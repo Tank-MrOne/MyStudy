@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<ul>
+			<li>赵丽颖</li>
+			<li>杨幂</li>
+			<li>迪丽热巴</li>
+			<li>戚薇</li>
+			<li>刘诗诗</li>
+		</ul>-->
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//第一步：发送请求从后台获取数据
+				//第二步：根据后台获取的数据动态创建列表
+				
+				
+				
+				//假设后台回来的数据，已经解析到一个数组当中
+				var arr = ['赵丽颖','杨幂','迪丽热巴','戚薇','刘诗诗'];
+				//第二种创建方式
+//				var str = '<ul>';
+//				for(var i = 0; i < arr.length; i++){
+//					str += '<li>'+ arr[i] +'</li>';
+//				}
+//				str += '</ul>'
+//				document.body.innerHTML += str;
+
+				
+				
+				
+				
+				//第三种方式创建
+				//第一步创建一个ul  没有谁就创建
+				var ulNode = document.createElement('ul');
+				
+				//循环创建li，并且给li添加内容，并且把li放到ul内部，组装完
+				for(var i = 0; i < arr.length; i++){
+					var liNode = document.createElement('li');
+					liNode.innerHTML = arr[i];
+					ulNode.appendChild(liNode);
+				}
+				
+				//把组装好的ul 给放到页面上
+				document.body.appendChild(ulNode);
+			}
+		</script>
+	</body>
+	
+	
+	
+</html>

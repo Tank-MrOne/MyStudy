@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/*html{
+				height: 100%;
+			}*/
+			
+			html{
+				width: 500px;
+				height: 500px;
+				margin-left: 100px;
+				border: 10px solid black;
+				background-color: red;
+				/*html比较特殊，特殊原因它的部分属性作用的不是自己 而是document*/
+				/*doucument是网页最外层的元素，html文档当中没有任何标签标示它*/
+			}
+			
+			body{
+				
+				width: 300px;
+				height: 3000px;
+				border: 10px solid yellow;
+				background-color: blue;
+				/*body比较特殊，单独的给Body设置某些属性，作用的不是自己 而是document*/
+				/*doucument是网页最外层的元素，html文档当中没有任何标签标示它*/
+			}
+					
+			
+			#box{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+			
+			/*初始包含块：和浏览器第一屏大小一致的一个块状结构，称作初始包含块，元素子绝父不相的时候
+			 其实相对的是初始包含块去做的定位，不是body也不是html也不是视口
+			 * */
+			
+			/*
+			 以后，打开浏览器最外层的结构，首先是document，接着是初始包含块 ， HTML ， body
+			 
+			 */
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

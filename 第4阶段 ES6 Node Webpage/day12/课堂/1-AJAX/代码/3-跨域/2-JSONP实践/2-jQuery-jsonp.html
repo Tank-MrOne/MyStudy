@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery JSONP的实践</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result{
+            height:100px;
+            border:solid 1px #000;
+        }
+    </style>
+    <script src='https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js'></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">jQuery JSONP的实践</h2>
+        <button class="btn btn-danger">点击获取数据</button>
+        <hr>
+        <div id="result">
+            <h4></h4>
+        </div>
+    </div>
+
+    <script>
+        $('button').click(function(){
+            // 第一个 ? 是路径和查询字符串的分隔符
+            // 第二个 ? 是回调函数的占位符
+            $.getJSON('http://127.0.0.1:8001/jsonp-server?callback=?', function(data){
+                console.log(data);
+            });
+        });
+    </script>
+</body>
+</html>

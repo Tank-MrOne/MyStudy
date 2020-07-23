@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			1、属性的赋值优先级比变量高（连等的情况下）
+//			var a;
+//			var b;
+//			a = {n:1};
+//			b = a;
+//			
+//			a.x = a = {n:2};//连等一个对象的时候，地址是一样的
+//			a.x = {n:2}; 
+//			a = a.x    
+//			console.log(a === b.x);
+//			console.log(a.x);
+//			console.log(b.x);
+			
+			
+			
+			//2、
+//			console.log([] == []);
+//			console.log([] == ![]);//!是一元运算符，优先级比较高
+								 // ！要求后面必须是一个布尔值
+								 //！true ==== false
+								// [] == false
+								//对象要转基本数据
+								// ‘’ == false
+								//  0 == 0 
+								//true
+			
+			
+			
+			//3、
+			//对象类型数据的判断
+	  		var b1 = {
+	    			b2:[2,'atguigu',console.log],
+	    			b3:function () {
+	      				alert('hello')
+	    			}
+	  		}
+	  
+			console.log(b1,b1.b2,b1.b3)
+	  		console.log(b1 instanceof Object,typeof b1)
+	  		
+//	  		console.log(Array instanceof Object);
+//	  		console.log([] instanceof Object);
+//	  		console.log(null instanceof Object);
+	  		
+	  		console.log(b1.b2 instanceof Array,typeof b1.b2)
+	  		console.log(b1.b3 instanceof Function,typeof b1.b3)
+	  		
+	  		
+//	  		function fn(){
+//	  			console.log('赵丽颖')
+//	  		}
+//	  		
+//	  		console.log(typeof fn);
+//	  		console.log(typeof fn());//  'undefined'
+	  		
+	  		
+	  		
+	  		console.log(typeof b1.b2[2])//function
+	  		console.log(typeof b1.b2[2]('atguigu'))//
+	  		
+	  		
+	  		
+	  		
+	  		
+	  		
+			
+			
+			
+		</script>
+	</body>
+</html>

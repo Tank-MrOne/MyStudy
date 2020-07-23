@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数</title>
+</head>
+<body>
+    <script>
+        // 获取 用户数据   文章数据   商品数据
+        function getUser(){
+            setTimeout(() => {
+                let data = '用户数据';
+                iterator.next(data);
+            }, 1000);
+        }
+
+        function getArticles(user){
+            setTimeout(() => {
+                console.log(user);
+                let data = '文章数据';
+                iterator.next(data);
+            }, 1000);
+        }
+
+        function getGoods(article){
+            setTimeout(() => {
+                console.log(article);
+                let data = '商品数据';
+                iterator.next(data);
+            }, 1000);
+        }
+
+        //生成器函数
+        function *gen(){
+            let users = yield getUser();
+            // console.log(users);
+            let articles = yield getArticles(users);
+            // console.log(articles);
+            let goods = yield getGoods(articles);
+            // console.log(goods);
+        }
+
+        //获取迭代器对象
+        let iterator = gen();
+        iterator.next();
+    </script>
+</body>
+</html>

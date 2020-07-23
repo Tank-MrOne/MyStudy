@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//字符串的方法，字符串是基本数据，它是没有方法的，其实说的是字符串包装对象的方法
+			//以后学习任何的方法，本质上就是学习函数。函数就要关心三要素
+			//字符串是一个基本值，以下所有的字符串方法都不会改变字符串原串
+			
+			
+//			ES5字符串方法
+			
+			var str = '1*234567890123A';
+			console.log(str.charAt(1)); //*******
+			//功能：找到对应索引位置的字符
+			//参数：一个索引值
+			//返回值：返回找到的对应字符
+			console.log(str.charCodeAt(0));
+			//功能：找到对应索引位置的字符的Unicode码
+			//参数：一个索引值
+			//返回值：返回找到的对应字符的Unicode码
+			console.log(str.concat('iii'));//拼接
+			//功能：把原串和指定的字符串拼接到一起
+			//参数：指定一个新的字符串
+			//返回值：返回拼接好的字符串
+//			console.log(str);//原串都不会发生改变
+
+			console.log(String.fromCharCode(49));//unicode编码
+			//功能：把unicode码转化为对应的字符
+			//参数：指定一个Unicode码
+			//返回值：返回对应的字符
+
+			console.log(str.indexOf('236',3));//********
+			//功能：从原串当中找指定的子串，求出子串下标位置
+			//参数：1、指定的一个子串，2、起始位置从哪开始查找 默认是从左边第一个开始往右
+			//返回值：返回对应的子串下标，如果没有找到返回-1
+			
+			console.log(str.lastIndexOf('23',10));//这个和indexOf类似，只不过这个是从又往左查
+			
+			//下面这三个依赖于正则表达式，后面学正则的时候，给大家加进来		
+//			console.log(str.replace('1','**'));//替换字串
+//			console.log(str.match(/1/g));//找到匹配项返回数组
+//			console.log(str.search());
+
+			str = '12345678';
+			console.log(str.localeCompare('12345678'));//比较大小
+			//功能：比较原串和指定的字符串大小
+			//参数：指定一个字符串
+			//返回值：如果原串大返回1 如果原串小返回-1 如果相等返回0
+
+			console.log(str.slice(2,-1));//**************
+			//功能：从原串当中截取指定位置（索引）的字符串，形成新串
+			//参数：指定起始位置和结束位置,位置可以是负数，包含起始位置的但是不包含结束位置的
+				   //参数也可以只写一个，代表起始位置，结束位置不写代表一直到字符串结束
+			//返回值：返回截取的字符串
+
+			console.log(str.substr(0,4));//后面的参数是长度
+			//功能：从原串当中截取的字符串，形成新串
+			//参数：指定起始位置和长度，位置也可以是负数，如果只写一个起始位置，一直截取到末尾
+			//返回值：返回截取的字符串
+			
+			console.log(str.substring(4,0));//后面的参数不允许是负数
+			//功能：从原串当中截取的字符串，形成新串
+			//参数：指定两个位置，两个位置不能是负数，方法会自动的根据位置大小决定起始和结束位置
+				//不包含结束位置的那个字符
+			//返回值：返回截取的字符串
+			
+			
+			console.log(str.split(''));//*************
+			//功能：以指定字符为间隔（切割点）将字符串转化为数组
+			//参数：可以不写，那么整个字符串作为数组的一个元素
+				 //可以是空串，那么每个字符都会成为数组的一个元素
+				 //可以是指定的字符串，会以这个字符串为切割点去切割，如果没有这个切割点，和不传一样
+			//返回值：返回生成的数组
+
+			
+			str = 'asjkfhaksdADADKHfalskjfa13244'
+			console.log(str.toLowerCase());//**********
+			console.log(str.toUpperCase());
+//			功能: 把字符串转化大小写
+//			参数:无
+//			返回值:返回转化后的字符串,也是新串
+
+
+			console.log(str.valueOf());
+			
+			//功能:从对象当中获取基本值[[PrimitiveValue]]
+			//参数：无
+			//返回值：如果这个对象有[[PrimitiveValue]]，就返回[[PrimitiveValue]]的值
+			//      如果对象没有[[PrimitiveValue]]，就返回对象本身
+			//      只有包装对象才有[[PrimitiveValue]]，其它的对象都没有
+		
+			
+			
+			console.log(str.toString());
+			//功能:把一个对象转化为字符串
+			//参数：无
+			//返回值：就是自己，是个新串
+			
+			
+			
+			//各种对象调用的valueOf和toString是不一样的
+			//包装对象调用的valueOf和toString都是自己原型身上的
+			//包装对象有[[PrimitiveValue]]，所以valueOf返回的就是[[PrimitiveValue]]的值
+			//toString就是把[[PrimitiveValue]]值转化为字符串
+			
+			
+			
+			
+			//数组  函数 对象
+			//非包装对象调用的valueOf都是Object原型当中的，非包装对象valueOf返回的都是自身
+			//而toString调用的是自己原型当中的
+			//调用toString返回的结果各不相同
+	
+			
+			//数组调用toString  就是把中括号去掉  中间的东西加引号; [1,2,3]    '1,2,3'
+			//函数调用toString  就返回函数数据本身加引号;    'function fn(){}'
+			//对象调用toString  返回字符串'[object Object]';		
+			
+			
+			
+			
+//			ES6方法
+//			1.	includes(str) : 判断是否包含指定的字符串
+			var str = 'ajshdhak123eiuf';
+			console.log(str.includes('1235'));
+//			2. 	startsWith(str) : 判断是否以指定字符串开头
+			console.log(str.startsWith('aa'));
+//			3. 	endsWith(str) : 判断是否以指定字符串结尾
+			console.log(str.endsWith('ff'));
+//			4. 	repeat(count) : 重复指定次数
+			console.log(str.repeat(2))
+			
+			
+			
+			
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,li{
+				list-style: none;
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			.list{
+				width: 200px;
+				height: 150px;
+				border: 1px solid black;
+			}
+			.list li{
+				width: 200px;
+				height: 50px;
+				background-color: hotpink;
+				text-align: center;
+				line-height: 50px;
+			}
+			
+			.list li:nth-child(2){
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+				box-sizing: border-box;
+			}
+			
+			.list li a{
+				font-size: 20px;
+				color: white;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li><a href="javascript:;">家电</a></li>
+			<li><a href="javascript:;">衣服</a></li>
+			<li><a href="javascript:;">数码</a></li>
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var liNodes = document.querySelectorAll('.list li');
+				
+				for(var i = 0; i < liNodes.length; i++){
+					liNodes[i].onmouseover = function(){
+						this.style.backgroundColor = 'yellowgreen';
+					};
+					
+					liNodes[i].onmouseout = function(){
+						this.style.backgroundColor = 'hotpink';
+					}
+				}
+			}
+		</script>
+		
+	</body>
+</html>

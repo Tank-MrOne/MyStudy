@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图标字体</title>
+		<link rel="stylesheet" href="iconfont/css/all.css">
+		<style>
+			
+			div{
+				font-size: 300px;
+				color: skyblue;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			
+			li::before{
+				/* \开始内容在content表示转义字符，和实体类似 */
+				content: '\f717';
+				/* 将fas或fab的样式复制到这里 */
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+				font-size: 40px;
+				color: pink;
+			}
+			
+			li::after{
+				content: '\f179';
+				font-family: 'Font Awesome 5 Brands';
+				font-weight: 400;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			- 使用图标的方式：
+				1.通过class来使用图标字体
+					①创建一个标签
+					②为标签添加第一个类，指定字体格式
+						fas/fab 
+					③为标签添加第二个类，指定具体的图标
+						
+				2.通过实体来使用图标字体
+					①创建一个标签
+					②为标签添加第一个类，指定字体格式
+						fas/fab 
+					③将对应图标的实体写在标签中
+						&#x编码;
+						
+				3.通过伪元素before和after来使用图标字体
+					①通过before或after选中要添加图标的位置
+					②将图标的编码设置为content属性的值
+					③设置基本的样式
+						
+		 -->
+		
+		
+		<!-- 通过实体来使用图标字体 -->
+		<!-- <div class="fas">&#xf52e;</div>
+		<div class="fas">&#xf7ab;</div> -->
+		
+		<!-- 创建一个标签 -->
+		<!-- <div class="fab fa-apple fa-spin"></div> -->
+		
+		<ul>
+			<li>
+				今天天气真不错
+			</li>
+			<li>
+				哈哈哈哈哈
+			</li>
+			<li>
+				嘻嘻嘻嘻嘻
+			</li>
+			<li>
+				嘻嘻嘻嘻嘻
+			</li>
+			<li>
+				嘻嘻嘻嘻嘻
+			</li>
+			<li>
+				嘻嘻嘻嘻嘻
+			</li>
+		</ul>
+	</body>
+</html>

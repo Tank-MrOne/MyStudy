@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">biu~</button>
+    <script>
+        /* setItem(key, value)--设置
+        getItem(key)--获取
+        removeItem(key)--删除 */
+        var oBtn = document.querySelector("#btn");
+        oBtn.onclick = function () {
+            localStorage.setItem("message", "你好呀");
+        }
+    </script>
+</body>
+
+</html>

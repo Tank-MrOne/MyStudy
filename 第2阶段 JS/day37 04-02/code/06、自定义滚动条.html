@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#wrap{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#wrap .scrollBar{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				height: 100%;
+				background-color: hotpink;
+				border-left: 1px solid greenyellow;
+				border-right: 1px solid greenyellow;
+			}
+			
+			#wrap .scrollBar .scrollIn{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 0;
+				width: 26px;
+				height: 100px;
+				background-color: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="scrollBar">
+				<div class="scrollIn"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//让滚动条滑块先动起来
+			window.onload = function(){
+				var scrollIn = document.querySelector('#wrap .scrollBar .scrollIn');
+				scrollIn.onmousedown = function(e){
+					e = e || window.event;
+					//按下的时候获取元素的初始位置和鼠标的初始位置
+					var eleY = scrollIn.offsetTop;
+					var startY = e.clientY;
+					//全局捕获
+					scrollIn.setCapture&&scrollIn.setCapture();//只有低版本浏览器才会用到全局捕获
+					document.onmousemove = function(e){
+						e = e || window.event;
+						//可以获取鼠标的结束位置
+						var endY = e.clientY;
+						//求出鼠标的距离差
+						var disY = endY - startY;
+						//求出元素移动的最终位置  =  元素的初始位置  + 鼠标的距离差
+						var lastY = eleY + disY;
+						
+						//添加临界值
+						if(lastY > document.documentElement.clientHeight - scrollIn.offsetHeight){
+							lastY = document.documentElement.clientHeight - scrollIn.offsetHeight
+						}else if(lastY < 0){
+							lastY = 0;
+						}
+						//把求出来的最终位置设置给元素
+						scrollIn.style.top = lastY + 'px';
+					};
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+						scrollIn.releaseCapture&&scrollIn.releaseCapture();//低版本浏览器释放全局捕获
+					}
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>

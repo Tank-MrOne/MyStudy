@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1">赵丽颖</p>
+		<p style="visibility: hidden;" id="p2">杨幂</p>
+		<script type="text/javascript">
+			window.onload = function(){
+//				var pNodes = document.querySelectorAll('p');
+				//这个获取元素的方法及getElementsByTagName、getElementsByClassName都是低级浏览器不支持
+				var p1 = document.getElementById('p1');
+				var p2 = document.getElementById('p2');//通过id获取元素的方法，高低都支持
+				console.log(p1.innerText);
+				console.log(p2.innerText);//拿不到隐藏的元素内容
+				
+//				console.log(p1.textContent);
+//				console.log(p2.textContent);//可以拿到隐藏的元素内容，但是只有高级浏览器认识
+				
+			}
+		</script>
+	</body>
+</html>

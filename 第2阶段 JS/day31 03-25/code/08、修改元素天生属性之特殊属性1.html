@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="checkbox" id="check"/> <br />
+		<button id="btn">按钮</button>
+		
+		<script type="text/javascript">
+		//点击按钮修改多选框选中
+			window.onload = function(){
+				
+				var btn = document.getElementById('btn');
+				var inputNode = document.getElementById('check');
+				
+				btn.onclick = function(){
+					//元素当中的属性和属性值相同的这种属性，js操作的时候值使用true和false
+					inputNode.checked = true;
+				}
+			}
+		
+		</script>
+	</body>
+</html>

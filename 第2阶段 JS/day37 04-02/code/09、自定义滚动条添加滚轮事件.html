@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#wrap{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#wrap .content{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			
+			#wrap .scrollBar{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				height: 100%;
+				background-color: hotpink;
+				border-left: 1px solid greenyellow;
+				border-right: 1px solid greenyellow;
+			}
+			
+			#wrap .scrollBar .scrollIn{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 0;
+				width: 26px;
+				/*height: 100px;*/
+				background-color: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			
+			<div class="content"></div>
+			
+			
+			<div class="scrollBar">
+				<div class="scrollIn"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//让滚动条滑块先动起来
+			window.onload = function(){
+				var scrollIn = document.querySelector('#wrap .scrollBar .scrollIn');
+				var content = document.querySelector('#wrap .content');
+				
+				
+				//模拟内容，给网页上写点内容
+				for(var i = 0; i < 200; i++){
+					content.innerHTML += i + '<br>';
+//					content.innerHTML = content.innerHTML +  i + '<br>'
+				}
+				
+				//设置滑块的高度
+//				自定义滚动条的万能比例：
+//				滑块的高度 / 滑槽的高度 = 滑槽的高度 / 内容的高度 = 滑块滚动距离 / 内容的滚动距离 
+				var scale = document.documentElement.clientHeight / content.offsetHeight;
+				var scrollHeight = document.documentElement.clientHeight * scale;
+				scrollIn.style.height = scrollHeight + 'px';
+				
+				
+				//拖拽滑块相关的
+				scrollIn.onmousedown = function(e){
+					e = e || window.event;
+					//按下的时候获取元素的初始位置和鼠标的初始位置
+					var eleY = scrollIn.offsetTop;
+					var startY = e.clientY;
+					//全局捕获
+					scrollIn.setCapture&&scrollIn.setCapture();//只有低版本浏览器才会用到全局捕获
+					document.onmousemove = function(e){
+						e = e || window.event;
+						//可以获取鼠标的结束位置
+						var endY = e.clientY;
+						//求出鼠标的距离差
+						var disY = endY - startY;
+						//求出元素移动的最终位置  =  元素的初始位置  + 鼠标的距离差
+						var lastY = eleY + disY;
+						
+						//添加临界值
+						if(lastY > document.documentElement.clientHeight - scrollIn.offsetHeight){
+							lastY = document.documentElement.clientHeight - scrollIn.offsetHeight
+						}else if(lastY < 0){
+							lastY = 0;
+						}
+						//把求出来的最终位置设置给元素
+						scrollIn.style.top = lastY + 'px';
+						//添加内容滚动逻辑
+//						滑槽的高度 / 内容的高度 = 滑块滚动距离 / 内容的滚动距离 
+						var contentDis = lastY / scale;
+						content.style.top = -contentDis + 'px';
+						
+						
+					};
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+						scrollIn.releaseCapture&&scrollIn.releaseCapture();//低版本浏览器释放全局捕获
+					}
+					return false;
+				}
+				
+				
+				
+				
+				
+				
+				
+				//滚动滚轮相关的
+				//IE/CHROME
+				document.addEventListener('mousewheel',scrollMove);
+				//fireFox
+				document.addEventListener('DOMMouseScroll',scrollMove);
+				//与其讲滚轮事件不如说在讲怎么区分滚轮是往下还是往上
+				//兼容性去处理回调函数
+				var flag = true;
+				function scrollMove(e){
+					e = e || window.event;
+					if(e.wheelDelta){
+						//ie或者chrome
+						if(e.wheelDelta > 0){
+							//往上
+							flag = true;
+						}else{
+							//往下
+							flag = false;
+						}
+						
+					}else if(e.detail){
+						//火狐
+						if(e.detail > 0){
+							//往下
+							flag = false;
+						}else{
+							//往上
+							flag = true;
+						}
+					}
+					
+					if(flag){
+						//不管什么浏览器，一定是往上滚的
+						//往上滚   滑块往上跑   内容往下跑
+						//滑槽的高度 / 内容的高度 = 滑块滚动距离 / 内容的滚动距离 
+						var lastY = scrollIn.offsetTop - 10;
+						if(lastY < 0){
+							lastY = 0;
+						}
+						scrollIn.style.top = lastY + 'px';
+						var contentDis = -scrollIn.offsetTop / scale;
+						content.style.top = contentDis + 'px';
+					}else{
+						//不管什么浏览器，一定是往下滚的
+						//往下滚   滑块往吓跑    内容往上跑
+						var lastY = scrollIn.offsetTop + 10;
+						if(lastY > document.documentElement.clientHeight - scrollIn.offsetHeight){
+							lastY = document.documentElement.clientHeight - scrollIn.offsetHeight
+						}
+						scrollIn.style.top = lastY + 'px';
+						var contentDis = -scrollIn.offsetTop / scale;
+						content.style.top = contentDis + 'px';
+					}
+					
+				}
+			
+			}
+		</script>
+	</body>
+</html>

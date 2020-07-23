@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.defineProperties</title>
+</head>
+
+<body>
+    <script>
+        //声明一个对象
+        let star = {
+            name: '张雨绮'
+        };
+
+        //增加属性
+        // star.type = 'sexy';// 
+
+        Object.defineProperties(star, {
+            type: {
+                value: 'sexy',
+                writable: false,
+                configurable: false,
+                enumerable: false
+            }
+        });
+
+        //删除属性
+        delete star.type;
+
+        console.log(star);
+                
+
+
+
+
+    </script>
+</body>
+
+</html>

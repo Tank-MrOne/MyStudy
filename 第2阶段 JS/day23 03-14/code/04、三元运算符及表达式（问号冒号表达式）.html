@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+//			问号冒号表达式：先看第一个表达式问号前面的值是否为真(问号前面只要有值就行，不是布尔要转化为布尔)？ 
+//			如果为真，则取冒号前面的值作为整个表达式的值，后面的不执行，
+//			如果为假,则取冒号后面的值作为整个表达式的值,前面的不执行
+//			var a = 10;
+//			var b = 20;
+//			var c = a < 0?a:b;
+//			console.log(c);
+			
+			
+			
+//			var a = 10;
+//			var b = 10?++a:a--;
+//			console.log(b,a);
+			
+			
+//			var a = 10;
+//			var b = 20;
+//			var c = a?a+b:b++;
+//			console.log(a,b,c);
+			
+			
+			var a = 10;
+			var b = 30;
+			var c = 0;
+			
+			var d = (a > c || c)? a+b*c++ :a-c+b++;
+//			d 10
+//			a 10
+//			b 30
+//			c 1
+			console.log(a,b,c,d)
+			
+			
+			
+		</script>
+	</body>
+</html>

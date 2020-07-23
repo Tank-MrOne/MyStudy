@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result {
+            height: 200px;
+            border:solid 1px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">JSON 演示</h2>
+        <button class="btn btn-primary" id="getJSON">点击获取 JSON 数据</button>
+        <hr>
+        <div id="result">
+
+        </div>
+    </div>
+
+    <script>
+        let getJSON = document.getElementById('getJSON');
+        let result = document.getElementById('result');
+
+        //绑定事件
+        getJSON.addEventListener('click', ()=>{
+            let x = new XMLHttpRequest;
+            x.onreadystatechange = function(){
+                if(x.readyState === 4 && x.status === 200){
+                    //处理服务器返回的响应体
+                    // console.log(x.responseText);// 
+                    //将JSON字符串转为 JS 对象
+                    let data = JSON.parse(x.responseText);
+                    //将 data 中的 hitokoto 属性设置为 result div 的文本
+                    result.innerHTML = data.hitokoto;
+                }
+            }
+            //初始化
+            x.open('GET', '/json-server');
+            //发送
+            x.send();
+        });
+    </script>
+</body>
+
+</html>

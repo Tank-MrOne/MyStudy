@@ -1,0 +1,34 @@
+{
+    "computers": [
+        {
+            "brand": "外星人",
+            "leng": "水冷",
+            "price": 18000,
+            "id": 1
+        },
+        {
+            "brand": "戴尔",
+            "price": 5200,
+            "leng": "风冷",
+            "id": 2
+        },
+        {
+            "brand": "华为",
+            "price": 3600,
+            "leng": "风冷",
+            "id": 3
+        },
+        {
+            "brand": "ThinkPad",
+            "price": 8600,
+            "leng": "水冷",
+            "id": 4
+        },
+        {
+            "brand": "小米",
+            "price": 3999,
+            "leng": "风",
+            "id": 5
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise处理同步任务</title>
+    <script src="promise.js"></script>
+</head>
+
+<body>
+
+    <script>
+        const p1 = Promise.resolve('成功啦');// 成功
+        const p2 = Promise.resolve(
+            new Promise((resolve, reject) => {
+                resolve('OK');
+            })
+        );
+        const p3 = Promise.resolve(new Promise((resolve, reject) => {
+            reject('FAIL');
+        }));
+        const p4 = Promise.resolve(Promise.resolve('Yes'));
+
+
+        console.log(p1);// o 成功啦
+        console.log(p2);// o OK
+        console.log(p3);// x FAIL
+        console.log(p4);// o Yes
+    </script>
+
+</body>
+
+</html>

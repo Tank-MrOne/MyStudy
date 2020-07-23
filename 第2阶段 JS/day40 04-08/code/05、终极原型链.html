@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person(name,age){
+				this.name = name;
+				this.age = age;
+			}
+			Person.prototype.eat = function(){
+				console.log('吃饭');
+			}
+			
+			var p1 = new Person('赵丽颖',33);
+			p1.eat();
+			console.log(p1.name);
+			
+			
+			
+			console.log(Object instanceof Function);
+			console.log(Function instanceof Object);
+			console.log(Function instanceof Function);
+			console.log(Object instanceof Object);
+			console.log(Function.prototype === Function.__proto__);
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

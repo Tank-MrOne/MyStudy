@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>嘿嘿</p>
+		<p>嘿嘿</p>
+		<p>嘿嘿</p>
+		<p>嘿嘿</p>
+		<script type="text/javascript">
+			//点击任意的p,所有的p内容全部改为哈哈
+			
+			window.onload = function(){
+				//第一步，拿到所有的p
+				var pNodes = document.querySelectorAll('p');
+				//第二步，对所有的p添加点击事件监听
+//				pNodes[0].onclick = function(){
+					//点击任何的p，都是让所有的p内容变为哈哈
+//					for(var j = 0; j < pNodes.length; j++){
+//						pNodes[j].innerHTML = '哈哈';
+//					}
+//				}
+//				pNodes[1].onclick = function(){
+						//点击任何的p，都是让所有的p内容变为哈哈
+//					for(var j = 0; j < pNodes.length; j++){
+//						pNodes[j].innerHTML = '哈哈';
+//					}
+//				}
+//				pNodes[2].onclick = function(){
+					//点击任何的p，都是让所有的p内容变为哈哈
+//					for(var j = 0; j < pNodes.length; j++){
+//						pNodes[j].innerHTML = '哈哈';
+//					}
+//				}
+//				pNodes[3].onclick = function(){
+					//点击任何的p，都是让所有的p内容变为哈哈
+//					for(var j = 0; j < pNodes.length; j++){
+//						pNodes[j].innerHTML = '哈哈';
+//					}
+//				}
+//				
+				for(var i = 0; i < pNodes.length; i++){
+					//外层for循环执行的时候，内部的函数是不执行的
+					
+					pNodes[i].onclick = function(){
+						//函数内部执行是点击p之后才会执行
+						//点击任何的p，都是让所有的p内容变为哈哈
+						for(var j = 0; j < pNodes.length; j++){
+							pNodes[j].innerHTML = '哈哈';
+//							this代表的是一个对象，在回调函数当中代表的是发生事件的那一个事件源，这里不能用this
+							//用了this，只代表一个会改变
+//							this.innerHTML = 'haha';
+						}
+					}
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+@num1 : 30;
+.box{
+    width: 30px * @num1;
+    height: 1000px / 3;
+    .con{
+        // 普通数值的加减法
+        width: 100px - 30%;
+        height: (100px + 10) * 20;
+    }
+    .inner{
+        // 颜色的运算是先转换成10进制的rgba  然后再计算  再转换成16进制
+        background-color: #fff-55;
+    }
+}

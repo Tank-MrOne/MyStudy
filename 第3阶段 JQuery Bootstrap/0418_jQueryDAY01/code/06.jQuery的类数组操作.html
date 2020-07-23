@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="box1">
+        <li>11</li>
+        <li>222</li>
+        <li>33</li>
+        <li>
+            <p class="ch">今天天气真好</p>
+        </li>
+        <li class="li5">55</li>
+        <li>66</li>
+    </ul>
+    <div class="box1">
+        <p class="ch">p1</p>
+        <span>span1</span>
+        <h3>hhhhhhh</h3>
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            // children()取得一个包含匹配的元素集合中每一个元素的所有子元素的元素集合。
+            // $(".box1").children().css("backgroundColor", "green");
+
+            //children()可以通过可选的表达式来过滤所匹配的子元素
+            // $(".box1").children("span").css("backgroundColor", "green");
+
+
+
+            // parent()取得一个包含着所有匹配元素的唯一父元素的元素集合
+            // console.log($(".ch").parent())
+            // parent()你可以使用可选的表达式来筛选。
+            // console.log($(".ch").parent(".box1"))
+
+            // siblings: 取得一个包含匹配的元素集合中每一个元素的所有唯一同辈元素的元素集合。可以用可选的表达式进行筛选
+            // console.log($(".li5").siblings());
+            // console.log($(".box1>p").siblings("span"));
+
+            // find()搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。
+            //end()回到最近的一个"破坏性"操作之前。即，将匹配的元素列表变为前一次的状态。
+            $("body").css("backgroundColor", "#222").find(".ch").css("backgroundColor", "green").end().css("color", "pink");
+
+
+            // prev() 、prevAll() 、next() 、nextAll()
+
+        })
+    </script>
+</body>
+
+</html>

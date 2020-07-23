@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			创建两个同一品牌的手机对象（要求品牌和方法在原型当中定义共享使用）;
+//			接下来把实例化对象的过程以及原型的原理图  每人画一遍；
+
+		function HuaWeiPhone(name,color,size,price){
+			this.name = name;
+			this.color = color;
+			this.size = size;
+			this.price = price;
+		}
+		
+		HuaWeiPhone.prototype.brand = 'HuaWei';//添加品牌在原型中
+		HuaWeiPhone.prototype.playGame = function(){
+			console.log('玩王者荣耀');
+		};
+		HuaWeiPhone.prototype.playMusic = function(){
+			console.log('可以听音乐');
+		};
+		
+		
+		var h1 = new HuaWeiPhone('mate30','black',5.5,5000);
+		console.log(h1.brand);
+		h1.playGame();
+					
+
+
+		</script>
+	</body>
+</html>

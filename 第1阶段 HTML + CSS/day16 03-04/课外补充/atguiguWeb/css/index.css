@@ -1,0 +1,142 @@
+.header-wrap{
+	height: 34px;
+	background: #ebebeb;
+}
+.header{
+	width: 1200px;
+	height: 34px;
+	/* background: pink; */
+	margin: 0 auto;
+	font-size: 12px;
+}
+.header .header-l{
+	float:left;
+}
+.header .header-r{
+	float:right;
+}
+.header-l b{
+	float:left;
+	position: relative;
+	width:108px ;
+	height: 24px;
+	line-height: 24px;
+	background: #009f7f;
+	border-radius: 3px;
+	color:#fff;
+	text-align: center;
+	font-weight: 400;
+	margin-top: 5px;
+}
+.header-l b::after{
+	content:"";
+	position: absolute;
+	left:50%;
+	margin-left: -10px;
+	bottom:-15px;
+	width: 0;
+	height: 0;
+	border-top:10px solid #009f7f;
+	border-right:10px solid transparent;
+	border-left:10px solid transparent;
+	border-bottom:10px solid transparent;
+}
+.header-l a{
+	float:left;
+	line-height: 34px;
+	margin-left: 21px;
+}
+.logoArea{
+	width: 1200px;
+	height: 83px;
+	background: pink;
+	margin: 0 auto;
+}
+.logoArea h1{
+	float:left;
+	margin-right: 64px;
+	position: relative;
+}
+.logoArea h1 a{
+	width: 177px;
+	height: 54px;
+	display: block;
+	background: url(../images/logo.png);
+	text-indent: -9999px;
+}
+.logoArea h3{
+	float:left;
+	width: 516px;
+	height: 29px;
+	background: url(../images/logo_1009.png);
+	
+}
+
+.logoArea h1::after{
+	content:"";
+	width: 3px;
+	height: 64px;
+	background: url(../images/line.png);
+	position: absolute;
+	right:0;
+	top:0;
+	
+}
+.nav{
+	width: 1200px;
+	height: 50px;
+	background: yellow;
+	margin: 0 auto;
+}
+.nav ul{
+	float:right;
+}
+.nav ul li{
+	float:left;
+	height: 51px;
+	position: relative;
+	/* overflow: hidden; */
+}
+.nav ul li a{
+	display: block;
+	padding: 0 25px;
+	height: 43px;
+	line-height: 43px;
+	font-size: 16px;
+	background: greenyellow;
+}
+/* .nav ul li:first-of-type::after{
+	content: "";
+	position: absolute;
+	left:0;
+	bottom:0;
+	width: 0;
+	height: 3px;
+	background: blue;
+	transform: translateX(-50%);
+	transition: all .5s;
+	transition-property: transform;
+}
+.nav ul li:first-of-type:hover::after{
+	width: 100%;
+	transform: translateX(0);
+}
+ */
+.nav ul li::after{
+	content: "";
+	position: absolute;
+	left:0;
+	bottom:0;
+	width: 0;
+	height: 3px;
+	background: blue;
+	transform: translateX(-50%);
+	
+}
+.nav ul li:hover::after{
+	transition: all .5s;
+	width: 100%;
+	transform: translateX(0);
+	transition: all .5s;
+	transition-property: transform;
+}

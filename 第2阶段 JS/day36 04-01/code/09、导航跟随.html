@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 100%;
+				height: 60px;
+				background-color: red;
+			}
+			body{
+				height: 4000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				window.onscroll = function(){
+					//系统滚动的事件
+					//求视口的高度
+					//求内容往上滚动的距离
+					var H = document.documentElement.clientHeight;//求出视口的高度
+					//系统的内容滚动，有些浏览器认为滚动的是html的内容，有些浏览器认为滚动的是body的内容
+					//这里我们要兼容写法
+					var scrollDis = document.documentElement.scrollTop || document.body.scrollTop;
+					
+					if(scrollDis >= H){
+						//如果内容滚动的距离大于等于视口的高度，那么就跟随
+						box.style.position = 'fixed';
+						box.style.left = 0;
+						box.style.top = 0;
+					}else{
+						//如果不大于就不跟随
+						box.style.position = 'static';
+						box.style.left = 0;
+						box.style.top = 0;
+					}
+					
+				}
+			}
+		</script>
+	</body>
+</html>

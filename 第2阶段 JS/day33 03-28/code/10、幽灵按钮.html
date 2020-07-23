@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				position: relative;
+				width: 250px;
+				height: 150px;
+				background-color: red;
+				margin: 50px auto;
+				text-align: center;
+				line-height: 150px;
+				color: purple;
+				font-size: 30px;
+				font-weight: bold;
+				transition: 2s;
+			}
+			
+			#box div{
+				position: absolute;
+				width: 0;
+				height: 30px;
+				background-color: green;
+				transition: 2s;
+			}
+			
+			#box .topBox{
+				left: 0;
+				top: 0;
+			}
+			
+			#box .bottomBox{
+				right: 0;
+				bottom: 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			我爱你赵丽颖
+			<div class="topBox"></div>
+			<div class="bottomBox"></div>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var topBox  = document.querySelector('#box .topBox');
+				var bottomBox  = document.querySelector('#box .bottomBox');
+				
+				box.onmouseover = function(){
+					topBox.style.width = 250 + 'px';
+					bottomBox.style.width = 250 + 'px';
+					topBox.style.backgroundColor = 'hotpink';
+					bottomBox.style.backgroundColor = 'hotpink';
+					this.style.color = 'greenyellow';
+					this.style.backgroundColor = 'skyblue';
+				};
+				
+				box.onmouseout = function(){
+					topBox.style.width = 0;
+					bottomBox.style.width = 0;
+					topBox.style.backgroundColor = 'green';
+					bottomBox.style.backgroundColor = 'green';
+					this.style.color = 'purple';
+					this.style.backgroundColor = 'red';
+				};
+				
+			}
+		</script>
+	</body>
+</html>

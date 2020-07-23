@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>音频</title>
+	</head>
+	<body>
+		
+		<!-- 
+			audio标签用于向网页中引入一个外部的音频文件 
+				属性：
+					src：一个外部音频文件的路径
+					controls ：显示播放的控件
+					autoplay ：自动播放，如果设置该属性，则音乐会自动播放
+						- 为了提升用户体验，在某些浏览器中，即使设置了autoplay音乐也不会自动播放
+					loop ：循环播放，如果设置该属性，音乐会自动循环	
+					
+				注意：如果属性名和属性值一直，则可以省略属性值
+					
+				音频文件，默认情况下用户是不能控制，所以直接使用audio引入时，
+					默认网页中什么也看不见，如果希望看到音频必须设置音频用户可控
+					
+				audio标签不兼容IE8及以下的浏览器
+		
+		-->
+		
+		<!-- <audio loop autoplay controls src="src/audio.mp3" ></audio> -->
+		
+		<audio controls>
+			对不起，您的浏览器不支持播放音频！
+			<!-- 
+				可以通过source标签来audio中指定多个音频文件
+				这样浏览器将会自动从上至下尝试
+			 -->
+			<source src="src/audio.mp3">
+			<source src="src/audio.ogg">
+			
+			
+		</audio>
+		
+		
+	</body>
+</html>

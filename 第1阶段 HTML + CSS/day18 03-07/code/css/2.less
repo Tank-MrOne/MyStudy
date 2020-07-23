@@ -1,0 +1,51 @@
+
+.box{
+	&1{
+		width: 100px;
+	}
+	
+	&2{
+		width: 200px;
+	}
+	
+	&3{
+		width: 300px;
+	}
+}
+
+
+.box1{
+	
+	width: 100px;
+	height: 100px;
+	
+	//&表示外层选择器
+	&:hover{
+		background-color: #bfa;
+	}
+	
+	.box2{
+		width: 50px;
+		height: 50px;
+		
+		// 这里 & 相当于 .box1 .box2
+		& + div{
+			color: purple;
+		}
+		
+		span{
+			color: yellow;
+		}
+		
+	}
+	
+	>.box3{
+		width: 50px;
+		height: 50px;
+	}
+	
+	+ div{
+		color: red;
+	}
+	
+}

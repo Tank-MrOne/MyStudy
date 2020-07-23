@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <!-- vue原始的方法,添加事件，不带参数 -->
+        <button v-on:click="test1">test1</button>
+        <!-- 原始方法的简写，不带参数 -->
+        <button @click="test2">test2</button>
+
+        <!-- 事件的回调函数，不写参数，默认传递的参数就是事件对象 -->
+        <button @click="test3">test3</button>
+        <!-- 事件的回调函数，写参数，传递的就是自己写的参数，而默认的事件对象就被覆盖 -->
+        <!-- 如果事件的参数要传递，而且还要使用事件对象，那么必须显示的把事件对象也进行传递
+        事件对象在vue当中，通过$event去获取
+     -->
+        <button @click="test4('zhaoliying',$event)">test4</button>
+
+
+        <div class="outer" @click="outer">
+            <!-- @click.stop代表阻止事件冒泡 事件操作符-->
+            <div class="inner" @click.stop="inner"></div>
+        </div>
+
+
+        <a href="http://atguigu.com" @click.prevent="testA">点我去学习</a>
+
+
+        <input type="text" @keyup.enter="testKey">
+
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#root',
+            data:{
+
+            },
+            methods: {
+                test1(){
+                    console.log('test1()')
+                },
+                test2(){
+                    console.log('test2()')
+                },
+                test3(e){
+                    console.log('test3()',e.target.innerText)
+                },
+                test4(str,e){
+                    console.log('test4()' + str, e.target.innerText)
+                },
+
+                outer(){
+                    console.log('outer()')
+                },
+                inner(e){
+                    //之前的阻止事件冒泡写法，可以
+                    // e.stopPropagation();
+                    console.log('inner()')
+                },
+                testA(e){
+                    //之前取消浏览器默认行为写法 可以
+                    // e.preventDefault();
+                    console.log(e.target.innerText)
+                },
+                testKey(e){
+                    //之前的写法，可以
+                    // if(e.keyCode === 13){
+                    //     console.log('回车')
+                    // }
+
+                    console.log('回车')
+                }
+
+            },
+        })
+    </script>
+</body>
+</html>

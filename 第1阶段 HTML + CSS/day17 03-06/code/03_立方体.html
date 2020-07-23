@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复仇者联盟</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			html{
+				perspective: 800px;
+			}
+			
+			/* 设置外部容器的大小 */
+			.cube{
+				width: 200px;
+				height: 200px;
+				/* background-color: #bfa; */
+				
+				margin: 100px auto;
+				
+				/* 
+					opacity 设置元素的透明效果
+					
+					rgba是颜色透明
+					opacity是整个元素都透明
+					
+					设置3d效果时，不要给父元素设置opacity
+				 */
+				/* opacity: 1; */
+				transition: all 2s;
+				
+				/* 
+					设置变形效果，默认都是2d变换，
+						如果需要保留3d效果，需要进行单独设置
+				 */
+				transform-style: preserve-3d;
+				
+				/* 设置动画效果 */
+				animation: round 10s linear infinite;
+				/* transform: rotateY(45deg); */
+				
+				
+			}
+			
+			/* .cube:hover{
+				transform: rotateY(45deg) scaleZ(2);
+			} */
+			
+			/* 设置li */
+			.cube li{
+				position: absolute;
+				/* opacity: 0.8; */
+				
+			}
+			
+			
+			
+			/* 去除图片的缝隙 */
+			img{
+				vertical-align: top;
+			}
+			
+			/* 设置图片旋转 */
+			.cube li:nth-child(1){
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			
+			.cube li:nth-child(2){
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			
+			.cube li:nth-child(3){
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			
+			.cube li:nth-child(4){
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			
+			.cube li:nth-child(5){
+				transform: rotateY(0deg) translateZ(100px);
+			}
+			
+			.cube li:nth-child(6){
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			
+			/* 设置关键帧 */
+			@keyframes round{
+				from{
+					transform: rotateX(0) rotateY(0) rotateZ(0);
+				}
+				to{
+					transform: rotateX(1turn) rotateY(1turn) rotateZ(1turn);
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- 
+			使用6个图片制作一个立方体
+		 -->
+		
+		<!-- 创建一个外层容器，用来容纳图片 -->
+		<ul class="cube">
+			<li><img src="img/1.jpg" ></li>
+			<li><img src="img/2.jpg" ></li>
+			<li><img src="img/3.jpg" ></li>
+			<li><img src="img/4.jpg" ></li>
+			<li><img src="img/5.jpg" ></li>
+			<li><img src="img/6.jpg" ></li>
+		</ul>
+		
+	</body>
+</html>

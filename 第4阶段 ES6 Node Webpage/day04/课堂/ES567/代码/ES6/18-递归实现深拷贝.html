@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归实现深拷贝</title>
+</head>
+
+<body>
+
+    <script>
+        let school = {
+            name: '尚硅谷',
+            slogon:'不断提高行业标准',
+            cities: ['北京','深圳','上海'],
+            founder: {
+                name: '刚哥',
+                age: 42
+            },
+            change(){
+                console.log('改变你!!');
+            }
+        };
+
+        let newObject = {};
+
+        //如果是原始类型
+        newObject.name = school.name;
+        //判断如果是数组
+        newObject.cities = [];
+        newObject.cities[0] = school.cities[0];
+        newObject.cities[1] = school.cities[1];
+        newObject.cities[2] = school.cities[2];
+
+        // newObject.name = 'atguigu';
+        // newObject.cities[0] = 'BEIJING';
+        // console.log(school);    
+        // console.log(newObject);
+
+        //如果是对象
+        newObject.founder = {};
+        newObject.founder['name'] = school.founder['name'];
+        newObject.founder['age'] = school['founder']['age'];
+
+        //如果是函数呢
+        newObject.change = school.change.bind(newObject);
+
+
+
+    </script>
+</body>
+
+</html>

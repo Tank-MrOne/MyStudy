@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//this是一个内置的变量
+			//this经常在函数内部去使用
+			//this在函数外部统统代表的是window
+			//this本质上是一个对象，this这个变量当中存储的是一个对象的地址
+			//this主要代表的是这个函数的执行者或者调用者是谁
+			
+			
+			//window是代表浏览器窗口对象，所有的东西都是归window去管的，它是我们的顶级对象
+			//全局变量及函数最终都是会作为window对象的属性来对待,只不过一般window是省略不写的；
+			
+			console.log(this);
+			
+			
+			var a = 100;
+			function fn(){
+			}
+			var b = 200;
+			console.log(window);
+
+			
+			
+			
+			//this的使用场合*******************************************
+			//1、普通函数内部    一般执行的时候都是window去执行的
+//			function fn1(){
+//				//叫函数，特殊对象window下的方法叫函数
+//				console.log(this);//window
+//			}
+//			fn1();//代表执行者是window
+//			
+//			
+//			function fn2(){
+//				console.log(this);//window
+//				function fn3(){
+//					console.log(this);//window
+//				}
+//				fn3();
+//			}
+//			fn2();
+
+
+
+			//2、方法内部   一般调用的时候执行者都是这个方法的对象
+			var obj = {
+				eat:function(){
+					//称作方法
+					console.log(this);//obj对象
+					console.log('吃');
+				}
+			}
+			obj.eat();//eat方法执行者是obj
+			
+			//3、构造函数内部  this一般代表的是准备实例化出来的那个对象
+			
+			//4、事件回调函数内部：代表的就是添加事件监听的事件源
+			
+			//5、call和apply调用的内部
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

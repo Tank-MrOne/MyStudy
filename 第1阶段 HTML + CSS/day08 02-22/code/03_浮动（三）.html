@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+				float: left;
+				/* 
+					文字不会被浮动元素覆盖，而是环绕在浮动元素周围
+				 */
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+			}
+			
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+			}
+			
+			.box4{
+				background-color: tomato;
+				float: left;
+				
+				/* 
+					
+					元素脱离文档流以后的特点：
+						1、脱离文档流后，元素不会独占一行
+						2、脱离文档流后，默认宽度和高度都被内容撑开
+						3、脱离文档流后，行内元素会变成块元素
+				 */
+			}
+			
+			.s1{
+				width: 100px;
+				height: 100px;
+				background-color: #ff0;
+				float: left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- <div class="box1"></div>
+		<div class="box2">今天天气真不错</div>
+		<div class="box3"></div> -->
+		
+		<!-- <div class="box4">abc</div> -->
+		
+		<span class="s1">我是一个span</span>
+		
+	</body>
+</html>

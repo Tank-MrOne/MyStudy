@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p>{{msg}}</p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el:'#root',
+            data:{
+                msg:'赵丽颖'
+            }
+        })
+        //数据代理最后的结果就是把data当中的属性数据通过vm去代理，这样的话比较方便
+        //数据代理最后我们可以通过vm.msg去操作配置对象data的msg，方便我们的操作
+        console.log(vm.msg)
+        console.log(vm._data.msg)
+    </script>
+</body>
+</html>

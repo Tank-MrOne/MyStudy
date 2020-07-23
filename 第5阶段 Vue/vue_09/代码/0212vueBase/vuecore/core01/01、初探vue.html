@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p id="pp">
+            {{msg}}
+        </p>
+    </div>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.2/jquery.js"></script> -->
+    <script src="./js/vue.js"></script>
+    <script>
+        //发送ajax请求拿到数据，步骤省略
+        //原生写法
+        // let pNode = document.getElementById('pp')
+        // pNode.innerHTML = '我爱你杨幂'
+
+        //jQuery   //cdn  //框架本质是为了让程序员简化方便而产生的
+        // $('#pp').text('我爱你杨幂')
+
+
+        //vue写法
+        //vue当中有没有让你去获取元素节点
+        //vue当中很重要的点：
+        //vue遵循的是以数据驱动页面，所以切记vue当中数据为尊
+        //vue当中不必要去关心dom操作
+        //vue更牛逼
+        new Vue({
+            el:'#root',
+            data:{
+                msg:'我爱你'
+            }
+        })
+
+
+    </script>
+</body>
+</html>

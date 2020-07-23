@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Object 通过它创建的对象 类别不确切
+			//所以我们需要自己能创建出确切的类别对象
+			//ES5当中没有类的概念，它是通过函数当类来用
+			//我们的构造函数来充当类的角色；
+			
+			
+			//创建一个类（函数）
+			
+			function Car(name,color,price){
+				this.name = name;
+				this.color = color;
+				this.price = price;
+				this.run = function(){
+					console.log('跑的很快~');
+				}
+				
+				var a = 100;//局部变量就是一句普通的功能代码，代表定义了一个变量，它既不是window的属性，也不是函数对象的属性
+							//只有全局变量特殊对待  会作为window对象的属性
+//				this.a = a;
+//				window.a = a;
+//				return [1,2,3];
+			}
+			
+			//函数有两个角色：函数和函数对象
+			//函数当函数用角色就是函数，加（）用
+			//函数当函数用又分为多种情况去使用：当普通函数用和当构造函数用
+			//任何的函数都可以当普通函数用也可以当构造函数用
+			//就看你调用函数的时候有没有加new  加了就是把函数当构造函数用，没加还是当普通函数用
+			//函数是普通函数还是构造函数并不是定义说了算，而是调用说了算；
+			
+			var result = Car('奔驰','black',200000);//此时就说这个函数是当普通函数用的
+			console.log(result);
+			//此时这个函数内部的this 是window
+			//函数的返回值看的就是return,没有return就是undefined;
+			console.log(color);//普通函数调用，本质是在window对象上增加了name color price run属性和值
+							  //在外部，我们就可以通过这个window的属性拿到函数内部的局部变量的值；
+							  
+							  
+							  
+			
+			var c1 = new Car('劳斯莱斯','red',10000000);//此时就说这个函数是当构造函数用的
+			//此时这个函数内部的this 是准备实例化出来的对象，因为构造函数本身就是实例化对象用的；
+			//返回值：如果没写return或者return后面是基本值，那么返回的就是实例化出来的对象本身，和return没关系
+			// 如果return后面是对象类型的数据，那么返回的就是对象数据，和实例化出来的对象没关系
+			console.log(c1);
+			c1.run();
+			
+		</script>
+	</body>
+</html>

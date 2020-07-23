@@ -1,0 +1,25 @@
+{
+  "name": "niubility-static-server",
+  "bin": {
+    "h5200212": "./bin/server.js"
+  },
+  "version": "1.0.2",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "static",
+    "server"
+  ],
+  "author": "xiaohigh",
+  "license": "ISC",
+  "dependencies": {
+    "better-opn": "^2.0.0",
+    "ejs": "^3.1.2",
+    "etag": "^1.8.1",
+    "yargs": "^15.3.1"
+  }
+}

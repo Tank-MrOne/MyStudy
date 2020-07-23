@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>a伪类的优先级</title>
+		<style>
+			
+			/* 
+				超链接伪类的编写属性
+					link
+					visited
+					hover
+					active
+			 
+			 */
+			
+			/* 正常的链接（未访问过的链接） */
+			a:link{
+				color: red;
+			}
+			
+			/* 访问过的链接 */
+			a:visited{
+				color: orange;
+			}
+			
+			a:hover{
+				color: greenyellow;
+			}
+			
+			a:active{
+				color: chocolate;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<a href="https://www.baidu123.com">没访问过的链接</a>
+		<br><br>
+		<a href="https://www.baidu.com">访问过的链接</a>
+		
+	</body>
+</html>

@@ -1,0 +1,22 @@
+//定义的时候声明形参  和变量一个样子 
+.center(@w,@h,@bg){
+    width: @w;
+    height: @h;
+    background-color: @bg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    margin: auto;
+}
+.outer{
+    //传参数
+    .center(500px,500px,red);
+    .inner{
+       .center(300px,300px,green);
+        .con{
+            .center(100px,100px,pink);
+        }
+    }
+}

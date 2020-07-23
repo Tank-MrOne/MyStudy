@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>高度塌陷</title>
+		<style>
+			.box1{
+				border: 10px #bfa solid;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				float: left;
+			}
+			
+			
+			/* 
+				.box1::after 表示元素的最后的位置
+			 */
+			.clearfix::after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1 clearfix">
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>

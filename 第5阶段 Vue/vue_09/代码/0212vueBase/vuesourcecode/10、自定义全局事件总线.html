@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./myBus.js"></script>
+    <script>
+        //首先得清除全局事件总线
+        // props  自定义事件   全局事件总线  （消息订阅发布）  插槽  vuex   vue-router
+        bus.$on('e1',function(){
+            console.log('1111')
+        })
+        bus.$on('e1',function(){
+            console.log('11112222')
+        })
+        bus.$on('e2',function(){
+            console.log('2222')
+        })
+        bus.$off('e1')
+        bus.$emit('e1')
+        bus.$emit('e2')
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<form action="target.html" autocomplete="off">
+			
+			<!-- 
+				type设置为hidden表示隐藏的表单项
+			 -->
+			<input type="hidden">
+			
+			<!-- 
+				表单中的常用属性
+					autofocus 自动使表单项获取焦点
+					autocomplete 表单自动补全
+						- 设置为 on 表示开启自动补全
+						- 设置为 off 表示关闭
+						- 如果是设置form标签上，它会影响整个表单
+							如果设置在了某个表单项上，则只会影响该表单
+					readonly 表单项只能看不能改，依然会提交到服务器
+					value 可以用来指定表单项的默认值
+					disabled 禁用表单项，不会提交到服务器
+					required 必填项，不填无法提交表单
+					placeholder 占位符（水印）
+			 -->
+			
+			用户名 <input type="text" name="username" value="sunwukong" readonly>
+				
+			<br><br>
+			
+			用户名 <input type="text" name="username" placeholder="请填写用户名" >
+			
+			<br><br>
+			
+			密码 <input type="password" name="password" required>
+			
+			<br><br>
+			
+			
+			性别 
+			<input type="radio" name="gender" value="male"> 男
+			<input type="radio" name="gender" value="female" checked> 女
+			
+			<br><br>
+			
+			爱好
+			<input type="checkbox" name="hobby" value="ppq"> 乒乓球
+			<input type="checkbox" name="hobby" value="ymq" checked> 羽毛球
+			<input type="checkbox" name="hobby" value="zq"> 足球
+			<input type="checkbox" name="hobby" value="lq"> 篮球
+			
+			<br><br>
+			
+			 
+			你喜欢的明星
+			<select name="star">
+							  <optgroup label="女明星">
+							  	<option value="fbb">范冰冰</option>
+							  	<option value="zw">赵薇</option>
+							  	<option value="lxr">林心如</option>
+							  </optgroup>
+							  <optgroup label="男明星">
+							  	<option value="pcj" >潘长江</option>
+							  	<option value="zbs">赵本山</option>
+							  	<option value="wyz" selected>吴彦祖</option>
+							  </optgroup>
+			</select>
+			<br><br>
+			<input type="submit" value="注册">
+			<!-- 其他类型的按钮 -->
+			<!-- 重置按钮，重置按钮可以用来将表单重置为最原始的状态 -->
+			<input type="reset" value="重置">
+			
+			<!-- 普通的按钮 只能用来被我们点击 -->
+			<input type="button" value="按钮">
+			
+			<br><br>
+			<button type="submit">提交</button>
+			<button type="reset">重置</button>
+			<button type="button">按钮</button>
+			<!-- <button type="button">
+				<img src="../day07/an.jpg" alt="">
+			</button> -->
+			
+			
+		</form>
+		
+	</body>
+</html>

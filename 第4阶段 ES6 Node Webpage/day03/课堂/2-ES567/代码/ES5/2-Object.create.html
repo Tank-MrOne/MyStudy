@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create</title>
+</head>
+<body>
+    <script>
+        //通过 create
+        var car = {
+            name: '汽车',
+            drive: function(){
+                console.log('我可以行驶');
+            }
+        };
+
+        //
+        let falali = Object.create(car, {
+            brand: {
+                // value: '法拉利',
+                // writable: false,     //能否被修改
+                configurable: false,  //是否被删除
+                enumerable: false,     //能否枚举 for in
+                get: function(){
+                    // console.log('get get get');
+                    // return '北汽';
+                    return this.v;
+                },
+                set: function(value){
+                    // console.log('set set set');
+                    // console.log(value);
+                    this.v = value;
+                }
+            }
+        });
+
+        //修改对象的属性
+        // falali.brand = '宝马';
+        //删除对象的属性
+        // delete falali.brand;
+        //遍历对象
+        // for(var i in falali){
+        //     console.log(i);
+        // }
+
+        //获取对象的属性
+        // console.log(falali.brand);
+
+        //设置对象的属性
+        falali.brand = '吉利';
+        console.log(falali);
+        
+        
+    </script>
+</body>
+</html>

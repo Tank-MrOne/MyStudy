@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li class="sing">我是列表项1</li>
+			<li class="sing">我是列表项2</li>
+			<li class="sing" id="single">我是列表项3</li>
+			<li class="sing">我是列表项4</li>
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//通过id获取一个dom对象
+//				var liNode = document.getElementById('single');
+//				console.log(liNode);
+				//通过标签名获取多个dom对象组成的一个伪数组
+//				var liNodes = document.getElementsByTagName('li');
+//				console.log(liNodes[2]);
+				
+				//通过类名去获取，获取的也是多个dom对象组成的伪数组
+//				var liNodes = document.getElementsByClassName('sing');
+//				console.log(liNodes[2]);
+				
+				
+				//通过css选择器去获取元素形成dom对象，只要选择器能选中，就获取；
+				
+				//document.querySelector只能拿到一个dom对象，如果选择器选中多个，只拿第一个；
+//				var liNode = document.querySelector('#single');
+//				var liNode = document.querySelector('li:nth-child(3)');
+//				console.log(liNode);
+				//document.querySelectorAll获取多个使用，返回的是一个伪数组，即使只有一个返回的也是伪数组
+				var liNodes = document.querySelectorAll('.sing');
+				console.log(liNodes);
+			}
+		</script>
+	</body>
+</html>

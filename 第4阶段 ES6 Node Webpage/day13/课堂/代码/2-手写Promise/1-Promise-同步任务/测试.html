@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise处理同步任务</title>
+    <script src="Promise.js"></script>
+</head>
+<body>
+
+<script>
+    /**
+     如何改变promise的状态?
+     (1) resolve(value): 如果当前是 pendding 就会变为 resolved
+     (2) reject(reason): 如果当前是 pendding 就会变为 rejected
+     (3) 抛出异常: 如果当前是 pendding 就会变为 rejected
+     */
+    let p = new Promise((resolve, reject)=>{
+        resolve('成功的数据');
+    })
+
+    p.then(value => {
+        console.log(value)
+    }, reason=>{
+        console.error(reason);
+    });
+
+    
+    function Promise(executor){
+
+    }
+
+
+</script>
+</body>
+</html>

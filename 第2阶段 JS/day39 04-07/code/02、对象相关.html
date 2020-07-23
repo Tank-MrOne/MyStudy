@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var a;
+			var obj1;
+			var obj2;
+			var obj3;
+			
+			a = {};//
+	  		obj1 = {m:2}//     
+	  		obj2 = {n:2}// 
+			obj3 = function(){};
+	
+	  		a[obj1] = 4  //a["[object Object]"] = 4
+	  		
+	  		
+	  		
+	  		
+	  		a[obj2] = 5     	//a["[object Object]"] = 5
+	  		
+	  		
+	 		a.name ='kobe'
+			a[obj3] = 6;
+			
+			
+//			a = {
+//	  			"[object Object]":5,
+//	  			name:'kobe',
+//	  			"function(){}":6
+//	  		}
+	  		
+			
+	
+	  		console.log(a[obj1]) 
+	  		console.log(a) 
+		</script>
+	</body>
+</html>

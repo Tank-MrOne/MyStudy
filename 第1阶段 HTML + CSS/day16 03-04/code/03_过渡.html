@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>过渡</title>
+		<style>
+			body{
+				position: relative;
+				height: 600px;
+				border: 1px red solid;
+				/* 给body设置背景时，背景实际上会直接指定给根元素 */
+				/* background-color: #bfa; */
+			}
+			
+			body:hover .box1{
+				left: 500px;
+				/* width: 500px;
+				height: 500px; */
+				background-color: orange;
+			}
+			
+			.box1{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				left: 0;
+				
+				/* 
+				 在网页中经常要用到一些交互效果,
+					当用户发生某些操作时，元素会发生一些变化
+					比如：改变大小、改变颜色、移动位置...
+					默认情况下这些都是一下子完成
+						我们希望样式发生变化时，不是一蹴而就的，而是有一个变化的过程
+					可以通过 transition 属性来设置过渡效果
+					希望谁发生过渡效果，就在谁身上设置 transition
+					
+						transition-property 指定要过渡的属性
+							- 当该属性发生变化时，会使用过渡效果
+							- 可以设置一个属性，也可以同时设置多个属性
+								多个属性间使用,隔开
+							- 在CSS中大部分有具体数值的属性都可以实现过渡效果
+							- 如果希望所有的属性都发生过渡效果，
+								则可以设置all
+								
+							
+						transition-duration 过渡持续的时间
+							- 时间单位s（秒） ms（毫秒）
+								1s = 1000ms
+				 */
+				
+				/* transition-property: width, height, background-color;
+				transition-duration: 10s,20s,30s; */
+				
+				transition-property: left, background-color;
+				transition-duration: 500ms ;
+				
+				
+			}
+				
+			
+		</style>
+	</head>
+	<body>
+		
+		 
+		<div class="box1"></div> 
+	</body>
+</html>

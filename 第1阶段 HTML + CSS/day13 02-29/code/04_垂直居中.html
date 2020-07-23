@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 80px0;
+				height: 400px;
+				border: 10px red solid;
+				
+				/* position: relative; */
+				
+				/* 让box1以单元格的形式呈现 */
+				display: table-cell;
+				
+				vertical-align: middle;
+			}
+			
+			.box2{
+				width: 100px;
+				/* height: 100px; */
+				background-color: greenyellow;
+				
+				/* 
+					通过绝对定位来使box2垂直居中 
+					使用绝对定位来实现垂直居中，要求元素的高度必须是确定，
+						不能被内容撑开
+						
+					垂直居中，方案二：	
+						- 可以将父元素使用display属性转换为 单元格
+						 然后就可以通过 vertical-align: middle; 
+						 使元素在其父元素中垂直居中
+						- 但是于此同时，父元素的宽度默认会由内容撑开
+				*/
+				/* position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto 0; */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2">
+				abcdefg
+			</div>
+		</div>
+	</body>
+</html>

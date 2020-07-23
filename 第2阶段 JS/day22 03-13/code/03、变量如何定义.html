@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//定义变量方式
+			//先定义后赋值
+			var a;//定义了一个变量，取名字叫a
+			a = 100;//然后把100这个数据 存储到a这个变量当中
+			a = 200;//变量内部的东西是随时可以改变的；
+			console.log(a);//打印a内部的数据，
+			
+			//初始化一个变量
+			var b = 100;//完全等价于  var b; b = 100;
+			console.log(b);
+			b = 300;
+			console.log(b);
+			
+			
+			//特殊情况特殊对待
+//			c;//这样是错误的，它是在取c的值，而c没定义；
+			c = 500;//也是可以定义一个变量，但是它和带var定义的变量有区别，区别，后面说。现在你可以认为差不多；
+			console.log(c);
+			
+			
+			
+			//一次定义多个变量；
+//			var d = 20;
+//			var e = 30;
+			
+			var d = 20,e = 30;//var d = 20;var e = 30;是完全等价的；
+			
+			
+			
+//			var d = e = 30; //如果两个值相等，可以这么定义变量，但是后面的e是没有带var的
+							// var d = 30; e = 30;
+						
+			
+		</script>
+	</body>
+</html>

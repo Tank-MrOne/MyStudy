@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise处理同步任务</title>
+    <script src="Promise.js"></script>
+</head>
+<body>
+
+<script>
+    /*
+     promise.then()返回的新promise的结果状态由什么决定?
+        (1)	简单表达: 由then()指定的回调函数执行的结果决定
+        (2)	详细表达:
+            ①	如果抛出异常, 新promise变为rejected, reason为抛出的异常
+            ②	如果返回的是非promise的任意值, 新promise变为resolved, value为返回的值
+            ③	如果返回的是另一个新promise, 此promise的结果就会成为新promise的结果
+
+     promise如何串连多个操作任务?
+        (1)	promise的then()返回一个新的promise, 可以开成then()的链式调用
+        (2)	通过then的链式调用串连多个同步/异步任务
+     */
+    let p = new Promise((resolve, reject) => {
+        // resolve('成功啦!!');
+        reject('失败啦!!');
+    });
+
+    let result = p.then(
+        value => {
+            // return '成功的数据';
+            // return new Promise((resolve, reject)=>{
+            //     resolve('用户的数据');
+            // })
+            throw '出错啦!!';
+        },
+        reason => {
+            // return '123';
+            // return new Promise((resolve,reject)=>{
+            //     // resolve('成功的数据');
+            //     reject('失败的数据');
+            // });
+            throw '出大事儿啦!!';
+        }
+    );
+
+    console.log(result);
+    
+    
+    // then(
+    //     value => {
+    //         console.log(value);
+    //     },
+    //     reason => {
+    //         console.error(reason);
+    //     }
+    // )
+</script>
+</body>
+</html>

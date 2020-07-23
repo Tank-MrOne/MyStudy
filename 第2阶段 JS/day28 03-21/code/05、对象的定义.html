@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//三种定义方式
+			//1、字面量定义
+			//对象是由键值对组成的
+			//每个键值对，键和值之间用  ：分隔
+			//所有的键都被称作是这个对象的属性，值叫做属性值
+			//对象的属性值如果是函数，那么我们成这个属性叫做对象的方法；
+			//对象的属性，本质上都是字符串，只不过大部分属性是可以省略引号不写的；
+//										 少数情况会出现不符合命名规范的,就必须带引号
+			
+			var obj = {
+				name:'赵丽颖',
+				'age':33,
+				gender:'female',
+				"height":165,
+				eat:function(){
+					console.log('吃货~');
+				},
+				'character-type':'淑女'//这个属性名必须使用引号；属性名不符合命名规范就得带引号
+			};
+			
+			var obj1 = {};//称作obj是Object的一个实例对象,只是这个对象当中没有任何属性
+			
+			console.log(obj);//称作obj是Object的一个实例对象；因为obj定义的时候是由Object实例化出来的；
+			console.log(obj1);
+			
+			//字面量定义对象其实本质上也是由构造函数定义出来的，它是第二种方式的简写
+			
+			
+			
+			//2、构造函数定义对象
+			var obj2 = new Object({
+				name:'旺财',
+				age:2,
+				run:function(){
+					console.log('跑的很快~');
+				}
+			})
+			
+			var obj3 = new Object();
+			
+			
+			
+			console.log(obj2);//称作obj2是Object的一个实例对象；因为obj定义的时候是由Object实例化出来的；
+			console.log(obj3);
+			
+			
+			
+			
+			//3、工厂函数定义对象
+			
+			function createObject(){
+				var obj = new Object();
+				return obj;
+			}
+			
+			var obj = createObject();
+			
+			
+			
+			//以上三种定义方式，本质都是定义了一个Object的实例对象，而Object的实例对象是通用的，万能的对象
+			//我们可以通过Object实例化出来一个人的对象，也可以实例化出来狗的对象
+			//也就是说通过Object实例化的对象就看自己写的是什么属性，是人的属性就代表是人，是狗的属性就代表是狗；
+			
+			
+			
+			//数组
+			console.log([1,2,3]);//打印出来长的和对象很像，其实数组也是特殊的对象（数组有序）
+			
+			//函数
+			function fn(){};
+			console.log(fn);
+			console.dir(fn);//函数也是一种特殊的对象，因为函数可以执行
+			
+			//函数表面上看起来就是一个功能代码
+			//函数本质上来说也是一个对象
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

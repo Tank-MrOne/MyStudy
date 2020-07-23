@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.ball{
+				width: 50px;
+				height: 50px;
+				background-color: deeppink;
+				border-radius: 50%;
+				
+				/* 开启定位 */
+				position: absolute;
+				
+				/* 应用动画 */
+				animation: jump2 5s infinite;
+			}
+			
+			.ball:nth-child(2){
+				left: 60px;
+				background-color: yellow;
+				animation-delay: 1000ms;
+			}
+			
+			.ball:nth-child(3){
+				left: 120px;
+				background-color: red;
+				animation-delay: 2000ms;
+			}
+			
+			.ball:nth-child(4){
+				left: 180px;
+				background-color: #bfa;
+				animation-delay: 3000ms;
+			}
+			
+			.ball:nth-child(5){
+				left: 240px;
+				background-color: greenyellow;
+				animation-delay: 4000ms;
+			}
+			
+			.ball:nth-child(6){
+				left: 300px;
+				background-color: chocolate;
+				animation-delay: 5000ms;
+			}
+			
+			.ball:nth-child(7){
+				left: 360px;
+				background-color: tomato;
+				animation-delay: 6000ms;
+			}
+			
+			.ball:nth-child(8){
+				left: 420px;
+				background-color: purple;
+				animation-delay: 7000ms;
+			}
+			
+			.ball:nth-child(9){
+				left: 480px;
+				background-color: skyblue;
+				animation-delay: 8000ms;
+			}
+			
+			.ball:nth-child(10){
+				left: 540px;
+				background-color: gold;
+				animation-delay: 9000ms;
+			}
+			
+			@keyframes jump2{
+				from{
+					top: 0;
+				}
+				
+				50%{
+					top: 500px;
+				}
+				
+				to{
+					top: 0;
+				}
+			}
+			
+			/* 设置关键帧 */
+			@keyframes jump{
+				
+				/* from 表示运动的起始位置 */
+				0%{
+					/* 起始位置 */
+					top: 0px;
+					left: 0px;
+				}
+				
+				20%, 80%{
+					top:100px;
+					left: 50px;
+				}
+				
+				50%{
+					top: 50px;
+					left: 200px;
+				}
+				
+				/* to 表示动画执行的结束位置 */
+				100%{
+					/* 结束位置 */
+					top:500px;
+					left:0px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//第一步：实例化一个对象，初始化主线程和分线程关联对象
+			
+			
+			var worker = new Worker('./myThread.js');
+			
+			worker.postMessage(100);//主线程发送消息给分线程,消息内容可以是任意类型
+			
+			worker.onmessage = function(e){
+				e = e || window.event;
+				//等待接受分线程计算完的结果
+				console.log(e.data);
+			}
+			
+			
+			console.log('i love you~   zhao li ying~');
+			
+			
+		</script>
+	</body>
+</html>

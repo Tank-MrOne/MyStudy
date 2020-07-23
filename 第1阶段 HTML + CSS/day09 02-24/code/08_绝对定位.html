@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box1{
+				/* width: 200px; */
+				/* height: 200px; */
+				background-color: #bfa;
+			/* 
+				水平方向的布局：外边距 + 边框 + 内边距 + width = 包含块的宽度
+				
+				当为元素开启定位以后，公式从7个值 升级 到了 9个值
+				
+				
+left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 包含块的宽度
+				
+				left + 7个变量 + right = 包含块的宽度
+				
+				在这9个值中，left right margin-left margin-right 和 width
+					可以设置为auto，left和right的默认值就是auto
+					
+				left + margin-left + width + margin-right + right = xxxx
+				
+				auto + auto + 200 + auto + auto = 800	
+				
+				left / right = 0
+				margin = 0
+				width = auto
+				
+				0 + 0 + auto + 0 + 0 = 800
+				
+				
+				left / right = 0
+				margin = auto
+				width = 200
+				
+				0 + auto + 200 + auto + 0 = 800
+
+				在绝对定位时，如果希望元素在包含块中水平居中，
+					则需要将left 和 right都设置为0，然后将左右margin设置为auto
+					
+				开启了绝对定位后，垂直方向的等式也必须满足：
+top + margin(top/bottom) + border(top/bottom) + padding(top/bottom) + bottom = 包含块高度
+			 */
+			position: absolute;
+			/* left: 0;
+			right: 0; */
+			/* margin: 0 auto; */
+			width: 200px;
+			/* 当偏移量设置为auto时，自动的外边距将会被忽略 */
+			/* margin: 0 auto; */
+			
+			/* 
+				可以通过给top和bottom设置一个0 然后将上下外边距设置为auto
+					的方式来使元素在包含块中垂直居中
+			 */
+			height: 200px;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+				
+			}
+			
+			.box2{
+				width: 800px;
+				height: 500px;
+				border: 10px red solid;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box2">
+			<div class="box1"></div>
+		</div>
+		
+		
+	</body>
+</html>

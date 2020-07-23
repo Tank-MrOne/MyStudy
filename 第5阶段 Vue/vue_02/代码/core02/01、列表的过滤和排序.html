@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <input type="text" v-model="searchName">
+        <ul>
+            <!-- 这里要展示的是搜索后的数据，不是原来的数据 -->
+            <li v-for="(person, index) in newPersons" :key="person.id">
+                {{person.id}} --- {{person.name}} --- {{person.age}}
+            </li>
+        </ul>
+        <button @click="sortType = 1">按年龄升序</button>
+        <button @click="sortType = 2">按年龄降序</button>
+        <button @click="sortType = 0">按原样排序</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                persons:[
+                    {id:1,name:'zhaoliying',age:33},
+                    {id:2,name:'yangmi',age:34},
+                    {id:3,name:'qiwei',age:40},
+                    {id:4,name:'dilireba',age:20}
+                ],
+                searchName:'',
+                sortType:0,//为0就代表是原样排序  1代表是升序   2代表是降序
+            },
+            computed: {
+                //搜索的过程，其实就是计算过程，要计算出一个新的数据，让页面去遍历展示
+                //不能在原数组去干活，因为如果修改了原数组，就回不去了
+                newPersons(){
+                    // let persons = this.persons
+                    // let searchName = this.searchName
+                    // 搜索
+                    let {persons,searchName,sortType} = this
+                    //原始的写法
+                    // let result = persons.filter(function(item){
+                    //     return item.name.indexOf(searchName) !== -1
+                    // })
+                    //箭头函数版本
+                    let result = persons.filter(item => item.name.indexOf(searchName) !== -1)
+
+                    
+                    //按照sortType 去排序，然后再返回
+                    if(sortType !== 0){
+                        result.sort((a,b) => {
+                            if(sortType === 1){
+                                //按年龄升序
+                                return a.age - b.age
+                            }else if(sortType === 2){
+                                //按年龄降序
+                                return b.age - a.age
+                            }
+                        })
+                    }    
+                    return result
+                }
+            },
+        })
+    </script>
+</body>
+</html>

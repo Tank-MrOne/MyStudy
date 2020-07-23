@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			绝对定位元素会找离自己最近的设置定位元素的祖先元素为参考点
+			 */
+			/* 
+			 子绝父相:父子指标签是嵌套关系,子元素是绝对定位,父元素是相对定位
+			 子绝父绝:
+			 子绝父固:
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			nav{
+				height: 30px;
+				background: #ccc;
+				margin-top: 100px;
+			}
+			.nav-inner{
+				width: 1190px;
+				height: 30px;
+				background: pink;
+				margin: 0 auto;
+			}
+			.place{
+				float:left;
+			}
+			.list{
+				float:right;
+			}
+			.place i,.place h5{
+				float:left;
+				line-height: 30px;
+				height: 30px;
+			} 
+			.list li{
+				float:left;
+				margin-right: 10px;
+				position: relative;
+			}
+			.list li a{
+				width: 100px;
+				height: 30px;
+				display: block;
+				background: yellow;
+				text-align: center;
+				line-height: 30px;
+			}
+			.list .reg-img{
+				position: absolute;
+				right:-10px;
+				top:-10px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-inner">
+				<div class="place">
+					<i>图标字体</i>
+					<h5>地点</h5>
+				</div>
+				<ul class="list">
+					<li>
+						
+						<a href="##">导航1</a>
+						<img src="registerNew.gif" class="reg-img">
+					</li>
+					<li>
+						<a href="##">导航2</a>
+					</li>
+					<li>
+						<a href="##">导航3</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</body>
+</html>

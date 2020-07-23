@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: hotpink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		<button id="btn">按钮</button>
+		
+		<script type="text/javascript">
+			//等待页面加载完成事件,点击按钮弹出一个对话框
+			window.onload = function(){
+				//以后我们的代码都写在这个里面
+				//等待页面加载完成后自动执行这个function中的代码，这个函数是一个回调函数
+				
+				//点击按钮，首先得先从树上按钮摘下来  
+				var btn = document.getElementById('btn');//把页面元素通过dom方法获取到封装成dom对象，给变量btn
+				
+				
+				//点击按钮
+				btn.onclick = function(){
+					//给btn添加点击事件监听
+					//事件监听的函数都是回调函数，这个函数我们不会去执行，而是在特定的条件下系统帮我们执行
+					alert('我爱你，赵丽颖~');
+					
+				}
+				
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

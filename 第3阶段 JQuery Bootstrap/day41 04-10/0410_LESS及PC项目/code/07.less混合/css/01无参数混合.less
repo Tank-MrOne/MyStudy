@@ -1,0 +1,21 @@
+//在 LESS 中我们可以定义一些通用的属性集为一个class，然后在另一个class中去调用这些属性.
+//混合就是将一系列属性从一个规则引入到另一个规则中
+
+//如果说作为mixin的类 不加小括号，则可以被编译出来，如果加上括号，则不能被编译出来，只能被调用
+.mine(){
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    //调用Mixin的时候，可以加上小括号调用，也可以不加
+    .mine();
+}
+.con{
+    width: 100px;
+    height: 100px;
+    .mine;
+}

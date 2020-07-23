@@ -1,0 +1,25 @@
+//@import 可以将一个其他的less文件引入到当前页面中
+// 使用import就相当于将一个文件原封不动的复制到了当前文件中
+// 存储变量的less文件 存储函数的less文件 ......
+//@import "./4.less";
+
+// .test{
+// 	.my-border();
+// }
+
+//除了可以自定义函数外，在less中还提供了许多内置函数
+
+.box1{
+	width: min(300px, 500px);
+	height: 200px;
+	background-color: greenyellow;
+	
+	&:hover{
+		//darken加深
+		// background-color: darken(greenyellow, 30%);
+		// lighten变浅
+		// background-color: lighten(greenyellow, 30%);
+		// average 取平均值
+		background-color: average(red,orange);
+	}
+}

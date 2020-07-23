@@ -1,0 +1,114 @@
+
+// 设置一下字体样式
+body{
+	font-family:14px/1.5 -apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: #333;
+	background-color: #fff;
+}
+
+// 重置a的样式
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+// 设置导航条容器的样式
+.topbar{
+	height: 48px;
+	background-color: #000;
+	// 设置弹性容器
+	display: flex;
+	// 设置主轴的空白空间的分配
+	justify-content: space-between;
+	// 设置辅轴的居中居中对齐
+	align-items: center;
+	
+	// 设置左右内边距
+	padding: 0 16px;
+	
+	
+	// 设置图标字体的颜色
+	.fas{
+		color: #fff;
+		font-size: 20px;
+	}
+	
+	// 设置logo
+	.logo{
+		a{
+			text-indent: -9999px;
+			// 将超链接设置为块元素
+			display: block;
+			width: 120px;
+			height: 31px;
+			// 设置背景图片
+			background-image: url(../img/dff63979.sprites-index@2x.png);
+			// 修改背景图片的大小
+			background-size: 400px 400px;
+		}
+	}
+	// 点击menu，显示下拉菜单
+	.menu:active {
+		.menu-list{
+			display: block;
+		}
+		
+	}
+	
+	
+	// 设置右侧下拉菜单
+	.menu-list{
+		display: none;
+		// 设置绝对定位
+		position: absolute;
+		// 设置上padding
+		padding-top:45px;
+		top:48px;
+		left:0;
+		right:0;
+		bottom:0;
+		background-color: #000;
+	}
+	
+	// 设置菜单项中超链接的样式
+	.item{
+		// 给li设置左右内边距
+		padding: 0 10%;
+		// 设置字体颜色和大小
+		font-size: 14px;
+		color: #fff;
+		a{
+			display: block;
+			height: 44px;
+			line-height: $height;
+			border-bottom: 1px solid rgb(24,24,24);
+		}
+	}
+	
+	// 设置搜索框的样式
+	.search{
+		// 开启相对定位
+		position: relative;
+		span{
+			// 开启绝对定位
+			position: absolute;
+			// 设置span的大小
+			height: 44px;
+			// 设置行高
+			line-height: $height;
+			// 设置左外边距
+			margin-left: 30px;
+			// 设置垂直偏移量
+			top:0;
+			
+		}
+	}
+}
+
+// 确认断点 768 ，当视口超过768以后样式发生变化
+@media only screen {
+	// 当视口大于768时
+	// transform-origin: ; 变形的原点
+	
+	// 当视口大于1231时
+}

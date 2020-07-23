@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name:'赵丽颖',
+				age:33
+			}
+			
+			function Dog(name,age){
+				this.name = name;
+				this.age = age;
+			}
+			
+			//把方法加到Object的显式原型对象当中也是可以的
+			//但是很少这么干
+//			Object.prototype.eat = function(){
+//				console.log('吃肉');
+//			}
+
+			Dog.prototype.eat = function(a,b){
+				console.log(this);
+				console.log('吃肉');
+				console.log(a,b);
+			}
+
+			var d1 = new Dog('旺财',3);
+			d1.eat(10,20);
+			
+//			obj.eat();//报错不是因为obj.eat报错而是因为obj.eat拿到了一个undefined，然后加括号调用报错；
+			
+			//狗可以吃肉
+			//赵丽颖没法吃肉
+			//如果我想让赵丽颖也吃肉
+			
+			//1、给这个对象自己添加一个吃肉的方法
+//			obj.eat = function(){
+//				console.log('吃肉');
+//			}
+//			obj.eat();
+
+
+			//2、不给这个对象添加，而是使用apply或者call借用 狗的吃肉方法去实现
+			
+//			d1.eat.apply(obj,[100,200]);//把狗的eat方法调用时的this指向修改为obj，代表obj在执行狗的这个方法
+			d1.eat.call(obj,100,200);
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

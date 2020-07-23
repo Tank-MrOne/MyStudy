@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>京东</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 将内部容器设置为弹性容器 */
+			.outer .innner{
+				display: flex;
+				
+				/* 设置空白空间的分配 */
+				justify-content: space-around;
+				/* 设置一个下外边距 */
+				margin-bottom: 20px;
+			}
+			
+			/* 设置弹性项 */
+			.innner a{
+				/* 使元素的大小自动缩放 */
+				/* flex: auto; */
+				/* 这里不能设置a的生长系数，因为设置以后，a会自动将元素撑满
+					导致没有空间设置边距。
+				 */
+				width: 10%;
+				
+				/* 设置文字的居中 */
+				text-align: center;
+				/* 去除下划线 */
+				text-decoration: none;
+				/* 设置字体大小 */
+				font-size: 12px;
+				/* 设置颜色 */
+				color: rgb(102,102,102);
+			}
+			
+			/* 设置图片的大小 */
+			.innner img{
+				width: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 创建一个外部容器 -->
+		<div class="outer">
+	
+			<!-- 内部容器 -->
+			<div class="innner">
+				<!-- 一个图标 -->
+				<a href="#">
+					<img src="img/1.png">
+					<span>京东超市</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/2.png">
+					<span>数码电器</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/3.png">
+					<span>京东服饰</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/4.png">
+					<span>京东生鲜</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/5.png">
+					<span>京东到家</span>
+				</a>
+			</div>
+			
+			
+			<!-- 内部容器 -->
+			<div class="innner">
+				<!-- 一个图标 -->
+				<a href="#">
+					<img src="img/6.png">
+					<span>充值缴费</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/7.png">
+					<span>9.9元拼</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/8.png">
+					<span>领券</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/9.png">
+					<span>赚钱</span>
+				</a>
+				
+				<a href="#">
+					<img src="img/10.png">
+					<span>PLUS会员</span>
+				</a>
+			</div>
+			
+		</div>
+	</body>
+</html>

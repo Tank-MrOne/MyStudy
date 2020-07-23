@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p v-html="msg"></p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el:'#root',
+            data:{
+                msg:'赵丽颖',
+            }
+        })
+
+        //和解析插值语法比较类似
+        //只不过它是在解析元素节点的属性（指令）
+        // 根据指令的不同，最终调用的update方法是不一样的
+        // v-text最终调用的和插值语法是同一个updater方法
+        //v-html它使用的是自己的updater方法
+
+        // 注意：每一个插值语法和非事件指令语法当中的表达式，都会创建自己的watcher
+        //并且和对应的dep进行绑定  
+        //一个dep里面的subs数组当中可以存储多个watcher
+        //一个watcher里面的depids对象也可以存储多个dep  
+        //他们是多对多的关系
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性盒</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			ul{
+				width: 800px;
+				border: 10px red solid;
+				
+				/* 设置弹性容器 */
+				display: flex;
+				
+				/* 
+					flex-direction
+						- 指定主轴的方向
+				*/
+			   /* flex-direction: row; */
+			   
+			   /* 
+					 flex-wrap 
+						- 元素在主轴上是否自动换行
+						- 可选值：
+							nowrap 默认值 不换行
+							wrap 自动换行（主轴满了，沿着侧轴换行）
+							wrap-reverse 自动换行，但是向相反的方向换行
+				*/
+			   /* flex-wrap: wrap-reverse; */
+			   
+			   
+			   /* 
+				flex-flow: ;
+					- 是 flex-direction 和 flex-wrap 的简写属性
+						可以同时设置两个值
+				*/
+			   flex-flow: row wrap;
+			   
+			   /* 
+				 justify-content 指定元素在主轴上的对齐方式
+					参数：
+						flex-start 元素沿着主轴起边对齐
+						flex-end 元素沿着主轴的终边对齐
+						center 元素沿着主轴居中对齐
+						space-around 空白空间平均分配到每个元素的两侧
+						space-between 空白空间平均分配到两个元素之间
+						space-evenly 空白空间平均分配到元素的一侧
+				*/
+			   justify-content: space-evenly;
+		
+			}
+			
+			ul li{
+				width: 200px;
+				height: 200px;
+				font-size: 40px;
+				color: #fff;
+				
+				/* 将所有弹性项的缩减系数设置为0 */
+				flex-shrink: 0;
+			}
+			
+			li:nth-child(1){
+				background-color: orange;
+				/* flex-grow: 1; */
+			}
+			li:nth-child(2){
+				background-color: #bfa;
+				/* flex-grow: 2; */
+			}
+			li:nth-child(3){
+				background-color: pink;
+				/* flex-grow: 3; */
+			}
+			li:nth-child(4){
+				background-color: greenyellow;
+			}
+			li:nth-child(5){
+				background-color: skyblue;
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		 
+		 <ul>
+			 <li>1</li>
+			 <li>2</li>
+			 <li>3</li>
+			 <!-- <li>4</li>
+			 <li>5</li> -->
+		 </ul>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>await</title>
+</head>
+
+<body>
+
+    <script>
+        async function main() {
+            //创建一个 Promise 对象
+            let p = new Promise((resolve, reject) => {
+                // resolve("成功的数据, 我不是渣男, 也当不上渣男");
+                reject("失败啦!!");
+            });
+            //await 右侧是 promise 成功的情况
+            let result = await p;
+            //await 右侧是 promise 成功的情况
+            // try {
+            //     let result = await p;
+            // } catch (e) {
+            //     console.log(e);
+            // }
+            //右侧不是 promise 的情况
+            // let result = await 123;
+            console.log(result);
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

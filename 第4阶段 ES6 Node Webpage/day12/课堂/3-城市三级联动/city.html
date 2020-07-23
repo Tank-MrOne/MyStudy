@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城市三级联动</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js'></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-xs-6 col-xs-offset-3">
+            <h2 class="page-header">城市三级联动</h2>
+            <div class="row">
+                <div class="col-xs-4">
+                    <select class="form-control" id="sheng">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="col-xs-4">
+                    <select class="form-control" id="shi">
+                        <option value="">请选择</option>
+                        
+                    </select>
+                </div>
+                <div class="col-xs-4">
+                    <select class="form-control" id="xian">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //发送 AJAX 请求获取 省份的信息
+        $.get('/get-provinces', function(data){
+            //将data数据转为 JS 对象
+            let d = JSON.parse(data);
+            //动态创建 li 标签
+            for(let i=0;i<d.length;i++){
+                $(`<option>${d[i]}</option>`).appendTo('#sheng');
+            }
+        });
+
+        //绑定一个事件
+        $('#sheng').change(function(){
+            //清空一下 市 的元素
+            $('#shi').html('<option>请选择</option>');
+            $('#xian').html('<option>请选择</option>');
+            //得到当前的省份信息
+            let sheng = $(this).val();
+            //发送 AJAX 请求获取市级信息
+            $.get('/get-cities', {sheng: sheng}, function(data){
+                // console.log(data);
+                //转换数据
+                let d = JSON.parse(data);
+                //遍历数据  shi
+                d.forEach(function(item){
+                    $(`<option>${item}</option>`).appendTo('#shi');
+                });
+            })
+        });
+
+        //市级元素绑定一个change事件
+        $('#shi').change(function(){
+            //清空
+            $('#xian').html('<option>请选择</option>');
+            //获取市级元素的内容
+            let shi = $(this).val();
+            let sheng = $('#sheng').val();
+            //发送 AJAX 请求
+            $.get('/get-xians', {shi: shi, sheng: sheng}, function(data){
+                //转换
+                let d = JSON.parse(data);
+                //遍历
+                d.forEach(item => {
+                    $(`<option>${item}</option>`).appendTo('#xian');
+                });
+            });
+        });
+        
+
+    </script>
+</body>
+
+</html>

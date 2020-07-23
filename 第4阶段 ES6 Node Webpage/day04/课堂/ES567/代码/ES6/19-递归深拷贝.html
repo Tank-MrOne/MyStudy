@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+</head>
+
+<body>
+    <script>
+        let school = {
+            name: '尚硅谷',
+            slogon: '不断提高行业标准',
+            cities: ['北京', '深圳', '上海'],
+            founder: {
+                name: '刚哥',
+                age: 42
+            },
+            change() {
+                console.log('改变你!!');
+            }
+        };
+
+        /**
+         * 深拷贝
+         * @params data 待拷贝的数据
+         */
+        function deepClone(data) {
+            //创建一个初始化数据 用来保存目标对象的数据
+            let result;
+            //判断 data 的数据类型
+            let type = getDataType(data);
+            //如果数据类型为数组, 则容器初始值也是数组
+            if (type === 'Array') {
+                result = [];
+            }
+            //如果数据类型为对象, 则容器初始值也是对象
+            if (type === 'Object') {
+                result = {};
+            }
+            
+            //遍历目标数据 
+            for (let i in data) {
+                //对键值进行类型检测
+                let type = getDataType(data[i]);
+                //判断键值是否为对象和数组
+                if (type === 'Array' || type === 'Object') {
+                    result[i] = deepClone(data[i])
+                } else if (type === 'Function') {
+                    result[i] = data[i].bind(result);
+                } else {
+                    result[i] = data[i]
+                }
+            }
+
+            return result;
+        }
+
+        function getDataType(data) {
+            return Object.prototype.toString.call(data).slice(8, -1);
+        }
+
+        let result = deepClone(school);
+
+        //打印结果
+        school.cities[0] = 'BEIJING';
+        console.log(school);
+        console.log(result);
+
+    </script>
+</body>
+
+</html>

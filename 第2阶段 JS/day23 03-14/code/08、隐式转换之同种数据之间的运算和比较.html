@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、数字和数字
+			//数字和数字之间运算 比较  判等   都是该怎么算怎么算，没有任何坑；
+//			var a = 10;
+//			var b = 20;
+//			//算术运算
+//			console.log(a + b);
+//			console.log(a - b);
+//			console.log(a * b);
+//			console.log(a / b);
+//			console.log(a % b);
+////			//比较
+//			console.log(a > b);
+//			console.log(a < b);
+//			console.log(a >= b);
+//			console.log(a <= b);
+////			//判等
+//			console.log(a == b);
+//			console.log(a != b);
+//			
+//			//下面都是了解
+//			//数字的运算小数是不准确的，目前无法避免
+//			console.log(0.1 + 0.2);
+//			console.log(0/1);//0
+//			console.log(1/0);//Infinity
+//			console.log(-1/0);//-Infinity
+//			console.log(0/0);//NaN
+//			console.log(1%0);//NaN
+//			console.log(0%0);//NaN
+//			console.log(0%1);//0
+//			//js当中能表示的最大值是多少
+//			console.log(Number.MAX_VALUE);
+//			console.log(Number.MIN_VALUE);
+			
+			
+			//2、字符串和字符串
+//			var str1 = 'abc';
+//			var str2 = 'acc';
+//			
+//			//算术运算
+//			//两个字符串相加是拼接字符串
+//			//其余的都是转数字
+//			//任何的值和NaN运算结果都是NaN，任何的值和NaN比较结果都是false,任何的值和NaN进行判等也不等false（包括它自己）
+//			//一句话，NaN 六亲不认
+//			
+//			//两个字符串运算的时候,除了加法是拼接以外,其余的运算全部转数字
+//			
+//			console.log(str1 + str2);//拼接字符串
+//			console.log(str1 - str2);
+//			console.log(str1 * str2);
+//			console.log(str1 / str2);
+//			console.log(str1 % str2);
+//			
+//			//比较 
+//			//两个字符串比较 比较的是字符的Unicode码从左左到右依次比较每个字符，出现大小的结果就停止；
+//			//0   48
+//			//a   95
+//			console.log(str1 > str2);
+//			console.log(str1 < str2);
+//			console.log(str1 >= str2);
+//			console.log(str1 <=str2);
+//			
+//			//判等
+//			//同种数据在判等的时候，不会发生任何转化，就看两边一样不一样，一样就是相等，不一样就不相等；
+//			console.log(str1 == str2);
+//			console.log(str1 != str2);
+			
+			//3、布尔和布尔
+//			var bool1 = true;
+//			var bool2 = false;
+//			//运算，全部转数字
+//			console.log(bool1 + bool2);
+//			console.log(bool1 - bool2);
+//			console.log(bool1 * bool2);
+//			console.log(bool1 / bool2);
+//			console.log(bool1 % bool2);
+//			
+//			//比较，全部转数字
+//			console.log(bool1 > bool2);
+//			console.log(bool1 < bool2);
+//			console.log(bool1 >= bool2);
+//			console.log(bool1 <= bool2);
+//			
+//			//同种数据在判等的时候，不会发生任何转化，就看两边一样不一样，一样就是相等，不一样就不相等
+//			console.log(bool1 == bool2);
+//			console.log(bool1 != bool2);
+			
+			
+			//4、undefined和undefined
+//			var und1;
+//			var und2;
+//			//运算，全部转数字
+//			console.log(und1 + und2);
+//			console.log(und1 - und2);
+//			console.log(und1 * und2);
+//			console.log(und1 / und2);
+//			console.log(und1 % und2);
+//			
+//			//比较，全部转数字
+//			console.log(und1 > und2);
+//			console.log(und1 < und2);
+//			console.log(und1 >= und2);
+//			console.log(und1 <= und2);
+//			
+//			//判等 同种数据在判等的时候，不会发生任何转化，就看两边一样不一样，一样就是相等，不一样就不相等
+//			console.log(und1 == und2);
+//			console.log(und1 != und2);
+//			console.log(NaN == NaN);
+
+
+			//5 null和null
+			var nul1 = null;
+			var nul2 = null;
+			
+			//运算，全部转数字
+			console.log(nul1 + nul2);
+			console.log(nul1 - nul2);
+			console.log(nul1 * nul2);
+			console.log(nul1 / nul2);//NaN 1/0  Inifinity   0/0 是NaN
+			console.log(nul1 % nul2);
+			//比较，全部转数字
+			console.log(nul1 > nul2);
+			console.log(nul1 < nul2);
+			console.log(nul1 >= nul2);
+			console.log(nul1 <= nul2);
+			
+			//判等  同种数据在判等的时候，不会发生任何转化，就看两边一样不一样，一样就是相等，不一样就不相等
+			console.log(nul1 == nul2);
+			console.log(nul1 != nul2);
+			
+			
+			
+			//同种数据类型运算比较判等总结:
+			//无论是哪种同种数据类型：
+//				1 判等的时候,不会发生数据转换,只看两边是否一样
+//				2 运算和比较的时候,比较特殊的是字符串:
+//					字符串加法的时候是拼接
+//					字符串比较的时候是比较Unicode码
+//					其余的运算和比较全部转数字
+			
+			
+		</script>
+	</body>
+</html>

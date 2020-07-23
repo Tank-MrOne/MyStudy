@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<!--<li>我是列表项1</li>
+			<li>我是列表项2</li>
+			<li>我是列表项3</li>
+			<li>我是列表项4</li>
+			<li id="single">我是列表项5</li>
+			<li>我是列表项6</li>
+			<li>我是列表项7</li>
+			<li>我是列表项8</li>-->
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				
+				var ulNode = document.querySelector('ul');
+				//1、父子关系
+				//假设我要获取ul内部的所有子节点
+//				console.log(ulNode.childNodes);//拿到ul所有的子节点 （文本  元素 注释）
+				//假设我要获取ul内部的所有子元素节点
+//				console.log(ulNode.children);//拿到ul所有的子元素节点，低级浏览器还包含注释
+				
+				//获取ul的第一个子节点
+//				console.log(ulNode.firstChild);
+//				//获取ul的第一个子元素节点,但是只有高级浏览器认识
+//				console.log(ulNode.firstElementChild);
+//				//获取ul的最后一个子节点
+//				console.log(ulNode.lastChild);
+//				//获取ul的最后一个子元素节点,但是只有高级浏览器认识
+//				console.log(ulNode.lastElementChild);
+//				
+//				//2、兄弟关系
+//				var liNode = document.querySelector('#single');
+//				//获取li的上一个兄弟节点
+//				console.log(liNode.previousSibling);
+//				//获取li的上一个兄弟元素节点,但是只有高级浏览器认识
+//				console.log(liNode.previousElementSibling);
+//				//获取li的下一个兄弟节点
+//				console.log(liNode.nextSibling);
+//				//获取li的下一个兄弟元素节点,但是只有高级浏览器认识
+//				console.log(liNode.nextElementSibling);
+				
+				
+				
+				//兼容性封装函数  实现获取ul元素的第一个子元素节点
+				//高级浏览器可以正常使用firstElementChild
+				//低级浏览器想办法去使用别的方式拿到
+//				console.log(ulNode.firstElementChild);
+				
+				function getFirstElementChild(node){
+					//如果有子元素节点就找到这个子元素节点，如果没有就返回null
+					if(node.firstElementChild){
+						//高级
+						return node.firstElementChild;
+					}else{
+						//低级
+						var result = node.firstChild;
+						while(result !== null &&  result.nodeType !== 1){
+							//如果前面不去判断null，result如果拿到是一个null，result.nodeType就会报错
+							result = result.nextSibling;//如果找到最后都没找到，会返回一个null
+						}
+						return result;
+					}
+				}
+				
+				console.log(getFirstElementChild(ulNode));
+				
+				
+				
+				
+				//兼容性获取最后一个子元素节点
+				
+			}
+		</script>
+	</body>
+</html>

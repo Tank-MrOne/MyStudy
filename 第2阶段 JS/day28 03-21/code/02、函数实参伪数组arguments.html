@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//arguments是存在于函数内部的
+			//函数外部没有这个东西，它代表的是函数的实参伪数组；
+			
+			//1、其实函数定义的形参可写可不写（ES5当中）,但是虽然可以不写，建议以后写上形参
+//			function add(){
+//				console.log(arguments);
+//				return arguments[0] + arguments[1];
+
+//				var sum = 0;
+//				for(var i = 0; i < arguments.length; i++){
+//					sum += arguments[i];
+//				}
+//				return sum;
+//			}
+			
+//			console.log(add(10,20));
+			
+			
+			//2、arguments.length，拿得是实参的个数  可以让我们一个函数具有多种功能
+			
+//			function addOrSub(a,b,c){
+//				if(arguments.length == 2){
+//					return a - b;
+//				}else if(arguments.length == 3){
+//					return a + b + c;
+//				}
+//			}
+//			
+//			console.log(addOrSub(10,20));//传递两个实参就做减法
+//			console.log(addOrSub(10,20,30));//传递的是三个实参就做加法
+			
+			
+			//3、arguments.callee 打印出来的就是函数本身，它可以在函数递归调用的时候，排上用场
+			function fn(){
+				console.log(arguments.length);
+				console.log(arguments.callee);
+			}
+//			fn();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

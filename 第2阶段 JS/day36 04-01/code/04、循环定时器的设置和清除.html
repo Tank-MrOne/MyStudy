@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>点击清除</button>
+		<script type="text/javascript">
+			//每隔2秒打印iloveyou   
+			//循环定时器 类似循环但不是循环
+			
+			//设置循环定时器
+			//当打印次数10次，然后就不打印了
+			var n = 0;
+			var timer = null;
+			
+			timer = setInterval(function(){
+				console.log('i love you~');
+				n++;
+				if(n === 10){
+					clearInterval(timer);
+				}
+			},2000);
+			
+			
+			
+			//循环定时器清除
+//			var btn = document.querySelector('button');
+//			btn.onclick = function(){
+//				clearInterval(timer);
+//			}
+			
+			
+			
+			//无论是延迟定时器还是循环定时器，清除的时候都需要保存设置定时器的编号
+			//定义保存定时器的编号的变量，一定要定义成全局变量
+			//定时器编号的变量必须是全局变量，否则某些场合没办法清除定时器
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

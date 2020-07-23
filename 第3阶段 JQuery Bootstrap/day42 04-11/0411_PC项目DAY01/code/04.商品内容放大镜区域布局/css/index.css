@@ -1,0 +1,205 @@
+.outer .header > .top {
+  width: 100%;
+  background-color: #eaeaea;
+  height: 30px;
+  line-height: 30px;
+}
+.outer .header > .top .container {
+  *zoom: 1;
+  width: 1200px;
+  margin: 0 auto;
+}
+.outer .header > .top .container:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .header > .top .container .loginList {
+  float: left;
+}
+.outer .header > .top .container .loginList p {
+  float: left;
+  margin-right: 10px;
+}
+.outer .header > .top .container .loginList p .register {
+  border-left: 1px solid #b3aeae;
+  padding: 0 5px;
+  margin-left: 5px;
+}
+.outer .header > .top .container .typeList {
+  float: right;
+  font-size: 0;
+}
+.outer .header > .top .container .typeList a {
+  font-size: 12px;
+  padding: 0 10px;
+}
+.outer .header > .top .container .typeList a ~ a {
+  border-left: 1px solid #b3aeae;
+}
+.outer .header > .bottom {
+  width: 1200px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+.outer .header > .bottom:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .header > .bottom .logoArea {
+  float: left;
+}
+.outer .header > .bottom .logoArea img {
+  width: 176px;
+  height: 56px;
+  margin: 25px 45px;
+}
+.outer .header > .bottom .searchArea {
+  float: right;
+  margin-top: 35px;
+}
+.outer .header > .bottom .searchArea .searchForm {
+  *zoom: 1;
+}
+.outer .header > .bottom .searchArea .searchForm:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .header > .bottom .searchArea .searchForm input {
+  box-sizing: border-box;
+  width: 490px;
+  height: 32px;
+  padding: 0px 4px;
+  border: 2px solid #ea4a36;
+  float: left;
+}
+.outer .header > .bottom .searchArea .searchForm input:focus {
+  outline: none;
+}
+.outer .header > .bottom .searchArea .searchForm button {
+  width: 68px;
+  height: 32px;
+  background-color: #ea4a36;
+  color: #fff;
+  float: left;
+  border: none;
+  cursor: pointer;
+}
+.outer .header > .bottom .searchArea .searchForm button:focus {
+  outline: none;
+}
+.outer .typeNav {
+  border-bottom: 2px solid #e1251b;
+}
+.outer .typeNav .container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.outer .typeNav .container .all {
+  width: 210px;
+  height: 50px;
+  background-color: #e1251b;
+  font-size: 14px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+.outer .typeNav .container .nav a {
+  margin: 0 22px;
+  line-height: 45px;
+  font-size: 16px;
+  color: #333;
+}
+.outer .con {
+  width: 1200px;
+  margin: 15px auto 0;
+}
+.outer .con .conPoin {
+  padding: 9px 15px 9px 0;
+}
+.outer .con .conPoin > a + a:before {
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #ccc;
+}
+.outer .con .mainCon {
+  *zoom: 1;
+  margin: 5px 0 15px;
+}
+.outer .con .mainCon:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .con .mainCon .previewWrap {
+  float: left;
+  width: 400px;
+}
+.outer .con .mainCon .previewWrap .preview {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #dfdfdf;
+}
+.outer .con .mainCon .previewWrap .preview .jqzoom {
+  width: 400px;
+  height: 400px;
+}
+.outer .con .mainCon .previewWrap .preview .jqzoom img {
+  width: 100%;
+}
+.outer .con .mainCon .previewWrap .specScroll {
+  margin-top: 5px;
+  *zoom: 1;
+}
+.outer .con .mainCon .previewWrap .specScroll:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .con .mainCon .previewWrap .specScroll .prev,
+.outer .con .mainCon .previewWrap .specScroll .next {
+  text-align: center;
+  width: 10px;
+  height: 54px;
+  line-height: 54px;
+  border: 1px solid #ccc;
+  background-color: #ebebeb;
+}
+.outer .con .mainCon .previewWrap .specScroll .prev {
+  float: left;
+  margin-right: 4px;
+}
+.outer .con .mainCon .previewWrap .specScroll .next {
+  float: right;
+}
+.outer .con .mainCon .previewWrap .specScroll .items {
+  width: 372px;
+  height: 56px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+.outer .con .mainCon .previewWrap .specScroll .items .itemsCon {
+  position: absolute;
+  width: 9999px;
+  height: 56px;
+  left: 0;
+}
+.outer .con .mainCon .previewWrap .specScroll .items .itemsCon img {
+  float: left;
+  text-align: center;
+  border: 1px solid #CCC;
+  padding: 2px;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}

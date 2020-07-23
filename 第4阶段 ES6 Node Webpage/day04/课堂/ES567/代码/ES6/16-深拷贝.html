@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+</head>
+<body>
+    <script>
+        //创建一个新的对象
+        let school = {
+            name: '尚硅谷',
+            slogon:'不断提高行业标准',
+            cities: ['北京','深圳','上海'],
+            founder: {
+                name: '刚哥',
+                age: 42
+            },
+            change(){
+                console.log('改变你!!');
+            }
+        };
+
+        // JSON  
+        // JSON.stringify 将JS对象转为 JSON 字符串
+        let str = JSON.stringify(school);
+
+        //将JSON字符串转为对象
+        let o2 = JSON.parse(str);
+
+        //修改
+        o2.cities[0] = 'BeiJing';
+
+        console.log(school);
+        console.log(o2);
+
+
+
+
+    </script>
+</body>
+</html>

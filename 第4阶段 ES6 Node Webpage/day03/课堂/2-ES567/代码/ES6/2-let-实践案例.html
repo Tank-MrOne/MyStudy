@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击 DIV 换色</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .item {
+            width: 100px;
+            height: 50px;
+            border: solid 1px #0aa;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        //获取 div 元素
+        let items = document.querySelectorAll('.item');
+
+        //遍历对象
+        // for (var i = 0; i < items.length; i++) {
+        //     //IIFE 实现
+        //     (function (index) {
+        //         items[index].onclick = function () {
+        //             items[index].style.background = 'black';
+        //         }
+        //     })(i);
+
+        //     //原来的方式实现
+        //     // items[i].onclick = function(){
+        //     //     // 这里该如何获取元素对象
+        //     //     // items[i].style.background = 'black'; // 这里不可以
+        //     //     // 通过this来完成
+        //     //     this.style.background = 'black';
+        //     // }
+        // }
+
+        for (let i = 0; i < items.length; i++) {
+            items[i].onclick = function () {
+                items[i].style.background = 'black';
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

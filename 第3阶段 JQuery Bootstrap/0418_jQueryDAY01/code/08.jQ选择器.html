@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="con">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <p></p>
+        <h3>h333</h3>
+    </div>
+
+
+    <ul>
+        <li>li1</li>
+        <li>li24 <h4>h44444</h4>
+        </li>
+        <li>li3</li>
+        <li>li4</li>
+        <li></li>
+    </ul>
+    <ul>
+        <li>li5</li>
+        <li>li6</li>
+        <li name="tianhao">li7</li>
+        <li>li8</li>
+    </ul>
+    <ul>
+        <li></li>
+    </ul>
+    <h1>h1111</h1>
+
+    <form action="###">
+        <input type="text">
+        <input type="text" disabled>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <select name="" id="">
+            <option value=""></option>
+        </select>
+    </form>
+
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            // console.log($("#con"));
+
+            /* console.log($("#con .box1 ~ div"));
+            console.log($("#con .box1").nextAll()); */
+
+            // console.log($("#con .box1 + .box3"));//获取不到
+            // console.log($("#con .box1").nextAll(".box3"));
+
+            // console.log($("ul li:first"))//长度为1
+            // console.log($("ul li:last"))//长度为1
+
+            // console.log($("#con div:not(.box2)"));//not的使用
+
+            // console.log($("ul li:odd"))//以下标为准
+            // console.log($("ul li:even"))//以下标为准
+
+            // console.log($("ul li:eq(0)"))
+
+
+            // console.log($("ul li:gt(2)"));//匹配大于某个下标的所有元素
+
+            // console.log($(":header"))//页面中所有的h标签
+            // console.log($("ul :header"))//页面中所有的h标签
+
+
+            // console.log($("ul li:contains(4)"))//页面中所有的h标签
+
+            // console.log($("ul li:empty"))
+            // console.log($("ul li:parent"))
+
+
+            // console.log($("ul li:first-child"));//
+            // console.log($("ul li:only-child"));//
+
+
+            /* console.log($("ul li[name]"));//
+            console.log($("ul li[name=tianhao]"));//
+            console.log($("ul li[name^=ti]"));//
+            console.log($("ul li[name$=hao]"));//
+            console.log($("ul li[name*=h]"));// */
+
+
+            // console.log($("form input:enabled"));
+            // console.log($("form input:disabled"));
+
+
+            console.log($("form :input"));//选中所有的表单元素  不仅仅是input
+
+
+        })
+    </script>
+</body>
+
+</html>

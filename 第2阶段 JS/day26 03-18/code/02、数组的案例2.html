@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			合并数组，原生实现
+//			var arr1 = [1,3,5,7,9];
+//			var arr2 = [2,4,6,8,10];
+			//1、合并在新数组当中
+//			var newArr = [];
+//			
+//			for(var i = 0; i < arr1.length; i++){
+//				//在把arr1内部的数据添加到newArr当中
+//				newArr[newArr.length] = arr1[i];
+//			}
+//			
+//			for(var i = 0; i < arr2.length; i++){
+//				//在把arr1内部的数据添加到newArr当中
+//				newArr[newArr.length] = arr2[i];
+//			}
+//			console.log(newArr);
+			
+//			//2、在原数组上进行合并
+//			for(var i = 0; i < arr1.length; i++){
+//				arr2[arr2.length] = arr1[i];
+//			}
+//			console.log(arr2);
+			
+//			数组去重	 *************************************
+//			var arr = [1,2,3,4,1,1,2,1,3,2,4];  //去重完成 [1,2,3,4]
+//			//数组去重都是在新数组当中去重的；
+//			var newArr = [];
+//			//代码是次要，首先是过程，过程明白了，代码多敲敲就熟练了
+//			var flag = true;
+//			for(var i = 0; i < arr.length; i++){
+//				//从老的数组当中拿数
+//				for(var j = 0; j < newArr.length; j++){
+//					//拿新的数组当中的值和老数组拿的值进行比较
+//					//而且从原数组当中拿的值，必须和新数组当中所有的值比较完成，才知道有没有
+//					if(arr[i] == newArr[j]){
+//						//代表着新数组内部有这个值；
+//						flag = false;
+//						break;
+//					}
+//				}
+//				//break出来的，代表新数组当中有这个值
+//				//老老实实执行完内部循环出来的，代表新数组内部没有这个值；
+//				if(flag){
+//					newArr[newArr.length] = arr[i];
+//				}
+//				flag = true;//重置标志位
+//			}
+//			
+//			console.log(newArr);
+			
+
+//			冒泡排序*************************************
+			var arr = [66,36,88,520,10];//[10,36,66,88,520]
+			
+			//代码
+			//外层循环控制轮数
+			for(var i = 0; i < arr.length - 1; i++){
+				//外层循环控制轮数
+				
+				for(var j = 0; j < arr.length - 1 - i; j++){
+					//内层循环控制的是比较的次数
+					//同时内层循环的循环变量，也是比较时候拿的数组值得下标
+					if(arr[j] > arr[j + 1]){//升序还是降序，自己决定，就看是大于还是小于
+						var temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+					
+				}
+				
+			}
+			console.log(arr);
+			
+			
+			
+			
+			
+
+
+
+//			二维数组（了解）
+			
+		</script>
+	</body>
+</html>

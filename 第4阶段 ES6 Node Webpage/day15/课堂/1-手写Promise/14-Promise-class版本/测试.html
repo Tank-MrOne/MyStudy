@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise测试文件</title>
+</head>
+
+<body>
+    <script src="Promise.js"></script>
+    <script>
+        //实例化
+        // let p = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         // resolve('成功啦!!');
+        //         reject("失败啦! 今天风好大!!");
+        //     }, 2000);
+        // });
+
+        //then 方法
+        // let rs = p.then(
+        //     value => {
+        //         console.info(value);
+        //     },
+        //     reason => {
+        //         // console.error(reason);
+        //         throw "加把劲啊  上山坡啦!";
+        //     }
+        // );
+
+        // console.log(rs);
+
+        //函数对象 resolve
+        let p = Promise.resolve("哈哈!!");
+        let p2 = Promise.reject("哈哈!!");
+
+        console.log(p2);
+
+    </script>
+</body>
+
+</html>

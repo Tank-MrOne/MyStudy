@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol属性遍历</title>
+</head>
+<body>
+    <script>
+        let school = {
+            name: '尚硅谷',
+            slogon: '不断提高行业标准',
+            [Symbol()]: '北京',
+            [Symbol()]: '上海',
+            [Symbol()]: '深圳'
+        };
+
+        //使用 for...in 循环
+        // for(let i in school){
+        //     console.log(i);
+        // }
+
+        //获取所有的键名
+        let keys = Reflect.ownKeys(school);
+
+        for(let i=0;i<keys.length;i++){
+            // keys[i] == name  slogon
+            console.log(school[keys[i]]);
+        }
+    </script>
+</body>
+</html>

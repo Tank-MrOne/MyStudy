@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			
+			img{
+				display: block;
+				/*vertical-align: middle;*/
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			input{
+				outline: none;
+			}
+			
+			.clearFix:after{
+				content: '';
+				display: table;
+				clear: both;
+			}
+			
+			#box{
+				position: relative;
+				width: 600px;
+				height: 300px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			
+			#box .list{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 3000px;
+				height: 300px;
+			}
+			
+			#box .list li{
+				float: left;
+				width: 600px;
+				height: 300px;
+			}
+			
+			#box .list li img{
+				width: 600px;
+				height: 300px;
+			}
+			
+			
+			#box span{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 100px;
+				background-color: rgba(200,200,200,.7);
+				font-size: 50px;
+				text-align: center;
+				line-height: 100px;
+				color: white;
+				opacity: 0;
+				transition: opacity 2s;
+			}
+			#box .left{
+				left: 0;
+			}
+			#box .right{
+				right: 0;
+			}
+			
+			#box .iconList{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10px;
+				overflow: hidden;
+			}
+			
+			#box .iconList li{
+				float: left;
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				border-radius: 50%;
+				background-color: gray;
+			}
+			
+			#box .iconList li.current{
+				background-color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+			<ul class="list">
+				<li><img src="img/17.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/7.jpg"/></li>
+				<li><img src="img/9.jpg"/></li>
+			</ul>
+			
+			<span class="left">  <  </span>
+			<span class="right">  >  </span>
+			
+			
+			<ul class="iconList">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var spanNodes = document.querySelectorAll('#box span');
+				var ulNode = document.querySelector('#box .list');
+				var timeAll = 600;//点击一次移动一张图片的距离所需要的总时间
+				var stepTime = 20;//每都一步所需要的的时间
+				var timer = null;
+				
+				
+				//移入
+				box.onmouseenter= function(){
+					spanNodes[0].style.opacity = 1;
+					spanNodes[1].style.opacity = 1;
+				};
+				//移出
+				box.onmouseleave = function(){
+					spanNodes[0].style.opacity = 0;
+					spanNodes[1].style.opacity = 0;
+				};
+				
+				
+				
+				//点击右侧按钮图片动起来
+				
+				spanNodes[1].onclick = function(){
+					//可以求出目前ul所在的位置
+					var startX = ulNode.offsetLeft;
+					//也可以知道移动的距离差 -600
+					var disX = -600;
+					//我们就可以求出点击一次移动的最终位置
+					var lastX = startX + disX;
+					//把求出的最终位置设置给ul,这样点击就已经能轮播了，但是是瞬变轮播
+					//如果要变成滑动就不能这样做，我们得让这个-600慢慢一步一步走；
+//					ulNode.style.left = lastX + 'px';
+//					用循环定时器模拟过度效果
+					//求出每一步走的距离
+					var stepDis = disX / (timeAll / stepTime);
+					timer = setInterval(function(){
+						var left = ulNode.offsetLeft + stepDis;
+						//当慢慢移动到最后和瞬间移动到最后距离一样的时候，我们就清除定时器
+						if(left === lastX){
+							clearInterval(timer);
+						}
+						ulNode.style.left = left + 'px';
+					},stepTime);
+					
+				}
+				
+				//点击左侧按钮
+				spanNodes[0].onclick = function(){
+					//可以求出目前ul所在的位置
+					var startX = ulNode.offsetLeft;
+					//也可以知道移动的距离差 -600
+					var disX = 600;
+					//我们就可以求出点击一次移动的最终位置
+					var lastX = startX + disX;
+					//把求出的最终位置设置给ul,这样点击就已经能轮播了，但是是瞬变轮播
+					//如果要变成滑动就不能这样做，我们得让这个-600慢慢一步一步走；
+//					ulNode.style.left = lastX + 'px';
+//					用循环定时器模拟过度效果
+					//求出每一步走的距离
+					var stepDis = disX / (timeAll / stepTime);
+					timer = setInterval(function(){
+						var left = ulNode.offsetLeft + stepDis;
+						//当慢慢移动到最后和瞬间移动到最后距离一样的时候，我们就清除定时器
+						if(left === lastX){
+							clearInterval(timer);
+						}
+						ulNode.style.left = left + 'px';
+					},stepTime);
+					
+				}
+				
+				
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>严格模式</title>
+</head>
+<body>
+    <script>
+        //全局声明 
+        // 'use strict';
+
+        //1. 不允许使用未声明的变量
+        // star = '罗志祥';
+
+        //2. 禁止自定义函数 this 指向 window
+        // function main(){
+        //     console.log(this);
+        // }
+        // main();
+
+        //3. eval 是一个函数
+        // eval('alert("这是一个测试")');
+        // eval('var song ="恋爱达人"');
+        // console.log(song);
+
+        //4. 对象不能有重名的属性
+        // var star = {
+        //     name: '罗志祥',
+        //     name: '小猪'
+        // };
+
+        //5. 函数不能有同名的形参
+        function add(a,a,a){
+            console.log(a+a+a);
+        }
+        add(1,2,3);
+        
+        
+        
+        // function main(){
+        //     'use strict';
+        //     girl = '周扬青'
+        // }
+        // main();
+        
+    </script>
+    
+</body>
+</html>

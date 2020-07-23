@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 300px;
+				height: 300px;
+				margin: 50px;
+				background-color: red;
+			}
+			body{
+				height: 4000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			box.onclick = function(e){
+				//鼠标的位置也是存在于事件对象当中
+				e = e || window.event;
+				console.log(e.clientX);
+				console.log(e.clientY);
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

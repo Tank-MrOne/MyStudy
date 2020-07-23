@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box1{
+				position: relative;
+				width: 500px;
+				height: 500px;
+				margin-left: 100px;
+				background-color: red;
+				border: 10px solid yellow;
+			}
+			
+			#box2{
+				width: 300px;
+				height: 300px;
+				background-color: green;
+				border: 10px solid black;
+				margin: 50px;
+				padding: 50px;
+				overflow: scroll;
+			}
+			
+			#box3{
+				width: 500px;
+				height: 500px;
+				background-color: blue;
+				margin: 50px;
+				padding: 50px;
+				border: 10px solid brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<div id="box3">
+					
+				</div>
+			</div>
+		</div>
+		
+		<button>点击获取滚动距离</button>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box2 = document.getElementById('box2');
+				//获取盒子大小，以后用的最多的就是前两个
+//				console.log(box2.clientWidth);//拿的是盒子的内容+padding的宽
+//				console.log(box2.offsetWidth);//拿的是盒子的内容+padding+border的宽
+				//几乎不用
+//				console.log(box2.scrollWidth);//如果盒子内容比盒子小，拿的就是盒子的内容+padding
+											//如果盒子内容比盒子大，
+											//拿的是内容的offsetWidth + 内容一侧的外边距 + 盒子一侧的内边距
+											
+				//
+//				console.log(box2.clientLeft);//拿的就是盒子左边框的宽度
+//				console.log(box2.offsetLeft);//***** 拿的是盒子距离参照点的左偏移量（就是让我们拿到盒子起始定位的left值）
+											//参照点（相对的东西），和绝对定位一样。
+											
+				
+				document.querySelector('button').onclick = function(){
+//					console.log(box2.scrollLeft);//获取盒子内容往左滚动的距离
+					box2.scrollLeft = 100;//切记不要加'px'
+				}
+				
+			}
+		</script>
+	</body>
+</html>

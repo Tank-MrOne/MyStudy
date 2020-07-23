@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrap {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow-x: scroll;
+            position: relative;
+        }
+
+        .wrap .carousel {
+            position: relative;
+        }
+
+        .wrap .carousel img {
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .select {
+            z-index: 3;
+        }
+
+        .prev,
+        .next {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(123, 45, 234, .7);
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .list {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            bottom: 20px;
+        }
+
+        .list li {
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 10px;
+            float: left;
+        }
+
+        .list li.active {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+
+        <div class="wrap">
+            <div class="carousel">
+                <img class="select" src="../images/jd001.jpg" alt="">
+                <img src="../images/jd002.jpg" alt="">
+                <img src="../images/jd003.jpg" alt="">
+                <img src="../images/jd004.jpg" alt="">
+                <img src="../images/jd005.jpg" alt="">
+            </div>
+            <p class="prev">&lt;</p>
+            <p class="next">&gt;</p>
+            <ul class="list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script src="jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            //图片轮播想要控制图片的切换，一般会有一个全局的变量 保存图片的下标，通过改变变量值，随之去改变图片
+            var currentIndex = 0;//图片的索引默认为0
+            var carouselTimerID = null;//图片轮播计时器ID
+
+            //index判断临界值和图片滚动函数
+            function carousel() {
+                //获取图片的长度
+                var imgLen = $(".carousel img").length;
+                //判断下标的临界值
+                if (currentIndex === imgLen) {
+                    currentIndex = 0;
+                }
+                if (currentIndex < 0) {
+                    currentIndex = imgLen - 1;
+                }
+                //下标已经实现了轮播，此时控制动画，让图片展示轮播效果，
+                //让当前下标所代表的图片展示，其他的图片消失
+                $(".carousel img").eq(currentIndex).stop(true, false).fadeIn(1000).siblings().fadeOut(1000);
+                //只要图片发生变化，下标样式就要发生变化，当前index代表的值添加类名，其他的取消类名
+                $(".list li").eq(currentIndex).addClass("active").siblings().removeClass("active");
+            }
+
+            //封装一个前进的函数
+            function next() {
+                stop();
+                //控制代表当前图片的变量 加1
+                currentIndex++;
+                carousel();
+                auto();
+            }
+            //封装一个后退的函数
+            function prev() {
+                stop();
+                currentIndex--;
+                carousel();
+                auto();
+            }
+            //自动走函数
+            function auto() {
+                //每间隔两秒换一张图
+                carouselTimerID = setInterval(next, 2000)
+            }
+            //停止走的计时器
+            function stop() {
+                clearInterval(carouselTimerID);
+            }
+
+
+
+            //自动走
+            auto();
+            //点击下一张 执行轮播
+            $(".next").click(next);
+            //点击上一张 执行轮播
+            $(".prev").click(prev);
+
+            //给下标绑定点击事件
+            $(".list li").click(function () {
+                stop();
+                //点击下标就是控制下一张要走的值  所以要改变全局变量index
+                currentIndex = $(this).index();
+                carousel();
+                auto();
+            })
+
+
+
+        })
+    </script>
+</body>
+
+</html>

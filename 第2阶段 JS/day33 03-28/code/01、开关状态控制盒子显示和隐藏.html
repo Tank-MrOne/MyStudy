@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 300px;
+				height: 200px;
+				background-color: hotpink;
+				transform: skew(0deg);
+				/*
+				 * 隐藏元素的方式
+				display: none;   不占位
+				visibility: hidden;  占位
+				opacity: 0;  透明度位0
+				transform: translateX(-10000px);
+				transform: scale(0);
+				transform: rotateY(90deg);
+				transform: skew(90deg);
+				width: 0;
+				height: 0;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button id="btn">显示/隐藏</button>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.querySelector('#btn');
+				var box = document.getElementById('box');
+				
+				var flag = true;//代表盒子目前显示
+				btn.onclick = function(){
+					if(flag){
+						box.style.visibility = 'hidden';
+					}else{
+						box.style.visibility = 'visible';
+					}
+					flag = !flag;
+				}
+			}
+		</script>
+		
+	</body>
+</html>

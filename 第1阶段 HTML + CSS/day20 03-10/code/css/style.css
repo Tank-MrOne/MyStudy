@@ -1,0 +1,63 @@
+body {
+  font-family: 9.33333333px -apple-system, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.topbar {
+  height: 48px;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+.topbar .fas {
+  color: #fff;
+  font-size: 20px;
+}
+.topbar .logo a {
+  text-indent: -9999px;
+  display: block;
+  width: 120px;
+  height: 31px;
+  background-image: url(../img/dff63979.sprites-index@2x.png);
+  background-size: 400px 400px;
+}
+.topbar .menu:active .menu-list {
+  display: block;
+}
+.topbar .menu-list {
+  display: none;
+  position: absolute;
+  padding-top: 45px;
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+}
+.topbar .item {
+  padding: 0 10%;
+  font-size: 14px;
+  color: #fff;
+}
+.topbar .item a {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #181818;
+}
+.topbar .search {
+  position: relative;
+}
+.topbar .search span {
+  position: absolute;
+  height: 44px;
+  line-height: 44px;
+  margin-left: 30px;
+  top: 0;
+}

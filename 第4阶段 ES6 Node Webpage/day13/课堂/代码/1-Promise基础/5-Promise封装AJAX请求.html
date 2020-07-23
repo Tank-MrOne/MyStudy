@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise封装AJAX请求</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="btn">点击发送 AJAX 请求</button>
+    <script>
+        /*
+        封装一个函数 promiseAJAX  只实现 GET 请求 
+        用来发送 AJAX 请求
+        返回 Promise 对象
+        */
+        function promiseAJAX(url, data) {
+            return new Promise((resolve, reject) => {
+                //1. 创建AJAX对象
+                let x = new XMLHttpRequest();
+                //2. 绑定事件
+                x.onreadystatechange = function () {
+                    //判断
+                    if (x.readyState === 4) {
+                        //严谨的处理 status
+                        if (x.status >= 200 && x.status < 300) {
+                            // 处理服务器返回的响应体
+                            resolve(x.responseText);
+                        } else {
+                            //处理  控制台提醒
+                            reject(x.status);
+                        }
+                    }
+                }
+                let params = '';
+                for (let i in data) {
+                    params += `${i}=${data[i]}&`;
+                }
+                //3. 初始化
+                x.open('GET', url + "?" + params);
+                //4. 发送
+                x.send();
+            })
+        }
+
+        // promiseAJAX('http://localhost:8000/server', { id: 100, vip: 1 })
+
+        let btn = document.querySelector('#btn');
+
+        btn.onclick = function () {
+            promiseAJAX('/server', { id: 100, name: 'ATGUIGU' })
+                .then(value=>{
+                    console.log('成功的数据',value)
+                }, reason=>{
+                    console.error('失败的状态码:' , reason);
+                })
+        }
+
+    </script>
+</body>
+
+</html>

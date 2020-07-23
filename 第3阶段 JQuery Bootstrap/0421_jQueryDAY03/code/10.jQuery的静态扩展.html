@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        欢迎观临
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            // 使用 $.extend方法可以给 jQuery类扩展方法或属性
+
+            $.extend({
+                fly: function () {
+                    alert("我要飞～");
+                }
+            })
+
+            /* $.fly();
+            $.fly(); */
+            // $(".box").fly();//报错
+
+
+            //给jQuery扩展一个 比较两个数字大小的方法
+            $.extend({
+                max: function (a, b) {
+                    return a > b ? a : b;
+                }
+            })
+
+            alert($.max(1, 2));
+        })
+    </script>
+</body>
+
+</html>

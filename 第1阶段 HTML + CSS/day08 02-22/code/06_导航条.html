@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>导航条</title>
+		<style>
+			/* 清除默认样式 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 设置nav外部容器 */
+			.menu{
+				/* 宽度 */
+				width: 1210px;
+				/* 高度 */
+				height: 48px;
+				/* 设置行高，使文字垂直居中 */
+				line-height: 48px;
+				/* 设置背景颜色 */
+				background-color: #E8E7E3;
+				/* 设置一个边距 */
+				margin: 50px auto;
+			}
+			
+			/* 设置超链接 */
+			.menu .item{
+/* background-color: #ff0; */
+				/* 将超链接转换为块元素 */
+				/* display: block; */
+				/* 设置链接向左浮动 */
+				float: left;
+				/* 设置超链接的高度 */
+				height: 48px;
+				/* 设置内边距 */
+				padding: 0 39px;
+				/* 设置字体的大小 */
+				font-size: 18px;
+				/* 去除下划线 */
+				text-decoration: none;
+				/* 设置背景颜色 */
+				color: #777;
+			}
+			
+			/* 单独设置最后一个超链接 */
+			.menu .item:last-child{
+				/* 设置内边距 */
+				padding: 0 41.5px;
+			}
+			
+			/* 设置鼠标移入后的效果 */
+			.menu .item:hover{
+				background-color: rgb(63,63,63);
+				color: #fff;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- 创建一个结构 -->
+		<nav class="menu">
+			<a class="item" href="#">HTML/CSS</a>
+			<a class="item" href="#">Browser Side</a>
+			<a class="item" href="#">Server Side</a>
+			<a class="item" href="#">Programming</a>
+			<a class="item" href="#">XML</a>
+			<a class="item" href="#">Web Building</a>
+			<a class="item" href="#">Reference</a>
+		</nav>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>其他的伪类</title>
+		<style>
+			
+			/*
+				伪元素：
+					- 表示网页中的特殊的位置
+					- 伪元素使用::开头
+					
+				::first-letter
+				  - 表示元素当中的首字母
+				::first-line
+				  - 表示元素当中的首行	
+				::before
+				  - 标签内部开始的位置
+				::after
+				  - 标签内部结束的位置	
+			*/
+		   p::first-letter{
+			   font-size: 40px;
+		   }
+		   
+		   p::first-line{
+			   background-color: yellow;
+		   }
+		   
+		   /* div::before{ */
+			   /* 
+			   在使用before和after时可以通过content
+			   向该位置中添加内容
+				*/
+			/*   content: 'hello';
+		   } */
+		   
+		   /* div::after{
+			   content: 'abc';
+		   } */
+		   
+		   div::before{
+			   content: "「";
+		   }
+		   
+		   div::after{
+			   content: "」";
+		   }
+		   
+			
+		</style>
+	</head>
+	<body>
+		
+		<div>
+			哈哈我是一个div
+		</div>
+		
+		<div>
+			哈哈我是一个div
+		</div>
+		
+		<div>
+			哈哈我是一个div
+		</div>
+		
+		<div>
+			哈哈我是一个div
+		</div>
+		
+		<p>
+			<!-- 
+				lorem + tab 	
+			-->
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quisquam sit autem rem voluptates cupiditate placeat possimus delectus facere aliquid dolor fugit consequatur quaerat sunt accusantium eius suscipit a provident.
+		</p>
+		
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p v-show="isShow">我爱你赵丽颖</p>
+        <button @click="destroyP">点击以后销毁</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        
+        new Vue({
+            el:'#root',
+            data:{
+                isShow:true
+            },
+            mounted() {
+                //挂载完成（页面刚渲染完）时候，会自动调用这个回调
+                this.timer = setInterval(() => {
+                    this.isShow = !this.isShow
+                }, 1000);
+            },
+            //清除定时器的做法
+            // methods: {
+            //     destroyP(){
+            //         clearInterval(this.timer)
+            //     }
+            // },
+            methods: {
+                destroyP(){
+                    this.$destroy()
+                    //是vm实例存在的一个方法，只有调用这个方法，beforeDestroy这个回调就会自动指定
+                }
+            },
+            // vm实例生命周期回调，销毁
+            beforeDestroy() {
+                clearInterval(this.timer)
+                //beforeDestroy也是一个生命周期回调，一般我们在这个回调当中做收尾工作，清除定时器、解绑事件
+            },
+        })
+    </script>
+</body>
+</html>

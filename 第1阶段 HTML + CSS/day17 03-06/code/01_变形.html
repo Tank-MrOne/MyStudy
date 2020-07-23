@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			html{
+				
+				perspective: 800px;
+				
+			}
+			
+			.box1{
+				width: 320px;
+				height: 320px;
+				background-color: #bfa;
+				margin: 100px auto;
+				
+				transition: all 2s;
+				
+				
+				/* 
+				backface-visibility 用来设置元素的背面是否可见 
+				 */
+				/* backface-visibility: hidden; */
+				
+				
+				
+			}
+			
+			.box1:hover{
+				/*
+					rotateX() 可以使元素沿着X轴进行旋转
+					rotateY() 可以使元素沿着Y轴进行旋转
+					rotateZ() 可以使元素沿着Z轴进行旋转
+						- 旋转需要指定一个角度，deg表示度
+						- 也可以使用turn，turn表示圈
+				 */
+				/* transform:rotateZ(10turn) */
+				/* transform: rotateX(80deg) ; */
+				transform: rotateY(180deg) rotateZ(180deg) rotateX(180deg);
+				
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<img src="../day07/an.jpg" alt="">
+		</div>
+	</body>
+</html>

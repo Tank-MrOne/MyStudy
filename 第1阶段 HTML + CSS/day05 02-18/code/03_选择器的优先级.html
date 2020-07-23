@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择器的优先级</title>
+		<style>
+			/* .box1{
+				background-color: red;
+			} */
+			
+			/* #b1{
+				background-color: blue;
+			} */
+			
+			/* div{
+				background-color: green !important;
+			} */
+			
+			/* div,#box1,.hello{} */
+			
+			/* 
+				样式冲突：
+					- 当使用不同的选择器选中同一个元素，
+						并且为同一个样式设置不同的值，
+						此时就发生了样式的冲突。
+					- 当样式发生冲突时，哪个样式生效由选择器的优先级决定
+						内联样式          1,0,0,0
+						id选择器			 0,1,0,0
+						类和伪类选择器	 0,0,1,0 	
+						元素选择器		 0,0,0,1
+						通配选择器        0,0,0,0
+						继承的样式		 没有优先级
+							
+					- 优先级越高越优先显示		
+					- 如果选择器是一个复合选择器，需要将多个选择器的优先级相加
+						然后再计算（注意，选择器分组中的优先级是单独计算的）
+					- 如果计算后优先级一样，则优先显示靠后的样式	
+					- 优先级计算是不能跨级别的
+						元素选择器优先级永远不会超过类选择器
+						类选择器也永远不会超过id选择器，以此类推
+					- 如果在样式的最后添加了一个 !important 
+						则此样式会获取最高的优先级，优先于所有样式显示
+						注意这玩意一定要慎用
+			 */
+			
+			.box2{
+				background-color: yellow;
+			}
+			
+			.box1{
+				background-color: red;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1 box2" id="b1">
+			我是一个div
+		</div>
+		
+	</body>
+</html>

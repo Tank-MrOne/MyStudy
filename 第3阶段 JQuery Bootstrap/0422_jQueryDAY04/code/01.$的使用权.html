@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            /* var $ = {
+                name: "lily"
+            } */
+
+            //主动交出$的控制权
+            // $.noConflict();
+
+            //交出控制权，但是我们还可以给他设置新的替代符号
+            var NB = $.noConflict();
+
+            NB("body").css("background", "red");
+        })
+    </script>
+</body>
+
+</html>

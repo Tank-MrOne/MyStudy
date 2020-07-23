@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简化对象写法</title>
+</head>
+<body>
+    <script>
+        //声明变量
+        let name = '尚硅谷';
+        let slogon = '不断提升行业标准';
+        let improve = function(){
+            console.log('可以提升你的技能');
+        };
+
+        //声明对象
+        let school = {
+            name,
+            slogon,
+            improve,
+            //方法简化
+            change(){
+                console.log('改变自己');
+            }
+        }
+
+        school.change();        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动</title>
+		<style>
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+				
+				/* 
+					浮动（float）
+						- 通过浮动可以使一个元素向页面的左侧或右侧移动
+						- 可选值：
+							none 默认值 元素不浮动
+							left 元素向左浮动
+							right 元素向右浮动
+							
+						- 设置浮动后，元素会移动到包含块的左侧或右侧
+						- 设置浮动后，七个值的等式不再需要强制满足
+							其他元素可以和当前元素出现在同一行
+						- 之所以产生这种情况的原因，是因为浮动会使元素脱离文档流，
+								脱离文档流后，元素不在受其约束
+						- 脱离文档流的元素层级会高于文档中的元素，
+							所以一旦两个元素重合，浮动元素会盖住其他元素
+				 */
+				
+				float: right;
+				/* float: left; */
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">
+			
+		</div>
+		
+		<div class="box2"></div>
+		
+		
+	</body>
+</html>

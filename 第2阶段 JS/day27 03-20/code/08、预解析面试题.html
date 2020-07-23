@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、
+//			alert(a);    
+//			a = 0;
+			
+			
+			//2
+//			alert(a);    
+//			var a = 0;
+//			alert(a); 
+			
+			
+			//3
+//			function a(){ alert('我是函数') }//var a = function(){};  var a = [1,2,3]
+////			var a
+//			alert(a);    
+//			a = '我是变量';
+//			alert(a);  
+			
+			
+			//4
+//			function a(){ alert('我是函数') }
+////			var a
+//			alert(a); //function a(){ alert('我是函数') }
+//			a++;//NaN
+//			alert(a); //NaN   
+//			a = '我是变量';
+//			alert(a)   //'我是变量';
+			
+			
+			//5
+			
+//			function fn(){
+//				var a;
+//		 		alert(a);  //undefined  
+//		 		a = 1;
+//		 		alert(a);  //1  
+//			}
+//			
+//			var a;
+//			alert(a);//undefined   
+//			a = 0;
+//			alert(a);//0  
+//			fn()
+//			alert(a);//0    
+			
+			
+			// 6
+//			function fn(){
+//		   		alert(a); // 0  
+//		   		a = 1;
+//		   		alert(a); //1  
+//			}
+//			var a;
+//			alert(a);  //undefined  
+//			a = 0;
+//			alert(a);  //0
+//			fn()
+//			alert(a);   //1
+			
+			//7
+			//函数声明定义的函数
+//			function fn(){
+//		   		alert(a);    
+//		   		a = 1;
+//		   		alert(a);   
+//			}
+			
+			function fn(){
+				var a;
+		 		alert(a);  //undefined  
+		 		a = 1;
+		 		alert(a);  //1  
+			}// var fn = function(){};
+			var a;
+//			var fn;
+			alert(a);//undefined    
+			a = 0;
+			alert(a);//0    
+			fn();
+			
+			fn = function(){
+				alert(a);//0    
+		   		a++;
+		   		alert(a);//1 
+			}
+			fn()
+			alert(a);//1
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

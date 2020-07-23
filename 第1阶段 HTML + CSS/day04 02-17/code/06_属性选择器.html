@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>属性选择器</title>
+		<style>
+			/* 
+				根据title属性来选中页面中指定的元素
+				
+				[属性名] 选中含有指定属性的元素
+				[属性名='属性值'] 选中属性等于指定值的元素
+				[属性名^='属性值'] 选中属性值以指定内容开头的元素
+				[属性名$='属性值'] 选中属性值以指定内容结尾的元素
+				[属性名*='属性值'] 选中属性值中包含指定内容的元素
+			 */
+			/* div[title]{
+				color: greenyellow;
+			} */
+			
+			/* [title="abc"]{
+				color: deepskyblue;
+			} */
+			
+			/* [title^="a"]{
+				color: orange;
+			} */
+			
+			/* [title$="d"]{
+				color: orange;
+			} */
+			
+			[title*="c"]{
+				color: orange;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			title属性每一个元素都可以设置，
+				当元素设置了title属性后，
+					鼠标移入元素时，title中的内容会作为提示文字在页面显示
+			
+		 -->
+		<div title="abc">第一个div</div>
+		<div title="bcd">第二个div</div>
+		<p title="acd">我是一个p标签</p>
+		<div>第三个div</div>
+		<div>第四个个div</div>
+	</body>
+</html>

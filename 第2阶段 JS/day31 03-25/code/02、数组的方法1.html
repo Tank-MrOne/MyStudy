@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3,4];
+			
+			//concat
+//			var result = arr.concat([100,200,300]);
+//			console.log(result);
+//			console.log(arr);
+//			console.log(arr === result);
+			//功能：在数组的末尾拼接元素
+			//参数：可以不写，相当于复制一个数组
+			//     也可以写一个或者多个值，会把这些值拼接到数组末尾
+			//     也可以写数组，会先把数组拆开，把元素拼接到数组末尾
+			//返回值：返回拼接好的新数组
+			//这个方法对原数组没有影响
+			
+			
+			//slice
+//			var result = arr.slice(1,3);
+//			console.log(result);
+//			console.log(arr);
+			//功能：在数组当中截取部分元素形成新数组
+			//参数：和字符串方法slice一致；起始位置和结束位置，不包含结束位置的元素
+			//  如果只传一个代表起始位置，一直到结束。两个位置都可以使用负数
+			//返回值：返回截取的元素形成的新数组
+			//这个方法对原数组没有影响
+			
+			
+			arr = [18,2,10,9,88,66,22];
+			
+//			function fn(){
+//				
+//			}
+			
+//			var result = arr.sort(function(a,b){
+//				return b - a;
+//			});
+//			console.log(result);
+//			console.log(arr);
+//			console.log(result === arr);
+			//功能：对数组进行排序
+			//参数：如果不写，默认把每个元素转化为字符串进行排序（按照Unicode码）
+			//	   如果要按照升序降序去排，需要传一个参数是函数
+			//   这个函数有两个形参
+			
+			//返回值：排好序的原数组
+			//这个方法对原数组有影响
+			
+			
+			
+			//valueOf 是Object的原型当中的
+//			var result = arr.valueOf()
+//			console.log(result);
+//			console.log(arr);
+//			console.log(result === arr);
+			//功能：获取数组对象的基本值
+			//参数：无
+			//返回值：返回原数组，因为数组是非包装对象，所以它是没有基本值
+			
+			//toString
+//			var result = arr.toString()
+//			console.log(result);
+//			console.log(arr);
+			//功能：将数组对象转化为字符串
+			//参数：无
+			//返回值：把数组的中括号去掉，其余加引号形成字符串返回
+			
+			
+			
+			//函数对象在调用valueOf的时候也是返回自身，因为它也没有基本值
+			//函数对象在调用toString的时候，返回的是自身数据加引号形成的字符串
+//			function fn(){
+//				console.log('haha');
+//			}
+//			
+//			var result = fn.valueOf();
+//			console.log(result);
+//			result = fn.toString();
+//			console.log(result);
+			
+			
+			
+			//对象在调用valueOf的时候返回的也是自身，因为它也没有基本值
+			//对象在调用toString的时候，返回的是固定的字符串[object  Object];
+			var obj = {name:'zhaoliying'};
+			var result = obj.valueOf();
+			console.log(result);
+			result = obj.toString();
+			console.log(result);
+			
+			
+			//只有包装对象是有基本值的；而且包装对象调用的valueOf和toString都是自己原型当中的方法
+			//非包装对象数组  函数 对象 都没有基本值，而且他们调用valueOf都是Object原型对象的方法，都返回自身
+			//非包装对象数组  函数 对象在转化字符串调用toString的时候，都是自己各自原型对象的方法
+			
+			
+			
+			//对象数据的类型转换
+			
+				//所有的对象数据  转化为布尔值 都是true 
+				//所有的对象和对象进行判等的时候，都是判地址
+				
+				
+			//对象和对象之间的比较  对象和对象之间的运算   
+			//对象和基本值之间的运算，比较 判等都牵扯到对象转化基本数据
+			
+			console.log([1,2,3] + {name:'haha'});//'1,2,3' + '[object Object]'
+			console.log([12,3] > [22,3]);//'12,3' '22,3'
+//			
+			console.log(function(){} + 1);//'function(){}' + 1
+			console.log([] < 1);//''< 1  0 < 1
+			console.log([12] == 12);
+			
+			
+			
+			
+			//以上都是需要把对象转化为基本数据类型
+			//再通过基本数据类型转化规则去转化
+			//最后才能运算 比较 判等
+			
+			//对象转化基本值的步骤：
+			//1、对象都会尝试调用valueOf去获取基本值，如果获取到那就拿这个基本值，基本值就是基本数据类型
+			//2、如果这个对象拿不到基本值，那么接着会再调用toString拿到基本值，而且一定是一个字符串
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

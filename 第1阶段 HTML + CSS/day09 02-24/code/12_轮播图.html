@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播图</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul{
+				/* 去除项目符号 */
+				list-style: none;
+			}
+			
+			/* 设置容器的大小 */
+			.banner-wrapper{
+				/* 容器的大小和图片大小一致 */
+				width: 830px;
+				height: 482px;
+				/* 设置居中 */
+margin: 50px auto;
+				/* 为使绝对定位元素参考该元素进行定位，所以为该元素开启了相对定位 */
+				position: relative;
+			}
+			
+			/* 使图片叠在一起 */
+			.banner li{
+				/* 设置绝对定位使图片的容器脱离文档流 */
+				position: absolute;
+			}
+			
+			/* 设置导航点的定位 */
+			.pointer{
+				position: absolute;
+				/* 
+					使用绝对定位让一个元素居中时，
+						元素的宽度和高度必须指定
+				 */
+				width: 288px;
+				left: 0;
+				right: 0;
+				/* top: 324px; */
+				bottom:140px;
+				margin: 0 auto;
+			}
+			
+			/* 设置8个导航点的样式 */
+			.pointer a{
+				/* 设置元素浮动，使超链接可以设置宽度和高度 */
+				float: left;
+				/* 设置宽度和高度 */
+				width: 20px;
+				height: 20px;
+				/* 设置圆形效果 */
+				border-radius: 50%;
+				/* 设置一个margin来保持元素的间距 */
+				margin: 0 8px;
+				background-color: rgba(255,255,255,.8);
+			}
+			
+			/* 设置鼠标移入后的效果 */
+			.pointer a:hover,
+			.pointer .active{
+				background-color: rgba(255, 170, 0, .8);
+			}
+			
+		
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- 设置banner的容器 -->
+		<div class="banner-wrapper">
+			
+			<!-- 设置轮播图 -->
+			<ul class="banner">
+				<li>
+					<a href="#">
+						<img src="img/1.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/2.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/3.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/4.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/5.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/6.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/7.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/8.jpg" alt="">
+					</a>
+				</li>
+			</ul>
+			
+			<!-- 创建8个导航点 -->
+			<div class="pointer">
+				<a href="javascript:;"></a>
+				<a class="active" href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	
+		
+		
+	</body>
+</html>

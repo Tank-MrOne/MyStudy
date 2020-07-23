@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装</title>
+</head>
+
+<body>
+
+    <script>
+        /**
+         * $.get('/server', {id:1, vip:100}, function(data){})
+         * $.post('/server', {id:1, vip:100}, function(data){})
+         */
+        let $ = {
+            //添加方法
+            get: function (url, data, callback) {
+                //实例化对象
+                let x = new XMLHttpRequest;
+                //绑定事件
+                x.onreadystatechange = function () {
+                    if (x.readyState === 4 && x.status === 200) {
+                        //处理服务器返回的响应体
+                        callback(x.responseText);
+                    }
+                }
+                // 参数转换  { id: 1, vip: 100 } => id=1&vip=100
+                let str = this.formatData(data);
+                //初始化
+                x.open('GET', url + '?' + str);
+                //发送
+                x.send();
+            },
+            post: function (url, data, callback) {
+                //实例化对象
+                let x = new XMLHttpRequest;
+                //绑定事件
+                x.onreadystatechange = function () {
+                    if (x.readyState === 4 && x.status === 200) {
+                        //处理服务器返回的响应体
+                        callback(x.responseText);
+                    }
+                }
+                let str = this.formatData(data);
+                //初始化
+                x.open('POST', url);
+                //设置请求头  name=abc&vip=1
+                x.setRequestHeader('content-type','application/x-www-form-urlencoded');
+                //发送
+                x.send(str);
+            },
+            //将对象数据 转为 字符串
+            formatData(data){
+                //处理数据 将对象转为字符串
+                let str = '';
+                for (let i in data) {
+                    str += `${i}=${data[i]}&`;
+                }
+                //去除最后一个 & 
+                str = str.substr(0, str.length - 1);// slice
+                return str;
+            }
+        };
+        //调用
+        $.get('http://127.0.0.1:8001/server', { id: 1, vip: 100 }, function (data) { 
+            console.log(data);
+        });
+
+        $.post('http://127.0.0.1:8001/server', { id: 1, vip: 100 }, function (data) {
+            console.log(data);
+        });
+
+
+    </script>
+</body>
+
+</html>

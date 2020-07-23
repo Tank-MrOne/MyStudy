@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//前面的单分支和双分支 都是从真假角度去看待一个事情
+			//单分支  真的就去执行花括号内的代码，假就什么也不干，继续执行后续代码
+			//双分支  真的就去执行if后面花括号的代码，假的就去执行else后面花括号的代码，最终后续代码还要去执行
+			//多分支就不是从真假角度去把事情分成两面了，而是通过另外一个角度看待事情，分为多个分支
+			
+			
+			//1、输入体重判断属于什么样的体型
+			//
+			// 自己的标准去看待              真假两面
+			// 根据体重的标准去看待       多分支   
+			
+			
+//			var weight = parseFloat(prompt('请输入您的体重'));//正常的成年人，小孩不算
+			//0 到  300
+			
+			// 70 ~ 300；
+			//70 - 90  骨感美
+			//90 - 120  性感美
+			//120 - 160 丰满美
+			//160 - 200 肉感美
+			//200 - 300 胖胖美
+			
+			//多分支在执行的时候会出现跳楼现象，上面有符合的，执行完就会直接跳到最后执行后续的代码
+			//不会执行其他分支的代码
+//			if(weight >= 70 && weight < 90){
+//				console.log('骨感美~');
+//			}else if(weight >= 90 && weight < 120){
+//				console.log('性感美~');
+//			}else if(weight >= 120 && weight < 160){
+//				console.log('丰满美~');
+//			}else if(weight >= 160 && weight < 200){
+//				console.log('肉感美~');
+//			}else if(weight >= 200 && weight <= 300){
+//				console.log('胖胖美~');
+//			}else{
+//				console.log('您输入的体重不合法,是 0 - 300之间');
+//			}
+			
+			
+			
+			//2、输入一个数  如果这个数是在 0 - 100 之间  就让这个数+5，然后输出
+//						如果这个数是在 100 - 200 之间  就让这个数-5，然后输出
+//						如果这个数是在 200 -  300 之间  就让这个数*5，然后输出
+//						如果这个数是在 300 -  500 之间  就让这个数/5，然后输出
+					//  如果这个数不是在0 - 500之间  原样输出
+			var num = parseFloat(prompt('请输入一个数字'));
+			if(num >= 0 && num < 100){
+				num += 5;
+//				console.log(num);
+			}else if(num >= 100 && num < 200){
+				num -= 5;
+//				console.log(num);
+			}else if(num >= 200 && num < 300){
+				num *= 5;
+//				console.log(num);
+			}else if(num >= 300 && num <= 500){
+				num /= 5;
+//				console.log(num);
+			}//else{
+//				//假设最终的这个else当中 没有代码 可以省略不写
+////				console.log(num);
+//			}
+			console.log(num);
+
+			
+			
+			
+		</script>
+	</body>
+</html>

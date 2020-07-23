@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品卡片</title>
+		<style>
+			
+			body{
+				/* 临时为body设置一个背景颜色 */
+background-color: #95A3AB;
+			}
+			
+			/* 去除a中的下划线 */
+			a{
+				/* 
+					text-decoration 文本修饰
+				 */
+				text-decoration: none;
+			}
+			
+			/* 设置外层容器card的样式 */
+			.card{
+				/* 整体宽度 */
+				width: 234px;
+				/* 整体高度 */
+				height: 339px;
+				/* 上边框 */
+				border-top: 1px solid #ffac13;
+				/* 设置一个白色背景 */
+				background-color: #fff;
+				/* 水平居中 */
+				text-align: center;
+			}
+			
+			/* 设置图片的容器 */
+			.card .img-wrapper{
+				/* 临时的背景颜色 */
+/* background-color: yellowgreen; */
+				/* 设置一个上外边距 */
+				/* margin-top: 39px; */
+				margin: 39px 0 22px;
+				
+				/* 设置div宽度 */
+				/* width: 160px;
+				margin: 0 auto; */
+				
+				/* 
+					text-align 用来指定元素中文本对齐方式
+				 */
+				/* text-align: center; */
+				 
+				
+			}
+			
+			/* 设置图片的描述信息 */
+			.card .desc{
+				/* 使文字居中 */
+				/* text-align: center; */
+				/* 设置字体大小 */
+				font-size: 14px;
+			}
+			
+			/* 设置文字的效果 */
+			/* 商品名 */
+			.card .goods-name{
+				/* 下外边距 */
+				/* margin-bottom: 4px; */
+				/* 设置字体颜色 */
+				color: #212121;
+			}
+			
+			/* 商品描述 */
+			.card .goods-desc{
+				/* 设置一个下外边距 */
+				/* margin-bottom: 12px; */
+				/* 指定一个上下的外边距，拉开文字间的距离 */
+				margin: 4px 0 12px;
+				/* 设置字体大小 */
+				font-size: 12px;
+				/* 设置文字的颜色 */
+				color: #b0b0b0;
+				
+			}
+			
+			/* 商品当前价格 */
+			.card .current-price{
+				color: #ff6709;
+			}
+			
+			/* 商品划线价格 */
+			.card .old-price{
+				color: #b0b0b0;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 设置一个超链接，使点击后会发生跳转 -->
+		<a href="#">
+			<!-- 创建一个外层容器 -->
+			<div class="card">
+				<!-- 创建一个图片的容器 -->
+				<div class="img-wrapper">
+					<!-- 商品的图片 -->
+					<img src="img/1.jpg" alt="小米蓝牙耳机" width="160">
+				</div>
+				
+				<!-- 创建文字容器 -->
+				<div class="desc">
+					<!-- 创建三个div，来表示描述的信息 -->
+					<!-- 商品的信息 -->
+					<div class="goods-name">
+						小米蓝牙耳机（K歌版）故宫...
+					</div>
+					
+					
+					<!-- 商品的描述 -->
+					<div class="goods-desc">
+						“仪”副耳机，顽音系列
+					</div>
+					
+					<!-- 商品的价格 -->
+					<div class="goods-price">
+						<span class="current-price">179元</span>
+						<!-- del表示一个删除的内容，它会自动在文字上添加删除线 -->
+						<del class="old-price">399元</del>
+					</div>
+				</div>
+				
+			</div>
+		</a>
+	</body>
+</html>

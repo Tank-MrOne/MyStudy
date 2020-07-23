@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器</title>
+</head>
+<body>
+    <button id='next'>下一步</button>
+    <script>    
+        //声明一个生成器函数
+        function *gen(){
+
+            yield '一只没有耳朵';
+            
+            yield '一只没有尾巴';
+
+            yield '真奇怪'
+
+            return 'over';
+            
+        }
+
+        //调用生成器函数 gen, 返回的结果是一个迭代器对象
+        let iterator = gen();
+
+        //调用
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+    
+        //获取元素
+        let next = document.getElementById('next');
+
+        //绑定事件
+        next.onclick = function(){
+            console.log(iterator.next());
+        }
+
+    </script>
+</body>
+</html>

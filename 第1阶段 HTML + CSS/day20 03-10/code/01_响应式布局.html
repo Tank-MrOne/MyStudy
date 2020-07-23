@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			
+			/* 
+				媒体查询使用 @media 开头 
+					① 设备类型（媒体类型）
+						all    表示所有设备
+						screen 带屏幕的设备
+						print  打印的样式
+						speech 屏幕阅读器
+				
+			*/
+			/* @media all{ */
+			/* @media screen {
+				body{
+					background-color: #bfa;
+				}
+			} */
+			
+			/* 
+			@media print {
+			  body { font-size: 100pt; }
+			}
+			
+			@media screen {
+			  body { font-size: 13px; }
+			} */
+			
+			/* 
+				在媒体查询中 , 表示或的关系
+			 */
+			/* @media screen, print {
+				
+			} */
+			
+			/* 
+				使用媒体查询，可以在媒体类型前边添加一个only
+					@media only screen
+					这样不会对样式产生影响，但是它可以避免一些浏览器的兼容问题
+					
+			 */
+			@media only screen {
+				body{
+					background-color: #bfa;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		HELLO
+		<!-- 
+			响应式
+				- 通常情况大部分的商业的网站，处理网页的方式
+					都是创建两个版本的网站（PC端，移动端）
+					这种方式它会给用户带来一个比较好的用户体验
+					但是这种方式也会带来比较高的开发成本
+					
+				- 对于小型网站，我们更希望开发一个网页便可以兼容所有的设备
+					并且在所有的设备中都会有一个比较好的使用的体验
+					
+				- 应对这种需求，就可以制作一个响应式的页面
+				- 响应式页面可以根据用户使用设备的不同，访问方式不同
+					切换成不同的显示效果
+					
+				- 通常情况响应式的页面适用一些小型的网站，产品单一网站
+					开发成本低，开发速度快
+					
+					
+			媒体查询
+				@media
+				- 通过媒体查询，可以根据用户使用的设备，
+					以及不同的视口的大小来为用户设置不同的样式
+					
+					
+		 -->
+	</body>
+</html>

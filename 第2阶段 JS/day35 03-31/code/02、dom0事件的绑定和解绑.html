@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button>点击解绑</button>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var btn = document.querySelector('button');
+				//dom事件的绑定方式（高低浏览器通用）
+				box.onclick = function(){
+					console.log('i love you~  zhao li ying~');
+				}
+				
+				//dom0事件如果对同一个元素添加同样的事件监听多次，后面会覆盖前面
+				box.onclick = function(){
+					console.log('i love you~  yangmi~');
+				}
+				
+				
+				//dom0事件的解绑方式
+				btn.onclick = function(){
+					box.onclick = null;//null是专门用来初始化对象和删除对象用的
+					//解绑方式本质就是把之前box这个对象身上的onclick属性和定义的函数数据断开指向
+				}
+			}
+		</script>
+	</body>
+</html>

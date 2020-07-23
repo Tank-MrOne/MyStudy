@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- 内部的东西就是我们的模板 -->
+        <!-- 模板包含：html + js 
+            插值：{{}} 代表插值语法： 目的是为了去显示标签文本内容用的，{{内部是js表达式}}
+            指令：大部分都是v-开头，本质是元素的自定义属性，目的是为了操作元素使用的,属性值也是js表达式，不需要{{}}
+        -->
+        <p>{{msg.toUpperCase()}}</p>
+        <!-- v-bind是为了给一个属性绑定动态获取的数据 -->
+        <a v-bind:href="url">点击我去百度</a>
+    </div>
+
+    <script src="./js/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            //实例化vm的时候，vm是Vue的一个实例化对象，每个页面都起码要有这样一个实例
+            //传递的参数：是一个配置对象,属性名是固定的，不能随便去改，而属性值是可以改变的，的对象
+            //配置对象内部首先先配两个：
+            el:'#root',//el是代表vm实例化对象要去服务的根元素，值本质是一个css选择器字符串
+                       //把#root对应的元素节点称作是vm的挂载点
+            data:{
+                //data可以是一个对象，这个对象就是我们的数据对象，里面的数据都是为了给模板提供的
+                //模板就是挂载点内部的所有（不包括挂载点）
+                //data内部的数据，最终都会被vm这个实例拿到  （数据代理）
+                //模板当中的数据其实拿的就是vm实例身上的，不过最终操作的都是data对象当中的
+                msg:'我爱你zhaoliying',
+                url:'https://www.baidu.com'
+            }
+            
+        })
+
+        // vm.msg = '我爱你yangmi'   代理后去拿
+        // vm.url = 'http://www.atguigu.com'
+
+       console.log(vm._data.msg) //没有代理通过data去拿
+
+
+    </script>
+
+</body>
+</html>

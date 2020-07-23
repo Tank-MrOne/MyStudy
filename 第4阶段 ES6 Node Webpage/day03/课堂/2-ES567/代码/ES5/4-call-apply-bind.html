@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call-apply-bind</title>
+</head>
+<body>
+    <script>
+        //声明一个函数
+        function add(a,b,c){
+            //打印三个实参
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            //打印 this 对象
+            console.log(this);
+        }
+
+        //声明一个对象
+        var school = {
+            name: '尚硅谷'
+        }
+
+        //直接调用
+        // add(1,2,3);
+        //使用call调用 add 函数
+        // add.call(school,4,5,6);
+        //使用 apply 方法调用
+        // add.apply(school, [7,8,9]);//  add(7,8,9);
+        // bind 方法 会返回一个新的函数  但是不自动执行
+        var fn = add.bind(school);
+        //调用 fn 函数
+        fn('a','b','c');
+    </script>
+</body>
+</html>

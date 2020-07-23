@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>我是列表项1</li>
+			<li>我是列表项2</li>
+			<li>我是列表项3</li>
+			<li>我是列表项4</li>
+			<li>我是列表项5</li>
+			<li>我是列表项6</li>
+			<li>我是列表项7</li>
+			<li><span>我是列表项8</span></li>
+		</ul>
+	
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//1、常用写法
+//				var liNodes = document.querySelectorAll('li');
+//				
+//				for(var i = 0; i < liNodes.length; i++){
+//					liNodes[i].onmouseover = function(){
+//						this.style.backgroundColor = 'hotpink';
+//					};
+//					liNodes[i].onmouseout = function(){
+//						this.style.backgroundColor = 'white';
+//					};
+//				}
+				
+				
+				//2、事件委派写法（儿子很多）
+				//事件监听添加给共有的父（祖先）元素
+				//事件发生在儿子身上的时候，会自动冒泡到爹身上
+				//爹感受到事件发生后，再回过头去找到发生事件的儿子进行处理
+				var ulNode = document.querySelector('ul');
+				ulNode.onmouseover = function(e){
+					e = e || window.event;//兼容高低浏览器事件对象写法
+					//目标元素的兼容写法 高级浏览器拿事件对象的target，低级浏览器拿事件对象的srcElement
+					var target = e.target || e.srcElement;
+					
+					
+					//找到真正发生事件的儿子     目标元素
+					//目标元素是藏在事件对象当中的
+					//事件对象当中target属性就是发生事件的目标元素（代表的是最内部的一个）
+//					console.log(e);
+					if(target.nodeName === 'LI'){//不加if有可能拿到的就是爹
+						//这个判断事件委派一般都会有，为了确保目标元素是我们找到的那个元素
+						target.style.backgroundColor = 'hotpink';
+					}else if(target.parentElement.nodeName === 'LI'){
+						target.parentElement.style.backgroundColor = 'hotpink';
+					}
+					
+				};
+				
+				ulNode.onmouseout = function(e){
+					e = e || window.event;
+					var target = e.target || e.srcElement;
+					if(target.nodeName === 'LI'){
+						target.style.backgroundColor = 'white';
+					}else if(target.parentElement.nodeName === 'LI'){
+						target.parentElement.style.backgroundColor = 'white';
+					}
+				};
+				
+				
+			}
+		</script>
+	</body>
+</html>

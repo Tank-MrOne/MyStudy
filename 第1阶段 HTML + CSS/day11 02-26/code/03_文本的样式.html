@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			.box1{
+				background-color: #ff0;
+				font-size: 50px;
+				
+				/* 
+					text-align
+						- 用来设置文本水平对齐的方式
+						- 可选值：
+							left 默认值 文字水平方向靠左对齐
+							center 文字水平方向居中对齐
+							right 文字水平方向靠右对齐
+							justify 两端对齐
+							
+						
+				 */
+				/* text-align: center; */
+				
+				/* 
+					vertical-align:
+						- 用来设置子元素中文本和父元素中文本的垂直对齐的方式
+						- 属性值：
+							baseline 默认值，子元素的基线和父元素的基线对齐
+							top 将子元素文本框的顶部和父元素的顶部对齐
+							bottom 将子元素文本框的底部和父元素的底部对齐
+							middle 将元素的中线和父元素的小写x的中线对齐
+									
+							数值，使文字上下移动
+							
+						
+					基线（baseline）
+						- 文字在网页中显示时，默认都是排列在一条线上，
+							这条线被称为基线
+						- 基线是一条参考线，大部分文字都在基线上水平排列
+							但是还有一部分文字会超出基线
+						- 默认情况下，子元素的文字和父元素的文字都是沿着基线对齐的
+				 */
+				
+			}
+			
+			span{
+				font-size: 20px;
+				vertical-align: top;
+			}
+			
+			.box2{
+				width: 400px;
+				border: 10px solid tomato;
+			}
+			
+			img{
+				/* 可以通过vertical-align来消除图片和块之间的距离 */
+				vertical-align: bottom;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box2">
+			<img src="an.jpg" alt="">
+		</div>
+		
+		
+		<!-- <div class="box1">
+			今天天气 Hello How are you! x
+			<span>
+				不识庐山真面目，HaHaHa Abc!
+			</span>
+		</div> -->
+		
+	</body>
+</html>

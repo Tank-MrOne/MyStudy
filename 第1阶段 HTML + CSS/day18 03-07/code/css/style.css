@@ -1,0 +1,13 @@
+/*
+	在LESS里可以直接使用CSS注释
+		CSS注释会被编译到最终的CSS文件中
+	
+*/
+.box1 {
+  width: 200px;
+  height: 200px;
+}
+.box1 {
+  width: 100px;
+  background-image: url('box/img/1.png');
+}

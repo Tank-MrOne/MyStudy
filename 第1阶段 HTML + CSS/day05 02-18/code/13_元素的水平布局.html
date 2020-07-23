@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			
+			.box1{
+				width: 900px;
+				height: 500px;
+				border: 10px red solid;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+				margin-left: 100px;
+				margin-right: 100px;
+				
+				/* 
+				  100 + 0 + 0 + 200 + 0 + 0 + 100 = 900 （强制满足）
+											  600	
+				  
+				  如果等式不满足，默认情况浏览器会自动调整右外边距的值，以使等式满足
+				  
+				 */
+				
+				
+				
+				/* 
+					包含块
+						- 默认情况下包含块指离元素最近的块级祖先元素
+						- 元素的水平方向布局相关的所有属性必须遵循如下一个等式：
+						margin-left border-left padding-left width
+						padding-right border-right maring-right
+						这七个属性共同决定了一个元素水平方向实际占用页面大小
+						
+在CSS中规定
+	margin-left + border-left + padding-left + width + padding-right + border-right + maring-right = 包含块的width属性值					
+	左外边距+左边框+左内边距+宽度+右内边距+右边框+右外边距=包含块的宽度					
+				 */
+			}
+			
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+			<div class="box3"></div>
+		</div>
+	</body>
+</html>

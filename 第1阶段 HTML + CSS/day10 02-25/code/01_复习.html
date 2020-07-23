@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				/* 
+					开启绝对定位后，如果不设置偏移量元素的位置默认是不变的
+					- 因为元素的偏移量 left right top bottom 
+						的默认值是auto
+					- 这四个值都是由浏览器自动设置的，
+						当开启绝对定位后，浏览器会通过这四个值将元素保持在原来的位置
+						
+				 */
+				
+				position: absolute;
+			}
+			
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+			
+			span{
+				width: 100px;
+				height: 100px;
+				background-color: #ff0;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<span>hello</span>
+		
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		
+		
+	</body>
+</html>

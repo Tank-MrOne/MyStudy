@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>axios基本使用</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">基本使用</h2>
+        <button class="btn btn-primary" onclick="sendGET()"> 发送GET请求 </button>
+        <button class="btn btn-warning" onclick="sendPOST()"> 发送POST请求 </button>
+        <button class="btn btn-success" onclick="sendPut()"> 发送 PUT 请求 </button>
+        <button class="btn btn-danger" onclick="sendDELETE()"> 发送 DELETE 请求 </button>
+    </div>
+    <script>
+        // let btn = document.getElementById();
+        // btn.onclick = function(){}
+        // btn.addEventListener();
+
+        //发送 GET 请求
+        function sendGET() {
+            axios({
+                method: 'GET',
+                url: 'http://127.0.0.1:8000/server',
+                //设置 url 参数的
+                params: {
+                    id:100,
+                    vip:8
+                },
+                data: {
+                    song: "一生中最爱",
+                    name: "xiaohigh"
+                }
+            }).then(response=>{
+                // console.log(response);
+                //获取响应状态码
+                console.log(response.status);
+                //获取响应头信息
+                console.log(response.headers);
+                //获取响应体
+                console.log(response.data);
+            });
+        }
+    
+        //发送 POST 请求   toUpperCase toLowerCase
+        function sendPOST(){
+            axios({
+                method: 'pOSt',
+                url: 'http://127.0.0.1:8000/server',
+                params: {
+                    a:100,
+                    b:200
+                },
+                // 设置请求体数据
+                data: {
+                    song: "一生中最爱",
+                    name: "xiaohigh"
+                }
+            }).then(response=>{
+                console.log(response.data);
+            })
+        }
+    
+        //发送 PUT 请求
+        function sendPut(){
+            axios({
+                method: "put",
+                url: "http://localhost:8000/server",
+                //设置数据
+                data: {
+                    id:100,
+                    vip:7
+                }
+            }).then(response=>{
+                console.log(response);
+            })
+        }
+    
+        //发送 DELETE 请求
+        function sendDELETE(){
+            axios({
+                method: "delete",
+                url: "http://127.0.0.1:8000/server",
+                params: {
+                    a:100,
+                    b:200
+                }
+            }).then(response=>{
+                console.log(response);
+            })
+        }
+    </script>
+</body>
+
+</html>

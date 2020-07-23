@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、输入一个数，根据输入的数字，打印是星期几
+			// 1  周一   2 周二   。。。。。7周日
+			
+//			var num = parseInt(prompt('请输入一个数'));
+			
+//			if(num === 1){
+//				console.log('周一');
+//			}else if(num === 2){
+//				console.log('周二');
+//			}else if(num === 3){
+//				console.log('周三');
+//			}else if(num === 4){
+//				console.log('周四');
+//			}else if(num === 5){
+//				console.log('周五');
+//			}else if(num === 6){
+//				console.log('周六');
+//			}else if(num === 7){
+//				console.log('周日');
+//			}else{
+//				console.log('请输入1 - 7的数字')
+//			}
+			
+			//把上面的改为switch...case语句去执行
+			//switch...case出现就是为了解决 if else if多分支可读性差而出现的
+			//能用switch。。。case的都可以使用if else if多分支；
+			//switch后面的括号当中也是需要一个有值得东西
+			//1、计算（）当中的值
+			//2、值不会进行转化，求出是什么值就是什么值
+			//3、无论是什么值，都会进入花括号去执行
+			//4、花括号当中case代表着标号，后面也是需要跟一个有值得东西
+			//5、进入花括号当种执行的时候，会拿着switch后面（）当种的值，和所有的case后面的值，进行判等（全等）
+			//6、switch后面（）当中的值，和哪一个case标号后面的值，全等了就执行这个case下面的语句块；
+			
+//			switch(num){
+//				case 1:
+//					console.log('周一');
+//					break;//跳楼，跳出switch语句，没有break，那么代码会继续往下执行后面的代码块
+//				case 2:
+//					console.log('周二');
+//					break;
+//				case 3:
+//					console.log('周三');
+//					break;
+//				case 4:
+//					console.log('周四');
+//					break;
+//				case 5:
+//					console.log('周五');
+//					break;
+//				case 6:
+//					console.log('周六');
+//					break;
+//				case 7:
+//					console.log('周日');
+//					break;
+//				default:
+//					console.log('请输入1 - 7之间的数字');
+//					break;
+//			}
+			
+			
+			//2、输入分数，判定优良差和不及格
+//				90 ~ 100    A
+//				80~90       B
+//				70~80       C
+//				60~70       D
+//				0~ 60       不及格
+//				其它        提示
+
+			var score = parseFloat(prompt('请输入你的分数'));
+			
+//			if(score >= 90 && score <= 100){
+//				console.log('A');
+//			}else if(score >= 80 && score < 90){
+//				console.log('B');
+//			}else if(score >= 70 && score < 80){
+//				console.log('C');
+//			}else if(score >= 60 && score < 70){
+//				console.log('D')
+//			}else if(score >= 0 && score < 60){
+//				console.log('不及格，重考');
+//			}else{
+//				console.log('请输入合法的分值 0 - 100');
+//			}
+			
+			
+			switch(true){//假设我们switch后面括号当种的值，可能有很多种，那么我们就应该这样去考虑
+				case score >= 90 && score <= 100:
+					console.log('A');
+					break;
+				case score >= 80 && score < 90:
+					console.log('B');
+					break;
+				case score >= 70 && score < 80:
+					console.log('C');
+					break;
+				case score >= 60 && score < 70:
+					console.log('D');
+					break;
+				case score >= 0 && score < 60:
+					console.log('不及格，重考');
+					break;
+				default:
+					console.log('请输入合法的分值 0 - 100');
+					break;
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

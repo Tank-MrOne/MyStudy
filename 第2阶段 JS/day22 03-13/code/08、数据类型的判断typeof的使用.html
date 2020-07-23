@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//以后我们的数据都是从后台请求回来的，存在一个变量当中
+			//那么我们想要根据这个数据类型，去做不同的事情，那么就得有手段对这个数据类型进行判断
+			var a = 10;//’number‘
+			a = '';//’string‘
+			a = true;//’boolean‘
+			a = undefined;//’undefined‘
+			
+			a = null;//’object‘;
+			
+			console.log(typeof a);
+//			typeof 是用来判定一个值,是什么类型，如果 后面是变量，要先拿到值；
+			//typeof 后面跟一个值；  最终结果出来的是这个值的类型名小写字符串形式
+			
+			
+			
+			//为什么typeof null 出来的是object
+			//1、这个是一个设计缺陷，造成的；
+			//2、因为null本身用来就是初始化一个对象或者删除一个对象用的，因此null类型typeof判断为object不为过
+			
+			
+			
+			//小面试题
+			console.log(typeof 100);//'number';
+			console.log(typeof typeof 100);//typeof 'number'//'string';
+			console.log(typeof typeof typeof 100)//'string';
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

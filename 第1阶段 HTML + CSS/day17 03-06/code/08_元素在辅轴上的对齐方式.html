@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性盒</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			ul{
+				width: 800px;
+				height: 600px;
+				border: 10px red solid;
+				
+				/* 设置弹性容器 */
+				display: flex;
+				
+				/* 
+					flex-direction
+						- 指定主轴的方向
+				*/
+			   /* flex-direction: row; */
+			   
+			   /* 
+					 flex-wrap 
+						- 元素在主轴上是否自动换行
+						- 可选值：
+							nowrap 默认值 不换行
+							wrap 自动换行（主轴满了，沿着侧轴换行）
+							wrap-reverse 自动换行，但是向相反的方向换行
+				*/
+			   /* flex-wrap: wrap-reverse; */
+			   
+			   
+			   /* 
+				flex-flow: ;
+					- 是 flex-direction 和 flex-wrap 的简写属性
+						可以同时设置两个值
+				*/
+			   flex-flow: row wrap;
+			   
+			   
+			   /* 
+				align-items
+					- 元素在辅轴上的对齐方式
+						可选值：
+							stretch 默认值，辅轴上元素将会拉伸为相同的高度（没有给元素指定高度）
+							flex-start 元素沿着辅轴的起边对齐
+							flex-end 元素沿着辅轴的终边对齐
+							center 元素在辅轴上居中对齐
+				*/
+			   /* align-items: center; */
+			   
+			   /* 
+				align-content 设置侧轴上的空白空间处理方式
+				
+				*/
+			   align-content: space-evenly;
+			   
+		
+		
+			}
+			
+			ul li{
+				width: 200px;
+				/* height: 200px; */
+				font-size: 40px;
+				color: #fff;
+				
+				/* 将所有弹性项的缩减系数设置为0 */
+				flex-shrink: 0;
+			}
+			
+			li:nth-child(1){
+				background-color: orange;
+				/* flex-grow: 1; */
+				
+				/* 
+					align-self 弹性子元素的属性
+						可以单独设置某个弹性元素的对齐方式
+				 */
+				/* align-self: flex-start; */
+			}
+			li:nth-child(2){
+				background-color: #bfa;
+				/* flex-grow: 2; */
+				font-size: 50px;
+			}
+			li:nth-child(3){
+				background-color: pink;
+				/* flex-grow: 3; */
+				font-size: 60px;
+			}
+			li:nth-child(4){
+				background-color: greenyellow;
+				font-size: 70px;
+			}
+			li:nth-child(5){
+				background-color: skyblue;
+				font-size: 80px;
+			}
+			li:nth-child(6){
+				background-color: silver;
+				font-size: 90px;
+			}
+			li:nth-child(7){
+				background-color: fuchsia;
+				font-size: 100px;
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		 
+		 <ul>
+			 <li>1</li>
+			 <li>2</li>
+			 <li>3</li>
+			 <li>4</li>
+			 <li>5</li>
+			 <li>6</li>
+			 <li>7</li>
+		 </ul>
+		
+	</body>
+</html>

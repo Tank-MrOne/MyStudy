@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				
+				
+				//IE/CHROME
+				box.addEventListener('mousewheel',scrollMove);
+				//fireFox
+				box.addEventListener('DOMMouseScroll',scrollMove);
+				
+				//与其讲滚轮事件不如说在讲怎么区分滚轮是往下还是往上
+				//兼容性去处理回调函数
+				var flag = true;
+				function scrollMove(e){
+					e = e || window.event;
+					if(e.wheelDelta){
+						//ie或者chrome
+						if(e.wheelDelta > 0){
+							//往上
+							flag = true;
+						}else{
+							//往下
+							flag = false;
+						}
+						
+					}else if(e.detail){
+						//火狐
+						if(e.detail > 0){
+							//往下
+							flag = false;
+						}else{
+							//往上
+							flag = true;
+						}
+					}
+					
+					
+					if(flag){
+						//不管什么浏览器，一定是往上滚的
+						box.style.height = box.offsetHeight - 10 + 'px';
+						
+					}else{
+						//不管什么浏览器，一定是往下滚的
+						box.style.height = box.offsetHeight + 10 + 'px';
+					}
+					
+				}
+				
+			}
+		</script>
+	</body>
+</html>

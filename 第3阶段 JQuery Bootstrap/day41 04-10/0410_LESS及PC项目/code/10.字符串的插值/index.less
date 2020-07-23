@@ -1,0 +1,10 @@
+@num:10;
+@publicUrl:"http://www.atguigu.com/images";
+.box{
+    //字符串的插值  使用花括号包住变量
+    width:~"@{num}px";
+    background:url(~"@{publicUrl}/pic_new/logo.png");
+}
+.con{
+    background: url("@{publicUrl}/indexIcon/student/cover.jpg");
+}

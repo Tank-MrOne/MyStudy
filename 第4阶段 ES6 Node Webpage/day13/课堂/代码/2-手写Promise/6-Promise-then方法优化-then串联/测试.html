@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise处理同步任务</title>
+</head>
+<body>
+
+<script>
+
+    let p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('成功啦!!');
+            // reject('失败啦!');
+        }, 1000)
+    });
+
+    p.then(
+        value => {
+            return 'ok';
+            // throw new Error('error');
+            // return new Promise((resolve, reject) => {
+            //     resolve('ok');
+            //     // reject('error');
+            // });
+        },
+        reason => {
+            // return 'oh oh oh';
+        }
+    ).then(
+        value => {
+            console.log(value);
+        },
+        reason => {
+            console.error(reason);
+        }
+    )
+</script>
+
+</body>
+</html>

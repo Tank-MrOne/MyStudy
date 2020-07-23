@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 设置标题 */
+			caption{
+				/* 设置标题文字靠左对齐 */
+				text-align: left;
+				/* 设置文字的大小 */
+				font-size: 18px;
+				
+				
+			}	
+			
+			/* 设置表格的宽度 */
+			table{
+				width: 708px;
+				height: 504px;
+				margin: 0 auto;
+				/* 设置边框的合并 */
+				border-collapse: collapse;
+				/* 设置字体颜色 */
+				color: rgb(51,62,79);
+				/* 设置加粗 */
+				font-weight: bold;
+				/* 设置字体大小 */
+				font-size: 14px;
+			}
+			
+			/* 设置表格边框 */
+			td,th{
+				border: 1px solid rgb(192,192,192);
+			}
+			
+			/* 设置表头的样式 */
+			th{
+				height: 22px;
+				color: #fff;
+				background-color: rgb(51,62,79);
+			}
+			
+			/* 设置td中的文字 */
+			td{
+				/* 开启相对定位 */
+				position: relative;
+				/* 文字靠左对齐 */
+				text-align: left;
+				/* 文字靠上对齐 */
+				vertical-align: top;
+				/* 设置padding */
+				padding-top: 4px;
+				padding-left: 8px;
+			}
+			
+			/* 
+				为空的td设置一个背景颜色 
+					empty是一个伪类，用来选中空的元素
+			*/
+			td:empty{
+				background-color: rgb(215,221,230);
+			}
+			
+			/* 为最后一个tr的最后一个单元格来设置一个背景颜色 */
+			tr:last-child td:last-child{
+				background-color: rgb(243,243,243);
+			}
+			
+			/* 否定伪类:not()的括号中的选择器不会参与优先级的计算 */
+			td:not(:empty):hover{
+				background-color: #ff0;
+			}
+			
+			/* 设置节日的小字 */
+			.jie{
+				/* 开启定位 */
+				position: absolute;
+				font-size: 12px;
+				font-weight: normal;
+				/* 设置节日的位置 */
+				bottom: 4px;
+				left: 8px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<table>
+			<!-- cation 表示表格的标题 -->
+			<caption>2019年六月</caption>
+			<tr>
+				<th>日</th>
+				<th>一</th>
+				<th>二</th>
+				<th>三</th>
+				<th>四</th>
+				<th>五</th>
+				<th>六</th>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+			</tr>
+			
+			<tr>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>14</td>
+				<td>15</td>
+			</tr>
+			
+			<tr>
+				<td>
+					16
+					<span class="jie">父亲节</span>
+				</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+				<td>20</td>
+				<td>21</td>
+				<td>22</td>
+			</tr>
+			
+			<tr>
+				<td>
+					23
+					<span class="jie">代码节</span>
+				</td>
+				<td>24</td>
+				<td>25</td>
+				<td>26</td>
+				<td>27</td>
+				<td>28</td>
+				<td>29</td>
+			</tr>
+			
+			<tr>
+				<td>30</td>
+				<td colspan="6">NOTES</td>
+				
+			</tr>
+		</table>
+		
+	</body>
+</html>

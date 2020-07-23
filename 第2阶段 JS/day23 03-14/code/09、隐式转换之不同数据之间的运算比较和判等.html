@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//一、数字和其它类型之间的运算判等比较
+			//1、数字和字符串
+//			var num = 100;
+//			var str = 'zhaoliying';
+//			//运算
+//			//不同数据运算的时候，只要碰到字符串，+法都是拼接字符串，其余的算法都是转数字
+//			console.log(num + str);//拼接字符串
+//			console.log(num - str);
+//			console.log(num * str);
+//			console.log(num / str);
+//			console.log(num % str);
+//			//比较  全部转数字
+//			console.log(num > str);
+//			console.log(num < str);
+//			console.log(num >= str);
+//			console.log(num <= str);
+//			//判等  不同数据类型之间的判等，也是要转数字
+//			console.log(num == str);
+//			console.log(num != str);
+			
+			//2、数字和布尔值  全部转数字
+//			var bool = true;
+//			console.log(num + bool);
+//			console.log(num - bool);
+//			console.log(num * bool);
+//			console.log(num / bool);
+//			console.log(num % bool);
+////			//比较  全部转数字
+//			console.log(bool > num);
+//			console.log(num < bool);
+//			console.log(num >= bool);
+//			console.log(num <= bool);
+////			//判等  不同数据类型之间的判等，也是要转数字
+//			console.log(num == bool);
+//			console.log(num != bool);
+
+			//3、数字和undefined   全部转数字
+//			var und;
+//			console.log(num + und);
+//			console.log(num - und);
+//			console.log(num * und);
+//			console.log(num / und);
+//			console.log(num % und);
+////			//比较  全部转数字
+//			console.log(num > und);
+//			console.log(num < und);
+//			console.log(num >= und);
+//			console.log(num <= und);
+////			//判等  不同数据类型之间的判等，也是要转数字
+//			console.log(num == und);
+//			console.log(num != und);
+
+			//4、数字和null  全部转数字
+//			var nul = null;
+//			console.log(num + nul);
+//			console.log(num - nul);
+//			console.log(num * nul);
+//			console.log(num / nul);
+//			console.log(num % nul);
+////			//比较  全部转数字
+//			console.log(num > nul);
+//			console.log(num < nul);
+//			console.log(num >= nul);
+//			console.log(num <= nul);
+////			//判等  不同数据类型之间的判等，也是要转数字
+//			console.log(num == nul);
+//			console.log(num != nul);
+			
+			//二、字符串和其它类型之间的运算判等比较
+			//字符串和其它数据类型 运算判等比较的时候，只有+法是拼接字符串，其余全部转数字
+			//1）字符串和布尔
+//			var str = 'yangmi';
+//			var bool = false;
+//			//运算
+//			console.log(str + bool);//拼接字符串
+//			console.log(str - bool);
+//			console.log(str * bool);
+//			console.log(str / bool);
+//			console.log(str % bool);
+//			//比较
+//			console.log(str > bool);
+//			console.log(str < bool);
+//			console.log(str >= bool);
+//			console.log(str <= bool);
+//			//判等
+//			console.log(str == bool);
+//			console.log(str != bool);
+			//2）字符串和undefined
+//			var und;
+//			//运算
+//			console.log(str + und);//拼接字符串
+//			console.log(str - und);
+//			console.log(str * und);
+//			console.log(str / und);
+//			console.log(str % und);
+//			//比较
+//			console.log(str > und);
+//			console.log(str < und);
+//			console.log(str >= und);
+//			console.log(str <= und);
+//			//判等
+//			console.log(str == und);
+//			console.log(str != und);
+			
+			//3）字符串和null
+//			var nul = null;
+//			//运算
+//			console.log(str + nul);//拼接字符串 'yangminull'
+//			console.log(str - nul);
+//			console.log(str * nul);
+//			console.log(str / nul);
+//			console.log(str % nul);
+//			//比较
+//			console.log(str > nul);
+//			console.log(str < nul);
+//			console.log(str >= nul);
+//			console.log(str <= nul);
+//			//判等
+//			console.log(str == nul);
+//			console.log(str != nul);
+			
+			
+			//三、布尔值和其它类型之间的运算判等比较  全部转数字
+//			var bool = true;
+			//1)布尔和undefined
+//			var und;
+//			//运算
+//			console.log(bool + und);
+//			console.log(bool - und);
+//			console.log(bool * und);
+//			console.log(bool / und);
+//			console.log(bool % und);
+//			//比较
+//			console.log(bool > und);
+//			console.log(bool < und);
+//			console.log(bool >= und);
+//			console.log(bool <= und);
+//			//判等
+//			console.log(bool == und);
+//			console.log(bool != und);
+			
+			//1)布尔和null
+//			var nul = null;
+//			//运算
+//			console.log(bool + nul);
+//			console.log(bool - nul);
+//			console.log(bool * nul);
+//			console.log(bool / nul);
+//			console.log(bool % nul);
+//			//比较
+//			console.log(bool > nul);
+//			console.log(bool < nul);
+//			console.log(bool >= nul);
+//			console.log(bool <= nul);
+//			//判等
+//			console.log(bool == nul);
+//			console.log(bool != nul);
+			
+			
+			//四、undefined和其它类型之间的运算判等比较  全部转数字
+			var und;
+			var nul = null;
+			//运算
+			console.log(und + nul);
+			console.log(und - nul);
+			console.log(und * nul);
+			console.log(und / nul);
+			console.log(und % nul);
+//			//比较
+			console.log(und > nul);
+			console.log(und < nul);
+			console.log(und >= nul);
+			console.log(und <= nul);
+//			//判等
+			console.log(und == nul);//undefined和null判等的时候，不会转化，特殊情况，他俩相等
+			console.log(und != nul);
+			
+			
+			// 当碰到和null判等的时候会有特殊情况发生
+//			1、null和undefined相等
+//			2、null和0不相等
+//			3、null和‘’不相等
+//			4、null和false不相等；
+			console.log(null == 0);
+			console.log(null == '');
+			console.log(null == false);
+			console.log(null == undefined);
+			
+		</script>
+	</body>
+</html>

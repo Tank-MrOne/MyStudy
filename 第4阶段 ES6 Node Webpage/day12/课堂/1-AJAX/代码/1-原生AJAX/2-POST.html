@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击发送AJAX的POST请求</button>
+    <hr>
+    用户名: <input type="text" name="username" id="username">
+
+    <script>
+        let btn = document.getElementById('btn');
+        let username = document.getElementById('username');
+
+        //绑定事件
+        btn.onclick = function(){
+            //
+            let x = new XMLHttpRequest;
+            //
+            x.onreadystatechange = function(){
+                if(x.readyState === 4 && x.status === 200){
+                    //处理服务器返回的响应体
+                    console.log(x.responseText);
+                }
+            }
+            //
+            x.open('POST', '/post-server');
+            //
+            x.send();
+        }
+   
+        
+        //绑定丧失焦点事件
+        username.onblur = function(){
+            //获取用户的输入内容
+            let name = username.value;
+            //发送AJAX请求
+            let x = new XMLHttpRequest;
+            x.onreadystatechange = function(){
+                if(x.readyState === 4 && x.status === 200){
+                    //处理服务器返回的响应体
+                    console.log(x.responseText);
+                }
+            }
+            x.open('POST', '/post-server');
+            //调用 setRequestHeader 方法来设置请求头
+            x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            //设置一个自定义头
+            x.setRequestHeader('a','b');
+            //设置请求体内容
+            x.send(`vip=1&username=${name}`);
+        }
+   </script>
+</body>
+</html>

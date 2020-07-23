@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义遍历数据</title>
+</head>
+
+<body>
+    <script>
+        //伪代码
+        // let arr = [
+        //     [Symbol.iterator]: function(){
+        //         return {
+        //             next: function(){
+
+        //             }
+        //         }
+        //     }
+        // ]
+
+        let team = {
+            name: '三年二班',
+            stus: [
+                'xiaoning',
+                'xiaoming',
+                'xiaotian',
+                'night'
+            ],
+
+            //创建 iterator 属性
+            [Symbol.iterator]: function(){
+                //创建下标
+                let index = 0;
+                //接收 this 的值
+                let _this = this;// that  _this 都是普通的变量
+                return {
+                    next: ()=>{
+                        // {value: 'xiaoming', done: false}
+                        //变量接收  代码如何标识遍历完成了呢 ??
+                        if(index < this.stus.length){
+                            let result = {value: this.stus[index], done: false};//这个结果没有结束 标记
+                            //下标自增
+                            index++;
+                            //
+                            return result;
+                        }else{
+                            return {value:undefined, done: true}
+                        }
+                        
+                    }
+                }
+            }
+        };
+
+        //使用 for ...of 遍历数据
+        for(let i of team){
+            console.log(i);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

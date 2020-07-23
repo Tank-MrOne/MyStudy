@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>电影卡片</title>
+		<!-- 引入图标字体 -->
+		<link rel="stylesheet" href="iconfont/css/all.css"/>
+		<style>
+			/* 清除默认样式 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			
+			/* 统一字体 */
+			body{
+				font:12px/1.5 "microsoft yahei", sans-serif;
+				/* 设置字体颜色 */
+				color: #acaaaa;
+			}
+			
+			/* 修改超链接 */
+			a{
+				text-decoration: none;
+				color: inherit;
+			}
+			
+			/* 设置外部容器的样式 */
+			.movie-card{
+				/* 容器宽度240px */
+				width: 240px;
+				/* 设置元素居中 */
+				margin: 50px auto;
+				/* 设置阴影效果 */
+				box-shadow: rgba(0,0,0,.3) 0 0 10px;
+				/* 添加一个圆角的效果 */
+				border-radius: 4px;
+				overflow: hidden;
+			}
+			
+			/* 统一图片的宽度和容器宽度一致 */
+			img{
+				width: 100%;
+				/* 去除图片的基线距离 */
+				vertical-align: bottom;
+			}
+			
+			/* 设置描述内容的容器 */
+			.desc{
+				/* 设置内边距 */
+				padding: 12px 18px 18px;
+				/* 设置一个下边框 */
+				border-bottom: 1px #e9e9e9 solid;
+			}
+			
+			/* 设置电影标题的样式 */
+			.desc .movie-title{
+				/* 字体样式 */
+				font-size: 18px;
+				color: #717171;
+				/* 设置一个上外边距 */
+				/* margin-top: 12px; */
+			}
+			
+			/* 设置小标题的样式 */
+			.desc .cata{
+				font-size: 14px;
+				/* 设置上下的外边距 */
+				margin: 12px 0 18px;
+			}
+			
+			/* 设置小图标的位置 */
+			.cata .fas{
+				margin-right: 8px;
+			}
+			
+			/* 设置下边的容器 */
+			.star-wrapper{
+				height: 46px;
+				line-height: 46px;
+				/* 设置内边距 */
+				margin: 0 18px;
+				/* 设置图标的大小 */
+				font-size: 14px;
+			}
+			
+			/* 设置星星的容器 */
+			.star-wrapper .star{
+				float: left;
+				/* 设置星星的颜色 */
+				color: #b9cb41;
+			}
+			
+			/* 设置灰色星星 */
+			.star-wrapper .empty{
+				color: #ddd;
+			}
+			
+			/* 设置facebook */
+			.star-wrapper .fb{
+				line-height: 46px;
+				float: right;
+				font-size: 20px;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<!-- 创建一个外部容器 -->
+		<div class="movie-card">
+			<!-- 图片的容器 -->
+			<div class="img-wrapper">
+				<!-- 电影的图片 -->
+				<img src="img/1.jpg" alt="公主">
+			</div>
+			
+			<!-- 电影描述 -->
+			<div class="desc">
+				<!-- 电影的名字 -->
+				<h2 class="movie-title">
+					公主王子和大马
+				</h2>
+				
+				<!-- 电影的分类 -->
+				<h3 class="cata">
+					<i class="fas fa-map-marker-alt"></i>
+					动画电影
+				</h3>
+				
+				<!-- 电影描述 -->
+				<p class="info">
+					在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。 这上面的夜的天空，奇怪而高，我生平没有见过这样奇怪而高的天空。
+				</p>
+			</div>
+			
+			<!-- 电影星级 -->
+			<div class="star-wrapper">
+				<!-- 创建星级评价 -->
+				<ul class="star">
+					<li class="fas fa-star"></li>
+					<li class="fas fa-star"></li>
+					<li class="fas fa-star empty"></li>
+					<li class="fas fa-star empty"></li>
+				</ul>
+				
+				<!-- 创建联系按钮 -->
+				<a class="fb fab fa-weixin" href="#">
+					
+				</a>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>

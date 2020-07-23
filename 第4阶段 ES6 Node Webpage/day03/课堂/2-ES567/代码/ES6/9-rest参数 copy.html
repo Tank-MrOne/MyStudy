@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest参数</title>
+</head>
+<body>
+    <script>
+        //声明一个函数
+        function add(...args){
+            //打印 arguments
+            console.log(arguments);// 
+            console.log(arguments instanceof Array);
+
+            //rest参数
+            console.log(args);
+            console.log(args instanceof Array);
+        }
+        // add(1,2,3,4);
+
+        function minus(a,b,...args) {
+            console.log(a);
+            console.log(b);
+            console.log(args);
+        }
+
+        minus(100,1,2,3,4);
+    </script>
+</body>
+</html>

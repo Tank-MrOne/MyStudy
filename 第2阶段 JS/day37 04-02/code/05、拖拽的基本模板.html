@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 150px;
+				height: 80px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">赵丽颖</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				box.onmousedown = function(e){
+					e = e || window.event;
+					//按下的时候获取元素的初始位置和鼠标的初始位置
+					var eleX = box.offsetLeft;
+					var eleY = box.offsetTop;
+					var startX = e.clientX;
+					var startY = e.clientY;
+					//全局捕获
+					box.setCapture&&box.setCapture();//只有低版本浏览器才会用到全局捕获
+					document.onmousemove = function(e){
+						e = e || window.event;
+						//可以获取鼠标的结束位置
+						var endX = e.clientX;
+						var endY = e.clientY;
+						//求出鼠标的距离差
+						var disX = endX - startX;
+						var disY = endY - startY;
+						//求出元素移动的最终位置  =  元素的初始位置  + 鼠标的距离差
+						var lastX = eleX + disX;
+						var lastY = eleY + disY;
+						//把求出来的最终位置设置给元素
+						box.style.left = lastX + 'px';
+						box.style.top = lastY + 'px';
+					};
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+						box.releaseCapture&&box.releaseCapture();//低版本浏览器释放全局捕获
+					}
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>

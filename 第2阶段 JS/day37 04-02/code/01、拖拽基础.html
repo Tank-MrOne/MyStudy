@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 150px;
+				height: 80px;
+				background-color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				
+				box.onmousedown = function(e){
+					e = e || window.event;
+					//按下的时候获取元素的初始位置和鼠标的初始位置
+					var eleX = box.offsetLeft;
+					var eleY = box.offsetTop;
+					
+					var startX = e.clientX;
+					var startY = e.clientY;
+					
+					box.onmousemove = function(e){
+						e = e || window.event;
+						//可以获取鼠标的结束位置
+						var endX = e.clientX;
+						var endY = e.clientY;
+						//求出鼠标的距离差
+						var disX = endX - startX;
+						var disY = endY - startY;
+						//求出元素移动的最终位置  =  元素的初始位置  + 鼠标的距离差
+						var lastX = eleX + disX;
+						var lastY = eleY + disY;
+						//把求出来的最终位置设置给元素
+						box.style.left = lastX + 'px';
+						box.style.top = lastY + 'px';
+					};
+					
+					box.onmouseup = function(){
+						box.onmousemove = box.onmouseup = null;
+					}
+					
+				}
+				
+			}
+		</script>
+	</body>
+</html>

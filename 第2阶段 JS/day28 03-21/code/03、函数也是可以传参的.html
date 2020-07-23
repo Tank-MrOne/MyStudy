@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var num = 10;
+			
+			function fn(func){//func接受到的是fn1函数的地址
+				var num = 20;
+				func();//func和外部fn1指向的是同一个函数数据；调用的仍然是外部定义的那个函数；
+			}
+			
+			function fn1(){
+				console.log(num);
+			}
+			
+			fn(fn1);//传的是fn1函数数据的地址
+			
+			
+		</script>
+	</body>
+</html>

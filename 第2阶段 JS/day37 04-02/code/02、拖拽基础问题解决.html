@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 150px;
+				height: 80px;
+				background-color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">赵丽颖</div>
+		
+		<script type="text/javascript">
+			//第一个问题点：鼠标拖动过快，会跑出元素，元素就不动了
+			//因为计算机跟不上你的速度，跑出盒子，盒子不动，因为事件添加在盒子身上，跑出去后事件就不在盒子身上
+			//触发了。包括在外部鼠标抬起，也是解绑不了盒子上的事件的，因为鼠标抬起也是在盒子身上添加的；
+			//解决：移动事件和抬起事件，最好添加给document
+			
+			//第二个问题点：在盒子当中写上文字，拖拽先选中文字，在拖拽，文字跟着走，盒子不动，放手盒子会瞬间
+			//移动到放手的位置；
+			//因为浏览器有默认行为，拖拽文字就是一个默认行为
+			//解决：取消浏览器的默认行为
+			
+			
+			//第三个问题点：在低版本浏览器当中在盒子当中写上文字，拖拽先选中文字，在拖拽
+			//会出现禁止拖拽的现象
+			//因为低版本浏览器专门有这样的行为，禁止拖拽是低版本浏览器专属
+			//解决：使用全局捕获
+			//把鼠标后续的事件，强制拉回作用在元素身上，以后鼠标就只能作用在元素身上了
+			//全局捕获有捕获就有释放，否则后果自负
+			
+			
+			
+			
+			window.onload = function(){
+				var box = document.getElementById('box');
+				box.onmousedown = function(e){
+					e = e || window.event;
+					//按下的时候获取元素的初始位置和鼠标的初始位置
+					var eleX = box.offsetLeft;
+					var eleY = box.offsetTop;
+					var startX = e.clientX;
+					var startY = e.clientY;
+					//全局捕获
+					box.setCapture&&box.setCapture();//只有低版本浏览器才会用到全局捕获
+					document.onmousemove = function(e){
+						e = e || window.event;
+						//可以获取鼠标的结束位置
+						var endX = e.clientX;
+						var endY = e.clientY;
+						//求出鼠标的距离差
+						var disX = endX - startX;
+						var disY = endY - startY;
+						//求出元素移动的最终位置  =  元素的初始位置  + 鼠标的距离差
+						var lastX = eleX + disX;
+						var lastY = eleY + disY;
+						//把求出来的最终位置设置给元素
+						box.style.left = lastX + 'px';
+						box.style.top = lastY + 'px';
+					};
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+						box.releaseCapture&&box.releaseCapture();//低版本浏览器释放全局捕获
+						
+					}
+					return false;
+				}
+			}
+			
+			
+			
+			
+			//取消浏览器默认行为根据事件添加方式不同而不同
+			//dom0事件，那么在事件回调当中写上return false；
+			//dom2事件, 在事件回调当中添加e.preventDefault()；
+		</script>
+	</body>
+</html>

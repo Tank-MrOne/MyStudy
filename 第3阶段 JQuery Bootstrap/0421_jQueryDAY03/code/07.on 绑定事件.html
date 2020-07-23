@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">box</div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            //on最简单的写法，一个参数是事件名  一个参数是事件函数
+            /* $(".box").on("click", function () {
+                alert("ononon")
+            }) */
+
+            //on可以传入倒数第二个参数  代表传入事件的数据
+            /* $(".box").on("click", { name: "nihao" }, function (e) {
+                console.log(e);
+                console.log(e.data);
+            }) */
+
+            //on可以传入第二个参数  代表触发事件的选择器
+            // $("ul li").on("click")
+            /* $("ul").on("click", "li", { name: "xiaowang" }, function () {
+                //jQ的事件委托  this指向的是当前的委托的元素
+                console.log($(this).index());
+            }) */
+
+            //on可以给一个元素绑定多个事件
+            /* $(".box").on({
+                mouseenter: function () {
+                    console.log("mouseenter")
+                },
+                mouseleave: function () {
+                    console.log("mouseleave")
+                }
+            }) */
+
+            //on可以给多个事件绑定同一个事件函数
+            $(".box").on("mouseenter mouseleave", function () {
+                console.log("来呀 快活啊");
+            })
+
+        })
+    </script>
+</body>
+
+</html>

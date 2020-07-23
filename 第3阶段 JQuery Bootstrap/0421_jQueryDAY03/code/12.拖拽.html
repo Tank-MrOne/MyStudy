@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#box").mousedown(function (e) {
+                e.preventDefault();
+                //获取鼠标距离拖拽块的位置
+                var pointToBox = {
+                    left: e.offsetX,
+                    top: e.offsetY
+                }
+
+                function move(e) {
+                    e.preventDefault();
+                    var boxPoint = {
+                        left: e.clientX - pointToBox.left,
+                        top: e.clientY - pointToBox.top
+                    }
+                    //赋值
+                    $("#box").css({
+                        left: boxPoint.left + "px",
+                        top: boxPoint.top + "px"
+                    })
+                }
+                $(document).mousemove(move);
+                $(document).mouseup(function () {
+                    $(document).off("mousemove", move)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

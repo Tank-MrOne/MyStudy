@@ -1,0 +1,462 @@
+.clearFix(){
+    *zoom:1;
+    &:after{
+        //空字符
+        content:"\200B";
+        height: 0;
+        display: block;
+        clear: both;
+    }
+}
+.outer{
+    .header{
+        &>.top{
+            width: 100%;
+            background-color: #eaeaea;
+            height: 30px;
+            line-height: 30px;
+            .container{
+                .clearFix();
+                width: 1200px;
+                margin: 0 auto;
+                .loginList{
+                    float: left;
+                    p{
+                       float: left;
+                       margin-right: 10px; 
+                       .register{
+                           border-left: 1px solid #b3aeae;
+                           padding: 0 5px;
+                           margin-left: 5px;
+                       }
+                    }
+                }
+                .typeList{
+                    float: right;
+                    font-size: 0;
+                    a{
+                        font-size: 12px;
+                        padding: 0 10px;
+                        & ~ a{
+                            border-left: 1px solid #b3aeae;
+                        }
+                    }
+                }
+            }
+        }
+        &>.bottom{
+            width: 1200px;
+            margin: 0 auto;
+            .clearFix();
+            .logoArea{
+                float: left;
+                img{
+                    width: 176px;
+                    height: 56px;
+                    margin: 25px 45px;
+                }
+            }
+            .searchArea{
+                float: right;
+                margin-top: 35px;
+                .searchForm{
+                    .clearFix();
+                    input{
+                        box-sizing: border-box;
+                        width: 490px;
+                        height: 32px;
+                        padding:0px 4px;
+                        border: 2px solid #ea4a36;
+                        float: left;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    button{
+                        width: 68px;
+                        height: 32px;
+                        background-color: #ea4a36;
+                        color: #fff;
+                        float: left;
+                        border: none;
+                        cursor: pointer;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .typeNav{
+        border-bottom:2px solid #e1251b;
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            .all{
+                width: 210px;
+                height: 50px;
+                background-color: #e1251b;
+                font-size: 14px;
+                color: #fff;
+                line-height: 50px;
+                text-align: center;
+                font-weight: bold;
+            }
+            .nav{
+                a{
+                    margin:  0 22px;
+                    line-height: 45px;
+                    font-size: 16px;
+                    color: #333;
+                }
+            }
+        }
+    }
+    .con{
+        width: 1200px;
+        margin: 15px auto 0;
+        .conPoin{
+            padding: 9px 15px 9px 0;
+            &>a + a:before{
+                content:"/\00a0";
+                padding: 0 5px;
+                color: #ccc;
+            }
+        }
+        .mainCon{
+            .clearFix();
+            margin:5px 0 15px;
+            .previewWrap{
+                float: left;
+                width: 400px;
+                .preview{
+                    width: 400px;
+                    height: 400px;
+                    border: 1px solid #dfdfdf;
+                    position: relative;
+                    .jqzoom{
+                        width: 400px;
+                        height: 400px;
+                        position: relative;
+                        img{
+                            width: 100%;
+                        }
+                        .mask{
+                            width: 200px;
+                            height: 200px;
+                            background-color: rgba(255,255,255,.5);
+                            position: absolute;
+                            left:0;
+                            top: 0;
+                            border: 1px solid #ddd;
+                        }
+                    }
+                    .maxbox{
+                        width: 400px;
+                        height: 400px;
+                        position: absolute;
+                        top: 0;
+                        left: 420px;
+                        overflow: hidden;
+                        border: 1px solid #ddd;
+                        img{
+                            width: 800px;
+                            height: 800px;
+                        }
+                    }
+                }
+                .specScroll{
+                    margin-top: 5px;
+                    .clearFix();
+                    .prev,.next{
+                        text-align: center;
+                        width: 10px;
+                        height: 54px;
+                        line-height: 54px;
+                        border:1px solid #ccc;
+                        background-color: #ebebeb;
+                    }
+                    .prev{
+                        float: left;
+                        margin-right: 4px;
+                    }
+                    .next{
+                        float: right;
+                    }
+                    .items{
+                        width: 372px;
+                        height: 56px;
+                        float: left;
+                        position: relative;
+                        overflow: hidden;
+                        .itemsCon{
+                            position: absolute;
+                            width: 9999px;
+                            height: 56px;
+                            left:0;
+                            img{
+                                float: left;
+                                text-align: center;
+                                border: 1px solid #CCC ;
+                                padding: 2px;
+                                width: 50px;
+                                height: 50px;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .infoWrap{
+                width: 700px;
+                float: right;
+                .info1{
+                   .infoName{
+                       font-size: 14px;
+                       line-height: 21px;
+                       margin-top: 15px;
+                   } 
+                   .news{
+                       color: #e12228;
+                       margin-top: 15px;
+                   }
+                   .priceArea{
+                       background-color: #fee9ec;
+                       margin-top: 10px;
+                       line-height: 28px;
+                       padding: 7px;
+                       .priceArea1{
+                        .clearFix();
+                            .title{
+                                float: left;
+                                margin-right: 15px;
+                            }
+                            .price{
+                                float: left;
+                                color: #cc1122;
+                                i{
+                                    font-size: 16px;
+                                }
+                                em{
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                }
+                                span{
+                                    font-size: 12px;
+                                }       
+                            } 
+                            .remark{
+                                float: right;
+                            }
+                        }
+                        .priceArea2{
+                            .clearFix();
+                            line-height: 28px;
+                            margin-top: 10px;
+                            .title{
+                                margin-right: 15px;
+                                float: left;
+                            }
+                            .fixWidth{
+                                width: 520px;
+                                float: left;
+                                .red-bg{
+                                    background-color: #c81623;
+                                    padding: 3px;
+                                    color: #fff;
+                                }
+                                .t-gray{
+                                    color: #999;
+                                }
+                            }
+                        }
+                    }
+                    .support{
+                        border-bottom: 1px solid #ededed;
+                        padding-bottom: 5px;
+                        .supportArea{
+                            margin-top: 10px;
+                            line-height: 28px;
+                            .clearFix();
+                            .title{
+                                margin-right: 15px;
+                                float: left;
+                            }
+                            .fixWidth{
+                                width: 520px;
+                                color: #999;
+                                float: left;
+                            }
+                        }
+                    }
+                }
+                .choose{
+                    .chooseArea{
+                        margin-top: 10px;
+                        line-height: 28px;
+                        .choosed{
+                            mark{
+                                height: 30px;
+                                line-height: 30px;
+                                display: inline-block;
+                                background-color: snow;
+                                border: 1px solid #ddd;
+                                padding: 0 20px;
+                                margin-right: 20px;
+                                a{
+                                    font-size: 12px;
+                                    color:red;
+                                    margin-left: 20px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        dl{
+                            margin: 13px 0;
+                            .clearFix();
+                            dt{
+                                float: left;
+                                margin-right: 15px;
+                            }
+                            dd{
+                                float: left;
+                                margin-right: 5px;
+                                color: #666;
+                                line-height: 24px;
+                                padding:2px 14px;
+                                border-top: 1px solid #eee;
+                                border-left: 1px solid #eee;
+                                border-right: 1px solid #bbb;
+                                border-bottom: 1px solid #bbb;
+                                &:nth-of-type(1){
+                                    color:red;
+                                }
+                            }
+                        }
+                    }
+                    .cartWrap{
+                        .clearFix();
+                        .controls{
+                            width: 56px;
+                            margin-right: 15px;
+                            float: left;
+                            position: relative;
+                            .itxt{
+                                width: 38px;
+                                height: 37px;
+                                border: 1px solid #ddd;
+                                color:#555;
+                                text-align: center;
+                            }
+                            .plus,.mins{
+                                position: absolute;
+                                width: 15px;
+                                height: 18px;
+                                background-color: #f1f1f1;
+                                color:#666;
+                                line-height: 17px;
+                                text-align: center;
+                                right: 0px;
+                                border: 1px solid #ccc;
+                            }
+                            .plus{
+                                top:0;
+                            }
+                            .mins{
+                                top:20px;
+                                border-top: none;
+                            }
+                        }
+                        .add{
+                            float: left;
+                            a{
+                                display: block;
+                                padding: 0 25px;
+                                height: 36px;
+                                font-size: 16px;
+                                background: #e1251b;
+                                color:#fff;
+                                text-align: center;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .productDetail{
+        width: 1200px;
+        margin:30px auto 0;
+        .clearFix();
+        .aside{
+            width: 210px;
+            float: left;
+            border: 1px solid #ccc;
+            .tabWraped{
+                height: 40px;
+                .clearFix();
+                h4{
+                    border-top:3px solid #fff;
+                    float: left;
+                    line-height: 36px;
+                    width: 105px;
+                    text-align: center;
+                    border-bottom: 1px solid #ccc;
+                    &.active{
+                        border-top-color:#e1251b;
+                        border-bottom-color:#fff;
+                    }
+                }
+            }
+            .tabContent{
+                padding:10px;
+                .tab-pane{
+                    display: none;
+                    &.active{
+                        display: block;
+                    }
+                    &:nth-child(1){
+                        .partList{
+                            .clearFix();
+                            li{
+                                width: 50%;
+                                border-bottom:1px dashed #ccc;
+                                float: left;
+                                line-height: 28px;
+                            }
+                        }
+                        .goodsList{
+                            li{
+                                margin:5px 0 15px;
+                                border-bottom:1px solid #ededed;
+                                padding-bottom: 5px;
+                                .p-img{
+                                    text-align: center;
+                                    img{
+                                        width: 152px;
+                                    }
+                                }
+                                .price{
+                                    font-size: 16px;
+                                    color:#c81623;
+                                }
+                                .operate{
+                                    text-align: center;
+                                    a{
+                                       padding:2px 14px ; 
+                                       border:1px solid #8c8c8c;
+                                       color:#8c8c8c;
+                                       line-height: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

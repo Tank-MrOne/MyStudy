@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				width: 100px;
+				height: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<img src="img/15.jpg" alt="" />
+		<script type="text/javascript">
+			window.onload = function(){
+				//鼠标移动事件，移动一下，移动事件触发的次数是n次
+				//必须通过console打印去确定事件触发了多少次
+				var imgNode = document.querySelector('img');
+				document.onmousemove = function(e){
+//					console.log('移动')
+//                  鼠标的位置和图片定位相对的都是视口的原点位置
+					//拿到鼠标的位置，就是图片要移动的位置
+					e = e || window.event;
+					imgNode.style.left = e.clientX + 'px';
+					imgNode.style.top = e.clientY + 'px';
+				}
+			}
+		</script>
+	</body>
+</html>

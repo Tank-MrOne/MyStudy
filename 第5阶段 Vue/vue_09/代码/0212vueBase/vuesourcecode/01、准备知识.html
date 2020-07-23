@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pp">pppp</p>
+    <p>pppp2</p>
+    <script>
+        // 1)	[].slice.call(lis): 将伪数组转换为真数组
+        // let arr = [1,2,3,4]
+        // let newArr = arr.slice()
+        // console.log(newArr,arr === newArr)
+
+        // //Array.prototype.slice 方法本意是为了截取数组形成新的数组，不传参就会截取整个数组，相当于复制一个数组
+        // // Array.prototype.slice.call(伪数组) //最终 会把伪数组复制一份变成真数组
+        // let pNodes = document.querySelectorAll('p')
+        // console.log(pNodes)
+        // let pNodesArr = [].slice.call(pNodes)
+        // console.log(pNodesArr)
+
+
+		// 2)	node.nodeType: 得到节点类型    元素节点   属性节点   文本节点   注释节点
+
+        //          nodeType       nodeName        nodeValue
+        // 元素节点     1          元素名大写           null
+        // 文本节点     3          #text               文本内容             
+        // 注释节点     8          #comment            注释内容
+        // 属性节点     2          属性名               属性值
+        // let pp = document.getElementById('pp')
+        // console.log(pp.attributes)
+
+
+		// 3)	Object.defineProperty(obj, propName, {}): 给对象添加/修改属性(指定描述符)
+		// 		configurable: true/false  是否可以重新define
+		// 		enumerable: true/false 是否可以枚举(for..in / keys())
+		// 		value: 指定初始值
+		// 		writable: true/false value是否可以修改
+        
+		// 		get: 回调函数, 用来得到当前属性值
+		// 		set: 回调函数, 用来监视当前属性值的变化
+
+
+		// 4)	Object.keys(obj): 得到对象自身可枚举的属性名的数组
+                //就是把对象所有的能够枚举的属性拿出来，做成一个数组
+                // let obj = {
+                //     username:'zhaoliying',
+                //     age:30
+                // }
+                // console.log(Object.keys(obj))
+
+
+
+        // 5)	obj.hasOwnProperty(prop): 判断prop是否是obj自身的属性
+                //判断一个对象的属性是不是自身的属性（这里自身不包括原型）
+                // console.log(obj.hasOwnProperty('valueOf'))   //valueOf是在原型当中的，不是自身
+
+        
+		
+
+
+    </script>
+</body>
+</html>

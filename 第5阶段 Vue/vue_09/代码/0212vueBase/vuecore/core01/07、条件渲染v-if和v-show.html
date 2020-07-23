@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- 根据ok的值，来判断哪个p该显示 -->
+        <p v-if="ok">表白成功</p>
+        <p v-else>表白失败</p>
+
+        <p v-show="ok">求婚成功</p>
+        <p v-show="!ok">求婚失败</p>
+
+        <button @click="update">点击切换</button>
+
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                ok:true
+            },
+            methods: {
+                update(){
+                    this.ok = !this.ok
+                }
+            },
+        })
+    </script>
+</body>
+</html>

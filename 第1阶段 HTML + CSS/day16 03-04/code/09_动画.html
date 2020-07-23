@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: #bfa;
+				
+				animation: t 5s 2s;
+				
+				/* 
+					animation-play-state 动画的运行状态
+						可以选值：
+							running 默认值，动画在运行
+							paused 动画暂停
+				 */
+				/* animation-play-state: paused; */
+				
+				/* 
+				  animation-direction 动画的运行方向
+					可选值：
+						normal 默认值，动画从0% - 100%运行
+						reverse 动画反向执行 100% - 0%
+						alternate 先从0% - 100% 然后 100% - 0%
+						alternate-reverse 先从100% - 0% 然后 0% - 100%
+				 */
+				/* animation-direction: alternate-reverse; */
+				
+				/* 
+					animation-fill-mode 
+						- 动画的填充的模式
+							可选值：
+								none 默认值
+									动画执行延时时，元素的颜色不变
+									动画执行完毕，元素恢复到动画执行前的状态
+								backwards 
+									动画执行延时时，元素样式变成动画开始的状态
+									动画执行完毕，元素恢复到动画执行前的状态
+								forwards 
+									动画执行延时时，元素保持自身的状态
+									动画执行完毕，元素会保持执行完毕的状态
+								both
+									兼具backwards 和 forwards两种的特点
+									动画执行延时时，元素样式变成动画开始的状态
+									动画执行完毕，元素会保持执行完毕的状态
+									
+					同样，以上三个样式，也可以统一设置在简写属性中，
+						没有顺序要求
+				 
+				 */
+				
+				animation-fill-mode:none;
+			}
+			
+			/* .box1:hover{
+				animation-play-state: paused;
+			} */
+			
+			
+			/* 设置关键帧 */
+			@keyframes t{
+				from{
+					width: 100px;
+					height: 100px;
+					background-color: orange;
+				}
+				
+				/* 50%{
+					width: 250px;
+					height: 250px;
+				} */
+				
+				to{
+					width: 500px;
+					height: 500px;
+					background-color: tomato;
+				}
+
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+	</body>
+</html>

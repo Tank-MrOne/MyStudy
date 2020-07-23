@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.p1{
+				background-color: red;
+			}
+			.p2{
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p1" id="pp" aa="bb">我是一个段落</p>
+		<script type="text/javascript">
+			window.onload = function(){
+				var pNode = document.getElementById('pp');
+				pNode.onclick = function(){
+					//对于天生的属性无论是一般属性还是特殊属性 都可以使用点语法和[]去操作
+//					this.id = 'ppp';
+//					pNode.className = 'p2';
+					
+					//自定义属性，没办法是用点语法和[]语法
+//					this.aa = 'cc';
+//					this['aa'] = 'cc';
+
+					//对于自定义的属性，只能用下面两个方法去读写
+//					console.log(this.getAttribute('aa'));//读取属性的属性值
+//					this.setAttribute('aa','cc')//设置属性的属性值
+					
+					//这两个方法是通用的，天生的属性也可以使用,并且类名直接使用class不用改为className
+					this.setAttribute('id','ppp');
+					this.setAttribute('class','p2');
+				}
+			}
+		</script>
+	</body>
+</html>

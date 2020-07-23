@@ -1,0 +1,11 @@
+- 安装nodeJS  http://nodejs.cn/ 下载相对应的安装包 然后安装
+- window+r 输入cmd   打开命令行窗口
+- 输入 node -v 查看node版本号
+- 输入 npm -v 查看npm版本号
+- 因为npm下载可能会很慢，或者你不想下载了，可以 ctrl+c 退出安装
+- 如果npm下载比较慢，可以选择使用cnpm，安装cnpm命令：npm i -g cnpm --registry=https://registry.npm.taobao.org
+- 如果npm和cnpm和node安装成功，则可以进行下载less  
+- 如果使用npm下载 则 npm i -g less  ， 如果使用cnpm下载 则cnpm i -g less（选一个即可）
+- 可以在命名行输入less 或者是 lessc  如果没有报错提示“less不是命令” 则安装成功
+- 在vscode中安装插件 Easy less，然后重启编辑器
+- 在文件夹中新建 index.less文件 ，保存则会则当前文件夹中自动生成index.css

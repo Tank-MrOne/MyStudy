@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 设置完美视口 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 
+				移动端的设计图常见的大小（375的倍数）
+					750px  (2x)
+					1125px (3x)
+					
+				通过Hbuilder进行真机的调试：
+					1.确保你的计算机和你的手机在同一个局域网中（连的是同一个wifi）
+					2.打开Hbuilder的预览
+					3.将地址栏中的127.0.0.1 修改为当前的ip地址
+						更换的方式：
+							win + r => cmd
+							输入ipconfig
+							获取ip地址，格式如下：
+								192.168.50.238
+					4.打个内置浏览器的二维码
+					5.通过手机扫描
+					
+				我的测试结果：
+					1、在iPhone中可以正常显示（和chrome一样）
+					2、在Android手机的内置浏览器可以正常显示
+						但是在微信浏览器中有兼容性问题
+					
+			 
+			 */
+			
+			html{
+				/* 
+					新版本的chrome中，已经可以设置小于12像素的字体大小
+					如果只需要兼容新版浏览器，这里不需要再对字体大小进行放大了
+				 */
+				font-size: 0.13333vw;
+				
+			}
+			
+			.box1{
+				/* 
+					h35
+					w48
+				 */
+				/* height: 4.67vw; */
+				
+				/* 
+					vw (视口宽度)
+					100vw = 1个视口宽度
+					 百分比是参照于包含块去计算的
+					 而vw总是参照于视口计算
+					 
+					 设计图的宽度 750px
+					 视口的宽度   100vw
+					 
+					 750px = 100vw
+						100÷750=0.13333333333333
+					 1px = 0.133333vw
+						48 x 0.133333 = 6.4
+					 48px = 6.4vw
+					 35px = 4.67vw
+				 
+				 */
+				/* width: 6.4vw; */
+				
+				/* 
+					1rem = 1个根元素字体的大小
+					
+					48 / 35
+				 */
+				width: 750rem;
+				height: 50rem;
+				
+				background-color: #bfa;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

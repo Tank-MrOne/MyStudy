@@ -1,0 +1,46 @@
+@h:100px;
+
+.box1{
+	// + 加法  * 乘法  - 减法 / 除法
+	width: 100px+300;
+	height: @h/3;
+}
+
+.box2{
+	width: 300px;
+	height: 300px;
+	background-color: red;
+}
+
+// .box3{
+	//将box2的样式直接应用到box3，通过选择器分组的形式
+	// 使用extend()继承样式时，必须确保选择器正确
+	// &:extend(.box2);
+// }
+
+.box3:extend(.box2){
+	color: orange;
+}
+
+.outer .box3{
+	width: 200px;
+	height: 200px;
+	background-color: tomato;
+}
+
+// .box4{
+	// &:extend(.outer .box3);
+	// .outer .box4
+// 	&:extend(.box3 all);
+// }
+
+.box5{
+	width: 100px;
+	height: 100px;
+	background-color: skyblue;
+}
+
+.box6{
+	// 直接将box5中的样式拿到box6里
+	.box5();
+}

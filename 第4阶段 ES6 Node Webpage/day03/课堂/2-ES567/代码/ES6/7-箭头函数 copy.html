@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+
+<body>
+    <script>
+        //声明箭头函数
+        let fn = (a,b,c) => {
+            //计算三个参数的和
+            let result = a + b + c;
+            //设置返回值
+            return result;
+        };
+
+        //调用函数
+        let res = fn(1,2,3);
+
+        //省略小括号的情况
+        let fn2 = num => {
+            return num * num;
+        };   
+
+        //通过函数得到 一个值的 * 100 之后的值   10 => 1000
+        // let fn3 = (num) => {
+        //     return num * 100;
+        // }
+
+        // let fn3 = num => num * 100;
+        // console.log(fn3(0.36));
+
+        // 箭头函数不能作为构造函数实例化
+        let fn4 = (name, age) => {
+            this.name = name;
+            this.age = age;
+        };
+
+        let obj = new fn4();
+    </script>
+</body>
+
+</html>

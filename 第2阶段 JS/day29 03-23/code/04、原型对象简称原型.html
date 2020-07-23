@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Villa(size,styleType,price){
+				this.size = size;
+				this.styleType = styleType;
+				this.price = price;
+				
+				//这个live是个方法，每个实例化对象内部到时候都会有单独的自己的这个方法
+				//如果实例化的对象多了，那么就会造成内存浪费很厉害
+				//因为每个对象去调用自己的这个方法，最终实现的功能是一样的；
+				//所以我们得想办法让所有的实例化对象去调用同一个方法。以达到资源共享，节省内存的目的；
+//				this.live = function(){
+//					console.log('住的很舒服');
+//				}
+			}
+			
+			//原型对象就是函数对象的一个属性prototype的值（地址）
+			//这个prototype属性值是原型对象，也被叫做显式原型对象
+			//由这个函数实例化出来的对象身上都会有一个属性叫 __proto__，它和函数对象prototype地址一样，代表同一个对象
+			//如果我们通过__proto__去操作原型对象，称为隐式原型对象
+			
+			
+//			函数对象的显式原型对象    ===== 实例化对象的隐式原型对象
+//			函数对象的prototype 我们通常是通过它写这个原型对象的
+//			实例化对象的__proto__,我们通过它是来读这个原型对象的
+			
+			Villa.prototype.live = function(){
+				console.log('住的很舒服');
+			}//把方法添加在原型对象当中，让所有的实例化对象共享
+			
+			
+			console.dir(Villa);
+			
+			var v1 = new Villa(1000,'欧美',10000000);
+			console.log(v1);
+			v1.live();
+			console.log(v1.styleType);
+			
+			var v2 = new Villa(2000,'田园',20000000);
+			v2.live();
+			console.log(v2.styleType);
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

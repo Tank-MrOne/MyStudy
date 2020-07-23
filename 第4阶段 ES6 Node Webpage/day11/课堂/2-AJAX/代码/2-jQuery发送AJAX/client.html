@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery发送AJAX请求</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js'></script>
+    <style>
+        #result{
+            height:200px;
+            border:solid 1px #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">jQuery 发送 AJAX 请求</h2>
+        <button class="btn btn-primary">GET 请求</button>
+        <button class="btn btn-success">POST 请求</button>
+        <button class="btn btn-warning">通用方法发送请求</button>
+        <hr>
+        <div id="result"></div>
+    </div>
+    <script>
+        //jquery 发送 GET 请求
+        $('button').eq(0).click(function(){
+            //发送请求
+            $.get('/server', {id:100, name:'atguigu'}, function(data){
+                $('#result').html(data);
+            });
+        });
+
+        //jquery 发送 POST 请求
+        $('button').eq(1).click(function(){
+            //发送请求
+            $.post('/server', {username:'admin',password:'admin'}, function(data){
+                $('#result').html(data);
+            });
+        });
+
+        //jquery 通用方法发送请求
+        $('button').eq(2).click(function(){
+            //发送请求
+            $.ajax({
+                url: '/server', //请求的 URL
+                type: 'POST',     //请求的方式
+                data: {a:100,b:200},
+                success: function(data){
+                    alert(data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <button class="active">点击执行动画</button>
+        <div class="con">
+        </div>
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script src="./jquery-2.1.4/jquery.easing.1.3.js"></script>
+    <script>
+        $(function () {
+
+            //自定义基础动画
+            $(".active").click(function () {
+                //回调函数的方法书写动画队列
+                /* $(".con").animate({
+                    width: "100px",
+                }, 1000, function () {
+                    $(".con").animate({
+                        height: "300px"
+                    }, 1000)
+                }); */
+
+                //依次书写 即可得到动画队列
+                /* $(".con").animate({
+                    width: "100px"
+                }, 1000);
+                $(".con").animate({
+                    height: "300px"
+                }, 1000) */
+
+                //可以使用链式调用
+                /* $(".con").animate({
+                    width: "100px"
+                }, 1000)
+                    .animate({
+                        height: "300px"
+                    }, 1000) */
+
+                //动画队列是针对动画，对其他大多数方法不是动画队列中的
+                /* $(".con").animate({
+                    width: "100px"
+                }, 1000)
+                    .animate({
+                        height: "300px"
+                    }, 1000)
+                    .css("background", "yellow"); */
+
+                //回调函数解决 最后改变颜色
+                $(".con").animate({
+                    width: "100px"
+                }, 1000)
+                    .animate({
+                        height: "300px"
+                    }, 1000, function () {
+                        console.log($(this))//当前对象
+                        $(this).css("background", "yellow")
+                    })
+
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

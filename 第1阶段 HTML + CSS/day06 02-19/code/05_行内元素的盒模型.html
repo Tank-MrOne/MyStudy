@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>行内元素的盒模型</title>
+		<style>
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+			}
+			
+			span{
+				background-color: #ff0;
+			}
+			
+			.s1{
+				/* 
+					内容区
+						- 行内元素不支持设置宽度和高度
+					内边距
+						- 行内元素可以设置内边距
+							但是垂直方向的内边距不会影响到页面的布局
+					边框
+						- 行内元素可以设置边框
+							但是垂直方向的边框的不会影响到页面的布局
+					外边距
+						- 行内元素可以设置外边距
+							垂直方向的外边距不会影响到页面的布局
+				 */
+				
+				margin: 100px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<span class="s1">我是一个span</span><span>我是一个span</span><span>我是一个span</span>
+		<span>我是一个span</span>
+		<span>我是一个span</span>
+		<span>我是一个span</span>
+		<span>我是一个span</span>
+		<span>我是一个span</span>
+		<span>我是一个span</span>
+		
+		<div class="box1"></div>
+	</body>
+</html>

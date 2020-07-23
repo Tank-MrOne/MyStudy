@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			input{
+				outline: none;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<input type="text" value="赵丽颖"/>
+		<script type="text/javascript">
+			//获取焦点的时候，input当中的值字体颜色为hotpink  背景色为skyblue  
+			//失去焦点的时候，input当中的值字体颜色和背景色都随机变色（变色龙）
+			window.onload = function(){
+				var inputNode = document.querySelector('input');
+				//获取焦点事件
+				inputNode.onfocus = function(){
+					this.style.color = 'hotpink';
+					this.style.backgroundColor = 'skyblue';//#ffffff
+				};
+				//失去焦点事件.
+				inputNode.onblur = function(){
+					//给字体颜色求的随机颜色
+					var red1 = Math.floor(Math.random()*256);
+					var green1 = Math.floor(Math.random()*256); 
+					var blue1 = Math.floor(Math.random()*256); 
+					//给北京颜色求的随机颜色
+					var red2 = Math.floor(Math.random()*256);
+					var green2 = Math.floor(Math.random()*256); 
+					var blue2 = Math.floor(Math.random()*256);
+					//设置随机颜色
+					this.style.color = 'rgb('+ red1 +','+ green1 +','+ blue1 +')';
+					this.style.backgroundColor = 'rgb('+ red2 +','+ green2 +','+ blue2 +')';
+				};
+				
+			}
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

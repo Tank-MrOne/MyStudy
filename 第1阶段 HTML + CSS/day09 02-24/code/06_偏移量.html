@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+				position: relative;
+				
+				/* 
+					- offset 偏移量（top bottom left right）只有在元素开启定位时才生效
+					- 相对定位是相对于元素自身在文档流中的位置进行定位
+					- 通常情况下，不需要同时使用四个偏移量
+						一般只需要使用四个中两个即可（水平，垂直）
+							left top
+							left bottom
+							right top
+							right bottom
+				 */
+				
+				/* left:100px; */
+				/* top: 100px; */
+				/* right:100px; */
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>

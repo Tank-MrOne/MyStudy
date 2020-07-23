@@ -1,0 +1,22 @@
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.box4 {
+  width: 200px;
+  height: 100px;
+  background-color: #bfa;
+  border: 1px red solid;
+}
+.box5 {
+  width: 100px;
+  height: 400px;
+  background-color: #bfa;
+  border: 1px red solid;
+}

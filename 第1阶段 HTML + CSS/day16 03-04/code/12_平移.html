@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body{
+				/* height: 1000px; */
+			}
+			.box1{
+				/* width: 200px; */
+				height: 300px;
+				background-color: #bfa;
+				
+				position: absolute;
+				
+				/* 设置一个left */
+				left:50%;
+				/* margin-left: -100px; */
+				top:50%;
+				
+				/* transform可以同时指定多个变形效果，变形之间使用空格隔开 */
+				transform: translateX(-50%) translateY(-50%);
+				
+				
+			}
+			
+			.box1:hover{
+				/* 
+					平移时，值可以设置为一个百分比的值 
+						平移时50%是相对于元素自身来计算的
+				*/
+				/* transform: translateX(50%); */
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">今天天气真不错</div>
+		
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、Array.prototype.indexOf(value) : 得到值在数组中的第一个下标
+//			var arr = [1,2,3,3,5,6];
+//			var result = arr.indexOf(3,3)
+//			console.log(result);
+//			console.log(arr);
+			//功能：得到值在数组中的第一个下标
+			//参数：第一个是数组当中值，第二个参数代表从哪开始往右查
+			//返回值：这个值在数组当中那么返回这个值第一次出现的下标，这个值不再数组当中，返回-1
+			
+			
+			//2、Array.prototype.lastIndexOf(value) : 和indexOf类似，只是从右开始查
+//			var arr = [1,2,3,3,5,6];
+//			var result = arr.lastIndexOf(3)
+//			console.log(result);
+//			console.log(arr);
+			
+			
+			//数组去重    
+//			var newArr = [];
+//			var flag = true;
+//			for(var i = 0; i < arr.length; i++){
+//				for(var j = 0; j < newArr.length; j++){
+//					if(arr[i] == newArr[j]){
+//						flag = false;
+//						break;
+//					}
+//				}
+//				
+//				if(flag){
+////					newArr[newArr.length] = arr[i];
+//					newArr.push(arr[i]);
+//				}
+//				
+//				flag = true;
+//				
+//			}
+//			console.log(newArr);
+			
+			
+			//数组去重优化版本
+//			var newArr= [];
+//			for(var i = 0; i < arr.length; i++){
+//				if(newArr.indexOf(arr[i]) == -1){
+//					newArr.push(arr[i]);
+//				}
+//			}
+//			console.log(newArr);
+//			
+			
+//			3、Array.prototype.forEach() 遍历数组,专门针对数组的,效率比for高，但是不能用break和continue
+//			var arr = [1,2,3];
+//			var result = arr.forEach(function(value,index){
+//				console.log(index,value);
+//			});
+//			console.log(result);
+//			console.log(arr);
+			
+			//功能：遍历数组
+			//参数：回调函数
+			//返回值：undefined
+			
+			
+			//4、 Array.prototype.map(function(item, index){}) : 遍历数组返回一个新的数组，返回加工之后的值
+//			var arr = [1,2,3,4];
+//			var result = arr.map(function(value,index){
+//				return value * 2;
+//			})
+//			console.log(result);
+//			console.log(arr);
+			//功能：让我们快速的根据原数据获取一个新数组，这个新数组和原数组有关系
+			//参数：回调函数
+			//返回值：返回和原数组相关的新数组
+			
+			//5、Array.prototype.filter(function(item, index){}) : 遍历过滤出一个新的子数组， 返回条件为true的值
+			
+//			var arr = [1,2,3,4];
+//			var result = arr.filter(function(value,index){
+//				return value > 2;
+//			})
+//			console.log(result);
+//			console.log(arr);
+			//功能：让我们从原数组当中过滤出符合条件的元素组成新的数组
+			//参数：回调函数
+			//返回值：返回过滤完的新数组
+			
+			
+			//es6新增
+//			1.Array.from(v) : 将伪数组对象或可遍历对象转换为真数组
+			//伪数组就是假数组，它可以使用数组方式去操作，但是没有数组的方法
+			//真数组，有数组的方法
+//			function add(a,b){
+//				console.log(arguments);
+//				console.log(Array.from(arguments));
+//				return a + b;
+//			}
+//			
+//			add(10,20);
+//			var arr = Array.from('1234');
+//			console.log(arr);
+			
+//			2.Array.of(v1, v2, v3) : 将一系列值转换成数组
+			console.log(Array.of(3));
+			//console.log(new Array(3));
+			
+//			3.find(function(value, index, arr){return true}) : 找出第一个满足条件返回true的元素
+			var arr = [1,2,3,12,34];
+			console.log(arr.find(function(value,index){
+				return value > 10;
+			}));
+//			4. findIndex(function(value, index, arr){return true}) : 找出第一个满足条件返回true的元素下标
+		     console.log(arr.findIndex(function(item,index){
+			    return item > 10;
+		     }));
+
+			
+			
+		</script>
+	</body>
+</html>

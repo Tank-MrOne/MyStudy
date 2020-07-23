@@ -1,0 +1,17 @@
+//在写私有less的时候  把公共的less给引入
+// @import "./public.less";
+//如果引入的是less文件  则可以省略less后缀
+@import "./public";
+
+//less中也可以使用@import来引入css文件
+//引入css 会直接把@import放在css中，kennel导致性能问题，所以css尽量直接引入在页面中
+// @import "./reset.css";
+
+.box{
+    width: 500px;
+    height: 400px;
+    background-color: red;
+    .con{
+        background-color: pink;
+    }
+}

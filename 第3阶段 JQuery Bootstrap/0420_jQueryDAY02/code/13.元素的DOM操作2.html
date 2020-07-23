@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 300px;
+            margin: 0 20px;
+            border: 3px solid #000;
+            padding: 0 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <button id="btn">点我啊</button>
+        <div class="con">
+            <p class="p1">p1</p>
+            <p class="p2">p2</p>
+            <p class="p3">p3</p>
+        </div>
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script src="./jquery-2.1.4/jquery.easing.1.3.js"></script>
+    <script>
+        $(function () {
+            //JS写法
+
+            /* //创建一个元素
+            var newP = document.createElement("p");
+
+            //给p元素插入内容
+            //方法1 创建文本节点
+            var newPCon = document.createTextNode("我是新的p");
+            newP.appendChild(newPCon);
+            //方法2 使用innerHTML
+            newP.innerHTML = "我是新的p";
+
+            //给p标签插入自定义属性
+            newP.setAttribute("name", "new");
+
+            //js提供插入节点的方法是   appendChild  insertBefore
+            $(".con")[0].appendChild(newP);
+
+            //克隆con 插入在outer内部的后边  如果参数是fasle或不写则是浅克隆  true为深克隆
+            var cloneCon = $(".con")[0].cloneNode(true);
+            $(".outer")[0].appendChild(cloneCon) */
+
+
+            //jQuery写法
+            // console.log($("<p name='new'>我是新的p</p>"));
+
+            // $(".con").append($("<p name='new'>我是新的p</p>"));
+            // $("<p name='new'>我是新的p</p>").appendTo($(".con"));
+
+            // $(".con").prepend($("<p name='new'>我是新的p</p>"));
+            // $("<p name='new'>我是新的p</p>").prependTo($(".con"))
+
+            // $(".con p").eq(1).after($("<p name='new'>我是新的p</p>"))
+            $("<p name='new'>我是新的p</p>").insertAfter($(".con p").eq(1));
+            $(".con p").eq(1).before($("<p name='new'>我是新的p</p>"))
+
+            //删除元素
+            // $(".con p:eq(0)").remove();
+            // $(".con p").remove(".p1");
+            // $(".con p:eq(0)").empty();//仅清空当前的元素内容，不删除当前的节点
+
+            //替换节点
+            // $("<i>我是一个i</i>").replaceAll(".p2");
+            $(".con .p3").replaceAll(".p2")
+
+
+            $(".con").click(function () {
+                alert(1);
+            })
+
+            //jQ不区分像JS中的 深浅克隆  但是clone仍然有布尔值
+            //clone的值是true  则克隆当前元素的事件  否则不克隆
+            $(".con").clone(true).appendTo($(".outer"));
+
+
+        })
+    </script>
+</body>
+
+</html>

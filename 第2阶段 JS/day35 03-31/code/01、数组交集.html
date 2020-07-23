@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr1 = [1,2,3,2];
+			var arr2 = [2,3,4,5,2,4,3,];
+			var newArr = [];
+			for(var i = 0; i < arr1.length; i++){
+				if(arr2.indexOf(arr1[i]) !== -1 && newArr.indexOf(arr1[i]) === -1){
+					newArr.push(arr1[i]);
+				}
+			}
+			
+			console.log(newArr);
+			
+		</script>
+	</body>
+</html>

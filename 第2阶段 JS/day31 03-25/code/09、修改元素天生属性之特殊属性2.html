@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.p1{
+				background-color: red;
+			}
+			.p2{
+				background-color: green;
+			}
+			.p3{
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p1" id="pp">我爱你赵丽颖</p>
+		
+		<script type="text/javascript">
+		//点击p修改p的背景色，通过类名实现
+			window.onload = function(){
+				var pNode = document.getElementById('pp');
+				pNode.onclick = function(){
+					//天生属性之特殊属性 class类属性，
+//					pNode.class = 'p2';
+//					pNode['class'] = 'p2';
+					//在js当中不叫class 叫className
+//					pNode.className = 'p2';
+					pNode['className'] = 'p3';
+				}
+			}
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点我啊 我是12号</button>
+    <div class="box">
+        欢迎观临
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            function fn1() {
+                alert("你好")
+            }
+            $(".box").on("click", fn1)
+
+            $("#btn").click(function () {
+                $(".box").off("click", fn1)
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			.box1{
+				width: 658px;
+				height: 494px;
+				
+				/* 
+					背景相关的样式:
+						backgound-color 背景颜色
+						background-image 背景图片
+							- 语法：
+								background-image:url(路径);
+							- 如果背景图片超过了元素的大小，
+								则默认只会显示图片的左上角
+							- 如果背景图片和元素一样大
+								则可以完整的显示背景图片
+							- 如果背景图片比元素小
+								则默认背景图片会自动平铺，将元素填满
+								
+						- 可以同时设置背景图片和背景颜色，
+							这样背景颜色将会成为图片的底色
+							
+						background-repeat：
+							- 设置背景图片的重复方式
+							- 可选值：
+								repeat 默认值 背景水平垂直双方向重复
+								no-repeat 背景图片不会重复，有多少显示多少
+								repeat-x 水平方向重复
+								repeat-y 垂直方向重复
+								
+				 
+				 */
+				
+				background-color: #bfa;
+				background-image: url(img/2.png);
+				background-repeat: repeat-y;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		
+	</body>
+</html>

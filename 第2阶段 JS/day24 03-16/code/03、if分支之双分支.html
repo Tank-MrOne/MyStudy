@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//1、天气好就去看电影，不好就写代码
+			//如果我们碰到只有两种状态的数据，一般都是使用布尔值
+//			var weather = true;
+//			if(weather){
+//				console.log('我们一起去电影院');
+//			}else{
+//				console.log('我们就在家写代码');
+//			}
+//			console.log('heihei');
+			
+			
+			
+			//2、输入一个数，这个数如果大于0就-1，不大于0就+1
+			var num = parseFloat(prompt('请输入一个数字'));
+			
+//			if(num > 0){
+//				//让num减1 
+//				//可以
+////				num = num - 1;
+//				//也可以
+////				num -= 1;// num--    --num
+//				//也可以
+//				num--;
+////				console.log(num);
+//				//--num也可以
+//			}else{
+//				num++;
+////				console.log(num);
+//			}
+//			console.log(num);
+			
+			
+			
+			//以后碰见了双分支，并且双分支每个分支里面的代码只有一行，此时，我们可以把它改为三元表达式去写
+			console.log(num > 0?num--:num++);//20
+			console.log(num);//19
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

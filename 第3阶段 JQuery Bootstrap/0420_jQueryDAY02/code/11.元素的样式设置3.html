@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 300px;
+            margin: 0 20px;
+            border: 3px solid #000;
+            padding: 0 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <button id="btn">点我啊</button>
+        <div class="con">
+            con
+        </div>
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script src="./jquery-2.1.4/jquery.easing.1.3.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                //height有参数的时候   代表设置一个高度 
+                //如果没有参数  则代表获取一个高度
+                // console.log($(".con").height());//没有单位
+                $(".con").height(200);
+
+                //width方法 类似于height方法
+
+
+                //innerWidth 获取元素的宽度 + padding
+                //outerWidth  获取内容的宽度 + padding + border
+                //outerWidth(true)  获取内容的宽度 +padding + border + margin
+                console.log($(".con").innerWidth())//320
+                console.log($(".con").outerWidth())//326
+                console.log($(".con").outerWidth(true))//366
+                //innerHeight  outerHeight outerHeight(true)  和上边同理
+
+            })
+
+
+
+        })
+    </script>
+</body>
+
+</html>

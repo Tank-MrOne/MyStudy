@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>我是一个段落</p>
+		<button>添加h1</button>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.querySelector('button');
+				
+				btn.onclick = function(){
+					//第一种动态添加节点，元素的方式，以后不用，因为会覆盖原本有的元素
+//					document.write('<h1>我是标题</h1>');
+					
+					
+					//第二种使用innerHTML,它是可以达到新添加元素的目的
+					//几个特殊元素的获取方式
+					//1、html   
+					//document.documentElement
+					//2、body
+					//document.body
+					//3、head
+					//document.head
+					
+					//直接写=会发生覆盖，因为它是把body里面的 内容修改为'<h1>我是标题</h1>'
+					//如果不想修改，必须使用+=才能添加元素   
+//					document.body.innerHTML += '<h1>我是标题</h1>';
+//					document.body.innerHTML = document.body.innerHTML + '<h1>我是标题</h1>'
+
+
+					//第三种方式是dom给我们提供的方法
+					
+					//1、创建一个你想添加的元素   dom对象，但是创建好的这个对象并不在页面上
+					var h1Node = document.createElement('h1');
+					//2、把创建好的h1标签写内容
+					h1Node.innerHTML = '我是标题';
+					//3、经历完前两步，h1标签就已经准备好了，然后页面上想要看到，必须把h1添加给页面上已经存在的元素
+					document.body.appendChild(h1Node);//追加的意思就是末尾加
+					
+					
+					
+					
+
+
+				}
+			}
+		</script>
+	</body>
+</html>

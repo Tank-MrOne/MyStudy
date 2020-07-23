@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//IIFE意思是立即调用函数表达式，也称作匿名函数自调用
+			
+			
+//			function fn(){
+//				console.log('i love you yangmi~');
+//			}
+//			
+//			fn();
+//			
+//			
+//			
+//			var fn1 = function(){
+//				console.log('i love you zhao li ying~~');
+//			}
+//			
+//			fn1();
+//			fn1();
+//			fn1执行了两次,每一次执行都有自己的执行环境,但是函数数据用的是同一个
+			
+			
+			//函数表达式，是没有名字的，没办法调用
+//			function(){
+//				console.log('i love you dilireba~~');
+//			}()//语法错误
+			
+			//函数表达式定义的同时就去调用
+			(function(){
+				console.log('i love you dilireba~~');
+			})();
+			
+		
+			// 匿名函数自调用的特点：
+			// 1、匿名函数自调用是在定义的同时执行函数
+			// 2、匿名函数自调用只能执行一次
+					//如果需要一个函数可以执行多次，这个函数必须是有名函数
+					//如果函数没有名字要想执行必须是自调用，但是只能执行一次
+			// 3、匿名函数自调用，函数整体不会发生预解析，但是函数内部执行代码是要去预解析
+			
+			
+//			(function(){
+//				
+//			})();
+			
+			
+			
+//			作用：
+//				防止外部命名空间污染
+//				隐藏内部代码暴露接口
+//				对项目的初始化,只执行一次
+			
+//			var a = 10;
+//			var b = 20;
+//			
+//			function add(a,b){
+//				return a + b;
+//			}
+//			
+//			a = 'haha';
+//			
+//			add(a,b);
+			
+			
+			
+//			function add(a,b){
+//				return a + b;
+//			}
+//			
+//			(function(){
+//				var a = 10;
+//				var b = 20;
+//				add(a,b);
+//			})()
+			
+			
+			
+			
+//			(function( window, undefined ) {
+//				
+//				//所有的功能代码都写在匿名函数当中；
+//				//可以防止外部人员随意修改内部代码，修改内部数据
+//				//提供接口给外部，外部人员可以访问接口操作内部数据；
+////				// 接口  函数  方法  api 本质都是函数
+//				
+//			})( window );
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p>{{msg}}</p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el:'#root',
+            data:{
+                msg:'赵丽颖'
+            }
+        })
+
+        
+        //1、根据正则查找模板当中{{}}语法里面的表达式
+
+        //2、从data当中找到和表达式同名的属性值，赋值给包含模板语法的文本节点
+
+
+
+        
+        
+    </script>
+</body>
+</html>

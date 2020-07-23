@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p>{{msg}}</p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el:'#root',
+            data:{
+                msg:'赵丽颖'
+            }
+        })
+        
+        vm.msg = '杨幂'
+
+        //模板解析初始化显示完成之后会同时给显示完成的这个表达式创建一个对应的watcher
+
+        //创建watcher的同时会和对应的属性的dep绑定
+        
+    </script>
+</body>
+</html>

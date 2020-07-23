@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- <input type="text" v-bind:value="msg"> -->
+        <!-- 是v-bind的简写方式
+            对于属性绑定数据的时候这样使用v-bind叫单向数据绑定
+            单向数据绑定各种属性都是可以使用的
+            双向数据绑定其实面向的就是表单类元素：原因是因为表单类元素可以页面输入内容
+        -->
+        <!-- 单向绑定数据 -->
+        <!-- <input type="text" :value="msg"> -->
+        <input type="text"  v-model="msg">
+        <!-- <p v-on:click="handlerClick">我爱你{{msg}}</p> -->
+        <!-- 事件指令的简写 -->
+        <p @click="handlerClick">我爱你{{msg}}</p>
+
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            // el:'#root',  一种写法
+            // data:{
+            //     msg:'赵丽颖'
+            // },  //data可以是对象的写法，也可以是函数的写法
+            
+            data(){
+                return {
+                    msg:'赵丽颖'
+                }
+            },
+
+            methods: {
+                //最基本的
+                // handlerClick:function(){
+                // },
+               
+                //箭头函数this看外部函数，外部函数this是谁，就是谁
+                //如果外部没有函数，箭头函数this就是window
+                //看外部的执行上下文当中的this是谁
+                // handlerClick:()=>{}
+
+                //es6当中的方法都可以简写
+                handlerClick(){
+                    // alert('我爱你~')  
+                    this.msg = '杨幂' 
+                    //在vue当中，methods方法当中的this都是指向vm实例
+                    //因为methods和data当中的东西都会被vm代理
+                },
+                
+            },
+        }).$mount('#root')//挂载点的第二种写法：使用vm的方法$mount
+
+       
+
+    </script>
+</body>
+</html>

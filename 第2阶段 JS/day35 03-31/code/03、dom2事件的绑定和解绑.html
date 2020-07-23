@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button id="btn">点击解绑</button>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var btn = document.getElementById('btn');
+				
+				//dom2事件添加和解绑高低浏览器使用的方法是不同的
+				//高级浏览器
+				//1、添加事件监听
+//				box.addEventListener('click',function(){
+//					console.log('i love you ~ zhao li ying!');
+//				});
+//				
+//				//dom2事件添加方式，如果添加多次，不会发生覆盖，会依次执行
+//				box.addEventListener('click',function(){
+//					console.log('i love you ~ 杨幂!');
+//				});
+				
+				
+				//2、事件的解绑
+				//dom2事件解绑的时候，参数必须和绑定的时候一模一样
+				
+//				btn.onclick = function(){
+//					box.removeEventListener('click',function(){
+//						console.log('i love you ~ 杨幂!');
+//					});
+//				}  解绑不了，因为回调函数和绑定的虽然看着一样，但是不是同一个函数
+
+
+				
+				//如果dom2事件要解绑，那么就不能在方法内部去定义回调函数，必须添加的时候在外部定义有名函数
+				
+//				function fn(){
+//					console.log('i love you ~ 戚薇~');
+//				}
+//				box.addEventListener('click',fn);
+//				
+//				
+//				btn.onclick = function(){
+//					box.removeEventListener('click',fn);
+//				}
+				
+				
+		//------------------------------------------------------------------		
+				
+				//低级浏览器
+				//1、添加事件监听
+//				box.attachEvent('onclick',function(){
+//					console.log('哈哈');
+//				})
+//				
+				//如果添加多个时间，那么也会依次执行，只不过执行顺序和高级浏览器相反
+				
+				//2、解绑方式
+				//如果要解绑，添加的回调必须放在外面
+//				function fn1(){
+//					console.log('嘿嘿');
+//				}
+//				box.attachEvent('onclick',fn1);
+//				
+//				btn.onclick = function(){
+//					box.detachEvent('onclick',fn1);
+//				}
+				
+				
+			//---------------------------------------------------------------------------	
+				
+				
+				//兼容封装高低浏览器添加事件绑定
+				//dom2事件高级浏览器用的是高级浏览器的添加方式
+				//低级浏览器用的是低级浏览器的添加方式
+				
+				function addEvent(node,eventType,callBack,isBubble){
+					if(node.addEventListener){
+						//高级浏览器node.addEventListener值是一个函数数据
+						node.addEventListener(eventType,callBack,isBubble);
+					}else{
+						//低级浏览器node.addEventListener值是一个undefined
+						node.attachEvent('on' + eventType,callBack);
+					}
+					
+				}
+				function fn2(){
+					console.log('兼容成功');
+				}
+				addEvent(box,'click',fn2);
+				
+				
+				
+				//自己实现封装兼容解绑DOM2事件
+				
+			}
+		</script>
+	</body>
+</html>

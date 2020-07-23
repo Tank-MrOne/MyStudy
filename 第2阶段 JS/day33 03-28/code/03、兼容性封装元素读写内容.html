@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="pp">赵丽颖</p>
+		
+		
+		<script type="text/javascript">
+			//如果用户使用的是高级浏览器就自动的通过textContent去操作内容
+			//如果用户使用的是低级浏览器就自动的通过innerText去操作内容
+			var pNode = document.getElementById('pp');
+//			console.log(pNode.textContent);不能直接写，因为这样只能满足高级浏览器的用户操作内容，低级浏览器不能
+//			console.log(getOrSetContent(pNode));//兼容性获取P内部的内容
+			getOrSetContent(pNode,'我爱你赵丽颖');//兼容性设置p内部的内容
+
+			//兼容性最终解决的问题  就是让高低浏览器用户都能通过各自的手段处理问题
+			//兼容性封装一般都是封装函数
+			//封装函数兼容性读写内容
+//			function getOrSetContent(node,content){
+//				if(arguments.length === 1){
+//					//在获取内容
+//					if(node.textContent){
+//						//证明是高级
+//						return node.textContent;
+//					}else{
+//						//低级浏览器
+//						return node.innerText;
+//					}
+//				}else if(arguments.length === 2){
+//					//在设置内容
+//					if(node.textContent){
+//						//证明是高级
+//						node.textContent = content;
+//					}else{
+//						//低级浏览器
+//						node.innerText = content;
+//					}
+//				}
+//			}
+			
+			//函数优化
+			function getOrSetContent(node,content){
+				if(arguments.length === 1){
+					//在获取内容
+//					return node.textContent?node.textContent:node.innerText
+					return node.textContent || node.innerText;
+				}else if(arguments.length === 2){
+					//在设置内容
+					node.textContent?node.textContent = content:node.innerText = content;
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+
+		</script>
+	</body>
+</html>

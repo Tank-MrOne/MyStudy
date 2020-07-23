@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// &&   ||   !
+			//1、一般情况下，用在多个条件表达式的连接，多个条件表达式连接完成也是一个表达式称作复合表达式
+			// &&  与  一假则假  如果&&连接的所有条件表达式，有一个是假的，那么整体复合表达式的值就是假的
+			// ||  或  一真则真
+			// ！    非   非真即假  非假即真
+			
+			var money = 100000;
+			var faceValue = 50;
+			
+			console.log(money > 50000 && faceValue > 80);//false
+			console.log(money > 50000 || faceValue > 80);//true
+			console.log(!(money > 50000 || faceValue > 80))//false;
+			
+			//2、二般情况,两边不是或者不全是条件表达式
+			//那么此时，一般情况下的口诀就不起作用了；
+			
+			//通用的口诀
+			// &&   如果前面为真，则取后面的值，作为整个表达式的值
+//					如果前面为假, 则取前面的值, 作为整个表达式的值,后面的不执行
+			//1）
+//			var num = 0 && 10;//  非0即为真
+//			console.log(num);
+
+			//2）
+//			var a = 2;
+//			console.log(0.2 && a++);//2  a3
+//			console.log(a);
+
+				
+			
+			// ||   如果前面为真，则取前面的值，作为整个表达式的值，后面的不执行
+//					如果前面为假, 则取后面的值, 作为整个表达式的值;
+			
+			//1
+			console.log(false || '赵丽颖');//
+			
+			//2
+			var a = 30;
+			var b = 20;
+			
+			console.log(a > b || a+b++);
+			console.log(a,b);
+			
+			
+			//!    !出现，要求后面必须是一个布尔值，即使后面不是布尔值，也会把后面的值转化为布尔值
+			
+			console.log(!(a > 10));
+			console.log(!6);//非0即为真
+			console.log(!'zhaoliying');//非空即为真
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

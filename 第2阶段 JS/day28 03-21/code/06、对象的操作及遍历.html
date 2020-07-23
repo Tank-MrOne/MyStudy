@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name:'赵丽颖',
+				'age':33,
+				gender:'female',
+				"height":165,
+				eat:function(){
+					console.log('吃货~');
+				},
+				'character-type':'淑女'//这个属性名必须使用引号；属性名不符合命名规范就得带引号
+			};
+			
+			//读写     增删改查
+			//对象的操作有两种操作方式   .语法和[]语法
+			//.语法和[]语法分别都可以操作什么属性？
+			
+			
+			//增和改
+			//1、点语法，写起来简单，但是某些场合无法使用.去操作
+			obj.weight = 90; //有则更改，无则添加
+			
+			//下面两种情况必须使用[]，其余的都可以使用.语法
+//			obj.character-type = '嘿嘿'; 无法操作，因为.后面的属性名不合法，只能使用[]去操作
+
+//			var a = 'aaa'; //本意是要以变量当中的值为属性，添加一个‘bbb’的值  ‘aaa’:'bbb'
+//			obj.a = 'bbb'; //这样写最终会把a当做对象的属性去操作，完全等价于obj['a'] = 'bbb'
+						   //如果是要使用变量当中的值为属性，那么.语法也没办法操作；
+
+
+			
+			//2、中括号语法，是通用的语法，但是写起来复杂
+			obj['weight'] = 100; //有则更改，无则添加
+			obj['character-type'] = '嘿嘿';//当对象的属性是不合法的名字必须使用[]
+			var a = true;
+			obj[a] = 'bbb';//如果我们需要以变量当中的值为属性去操作对象的话，必须使用[]
+			
+			
+			
+			//删
+			
+//			delete obj.age;
+//			delete obj['character-type'];
+//			delete obj[a];
+			
+			//查
+			
+			console.log(obj.name);
+			console.log(obj['character-type']);
+			console.log(obj[a]);//【】要先去找变量的值，然后把值转化为字符串，去对象找这个字符串属性操作。因为属性本质是字符串
+			
+			console.log(obj);
+			
+			
+			
+			
+			//对象的遍历
+			
+			//对象的遍历用的是for  in循环，专门用来遍历对象的
+			//for in专门在对象当中去遍历属性
+			
+			for(var key in obj){//var key = 'name';
+				//拿一次属性名赋值给变量key   就会循环一次
+				console.log(key,obj[key]);
+			}
+			
+			//对象当中如果找不到这个属性，那么这个属性打印出来的值是undefined,不会报错；属性不是变量；
+			
+					
+			
+			//数组是数组，数组也是对象
+			var arr = [1,2,3,4];
+			
+			arr.heihei = 'haha';//A.B 那么A一定是对象，B一定是对象的属性，把数组当对象用加了一个属性和值
+			arr['100'] = 5;
+			
+			console.log(arr);
+			
+			//数组当数组用的使用，我们用for循环去遍历；for循环只能遍历出数组当中数字属性的值
+			for(var i = 0; i < arr.length; i++){
+				console.log(arr[i]);
+			}
+			
+			
+			//数组当对象用的时候，我们用for  in去遍历；for in循环数组当中无论是数字属性还是其它属性值都可以遍历到
+			//length这个属性，我们是默认无法看到的。但是可以操作
+			
+			for(var key in arr){
+				console.log(key,arr[key]);
+			}
+			
+			
+			
+			//函数是函数，函数也是对象
+			
+			//函数当函数使用
+			function fn(){
+				console.log('i love you');
+			}
+			
+			fn();//当函数去用，就是调用函数实现函数表面上的功能；一个东西加括号，那么括号前面一定函数，函数是在当函数用；
+			
+			
+			
+			//函数当对象用
+			fn.hehe = 'heihei';   //A.B  那么代表这个函数是在当对象用；
+			console.log(fn);
+			console.dir(fn);
+			
+			
+			for(var key in fn){
+				console.log(key,fn[key]);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

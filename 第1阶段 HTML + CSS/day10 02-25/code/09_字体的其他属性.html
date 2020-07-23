@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				/* font-size: 40px; */
+				
+				/* 
+					font-weight （字重）
+						- 设置文字的粗细
+						- 一共可以设置九级字重（粗细）
+							100 - 900
+							100最细的 900最粗的
+							9级字重需要由计算机中字体的数量来决定，
+								所以当字重从100变成200时不一定会发生变化
+							大的字重只能保证不比小字重细，但是不一定会有变化
+							- 所以通常情况下这些值并不使用	
+						- 常用值：
+							normal 正常粗细
+							bold  加粗
+							
+					font-style（斜体）
+						可选值：
+							normal 默认值 正常的字体
+							italic 斜体
+							
+				 */
+				/* font-weight: bold; */
+				font-style: italic;
+				
+				/* 
+					加粗和斜体也可以在font中设置，
+						它俩没有顺序要求，但是字体大小和字体族必须是最后两个
+				 */
+				
+				font:italic bold  50px/80px "microsoft yahei", sans-serif;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			今天天气好晴朗！Hello Hello How are you！
+		</div>
+	</body>
+</html>

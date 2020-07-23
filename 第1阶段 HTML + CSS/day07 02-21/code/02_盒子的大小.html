@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>盒子的大小</title>
+		<style>
+			
+			.box1{
+				/* 
+					盒子的可见框，由以下几个部分组成：
+						内容区（content）
+						内边距（padding）
+						边框（border）
+						- 盒子可见框的大小由它们共同决定
+						
+					box-sizing
+						- 用来指定盒子可见框的计算方式
+						- 可选值：
+							content-box 默认值，元素width和height设置的是内容区的大小
+							border-box 元素的width和height设置的是可见框的大小
+								当设置完border-box后，
+									内容区大小将会由浏览器自动计算
+									设置border和padding后内容区会自动减小
+					
+				 */
+				
+				box-sizing: border-box;
+				
+				width: 200px;
+				height: 200px;
+				padding: 20px;
+				border: 10px tomato solid;
+				
+			}
+			
+			
+			.box2{
+				margin-top: 100px;
+				background-color: yellow;
+				width: 200px;
+				height: 200px;
+				padding: 20px;
+				border: 10px tomato solid;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		<div class="box2"></div>
+		
+	</body>
+</html>

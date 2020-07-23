@@ -1,0 +1,23 @@
+/* 网站的基础样式，可以将所有公共的样式编写到base.css中 */
+
+/* 统一设置字体的大小 */
+body{
+	font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+	color: #333;
+	/* 限制body的最小宽度 */
+	min-width: 1226px;
+}
+
+/* 添加clearfix */
+.clearfix::before,
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* 确定主容器的宽度 */
+.w{
+	width: 1226px;
+	margin: 0 auto;
+}

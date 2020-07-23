@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				/* 
+					一个盒子最内部的区域被称为内容区
+						内容区相当于一个盒子的内部空间
+						一个元素的所有子元素都在内容区排布
+					元素内容区的大小由两个属性决定：
+						width：指定内容区的宽度
+						height：指定内容区的高度
+					注意：默认情况下width和height设置的是内容区的大小
+							而不是整个盒子的大小
+				 */
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				
+				
+				/*
+					边框（border）
+						- 是盒子可见框的最外部
+						- 离开边框就属于盒子的外部
+						- 边框的大小默认会影响到整个盒子的大小
+				*/
+			   
+			   /* 
+					border-width 用来设置边框的宽度
+						如果仅仅指定一个值，则四个方向边框都是相同的宽度
+						如果指定了四个值，则四个值分别代表上右下左四个方向的边框
+						如果指定了三个值，则分别表示上、左右、下
+						如果指定了两个值，则分别表示上下、左右
+						
+				*/
+				/* 
+								上  右   下    左
+				border-width: 10px 20px 30px 40px; 
+				*/
+				/* 
+								上  左右  下
+				border-width: 10px 20px 30px; 
+				*/
+			   
+			   /* 	
+							上下	   左右
+			   border-width: 10px 20px; 
+			   */
+			   border-width: 10px;
+			   /* border-top-width: 10px; */
+				
+				/* 
+					border-color 用来设置边框的颜色
+					- 它也可以分别设置四个方向边框的颜色
+						规则和border-width
+						
+					- 除了border-color以外
+						css中还提供了四个 border-xxx-color 用来分别指定四个边的颜色
+						xxx可以是top、right、bottom、left
+				 */
+				/* border-color: red orange yellow yellowgreen; 
+				border-color: red orange yellow ; 
+				border-color: red orange ; 
+				border-color: red ; */
+				
+				/* border-top-color: blue;
+				border-right-color: purple;
+				border-bottom-color: pink;
+				border-left-color: tomato; */
+				
+				border-color: red ;
+				
+				
+				/* 
+					border-style 用来指定边框的样式
+						可选值：
+							solid 实线边框
+							dashed 虚线边框
+							dotted 点状虚线
+							double 双线边框
+							
+						- border-style可以同时指定四个边框的样式
+							也可以分别指定
+				 */
+				border-style: solid dashed dotted double; 
+				border-style: solid dashed dotted ; 
+				border-style: solid dashed  ; 
+				border-style: solid ; 
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+		</div>
+	</body>
+</html>

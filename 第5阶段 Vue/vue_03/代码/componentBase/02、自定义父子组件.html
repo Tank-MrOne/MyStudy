@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <Myblog v-for="(blog, index) in blogs" :key="blog.id" :title="blog.title"></Myblog>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+
+        //是子组件（按钮计数）
+        Vue.component('Mybutton',{
+            //这个配置对象和Vue的配置对象里面的配置项很像，但是没有Vue的完整  不能写el
+            data(){ //这个data是专门给组件对象用的，这里的data不能使用对象，只能使用函数
+                return {
+                    count:0
+                }
+            },
+            props:['title'],
+            // data:{
+            //     count:0
+            // },
+            template:'<button @click="count++">你点击了{{title}}{{count}}次</button>'//代表组件使用的模板（就是标签）
+        })
+
+        //父组件
+        Vue.component('Myblog',{
+            props:['title'],//声明接收属性数据,组件内部就可以使用这个数据
+            template:'<h2>这个标题是{{title}}<Mybutton :title="title"></Mybutton></h2>'
+        })
+
+
+        new Vue({
+            el:'#root',
+            data(){
+                return {
+                    blogs:[
+                        {id:1,title:'blogOne'},
+                        {id:2,title:'blogTwo'},
+                        {id:3,title:'blogThree'},
+                    ]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

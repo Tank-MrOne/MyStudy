@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>京东导航</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			
+			/* 设置外部的容器nav */
+			.nav{
+				/* 设置宽度 */
+				width: 762px;
+				/* 设置高度 */
+				height: 60px;
+				/* 设置文字的垂直居中 */
+				line-height: 60px;
+				/* 设置元素的位置 */
+				margin: 50px auto;
+/* background-color: #bfa; */
+			}
+			
+			/* 设置菜单中的li */
+			.nav li{
+				/* 设置向左浮动，使元素横向排列 */
+				float: left;
+				/* 设置左右的外边距 */
+				margin: 0 11px;
+			}
+			
+			/* 设置链接的样式 */
+			.nav a{
+				/* 将a转换为块元素 */
+				display: block;
+				/* 设置a的高度 */
+				height: 60px;
+				/* 去除下划线 */
+				text-decoration: none;
+				/* 设置字体大小和字体颜色 */
+				font-size: 15px;
+				color: #333;
+			}
+			
+			/* .nav a:nth-child(1),
+			.nav a:nth-child(2){
+				color: red;
+			} */
+			
+			/* 设置前两个超链接为红色 */
+			.nav li:nth-child(1) a,
+			.nav li:nth-child(2) a{
+				/* 设置颜色 */
+				color: red;
+				/* 设置加粗 */
+				font-weight: bold;
+			}
+			
+			/* 设置hover效果 */
+			.nav li a:hover{
+				color: #a10000;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul class="nav">
+			<li><a href="#">秒杀</a></li>
+			<li><a href="#">优惠券</a></li>
+			<li><a href="#">PLUS会员</a></li>
+			<li><a href="#">品牌闪购</a></li>
+			<li><a href="#">拍卖</a></li>
+			<li><a href="#">京东家电</a></li>
+			<li><a href="#">京东超市</a></li>
+			<li><a href="#">京东生鲜</a></li>
+			<li><a href="#">京东国际</a></li>
+			<li><a href="#">京东金融</a></li>
+		</ul>
+		
+		
+	</body>
+</html>

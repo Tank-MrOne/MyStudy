@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        var oIpt = document.querySelector("input");
+
+        //blur事件  无论表单是否发生改变 只要失去焦点就会触发
+        oIpt.onblur = function () {
+            console.log("失去焦点");
+        }
+
+        //change事件也是在失去焦点的时候触发 但是需要判断表单内容是否发生改变，如果没有发生改变 则不会触发
+        oIpt.onchange = function () {
+            console.log("失去焦点2");
+        }
+
+        //input事件 只要表单的值发生了改变   就会立即执行input事件
+        oIpt.oninput = function () {
+            console.log("input事件")
+        }
+    </script>
+</body>
+
+</html>

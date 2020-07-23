@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" id="c1"/>
+		<label for="c1">抽烟</label>
+		
+		<label>
+			<input type="checkbox" />喝酒
+		</label>
+		
+		<label>
+			<input type="checkbox" />烫头
+		</label>
+		
+		<label>
+			<input type="checkbox" />打豆豆
+		</label>
+		
+		<br />
+		
+		<button>全选</button>
+		<button>全不选</button>
+		<button>反选</button>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btns = document.querySelectorAll('button');
+				var inputNodes = document.querySelectorAll('input');
+				//全选
+				btns[0].onclick = function(){
+					for(var i = 0; i < inputNodes.length; i++){
+						inputNodes[i].checked = true;
+					}
+				}
+				//全不选
+				btns[1].onclick = function(){
+					for(var i = 0; i < inputNodes.length; i++){
+						inputNodes[i].checked = false;
+					}
+				}
+				
+				//反选
+				btns[2].onclick = function(){
+					for(var i = 0; i < inputNodes.length; i++){
+						inputNodes[i].checked = !inputNodes[i].checked;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

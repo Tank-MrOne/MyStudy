@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p>{{timeNow}}</p>
+        <p>{{timeNow | timeFormat}}</p>
+        <p>{{timeNow | timeFormat('YYYY-MM-DD')}}</p>
+        <p>{{timeNow | timeFormat('HH:mm:ss')}}</p>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.26.0/moment.js"></script>
+    <script>
+        //展示数据的时候，先把数据处理一下子，再去展示处理后的数据
+        //处理后的数据和原数据没关系
+        //全局过滤器
+        // Vue.filter('timeFormat',function(value,formarStr='YYYY-MM-DD hh:mm:ss'){
+        //     return moment(value).format(formarStr)
+        // })
+        //局部过滤器
+
+        new Vue({
+            el:'#root',
+            data:{
+                timeNow:Date.now()//1970年到现在的毫秒数
+            },
+            filters:{
+                timeFormat(value,formarStr='YYYY-MM-DD hh:mm:ss'){
+                    return moment(value).format(formarStr)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

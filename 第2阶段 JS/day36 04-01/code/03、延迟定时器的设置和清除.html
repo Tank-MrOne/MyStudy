@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button>点击清除定时器</button>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//延迟定时器就是用来做延迟效果的
+				var a = 10;
+				var b = 20;
+				var c = a + b;
+	//			console.log(c);
+				
+				//5秒之后再去打印这个结果
+				
+				//设置延迟定时器
+				var timer = setTimeout(function(){
+					console.log(c);
+				},5000);//延迟的时间以毫秒为单位,定时器返回的都是定时器设置的编号，这个编号对清除定时器有用
+				
+				
+//				console.log(timer);
+				//清除延迟定时器
+				var btn = document.querySelector('button');
+				btn.onclick = function(){
+					clearTimeout(timer);//参数代表的是设置定时器返回的定时器编号
+				}
+				
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

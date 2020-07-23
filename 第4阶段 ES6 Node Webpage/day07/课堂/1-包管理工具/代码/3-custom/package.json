@@ -1,0 +1,14 @@
+{
+  "name": "salary-random-function",
+  "version": "1.0.0",
+  "description": "用来生成随机数",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random"
+  ],
+  "author": "xiaohigh",
+  "license": "ISC"
+}

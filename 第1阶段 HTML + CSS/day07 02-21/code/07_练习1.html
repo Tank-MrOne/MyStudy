@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>练习一</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 编写样式 */
+			.goods-list{
+/* background-color: #9ACD32; */
+				/* 设置ul外层的容器的宽度和高度 */
+				width: 190px;
+				height: 470px;
+				
+				/* 设置块居中，方便查看 */
+margin: 50px auto;
+				
+				/* 去除项目符号 */
+				list-style: none;
+			}
+			
+			/* 设置li的大小 */
+			.goods-list li{
+				width: 190px;
+				height: 150px;
+				/* 设置一个下外边距 */
+				margin-bottom: 10px;
+			}
+			
+			/* 设置图片的宽度 */
+			.goods-list li img{
+				width: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			定义结构，创建一个ul来表示整体
+		 -->
+		<ul class="goods-list">
+			<li>
+				<a href="javascript:;">
+					<img src="img/1.png" alt="商品一">
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="img/2.jpg" alt="商品二">
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="img/3.jpg" alt="商品三">
+				</a>
+			</li>
+		</ul>
+		 
+	</body>
+</html>

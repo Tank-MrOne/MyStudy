@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			var a = 0;
+			function fn1(){
+//				var a = 1;
+				
+				function fn2(){
+//					var a = 2;
+					
+					function fn3(){
+//						var a = 3;
+						console.log(a);//3
+					}
+					fn3();
+				}
+				fn2();
+			}
+			
+			fn1();
+			
+			
+//			fn2();  fn2是局部变量，全局根本没法使用
+			
+//			console.log(b);
+			
+		</script>
+	</body>
+</html>

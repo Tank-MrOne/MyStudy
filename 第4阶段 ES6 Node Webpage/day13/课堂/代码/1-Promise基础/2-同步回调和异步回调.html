@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同步回调和异步回调</title>
+</head>
+<body>
+    <script>
+        // 同步回调
+        // let arr = [1,2,3,4,5,6,7];
+
+        // //还有  map  every some filter 
+        // arr.forEach(item => {
+        //     console.log(item);
+        // });
+
+        // console.log('over');
+
+        //异步回调  fs  ajax    
+        setTimeout(() => {
+            console.log('今天天气不错!! 还挺风和日丽的!!')
+        }, 0);
+
+        console.log('over');
+
+    </script>
+</body>
+</html>

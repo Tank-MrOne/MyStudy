@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				margin: 100px auto;
+				
+				transition: all 2s;
+			}
+			
+			.box1:hover{
+				/* 
+					scaleX() x轴方向缩放
+					scaleY() y轴方向缩放
+					scale()  x轴和y轴双方向缩放
+						- 需要一个数字作为参数，数字用来指定缩放的倍数
+						
+					scaleZ() 沿着z轴方向缩放
+				 */
+				transform: scaleZ(2);
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		
+	</body>
+</html>

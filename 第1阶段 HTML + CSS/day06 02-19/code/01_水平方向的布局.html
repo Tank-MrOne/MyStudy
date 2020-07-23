@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 800px;
+				height: 500px;
+				border: 10px #87CEEB solid;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+				margin-left: auto;
+				margin-right: auto;
+				
+				
+				/* 
+				   box2 的包含块是 box1
+
+一个元素的水平方向布局必须遵循下列等式：
+margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 包含块的宽度（box1的width）					
+			如果没有给元素设置border 和 padding，则等式可以变成如下形式
+			margin-left + width + margin-right = width(包含块)
+			margin-left + width + margin-right = 800
+			0 + 200 + 0 = 800？
+				- 如果等式不满足，默认会调整右外边距，以使等式满足
+				- 上例中，左右外边距皆为0，宽度为200，包含块宽度为800
+					等式不满足，所以浏览器会自动将右外边距调整为600以使等式满足
+					
+			700 + 200 + 0 = 800？
+				- 上例中，700 + 200 大于800，则会自动将右外边距调整-100以使等式满足
+				
+			margin和width都可以设置为auto，如果将其设置为auto，则浏览器会自动计算其具体指
+				
+			0 + auto + 0 = 800?
+				- 如果只有一个值设置为auto，则浏览器会自动调整该值，以使等式满足
+				- 上例中，宽度设置为auto，而外边距为0，所以宽度会自动调整为800，将父元素撑满
+					auto实际上也是宽度的默认值
+				   
+				 
+				
+			200 + auto + 0 = 800
+				- 上例中，左外边距为200，宽度为auto，右外边距为0
+					则宽度会自动设置为600 以使等式满足
+					
+			auto + auto + 0 = 800
+			auto + auto + 200 = 800
+			auto + auto + auto = 800
+				- 如果有外边距和宽度同时设置为auto，则设置为auto那个外边距
+					自动变成0
+					
+			auto + 200 + 0 = 800 
+					
+			auto + 200 + auto = 800
+				- 如果两个外边距都设置为了auto，则浏览器会自动将两个外边距设置为
+					相等的值，以使等式满足
+				- 所以当一个元素的宽度固定，
+						而左右两个外边距设置为auto时，浏览器会自动将外边距设置为相等的值
+						从而使元素在包含块中水平居中
+				
+					
+			*/
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+		
+	</body>
+</html>

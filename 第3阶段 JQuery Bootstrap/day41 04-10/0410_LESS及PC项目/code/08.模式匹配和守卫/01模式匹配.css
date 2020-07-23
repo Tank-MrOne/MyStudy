@@ -1,0 +1,11 @@
+/* .mine(){
+    A:其中A必选
+    B：必选
+    C ：可选
+    D：可选  C和D只能2选一
+} */
+.box {
+  width: 300px;
+  height: 100px;
+  background-color: red;
+}

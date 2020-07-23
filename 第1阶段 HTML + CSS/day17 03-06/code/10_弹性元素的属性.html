@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性盒</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			ul{
+				width: 100%;
+				
+				/* 设置弹性容器 */
+				display: flex;
+			   
+		
+		
+			}
+			
+			ul li{
+				width: 200px;
+				height: 100px;
+				font-size: 40px;
+				color: #fff;
+				
+				/* flex-grow: 元素的生长系数，按照值的比例进行分配的 */
+				/* flex-grow: 1; */
+				
+				/* 
+					将所有弹性项的缩减系数设置为0 
+					元素缩减的大小需要根据元素的大小和缩减系数一起计算
+				*/
+				/* flex-shrink: 1; */
+				
+				
+				/* 
+					flex-basis 指定元素在主轴方向的基础大小
+						- 该值指定的大小需要根据主轴的方向判断
+						- 如果主轴是横向的，则该值指定的是元素的宽度
+						- 如果主轴是纵向的，则该值指定的是元素高度
+						
+						- 默认值是auto，表示值以元素的宽度或高度为准
+				 */
+				/* flex-basis: auto; */
+				
+				/* 
+				flex
+					- 是flex-grow flex-shrink flex-basis 三个值的简写属性
+						可以使用flex同时指定三个值
+					- 参数的顺序：
+						生长系数 缩减系数 基础大小
+						可选值：
+							initial 默认值 --> 0 1 auto
+							auto --> 1 1 auto
+							none --> 0 0 auto 没有弹性
+				 */
+				/* flex: 1 1 auto; */
+				flex: auto;
+			}
+			
+			li:nth-child(1){
+				background-color: orange;
+				/* flex-grow: 1; */
+				
+				/* 
+					order 弹性元素的属性，该属性可以决定元素的顺序
+				 */
+				
+				order: 4;
+			}
+			li:nth-child(2){
+				background-color: #bfa;
+				/* flex-grow: 2; */
+				
+				order:2
+			}
+			li:nth-child(3){
+				background-color: pink;
+				/* flex-grow: 3; */
+				
+				order: 3;
+			}
+			li:nth-child(4){
+				background-color: greenyellow;
+				
+				order: 1;
+			}
+			li:nth-child(5){
+				background-color: skyblue;
+			}
+			li:nth-child(6){
+				background-color: silver;
+			}
+			li:nth-child(7){
+				background-color: fuchsia;
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		 
+		 <ul>
+			 <li>1</li>
+			 <li>2</li>
+			 <li>3</li>
+			 <li>4</li>
+			 
+		 </ul>
+		
+	</body>
+</html>

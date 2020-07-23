@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 
+				将class值为box1的div中的文字设置为橙色
+				
+				交集选择器
+					作用：选中同时符合多个选择器的元素
+					语法：选择器1选择器2选择器3{}
+					例子：div.box1{}  div.outer{}
+					注意:
+						交集选择器中含有元素选择器时，必须以元素选择器开头
+				
+				
+				
+			 */
+			/* div.box1{
+				color: orange;
+			} */
+			
+			/* 
+				将div p 和 h1 的字体颜色设置为蓝色
+				选择器分组（并集选择器）
+					作用：同时选中多个选择器所对应的元素
+					语法：选择器1,选择器2,选择器3{}
+					例子：div, p, h1{} .box1, #p1, h2{}
+				
+			 */
+			div, p, h1{
+				color: skyblue;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">
+			第一个div
+		</div>
+		
+		<p class="box1">
+			第二个p元素
+		</p>
+		
+		<h1>
+			这是一个标题
+		</h1>
+		
+		<h2>
+			这是一个二级标题
+		</h2>
+		
+		<div class="box3"></div>
+		<div class="box3"></div>
+		<p id="p1"></p>
+		<!-- 
+			div.box$*n + tab
+		 -->
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		
+		
+	</body>
+</html>

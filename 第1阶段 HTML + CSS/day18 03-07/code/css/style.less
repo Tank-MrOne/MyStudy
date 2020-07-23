@@ -1,0 +1,128 @@
+/*
+	在LESS里可以直接使用CSS注释
+		CSS注释会被编译到最终的CSS文件中
+	
+*/
+
+// 也可以使用LESS中的单行注释
+// LESS的单行注释，不会被编译到最终的CSS文件中
+// 在LESS中 使用 @ 来定义变量
+
+//  变量的使用：
+//  创建变量：
+// @变量名:变量值;
+//  使用变量
+// @变量名
+//  特殊位置使用变量（类名、属性内部）
+// @{变量名}
+//  直接引用属性值
+// $属性值 （$width $background-color...）
+// 变量的使用会依据就近原则
+
+@w:200px;
+@h:300px;
+@color:#bfa;
+@name:box;
+
+
+.box1{
+	width: 200px;
+	height: $width;
+}
+
+.@{name}1{
+	width: 100px;
+	background-image: url('@{name}/img/1.png');
+}
+
+//  在类名中引用变量时，必须使用 @{变量名}
+// .@{name}1{
+// 	width: 100px;
+// }
+
+// .box1 {
+//   width: 100px;
+// }
+
+
+
+// 源码：
+// .box1{
+// 	@w:100px;
+// 	width: @w;
+	
+// 	.box2{
+// 		width: @w;
+// 	}
+// }
+
+//编译后：
+// .box1 {
+//   width: 100px;
+// }
+// .box1 .box2 {
+//   width: 100px;
+// }
+
+
+
+
+// less中每个{}都是一个独立的区域
+// 源码
+// .box1{
+// 	@w:100px;
+// 	width: @w;
+// }
+
+// .box2{
+// 	width: @w;
+// }
+
+
+// 编译后
+// .box1 {
+//   width: 100px;
+// }
+// .box2 {
+//   width: 200px;
+// }
+
+// 源码
+// .box1{
+// 	@w:100px;
+// 	width: @w;
+// 	@w:300px;
+// }
+// 编译后:
+// .box1 {
+//   width: 300px;
+// }
+
+
+//  在less使用变量遵循就近原则，有重名变量时，会优先使用离它最近的
+//  源码：
+// .box1{
+// 	@w:400px;
+// 	width: @w;
+// }
+
+// 编译后：
+// .box1 {
+//   width: 400px;
+// }
+
+
+
+// 源码：
+// .box1{
+// 	width: @w;
+// 	height: @h;
+// 	background-color: @color;
+// }
+
+// 编译后：
+// .box1 {
+//   width: 200px;
+//   height: 300px;
+//   background-color: #bfa;
+// }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个jQuery</title>
+</head>
+
+<body>
+    <div id="con">con</div>
+    <!-- <script src="jquery-2.1.4/jquery.js"></script> -->
+    <!-- 可以通过CDN引入 叫内容分发网络，依靠部署在各地服务器，通过中心平台的负载均衡 奋荣分发等模块，
+    用户可以就近获取需要的内容，提高速度和命中率 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script>
+        //点击con 弹出 hello world
+        $(function () {
+            $("#con").click(function () {
+                alert(1);
+            })
+        })
+    </script>
+</body>
+
+</html>

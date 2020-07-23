@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 300px;
+				height: 300px;
+				background-color: #87CEEB;
+				/* padding-top: 100px; */
+				
+				/* margin-bottom: 100px; */
+				
+				/* border-top: 1px #87CEEB solid; */
+				/* padding-top: 1px; */
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+				/* margin-top: 100px; */
+				
+				/* 
+					垂直外边距的折叠
+						- 当两个元素的垂直方向的相邻外边距会发生外边距的折叠现象
+						- 折叠现象对于不同关系会有不同的影响
+							- 父子元素
+								- 父子元素间的相邻垂直外边距
+									子元素的上外边距会传递给父元素
+									子元素的下外边距不会撑开父元素
+									
+							- 兄弟元素
+								- 兄弟元素间的相邻垂直外边距
+									会取两者的最大值
+				 */
+			}
+			
+			.box3{
+				width: 300px;
+				height: 300px;
+				background-color: orange;
+				margin-top: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+		
+		<!-- <div class="box3"></div> -->
+	</body>
+</html>

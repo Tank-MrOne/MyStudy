@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浅拷贝</title>
+</head>
+
+<body>
+    <script>
+        //浅拷贝
+        // let school = {
+        //     name: '尚硅谷',
+        //     age:10,
+        //     city: ['北京','上海','深圳']
+        // };
+
+        //1. 直接复制
+        // let result = school;
+        // result.name = 'atguigu';
+        // console.log(school);
+        // console.log(result);
+
+        //2. 数组  
+        let arr = ['唐僧', '猪八戒', '沙僧', { name: '孙悟空' }];
+
+        // 1> concat
+        // let newArr = [].concat(arr);
+        //修改
+        // newArr[3].name = '弼马翁';
+        // console.log(arr);
+        // console.log(newArr);
+
+        // 2> slice
+        // let newArr = arr.slice(0);
+        // newArr[3].name = '弼马翁';
+        // console.log(arr);
+        // console.log(newArr);
+
+        // 3> ... 扩展运算符
+        let newArr = [...arr];
+        newArr[3].name = '弼马翁';
+
+        console.log(arr);
+        console.log(newArr);
+
+
+    </script>
+</body>
+
+</html>

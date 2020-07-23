@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <p v-show="isShow" ref="pp">{{isShow?"我爱你赵丽颖":"我爱你杨幂"}}</p>
+        <button @click="destroyP">点击以后销毁</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#root',
+            data: {
+                isShow: true
+            },
+
+            beforeCreate() {
+                //初始化vm数据之前
+                console.log(this.isShow)//undefined 因为在初始化之前，代表数据还没准备好，打印不到
+                console.log('beforeCreate执行了')
+            },
+
+            created() {
+                //初始化vm数据之后
+                console.log(this.isShow)//代表数据已经准备好，可以打印出来
+                console.log('created执行了')
+            },
+
+
+            beforeMount() {
+                //此时，页面元素还没有挂载完成（p元素还没有放到页面上）
+                console.log(this.$refs.pp)// 拿到上面标示的pp 本质拿到的就是p元素
+                console.log('beforeMount执行了')
+            },
+
+            mounted() {
+                //此时，页面元素挂载完成（p元素已经放到页面上了）
+                console.log(this.$refs.pp)// 拿到上面标示的pp 本质拿到的就是p元素
+                console.log('mounted执行了')
+                //挂载完成（页面刚渲染完）时候，会自动调用这个回调
+                this.timer = setInterval(() => {
+                    this.isShow = !this.isShow
+                }, 1000);
+            },
+
+            beforeUpdate() {
+                // vm当中的数据已经更新了，但是页面的数据还没有更新完成，这个回调说的是页面更新前，和vm没关系
+                console.log(this.isShow, this.$refs.pp.textContent)
+                console.log('beforeUpdate执行了')
+            },
+            updated() {
+                //代表页面上的数据也更新完成了，和vm里面是对应的
+                console.log(this.isShow, this.$refs.pp.textContent)
+                console.log('updated执行了')
+            },
+
+            // vm实例生命周期回调，销毁
+            beforeDestroy() {
+                //切记 如果想要beforeDestroy和destroyed执行，必须调用vm实例存在的一个方法this.$destroy()
+                clearInterval(this.timer)
+                console.log('beforeDestroy执行了')
+                //beforeDestroy也是一个生命周期回调，一般我们在这个回调当中做收尾工作，清除定时器、解绑事件
+            },
+
+            destroyed() {
+                console.log('destroyed执行了')
+            },
+
+            methods: {
+                destroyP() {
+                    this.$destroy()
+                    //是vm实例存在的一个方法，只有调用这个方法，beforeDestroy这个回调就会自动指定
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>

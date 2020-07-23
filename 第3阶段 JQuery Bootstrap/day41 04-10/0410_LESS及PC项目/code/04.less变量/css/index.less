@@ -1,0 +1,63 @@
+//声明一个代表全局颜色的变量
+@mainColor:red;
+
+//声明一个代表数值的变量
+@zero:10px;
+
+//声明一个变量 代表选择器的名字
+@a:outer;
+
+//声明一个变量 代表属性名
+@p:position;
+
+//声明一个变量，保存图片
+@url1:"http://www.atguigu.com/images/pic_new/logo.png";
+
+//声明一个变量，保存图片
+@url2:url("http://www.atguigu.com/images/pic_new/logo.png");
+
+//变量可以保存变量，但是需要加上完整的@符号
+@z:@zero;
+*{
+    margin:@z;
+    padding: @z;
+}
+//2.变量作为选择器来使用 需要加上花括号
+.@{a}{
+    //1.变量作为普通的属性值使用  记得要加@富豪
+    border: 1px solid @mainColor;
+    width: 400px;
+    height: 400px;
+    //3.变量作为属性名使用 需要加上花括号
+    @{p}: relative;
+    .box{
+        width: 100px;
+        height: 100px;
+        @{p}: absolute;
+        left: @zero;
+        top: @zero;
+        right: @zero;
+        bottom: @zero;
+        margin: auto;
+        background-color: @mainColor;
+    }
+    .logo{
+        width: 200px;
+        height: 100px;
+        //4.变量作为url地址使用
+        // background: url(@url1) 0 0 no-repeat;
+        background: @url2 0 0 no-repeat;
+    }
+}
+
+//变量的延迟加载
+@var: 0;
+.class {
+    @var: 1;
+    .brass {
+        @var: 2;
+        left: @var;
+        @var: 3;
+    }
+    right: @var;
+}

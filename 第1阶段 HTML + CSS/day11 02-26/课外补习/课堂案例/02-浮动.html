@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+				清除浮动造成的影响解决方案:
+				1.给父元素设置高度
+				2.overflow:hidden
+				3.额外标签 设置clear:both
+				4.  .clearfix类名
+			 */
+			.box{
+				width: 800px;
+				/* height: 500px; */
+				border: 1px solid #000;
+				margin: 0 auto;
+				/* overflow: hidden; */
+			}
+			.one{
+				width: 100px;
+				height: 100px;
+				background: red;
+				float:left;
+			}
+			.two{
+				width: 200px;
+				height: 200px;
+				background: blue;
+				float:left;
+			}
+			.footer{
+				height: 300px;
+				background: yellow;
+			}
+			.three{
+				/* height: 50px; */
+				background: green;
+				clear: both;
+			}
+			.clearfix::after{
+				content:"";
+				display: block;
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box clearfix">
+			<div class="one"></div>
+			<div class="two"></div>
+			
+			<!-- <div class="three"></div> -->
+		</div>
+		<div class="footer"></div>
+	</body>
+</html>

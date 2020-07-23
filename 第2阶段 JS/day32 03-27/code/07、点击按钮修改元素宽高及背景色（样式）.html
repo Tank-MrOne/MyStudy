@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			div{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<button>按钮</button>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.querySelector('button');
+				var box = document.querySelector('div');
+				
+				btn.onclick = function(){
+					//js操作的样式都是行内样式
+					//一般我们去修改样式用的就是下面这样的写法
+//					box.style.width = 500 + 'px';
+//					box.style.height = '500px';
+//					box.style.backgroundColor = 'skyblue';
+//					
+					
+					//一般我们读取元素的样式，不能通过这样的方法去读，因为起始元素的样式不是写在行内的，获取不到
+					console.log(box.style.width);//一开始读不到，因为这样是从行内去读的，而起始行内并没写样式，读取一个空串
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

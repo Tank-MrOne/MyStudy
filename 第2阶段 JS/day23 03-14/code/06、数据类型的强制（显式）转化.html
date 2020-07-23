@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//一、把其它的数据转化为数字
+			//1)字符串转数字
+//			var str = 'ajsdg赵丽颖';//NaN是一个数字类型，但是意思是not  a number,不是一个数字
+//			str = '132quyeqoiu123';//NaN
+//			str = '   -1.234';//数字1234
+//			str = '     ';//0
+//			str = '';//0
+//			str = 'null';    //   
+//			
+			//先把字符串转化为数字 ，结果给了Number(str)整体，它是一个函数调用表达式；
+			//再把这个表达式的结果赋值给result
+//			var result = Number(str);
+//			console.log(result);
+//			console.log(Number(str));//先把字符串转化为数字 ，结果给了Number(str)整体，直接打印，和上面效果打印一样；
+			
+			//2)布尔值转化数字
+			//true就是1
+			//false就是0
+//			var bool = true;//1
+//			bool = false;
+//			var result = Number(bool);
+//			console.log(result);
+			
+			//3）undefined转数字
+//			var und;//NaN
+//			var result = Number(und);
+//			console.log(result);
+
+			//4）null转数字
+//			var nul = null;//NaN
+//			var result = Number(nul);
+//			console.log(result);
+			
+			
+			//二、把其它的数据转化为字符串
+			//1）数字转字符串
+//			var num = 100;
+//			var result = String(num);
+//			console.log(result);
+			//2) 布尔值转字符串
+//			var bool = false;
+//			var result = String(bool);
+//			console.log(result);
+			//3) undefined转字符串
+//			var und;
+//			var result = String(und);
+//			console.log(result);
+			//4) null转化字符串
+//			var nul = null;
+//			var result = String(nul);
+//			console.log(result);
+
+
+
+			//三、把其它数据类型转化为布尔值
+			//1)数字转布尔
+			//除了0和NaN是false,其余都是true
+//			var num = NaN;
+//			var result = Boolean(num);
+//			console.log(result);
+			
+			//2)字符串转布尔值
+			//非空即为真
+//			var str = 'asdfghald打包会计师';
+//			str = '1234124';
+//			str = '    ';
+//			str = '';
+//			var result = Boolean(str);
+//			console.log(result);
+			
+			//3)undefined转布尔  就是false
+//			var und;
+//			var result = Boolean(und);
+//			console.log(result);
+			
+			//3)null转布尔  就是false
+			var nul = null;
+			var result = Boolean(nul);
+			console.log(result);
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

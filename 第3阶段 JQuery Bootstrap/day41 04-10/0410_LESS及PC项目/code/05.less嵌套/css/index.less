@@ -1,0 +1,58 @@
+#outer{
+    border: 1px solid #000;
+    .con{
+        background-color: #ccc;
+        padding: 30px;
+        .nav{
+            background-color: pink;
+            border: 1px solid #000;
+            list-style: none;
+            li{
+                height: 40px;
+                line-height: 40px;
+                font-size: 28px;
+                color: royalblue;
+                // 选择器前面的 & 符号就表示对父选择器的引用。
+                &:nth-child(3){
+                    color:yellow;
+                }
+                &:hover{
+                    color: green;
+                }
+            }
+            .active{
+                color:red;
+            }
+        }
+    }
+    .box{
+        margin: 40px;
+        background-color: yellowgreen;
+        h2{
+            font-size: 30px;
+            text-align: center;
+        }
+        p{
+            color: #ccc;
+            font-size: 12px;
+            border: 1px solid red;
+        }
+    }
+    .clearFix{
+        // css Hack
+        *zoom:1;//在IE低版本开启haslayout
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            margin: 10px;
+        }
+        &:after{
+            content:"\200B";
+            height: 0;
+            display: block;
+            clear:both;
+        }
+    }
+}

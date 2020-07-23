@@ -1,0 +1,310 @@
+
+.clearFix(){
+    *zoom:1;
+    &:after{
+        //空字符
+        content:"\200B";
+        height: 0;
+        display: block;
+        clear: both;
+    }
+}
+.outer{ 
+    .toolbar{
+        position: fixed;
+        z-index:99;
+        width: 300px;
+        height: 100%;
+        background-color: #7a6e6e;
+        transition:all .3s linear;
+        &.toolbar-out{
+            top:0;
+            right:0;
+        }
+        &.toolbar-wrap{
+            top:0;
+            right:-294px;
+        }
+        .content{
+            width: 294px;
+            height: 100%;
+            background-color: bisque;
+            position: relative;
+            left:6px;
+            z-index:4;
+        }
+        .but{
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            // background-color: #7a6e6e;
+            border-radius: 3px 0 0 3px;
+            position: absolute;
+            top:0;
+            left:-29px;
+            cursor: pointer;
+            text-align: center;
+            &.list{
+                background:#7a6e6e url(../images/list.png) center center no-repeat;
+                background-size: cover;
+            }
+            &.pull-wrap{
+                background:#7a6e6e url(../images/cross.png) center center no-repeat;
+                background-size: cover;
+            }
+        }
+        .toolList{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left:-29px;
+            width:35px;
+            z-index:3;
+            .pull{
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                border-radius: 3px 0 0 3px;
+                
+                cursor: pointer;
+                text-align: center;
+                position: relative;
+                .tab-icon{
+                    display: inline-block;
+                    width: 35px;
+                    height: 35px;
+                    position: relative;
+                    z-index: 2;  
+                    background-color:#7a6e6e;
+                }
+                em{
+                    width: 62px;
+                    height: 35px;
+                    line-height: 35px;
+                    color:#fff;
+                    text-align: center;
+                    position:absolute;
+                    left:35px;
+                    top:0;
+                    background-color: #776e6e;
+                    z-index:1;
+                    transition:all .3s linear;
+
+                }
+                .vip{
+                    background:#7a6e6e url(../images/toolbars.png) -87px -174px no-repeat; 
+                }
+                .cart{
+                    background: #7a6e6e url(../images/toolbars.png) -50px 0 no-repeat; 
+                }
+                .follow{
+                    background:#7a6e6e url(../images/toolbars.png) -50px -100px no-repeat; 
+                }
+                .history{
+                    background:#7a6e6e url(../images/toolbars.png) -190px -150px no-repeat; 
+                }
+                .message{
+                    background:#7a6e6e url(../images/toolbars.png) -50px -150px no-repeat; 
+                }
+                .qus{
+                    background:#7a6e6e url(../images/toolbars.png) -50px -250px no-repeat; 
+                }
+
+            }
+        }
+        .back{
+            position: absolute;
+            bottom:0;
+            left:-29px;
+        }
+        &>.pull{
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 3px 0 0 3px;
+            cursor: pointer;
+            text-align: center;
+            .tab-icon{
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                position: relative;
+                z-index: 2;  
+                background-color:#7a6e6e;
+            }
+            em{
+                width: 62px;
+                height: 35px;
+                line-height: 35px;
+                color:#fff;
+                text-align: center;
+                position:absolute;
+                left:35px;
+                top:0;
+                background-color: #776e6e;
+                z-index:1;   
+
+            }
+            .top{
+                background:#7a6e6e url(../images/toolbars.png) -50px -250px no-repeat; 
+            
+            }
+
+        }
+    }
+    .header{
+        &>.top{
+            width: 100%;
+            background-color: #eaeaea;
+            height: 30px;
+            line-height: 30px;
+            .container{
+                .clearFix();
+                width: 1200px;
+                margin: 0 auto;
+                .loginList{
+                    float: left;
+                    p{
+                       float: left;
+                       margin-right: 10px; 
+                       .register{
+                           border-left: 1px solid #b3aeae;
+                           padding: 0 5px;
+                           margin-left: 5px;
+                       }
+                    }
+                }
+                .typeList{
+                    float: right;
+                    font-size: 0;
+                    a{
+                        font-size: 12px;
+                        padding: 0 10px;
+                        & ~ a{
+                            border-left: 1px solid #b3aeae;
+                        }
+                    }
+                }
+            }
+        }
+        &>.bottom{
+            width: 1200px;
+            margin: 0 auto;
+            .clearFix();
+            .logoArea{
+                float: left;
+                img{
+                    width: 176px;
+                    height: 56px;
+                    margin: 25px 45px;
+                }
+            }
+            .searchArea{
+                float: right;
+                margin-top: 35px;
+                .searchForm{
+                    .clearFix();
+                    input{
+                        box-sizing: border-box;
+                        width: 490px;
+                        height: 32px;
+                        padding:0px 4px;
+                        border: 2px solid #ea4a36;
+                        float: left;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    button{
+                        width: 68px;
+                        height: 32px;
+                        background-color: #ea4a36;
+                        color: #fff;
+                        float: left;
+                        border: none;
+                        cursor: pointer;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .typeNav{
+        border-bottom:2px solid #e1251b;
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            .all{
+                width: 210px;
+                height: 50px;
+                background-color: #e1251b;
+                font-size: 14px;
+                color: #fff;
+                line-height: 50px;
+                text-align: center;
+                font-weight: bold;
+            }
+            .nav{
+                a{
+                    margin:  0 22px;
+                    line-height: 45px;
+                    font-size: 16px;
+                    color: #333;
+                }
+            }
+        }
+    }
+    .footer{
+        background-color: #eaeaea;
+        .footer-container{
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            .footerList{
+                padding: 20px;
+                border-bottom: 1px solid #e4e1e1;
+                border-top: 1px solid #e4e1e1;
+                overflow: hidden;
+                padding-left: 40px;
+                .footerItem{
+                    width: 16.6666667%;
+                    float: left;
+                    h4{
+                        font-size: 14px;
+                    }
+                    .footerItemCon{
+                        li{
+                            line-height: 18px;
+                        }
+                    }
+                    &:last-child img{
+                        width: 121px;
+                    }
+                }
+            }
+            .copyright{
+                padding: 20px;
+                .helpLink{
+                    text-align: center;
+                    li{
+                        display: inline;
+                        .space {
+                            border-left: 1px solid #666;
+                            width: 1px;
+                            height: 13px;
+                            background: #666;
+                            margin: 8px 10px;
+                        }
+                    }
+                }
+                p{
+                    margin: 10px 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

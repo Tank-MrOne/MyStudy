@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p v-on:click="handler"></p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el:'#root',
+            data:{
+                msg:'赵丽颖',
+            },
+            methods: {
+                handler(){
+
+                }
+            },
+        })
+
+        //解析事件指令，通过解析指令判断指令是不是事件指令
+        // 同时解析事件指令当中的事件类型  click
+        // 根据事件指令的属性值，去data当中找到和这个属性值对应的methods方法  handler
+        //最终给当前解析的这个元素  添加事件监听
+        // p.addEventListener('click',handler,false)
+
+        //注意：无论是事件指令还是非事件指令，解析完成后，这些另都会被删除掉
+        //因为该做的事已经做好了，没必要在标签当中留下那些指令属性
+
+        //事件指令牵扯到的表达式是不会创建watcher,因为它有回调函数，当触发事件
+        //直接调用回调函数
+
+
+        
+
+       
+    </script>
+</body>
+</html>

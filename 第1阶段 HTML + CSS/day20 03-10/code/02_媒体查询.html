@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			/* 
+				② 媒体特性 
+					- 通过媒体特性根据屏幕的状态来设置样式
+					- width可以用来设置视口在指定宽度时的样式
+					- min-width用来指定视口满足一个最小宽度时的样式
+						视口宽度 大于等于 某值时
+					- max-width 用来指定视口满足一个最大宽度时的样式
+						视口宽度 小于等于 某值时
+			*/
+			/* @media (max-width:500px) {
+				body{
+					background-color: #bfa;
+				}
+			} */
+			
+			/* 
+				视口宽度在500-700之间时设置背景颜色为橙色
+				在媒体特性间，可以使用一些符号连接：
+					, 表示或的关系
+					and 表示且的关系
+					only 主要用来处理老的浏览器的兼容性
+					not 表示否定(使用较少)
+					
+					
+				断点
+					- 当视口宽度变化为某个值时，网页结构将会发生变化
+						发生变化的值，我们就称其为断点
+					- 常用的断点：
+						超小屏幕 768px以下   手机  小的pad
+						小屏幕   768px以上   
+						中型屏幕  992px
+						大屏幕    1200px
+					
+			 */
+			/* @media only screen and (min-width:500px) and (max-width:700px){ */
+			@media not print and (min-width:500px){
+				body{
+					background-color: orange;
+				}
+			}
+			
+			/* 设置竖屏时的样式 */
+			/* @media (orientation:portrait) {
+				body{
+					background-color: greenyellow;
+				}
+			} */
+			
+			/* 设置横屏的样式 */
+			/* @media (orientation:landscape) {
+				body{
+					background-color: orange;
+				}
+			} */
+			
+			
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

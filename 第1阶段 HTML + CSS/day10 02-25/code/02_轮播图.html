@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播图</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul{
+				/* 去除项目符号 */
+				list-style: none;
+			}
+			
+			/* 设置容器的大小 */
+			.banner-wrapper{
+				/* 容器的大小和图片大小一致 */
+				width: 830px;
+				height: 482px;
+				/* 设置居中 */
+margin: 50px auto;
+				/* 为使绝对定位元素参考该元素进行定位，所以为该元素开启了相对定位 */
+				position: relative;
+			}
+			
+			/* 使图片叠在一起 */
+			.banner li{
+				/* 设置绝对定位使图片的容器脱离文档流 */
+				position: absolute;
+			}
+			
+			/* 设置导航点的定位 */
+			.pointer{
+				position: absolute;
+				/* 
+					使用绝对定位让一个元素居中时，
+						元素的宽度和高度必须指定
+				 */
+				width: 288px;
+				left: 0;
+				right: 0;
+				/* top: 324px; */
+				bottom:140px;
+				margin: 0 auto;
+			}
+			
+			/* 设置8个导航点的样式 */
+			.pointer a{
+				/* 设置元素浮动，使超链接可以设置宽度和高度 */
+				float: left;
+				/* 设置宽度和高度 */
+				width: 20px;
+				height: 20px;
+				/* 设置圆形效果 */
+				border-radius: 50%;
+				/* 设置一个margin来保持元素的间距 */
+				margin: 0 8px;
+				background-color: rgba(255,255,255,.8);
+			}
+			
+			/* 设置鼠标移入后的效果 */
+			.pointer a:hover,
+			.pointer .active{
+				background-color: rgba(255, 170, 0, .8);
+			}
+			
+			/* 
+				30 64
+				设置翻页按钮的大小
+			 */
+			.prev-next div{
+				/* 开启绝对定位 */
+				position: absolute;
+				font-size: 20px;
+				color: #fff;
+				font-weight: bold;
+				
+				/* 设置鼠标指针的形状 */
+				cursor: pointer;
+				
+				width: 30px;
+				/* 设置文字水平居中 */
+				text-align: center;
+				/* 
+					482 - 64 = 418 / 2 = 209
+				 */
+				height: 64px;
+				/* 设置文字垂直居中 */
+				line-height: 64px;
+				background-color: rgba(0,0,0,.3);
+				
+				/* 设置垂直居中 */
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+			}
+			
+			.prev-next div:hover{
+				background-color: rgba(0,0,0,.5);
+			}
+			
+			.prev-next .next{
+				right: 0;
+			}
+			
+			/* 设置热卖 */
+			.hot{
+				 width: 814px;
+				 height: 122px;
+				 background-color: #fff;
+				 
+				 /* 开启绝对定位 */
+				 position: absolute;
+				 /* 水平居中 */
+				 left: 0;
+				 right: 0;
+				 margin: 0 auto;
+				 
+				 /* 设置底部的偏移量 */
+				 bottom: 8px;
+			}
+		
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- 设置banner的容器 -->
+		<div class="banner-wrapper">
+			
+			<!-- 设置轮播图 -->
+			<ul class="banner">
+				<li>
+					<a href="#">
+						<img src="img/1.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/2.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/3.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/4.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/5.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/6.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/7.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/8.jpg" alt="">
+					</a>
+				</li>
+			</ul>
+			
+			<!-- 创建8个导航点 -->
+			<div class="pointer">
+				<a href="javascript:;"></a>
+				<a class="active" href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		
+			<!-- 创建翻页的按钮 -->
+			<div class="prev-next">
+				<!-- 向前翻 -->
+				<div class="prev"><</div>
+				<!-- 向后翻 -->
+				<div class="next">></div>
+			</div>
+			
+			
+			<!--热卖商品-->
+			<div class="hot">
+				
+			</div>
+		</div>
+		
+		
+	
+		
+		
+	</body>
+</html>

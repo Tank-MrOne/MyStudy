@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文档流</title>
+		<style>
+			.box1{
+				background-color: #ff0;
+			}
+			
+			span{
+				background-color: #ADFF2F;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			文档流（normal flow）
+				- 文档流实际上就是网页中的一个位置
+				- 网页是一个多层的结构，文档流就是网页的最底层
+				- 在网页中创建一个元素，默认就是在文档流中排列的
+					所以默认情况下，文档流中的元素都需要遵循文档流中的规则
+				- 元素在文档流中的特点：
+					块元素
+						1、块元素在文档流中会独占一行，会自上向下依次排列
+						2、文档流中块元素的默认宽度会占有包含块的全部
+						3、文档流中块元素的默认高度是被内容撑开
+						
+					行内元素
+						1、行内元素在文档流中自左向右水平排列只占有自身大小的位置
+							如果一行中无法容纳所有的元素，则会自动换到第二行
+							继续自作向右排列（和书写习惯）
+						2、行内元素的高度和宽度默认都是被内容撑开	
+		 -->
+		 <div class="box1">box1</div>
+		 
+		 <span>我是一个小span</span>
+		 <span>我是一个小span</span>
+		 <span>我是一个小span</span>
+		 <span>我是一个小span</span>
+		 <span>我是一个小span</span>
+		 <span>我是一个小span</span>
+		 <span>我是一个小span</span>
+	</body>
+</html>

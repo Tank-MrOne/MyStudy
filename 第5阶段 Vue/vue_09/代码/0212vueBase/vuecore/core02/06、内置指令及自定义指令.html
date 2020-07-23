@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p v-text="msg"></p>
+        <p v-html="msg"></p>
+        <p v-upper="msg"></p>
+    </div>
+
+    <div id="root1">
+        <p v-text="msg"></p>
+        <p v-html="msg"></p>
+        <p v-upper="msg"></p>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        //全局指令：所有的vm模板内部都能使用
+        //指令名字不带v- 指令名字不能大写
+        // Vue.directive('upper',function(node,binding){
+        //     // console.log(binding)
+        //     node.textContent = binding.value.toUpperCase()
+        // })
+
+        //局部指令：只有当前这个vm模板内部能使用
+        new Vue({
+            el:'#root',
+            data(){
+                return {
+                    msg:'<h2>iloveyou~</h2>'
+                }
+            },
+            //局部指令配置项
+            directives:{
+                upper(node,binding){
+                    node.textContent = binding.value.toUpperCase()
+                }
+            }
+        })
+
+        new Vue({
+            el:'#root1',
+            data(){
+                return {
+                    msg:'<h2>iloveyou~</h2>'
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

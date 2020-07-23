@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="outer">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        /* $(function () {
+            $(".outer li").css("color", "red");
+            $()
+        }) */
+
+        jQuery(function () {
+            // jQuery链式调用的原理是：每一个方法都会返回一个jQuery对象，只要是jQuery对象都能调用jQuery方法
+            //这里还用到了隐式迭代（直接隐式的对所有的li设置了颜色）
+            jQuery(".outer li").css("color", "red").parent().css("background", "green");
+            console.log(jQuery(".outer li"))
+            console.log(jQuery(".outer li").css("color", "red"))
+            console.log(jQuery(".outer li").css("color", "red").parent())
+            console.log(jQuery(".outer li").css("color", "red").parent().css("background", "green"))
+        })
+
+
+    </script>
+</body>
+
+</html>

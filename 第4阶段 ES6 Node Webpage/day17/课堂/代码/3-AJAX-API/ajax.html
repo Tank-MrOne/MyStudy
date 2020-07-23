@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发送AJAX请求</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">AJAX API</h2>
+        <button id="btn" class="btn btn-primary">发送ajax GET请求</button>
+        <button id="btn2" class="btn btn-primary">发送ajax POST请求</button>
+        <button id="btn3" class="btn btn-primary">发送ajax 超时请求</button>
+        <button id="quxiao" class="btn btn-danger">取消</button>
+    </div>
+</body>
+<script>
+    //获取按钮
+    let btns = document.querySelectorAll('button');
+    let x = null;
+    //GET
+    btns[0].onclick = function () {
+        //1. 创建对象
+        let xhr = new XMLHttpRequest();
+        //2. 事件绑定
+        xhr.onreadystatechange = function () {
+            //readyState 属性用来标识对象的状态 
+            if (xhr.readyState === 4) {
+                // xhr.status 响应状态码
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    //处理返回的结果
+                    //z状态码
+                    console.log(xhr.status);
+                    //响应的状态字符串
+                    console.log(xhr.statusText);
+                    //响应头  获取所有的响应头信息
+                    console.log(xhr.getAllResponseHeaders());
+                    //获取响应头中的 date 头信息
+                    console.log(xhr.getResponseHeader("date"));
+                    //响应体
+                    console.log(xhr.responseText);
+                }
+            }
+        }
+        //3. 初始化
+        xhr.open("GET", "/server?id=100&vip=7");
+        //设置请求头信息
+        xhr.setRequestHeader("className", "H5200212");
+        //4. 发送
+        xhr.send();
+    }
+
+    //POST
+    btns[1].addEventListener("click", function () {
+        //
+        let x = new XMLHttpRequest();
+        //设置响应结果类型(预设置)
+        x.responseType = "json";
+        //
+        x.onreadystatechange = function () {
+            if (x.readyState === 4) {
+                if (x.status === 200) {
+                    //输出响应体结果 响应体
+                    console.log(x.response);
+                    // console.log(x.responseText);
+                }
+            }
+        }
+        //
+        x.open("POST", "/server");
+        //
+        let data = { name: "atguigu", age: 7 };
+        //1. urlencoded 形式发送给服务器
+        // let body = "";
+        // for(let i in data){ body += `${i}=${data[i]}&`; }
+        // body = body.substr(0, body.length-1);
+        // // 设置请求头信息
+        // x.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        // x.send(body);
+
+        //2. json 形式发送给服务器
+        let str = JSON.stringify(data);
+        //设置请求头信息
+        x.setRequestHeader("Content-Type", "application/json");
+        x.send(str);
+    });
+
+    //超时
+    btns[2].addEventListener("click", function () {
+        //
+        x = new XMLHttpRequest();
+        //设置超时时间
+        x.timeout = 3000;
+        //设置超时时间回调
+        x.ontimeout = function(){
+            console.log("服务器超时了!");
+        }
+        //当出现网络错误的时候触发
+        x.onerror = function(){
+            console.log("你的网络似乎出了一些问题!!");
+        }
+        x.onreadystatechange = function () {
+            if (x.readyState === 4 && x.status === 200) {
+                console.log(x.response);
+            }
+        }
+        //
+        x.open("GET", "/delay-server");
+        //
+        x.send();
+    });
+
+    //取消请求
+    btns[3].addEventListener("click", function(){
+        x.abort();
+    });
+</script>
+
+<script src='https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js'></script>
+<script>
+    // $.get('/server', function(data){
+    //     console.log(data);
+    // }, "JSON");
+    // $.post  $.ajax  
+</script>
+
+
+</html>

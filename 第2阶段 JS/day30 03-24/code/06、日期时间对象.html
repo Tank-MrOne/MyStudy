@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Date是一个内置的函数
+			//这个函数不管是普通函数调用还是构造函数调用都会返回一个日期时间的对象
+			
+			
+			var result = Date();
+			console.log(result);
+			console.log(Date.now());
+			
+			
+			var date = new Date();
+			console.log(date);
+			console.log(date.getFullYear());//拿到年
+			console.log(date.getMonth());//拿到月   月份是 0 - 11表示的  记得后面+1
+			console.log(date.getDate());//拿到日
+			console.log(date.getHours());//小时
+			console.log(date.getMinutes());//分钟
+			console.log(date.getSeconds());//秒
+			console.log(date.toLocaleTimeString());//当前时间的本地格式化字符串
+			console.log(date.toLocaleDateString());//当前日期的本地格式化字符串
+			console.log(date.getTime());//1970 年 1 月 1 日到现在 之间的毫秒数
+			console.log(date.getDay());//拿到星期
+			
+			
+			//格式化日期时间字符串   XXXX年XX月XX日  
+			
+			function getDateAndTimeNow(){
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				var time = date.toLocaleTimeString();
+				
+				return '现在是：' + year + '年' + month + '月' + day + '日 '+ time;
+			}
+			
+			var result = getDateAndTimeNow();
+			console.log(result);
+			
+		</script>
+	</body>
+</html>

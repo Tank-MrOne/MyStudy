@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//内置对象是js当中已经给我们创建好的对象
+			//这个对象内部的属性和方法可以直接拿来使用
+			
+			
+			//假设我们需要给后台传数据，那么我们需要格式化数据为json
+			//json串要想封装好 前端必须使用对象或者对象的数组  [{},{},{}]
+			
+			var a = '赵丽颖';
+			var b = 100;
+			var c = '嘿嘿';
+			
+			//第一步，把数据给封成一个对象
+			var obj = {
+				a:a,
+				b:b,
+				c:c
+			}
+			
+			//第二步，把对象给变为json串，依赖JSON对象的方法
+			
+			console.log(obj);
+			var result = JSON.stringify(obj);//把对象转化为json串
+			console.log(result);
+			
+			
+			
+			//后端传递回来的数据，我们需要把这个json串转化为对象去操作
+			console.log(JSON.parse(result));
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>战狼2</li>
+			<li>黑客帝国</li>
+			<li>变形金刚</li>
+			<li>金刚狼</li>
+			<li>蜘蛛侠</li>
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload= function(){
+				//从末尾加   追加
+//				var ulNode = document.querySelector('ul');
+//				var liNode = document.createElement('li');
+//				liNode.innerHTML = '上海堡垒';
+//				ulNode.appendChild(liNode);
+				
+				//从其他位置加
+//				var ulNode = document.querySelector('ul');
+//				var liNode = document.createElement('li');
+//				liNode.innerHTML = '上海堡垒';
+//				var liNodeOld = document.querySelector('li:nth-child(4)');
+//				ulNode.insertBefore(liNode,liNodeOld);
+				
+				
+				
+				//替换节点（改）
+//				var ulNode = document.querySelector('ul');
+//				var liNodeOld = document.querySelector('li:nth-child(4)');
+//				var liNode = document.createElement('li');
+//				liNode.innerHTML = '钢铁侠';
+//				ulNode.replaceChild(liNode,liNodeOld);
+				
+				
+				//删除节点
+				var ulNode = document.querySelector('ul');
+//				var liNodeOld = document.querySelector('li:nth-child(4)');
+//				ulNode.removeChild(liNodeOld);
+				
+				
+				
+				//删除整个ul  下面两种方式都可以
+//				document.body.removeChild(ulNode);
+				ulNode.parentNode.removeChild(ulNode);
+				
+				
+			}
+		</script>
+	</body>
+</html>

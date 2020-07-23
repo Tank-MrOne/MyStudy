@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <p>{{msg}}</p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el: '#root',
+            data: {
+                msg: 'zhaoliying',
+            }
+        })
+        //数据劫持和监视
+        //1、会给data对象当中的属性都创建一个和它对应的dep对象
+        // dep:{
+        //     id:0,
+        //     subs:[]
+        // }
+
+        //2、会给data当中所有的属性（包括深层次的）都会添加getter和setter进行监视
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

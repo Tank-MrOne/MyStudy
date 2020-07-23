@@ -1,0 +1,8 @@
+.box1 {
+  width: 300px;
+  height: 200px;
+  background-color: greenyellow;
+}
+.box1:hover {
+  background-color: #ff5300;
+}

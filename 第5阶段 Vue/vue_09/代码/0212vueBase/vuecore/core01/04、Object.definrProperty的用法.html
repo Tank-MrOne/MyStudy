@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            firstName:'zhao',
+            lastName:'liying'
+        }
+
+        // obj.fullName = 'zhaoliying'
+        // console.log(obj)
+
+        // // obj.fullName = 'qiwei'
+        // // console.log(obj)
+        // obj.firstName = 'liu'
+        // console.log(obj)
+
+        // Object.defineProperty 
+        //当我们添加的属性是根据已有的属性，计算而来的，此时必须使用这个方法去添加
+
+        //setter和getter方法，他们是两个回调函数
+        //如果通过这样的方式给添加属性，那么这个属性在读写的时候会调用响应的回调去处理
+
+        Object.defineProperty(obj,'fullName',{
+            get(){
+                return this.firstName + '-' + this.lastName
+            },
+            set(value){
+                let arr = value.split('-')
+                this.firstName = arr[0]
+                this.lastName = arr [1]
+            }
+        })
+
+        obj.firstName = 'liu'
+        console.log(obj.fullName)
+        obj.fullName = 'qi-wei'
+        console.log(obj)
+
+
+        //vue当中
+        //1、数据代理
+        //2、响应式数据
+        //3、计算属性
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+
+        //jQ提供了 一系列事件的简写，当元素调用当前事件简写的函数，并传入一个函数做参数的时候，就相当于绑定事件了
+        // ELE.click(fn);
+
+        //blur事件  无论表单是否发生改变 只要失去焦点就会触发
+        $("input").blur(function () {
+            console.log("失去焦点");
+        });
+
+        //change事件也是在失去焦点的时候触发 但是需要判断表单内容是否发生改变，如果没有发生改变 则不会触发
+        $("input").change(function () {
+            console.log("失去焦点2");
+        })
+
+        //input事件 只要表单的值发生了改变   就会立即执行input事件
+        $("input").input(function () {
+            console.log("input事件")
+        })
+
+    </script>
+</body>
+
+</html>

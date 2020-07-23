@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				border: 10px red solid;
+				/* 
+					可以通过开启父元素的BFC来解决高度塌陷的问题
+					BFC（Block Format Context） 块级格式化环境
+						- BFC可以理解为是元素的一个隐含的属性，
+							当元素开启BFC以后，元素将会具有以下特性：
+								1. 开启BFC后子元素的垂直外边距不会传递给父元素
+								2. 开启BFC后元素不会被浮动元素所覆盖
+								3. 开启BFC后父元素可以包含浮动的子元素
+								
+						- 开启BFC的方式与很多：
+							1.设置元素浮动（会导致元素浮动）
+							2.将元素的display设置为inline-block
+							... 开启BFC的方式有很多很多，
+								但是往往副作用也是很大很大
+								
+							经过长时间的探索，终于找到了一种方式：
+								可以通过将元素的overflow设置为一个非visble的值
+									即可开启元素的BFC
+									
+								我们可以将父元素的overflow设置为hidden
+									即可完美的解决高度塌陷的问题
+				 */
+				overflow: hidden;
+				
+				/* display: inline-block; */
+				
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				float: left;
+			}
+			
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+		
+		<div class="box3"></div>
+		
+	</body>
+</html>

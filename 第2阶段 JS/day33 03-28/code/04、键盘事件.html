@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<!--键盘事件除了给表单类元素添加以外还能给document-->
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var inputNode = document.querySelector('input');
+				
+//				inputNode.onkeydown = function(){
+//					console.log('按下');//如果按下不放，那么这个按下事件是重复触发
+//				}
+				
+				inputNode.onkeyup = function(e){
+//					console.log('抬起');//只会触发一次，用的比较多，可以保证事件函数只执行一次
+					//与其说我们在讲键盘事件，不如说我们在讲怎么区分哪个键的事件
+					//区分哪个键，我们需要通过键码去区分
+					//键码在事件对象当中：每一个事件触发的时候都会有独立事件对象
+					//  事件对象就是回调函数的第一个参数，所有的事件触发的时候都会有这个对象
+					//  事件对象是一个对象，不是我们自己封装的对象，而是当触发事件的时候，系统会
+					//  自动的帮我们把和这一次触发事件相关的信息封装为 一个对象
+					//  系统会调用我们的回调函数，会把这个事件对象传给回调函数的第一个形参
+//					console.log(e);
+					//如果是回车，那么就打印回车
+					if(e.keyCode === 13){
+						console.log('回车')
+					}else if(e.keyCode === 16){
+						console.log('shift')
+					}
+				}
+				
+				
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<img src="img/2.jpg" id="imgSrc" />
+		
+		<a href="https://www.baidu.com" id="aa">点我</a>
+		
+		<button id="btn">按钮</button>
+		
+		<script type="text/javascript">
+			//点击按钮修改图片的路径 a标签的href 及 id   
+			//没有特殊说明都可以这样操作
+			window.onload = function(){
+				var btn = document.getElementById('btn');
+				var imgNode = document.getElementById('imgSrc');
+				var aNode = document.getElementById('aa');
+				
+				btn.onclick = function(){
+					//天生属性里面的普通属性
+					imgNode.src = 'img/3.jpg';
+//					imgNode['src'] = 'img/3.jpg';
+					aNode.href = 'https://www.jd.com';
+					aNode.id = 'bb';
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

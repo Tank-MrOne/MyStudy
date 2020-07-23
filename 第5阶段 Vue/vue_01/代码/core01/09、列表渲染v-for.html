@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <!-- :key内部需要放一个不重复的数据当中的唯一标识，目的是为了提高效率 -->
+            <li v-for="(person, index) in persons" :key="person.id">
+                {{person.id}} --- {{person.name}} --- {{person.age}}
+            </li>
+        </ul>
+
+        <button @click="update">点击修改第一项数据的名字</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                persons:[
+                    {id:1,name:'zhaoliying',age:33},
+                    {id:2,name:'yangmi',age:34},
+                    {id:3,name:'qiwei',age:40},
+                    {id:4,name:'yuange',age:30},
+                ]
+            },
+            methods: {
+                update(){
+                    //1、修改对应对象当中的属性值
+                    // this.persons[0].name = '颖宝'
+                    // 响应式数据造成的：  
+                    //    data当中的对象内部数据都会变为响应式数据,每个对象内部的属性都会添加get和set
+                    //    添加了get和set，那么响应的数据就是响应式数据
+                    //    只有响应式数据，才会在更改的时候，去更新页面
+
+
+                    //2、修改对应的对象整体,使用数组方法（增删改）
+                    //数组的方法：非常重要   数组所有的  map filter forEach find findIndex
+                    // this.persons.splice(0,1,{id:1,name:'颖宝',age:33})
+                    
+                    // push()
+                    // pop()
+                    // shift()
+                    // unshift()
+                    // splice()
+                    // sort()
+                    // reverse()   被vue包装了一下，本来是没办法去修改的，因为它不是响应式数据，这些方法额外添加更新界面的操作
+
+
+                    //3、修改对应的对象整体,使用数组下标
+                    //不是响应式数据，但是vm内部数据确实可以更改，但是它没办法在页面上显示
+                    this.persons[0] = {id:1,name:'颖宝',age:33};
+                    console.log(this.persons)
+                }  
+            },
+        })
+    </script>
+</body>
+</html>

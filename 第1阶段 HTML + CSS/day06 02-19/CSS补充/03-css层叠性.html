@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			选择器: 标签选择器  类型选择器 id选择器   后代选择器 并集选择器
+			伪类选择器 css3    nth-child()  nth-of-type()
+			
+			层叠性: 在设置不同属性时,都可以实现,在设置相同属性时,在权重相同时,后定义的会层叠(覆盖)先定义的,在权重不同时,谁的权重高实现谁的
+			
+			
+			权重:
+			标签选择器 < 类选择器 < id选择器 < 行内式 < !important
+			   1         10          100       1000     无穷大
+			 */
+			.one{
+				color:green;
+			}
+			div{
+				color:red;
+				
+			}
+			div{
+				font-size: 30px;
+				color:blue;
+			}
+			div{
+				font-weight: 700;
+				color:yellow
+			}
+			.two{
+				color:pink;
+			}
+			
+			
+			
+			#ss1{
+				color:green;
+			}
+			span{
+				color:yellow;
+			}
+			.s1{
+				color:red;
+			}
+			.box span{
+				color:pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="two one">我是一个盒子</div>
+		
+		<div class="box">
+			<span class="s1" id="ss1" style="color:gray">我是span</span>
+		</div>
+	</body>
+</html>

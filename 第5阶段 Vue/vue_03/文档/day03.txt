@@ -1,0 +1,96 @@
+day03
+
+21、自定义组件（非单文件组件）
+
+	定义全局组件：
+		复杂方式：
+			1、定义组件，本质是通过Vue.extend(option配置对象)定义一个组件函数（以后用来作为构造函数使用）
+			2、注册组件，本质就是为组件定义一个组件名称（组件标签名） Vue.component('标签名'，组件函数)
+			3、使用组件，组件标签名在解析的时候会自动对应到每一个组件函数的实例，每个实例服务一个组件标签
+		简化方式：
+			简化方式： Vue.component('标签名'，option配置对象)
+		组件当中的data选项为什么非得是一个函数，而不能是一个对象？
+
+	定义局部组件：
+		
+		
+		
+	父子组件：假设一个页面上有两个组件，一个在另外一个的内部，那么我们称这两个组件是父子组件
+		myblog
+		组件内部接受外部的数据，通过配置项props数组声明接收标签属性值
+	
+	缺点：
+		这样定义组件麻烦、模板没提示
+		样式没法搞，
+		没法使用模块化解析ES6语法
+
+	
+
+
+22、单文件组件（把上面的父子组件改为单文件组件）
+
+	1、先在你的项目当中创建一个components文件夹，用于放置我们后期定义的组件（配置对象）
+	2、在你写代码的地方，一般我们需要创建一个App.vue的文件，它用于组装我们定义好的组件，App本质也是一个组件
+	3、vm实例最终只需要去把App组件给注册然后去渲染就好了
+
+	
+	
+	一个.vue文件，里面包含了组建的结构样式和行为，其实本质就是我们的配置对象（文件）
+	写法高亮 比较明了  但是需要模块化  需要搭建环境
+	
+
+23、手动搭建项目环境(参考官方文档就可以了~ 不需要死记硬背)
+
+	1、npm init 手动创建package.json/或者npn init  
+		主要：name   version   scripts   dependencies  devDependencies
+	2、创建src文件夹
+	3、src内部创建public文件夹
+	4、src内部创建index.js
+	5、public内部创建index.html
+	6、index.js写点测试代码
+	7、把index引入到index.html 手动运行，看看是否成功
+	8、改为模块化，把引入的index.js删除，我们需要自动引入
+	9、安装webpack   最好是不要全局安装    npm i -D  webpack  webpack-cli / yarn add -D webpack webpack-cli
+	10、书写webpack的配置文件（参考官方文档）   入口  出口  module   plugins
+	11、yarn webpack可以直接运行    npm需要配置scripts启动选项 npm run 去启动
+	12、运行之后html和生成的js不会自动引用      配置插件html-webpack-plugin打包连带html文件
+
+
+	13、每次运行webpack  dist内部不会自动清除，那么我们需要安装插件自动清除dist, clean-webpack-plugin
+	14、配置loader 解析ES6语法为ES5   babel-loader
+	15、配置loader 打包css文件   css-loader  style-loader  记得把css文件引入到index.js
+	16、配置loader 打包图片文件  file-loader  url-loader
+
+
+	17、每次更改代码都要去重新打包，那么我们可以使用开发服务器插件自动打包 webpck-dev-server，
+		但是修改webpack配置还是要重新启动
+	18、配置devtool 定位错误位置为原始代码的哪一行
+	19、基本的包配置和webpack配置也就完成
+
+
+
+24、组件模板解析
+	定义主子组件
+
+
+	1、安装vue
+	2、在index.js当中写vue的基础架子
+	3、把App.vue导入到index.js当中进行渲染
+	4、配置vue相关loader 插件  
+		1、安装
+		2、配置loader
+		3、配置插件
+		4、记得style-loader要修改为vue-style-loader
+	
+
+	5、resolve的配置解决导入.vue文件省略后缀名问题
+	
+	
+	解析两种方式：
+		1、render：h => h(App)
+
+
+		//明天说
+		2、components注册组件，template解析，但是vue导入需要导入带解析器的版本
+
+

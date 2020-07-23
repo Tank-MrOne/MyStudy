@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/myModule.js"></script>
+		
+		<script type="text/javascript">
+			//使用闭包原理实现自定义模块
+			
+			//普通函数自定义的模块
+//			var obj = myMoney();
+//			obj.setMoney(10000);
+//			obj.getMoney();
+			//匿名函数自调用版本   自定义的模块
+			setMoney(10000);
+			getMoney();
+		</script>
+</html>
+	</body>

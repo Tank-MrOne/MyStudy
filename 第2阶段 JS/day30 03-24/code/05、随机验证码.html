@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/myJs.js"></script>
+		<script type="text/javascript">
+			//验证码本质上就是一个字符串
+			//第一步，验证码需要码源
+//			var str = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890';
+//			var code = '';
+			//第二步随机的从码源当中每次拿一个
+			//字符串字符也是连续的，那么也可以和数组一样使用，但是有区别
+//			console.log(str.length);
+//			console.log(str[0]);//可以读取
+			//字符串是一个常量，我们只能读，不能写
+//			str[0] = 'n';//字符串不能被修改，修改了也不理你
+//			console.log(str);
+			
+			//8位验证码，就是随机的从字符串当中拿8次，每次拿一个，然后拼接到一起
+//			for(var i = 0; i < 8; i++){
+//				code += str[Math.floor(Math.random()*str.length)];
+//			}
+//			console.log(code);
+			
+			
+			
+			//封装函数实现随机验证码
+			var result = getRandomCode(6)
+			console.log(result);
+			console.log(getRandomInt(2,10));
+			
+		</script>
+	</body>
+</html>

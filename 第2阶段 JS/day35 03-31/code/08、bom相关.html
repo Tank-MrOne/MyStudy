@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height: 3000px;">
+		<script type="text/javascript">
+			window.onload = function(){
+				//1、window对象
+//				window.onresize = function(){
+//					//也是一个事件，浏览器窗口发生大小改变的时候这个事件函数就会自动执行
+//					console.log(document.documentElement.clientWidth);//固定拿视口宽度的
+//					console.log(document.documentElement.clientHeight);//固定拿视口宽度的
+//				};
+//				
+//				window.onscroll = function(){//系统滚动事件
+//					console.log('滚');
+//				}
+				//2、location对象   管浏览器的地址
+//				console.log(window.location.href);
+//				window.location.href = 'https://www.baidu.com';
+				
+				//3、history对象   管历史记录
+//				history.back();//回到上一页
+//				history.forward();//回到下一页
+//				window.history.go(-1);//回到指定的历史记录  0代表当前页   负数代表前面的页  正数代表后面的页
+				
+				//4、navigator   管着浏览器的版本内核信息
+//				console.log(navigator.appName);//浏览器名字Netscape（网景）
+//				console.log(navigator.appCodeName);//核心名称，但是不准
+//				console.log(navigator.appVersion);//应用的版本
+				
+				//5、screen 
+				console.log(window.screen.width);
+				console.log(window.screen.height);
+			}
+		</script>
+	</body>
+</html>

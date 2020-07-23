@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关键问题</title>
+</head>
+
+<body>
+    <script>
+        //改变promise状态和指定回调函数谁先谁后?  执行器函数式同步调用
+        let p = new Promise((resolve, reject) => {
+            //先改变 promise 的状态, 后指定回调
+            // resolve('成功');
+            //先指定的回调, 后修改 promise 对象的状态
+            setTimeout(() => {
+                resolve('异步成功啦');
+            }, 1000);
+        });
+
+        p.then(
+            value => {
+                console.log(value)
+            },
+            reason => {
+                console.error(reason);
+            })
+    </script>
+</body>
+
+</html>

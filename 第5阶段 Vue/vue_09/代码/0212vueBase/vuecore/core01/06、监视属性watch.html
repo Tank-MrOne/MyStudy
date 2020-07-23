@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        姓：<input type="text" v-model="firstName"> <br>
+        名：<input type="text" v-model="lastName"><br>
+        姓名双向<input type="text" v-model="fullName"><br>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#root',
+            data: {
+                firstName: 'zhao',
+                lastName: 'liying',
+                fullName:'zhao-liying'
+            },
+            // watch: {
+            //     //可以实现计算属性，双向绑定的效果。但是比较麻烦
+            //     //要监视数据，数据必须先存在
+            //     //监视数据，必须全部监视
+            //     firstName(newVal,oldVal){
+            //         this.fullName = newVal + '-' + this.lastName
+            //     },
+            //     lastName(newVal,oldVal){
+            //         this.fullName = this.firstName + '-' + newVal
+            //     },
+            //     fullName(newVal,oldVal){
+            //         let arr = newVal.split('-')
+            //         this.firstName = arr[0]
+            //         this.lastName = arr [1]
+            //     }
+            // },
+        })
+        //监视属性的另外一种写法，用的比较少
+        vm.$watch('firstName',function(newVal,oldVal){
+            this.fullName = newVal + '-' + this.lastName
+        })
+
+        //data 要么是对象要么写函数
+        //el:  要么在配置对象里面配置，要么使用vm.$mount()
+        //watch: 要么在配置对象里面配置，要么使用vm.$watch()
+        //所有的多种写法：我们一般都常用在对象里面配置这样的方式去写
+    </script>
+</body>
+
+</html>

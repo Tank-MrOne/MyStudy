@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画</title>
+		<style>
+			.box1{
+				/* 设置高度 */
+				height: 271px;
+				
+				width: calc(528px/4);
+				
+				/* 设置居中 */
+				margin: 50px auto;
+				
+				background: url(img/bigtap-mitu-queue-big.png) 0 0;
+				
+				
+				/* 
+					过渡效果只会在属性发生变化时才会产生效果
+						除了过渡可以直接为元素设置动画效果
+							1.要设置动画，必须先在样式中创建关键帧（每秒显示图片的数量）
+							2.将关键帧应用到当前的元素
+				 */
+				
+				/* 设置关键帧在当前元素生效 
+					animation-name 用来指定在当前元素上生效的关键帧名字
+				*/
+				animation-name: walk;
+				
+				/* 
+				 animation-duration 用来指定动画的执行的时间
+				 */
+				animation-duration: 500ms;
+				
+				/*  
+				 animation-timing-function 用来指定动画执行的时间函数
+				*/
+				animation-timing-function: steps(4);
+				
+				/*  
+				animation-delay 动画执行的延时
+				*/
+				/* animation-delay: 2s; */
+				
+				/* 
+				animation-iteration-count 指定动画执行的次数
+					可以指定 infinite 使动画循环运行
+					
+				 */
+				animation-iteration-count: infinite;
+				
+			}
+			
+			/*
+				@keyframes来指定关键帧 
+					- 需要为关键帧指定一个名字
+			*/
+			@keyframes walk{
+				
+				/* 动画开始的位置 */
+				from{
+					background-position: 0 0;
+				}
+				
+				/* 动画结束的位置 */
+				to{
+					background-position: -528px 0;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 创建一个元素来放图片 -->
+		<div class="box1"></div>
+	</body>
+</html>

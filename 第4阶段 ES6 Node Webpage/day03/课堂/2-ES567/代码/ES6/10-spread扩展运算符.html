@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展开运算符</title>
+</head>
+<body>
+    <script>
+        //声明一个数组
+        // let arr = ['德玛西亚之力','德玛西亚之翼','德玛西亚皇子'];
+        // function fn() {
+        //     console.log(arguments);
+        // }
+        // fn(...arr); 
+        // ['德玛西亚之力','德玛西亚之翼','德玛西亚皇子']  => '德玛西亚之力','德玛西亚之翼','德玛西亚皇子'
+
+        let skillOne = {
+            q: '致命打击'
+        };
+
+        let skillTwo = {
+            w: '勇气'
+        };
+
+        let skillThree = {
+            e: '审判'
+        };
+
+        let skillFour = {
+            r: '正义'
+        };
+
+        let gailun = {...skillOne, ...skillTwo, ...skillThree, ...skillFour};
+
+        console.log(gailun);
+    </script>
+</body>
+</html>

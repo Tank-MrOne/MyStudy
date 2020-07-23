@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>变形</title>
+		<style>
+			
+			html{
+				/* 在HTML上来设置视距 */
+				perspective: 800px;
+			}
+			
+			body{
+				border: 1px red solid;
+				
+				height: 500px;
+			}
+			
+			.box1{
+				
+				/* 
+				 
+					变形（transform）
+						- 通过变形可以改变页面中元素的大小形状位置等.
+						- 变形不会影响到页面的布局
+						
+					使用transform属性来设置变形效果
+						translate 平移
+							translateX() 沿着x轴平移
+							translateY() 沿着Y轴平移
+							translateZ() 沿着Z轴平移
+								- Z轴的距离默认决定了元素距离眼睛的距离
+									但是默认情况下，网页是不支持透视效果（近大远小）
+								- 所以我们如果想看的z轴平移的效果必须开启网页的透视效果
+				 */
+				
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				
+				margin: 50px auto;
+				
+				/* 沿x轴平移100px*/
+				/* transform: translateX(100px); */
+				
+				transition: all 1s;
+			}
+			
+			body:hover .box1{
+				/* transform: translateX(500px); */
+				
+				/* transform: translateY(-100px); */
+				
+				transform: translateZ(-400px);
+			}
+			
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<!-- <div class="box2"></div> -->
+	</body>
+</html>

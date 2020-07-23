@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>嘿嘿</p>
+		<p>嘿嘿</p>
+		<p>嘿嘿</p>
+		<p>嘿嘿</p>
+		<script type="text/javascript">
+			//点击任意的p,点击的这一个p变成哈哈，其余的p变成呵呵
+			//排它思想
+			//1、先让所有的元素处于同样的状态
+			//2、再让那个特殊的自己改变
+			
+			window.onload = function(){
+				//第一步，拿到所有的p
+				var pNodes = document.querySelectorAll('p');
+				//第一种采用this
+//				for(var i = 0; i < pNodes.length; i++){
+//					pNodes[i].onclick = function(){
+//						//排它 先让所有的变成哈哈
+//						for(var j = 0; j < pNodes.length; j++){
+//							pNodes[j].innerText = '呵呵';
+//						}
+//						
+//						//接着再让点击的那一个变成哈哈
+//						//不能使用pNodes[i]，函数内部是点击的时候执行的，而点击的时候外部循环早都执行完了
+//						//外部循环变量i都已经不是你想的那个了
+////						console.log(i);
+////						pNodes[i].innerHTML = '哈哈';
+//
+//						this.innerHTML = '哈哈';
+//					}
+//				}
+				
+				
+				//第二种
+				for(var i = 0; i < pNodes.length; i++){
+					pNodes[i].index = i;//循环的时候，把每个dom对象的下标，存储在这个对象身上的一个属性当中
+					pNodes[i].onclick = function(){
+						//排它 先让所有的变成哈哈
+						for(var j = 0; j < pNodes.length; j++){
+							pNodes[j].innerText = '呵呵';
+						}
+						
+						pNodes[this.index].innerHTML = '哈哈';
+					}
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

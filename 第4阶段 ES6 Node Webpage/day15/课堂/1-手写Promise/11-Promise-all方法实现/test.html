@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Promise.js"></script>
+</head>
+
+<body>
+    <script>
+        //同步任务
+        // let p = new Promise((resolve, reject) => {
+        //     //同步任务
+        //     // resolve("成功的数据");
+        //     // reject("失败的数据");
+        //     // throw new Error("出错啦!!xxx")
+        //     //异步任务
+        //     setTimeout(() => {
+        //         // resolve("OK的啦!!");
+        //         reject("失败的数据");
+        //         // try {
+        //         //     throw new Error("出错啦!!");
+        //         // } catch (e) {
+        //         //     reject(e);
+        //         // }
+        //     }, 2000);
+        // }).then(function(){
+
+        // }).then(function(){
+
+        // }).catch(function(reason){
+        //     console.error(reason);
+        // });
+
+        // console.log(p);
+        // let res = p.then(value => {
+        //     console.log(value);
+        //     // return "OK";
+        //     // return new Promise((resolve, reject) => {
+        //     //     resolve(222);
+        //     // })
+        //     // throw new Error("出错啦!!");
+        // }, reason => {
+        //     console.warn(reason);
+        //     // throw new Error("出问题啦!!");
+        //     // console.log(222);
+        // });
+
+        // console.log(res);
+    
+        //测试 resolve 方法
+        // let p = Promise.resolve(123);
+        // let p = Promise.resolve(new Promise((resolve, reject)=>{
+        //     reject(234);
+        // }));
+        // let p = Promise.reject(123);
+
+        console.log(p);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客户端</title>
+</head>
+<body>
+    <button>点击获取新闻数据</button>
+    <ul id="newsList">
+
+    </ul>
+
+    <script>
+        let btn = document.querySelector("button");
+        let ul = document.getElementById("newsList");
+        btn.onclick = function(){
+            //创建实例对象
+            let x = new XMLHttpRequest();
+            //
+            x.onreadystatechange = function(){
+                if(x.readyState === 4 && x.status === 200){
+                    //
+                    // console.log(x.responseText);
+                    //将数据转换为 JS 的对象
+                    let d = JSON.parse(x.responseText);
+                    //遍历数据
+                    console.log(d);
+                    for(let i =0;i<d.data.length;i++){
+                        //创建 li 标签
+                        let li = document.createElement("li");
+                        //修改 li 标签中的文本
+                        li.innerHTML = d.data[i].title;
+                        //将 li 插入到 ul 中
+                        ul.appendChild(li);
+                    }
+                }
+            }
+            //初始化
+            x.open("GET", "/news");
+            //发送
+            x.send();
+        }
+    </script>
+</body>
+</html>

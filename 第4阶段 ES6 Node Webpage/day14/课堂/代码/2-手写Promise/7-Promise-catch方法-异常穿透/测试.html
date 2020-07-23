@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise处理同步任务</title>
+    <script src="promise.js"></script>
+</head>
+<body>
+
+<script>
+    /*
+      promise异常传透?
+        (1)	当使用promise的then链式调用时, 可以在最后指定失败的回调,
+        (2)	前面任何操作出了异常, 都会传到最后失败的回调中处理
+     */
+    let p = new Promise((resolve, reject) => {
+        // reject('失败啦')
+        resolve('ok')
+    });
+
+    // 直接处理
+    // p.catch(
+    //     reason =>{
+    //         console.error(reason);
+    //     }
+    // );
+
+    // //异常穿透
+    p.then(
+        value => {
+            // throw '失败啦!!';
+        }
+    )
+    .then(
+        value => {
+            console.log('这个有点难度!!');
+            return '异常穿透';
+        }
+    ).catch(// then(undefined, onRejected);
+        reason => {
+            console.error(reason);
+        }
+    ).then(
+        value => {
+            console.log(value);
+        }
+    )
+</script>
+
+</body>
+</html>

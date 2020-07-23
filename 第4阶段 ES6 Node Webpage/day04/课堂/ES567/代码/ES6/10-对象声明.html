@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象声明</title>
+</head>
+<body>
+    <script>
+        //声明一个构造函数 手机的构造函数
+        // function Phone(brand, color){
+        //     //属性设置
+        //     this.brand = brand;
+        //     this.color = color;
+
+        //     // this.call = function(){}
+        // }
+
+        // Phone.prototype.call = function(someone){
+        //     console.log(`我可以给${someone}打电话`);
+        // }
+
+        // //实例化对象 1110
+        // let nokia = new Phone('诺基亚','深灰色');
+
+
+        //使用 class 声明类
+        class Phone{
+            //构造方法 名字固定 
+            constructor(brand, color){
+                this.brand = brand;
+                this.color = color;
+            }
+
+            //声明成员方法
+            call(someone){
+                console.log(`我可以给${someone}打电话`);
+            }
+        }
+
+        //实例化
+        let chuizi = new Phone('Smartisan', '黑色');
+
+        console.log(chuizi);
+        //调用方法
+        chuizi.call('赵丽颖');
+
+
+
+
+    </script>
+</body>
+</html>

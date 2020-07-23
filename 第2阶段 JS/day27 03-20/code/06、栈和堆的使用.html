@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、
+//			var arr = [1,2,3];
+//			var arr1 = arr;
+//			arr[1] = 22;
+//			console.log(arr1);//[1,22,3]
+			
+			//如果是基本数据类型，赋值的时候直接赋的就是基本的数据值，而且是直接存储在栈里
+			
+			//如果是对象数据类型，把它赋值给变量的时候，赋值的是这个对象数据的地址；
+			//对象数据类型,在打印的时候,打印的就是对象数据本身,打印不出来地址
+			
+			
+			
+			//2
+			
+//			var arr = [1,2,3];
+//			var arr1 = arr;
+//			arr = [1,22,3];
+//			console.log(arr1);//[1,2,3]
+			
+			
+			//3
+			
+			//基本数据传参和对象数据传参   区别
+			//基本数据传参  传参的时候，外部变量和内部变量都各自有各自的一个值，只是传值过去刚开始是相同的而已
+			//后期修改函数内部变量的基本值和和函数外部的变量基本值  没关系；
+			
+			
+			
+			var a = 10;
+			var b = 20;
+			function add(a,b){
+				a = 40;
+				return a + b;
+			}
+			
+			console.log(add(a,b));
+			
+			console.log(a,b);
+			
+			
+			//对象数据类型传参
+			
+			
+			var arr = [1,2,3];
+			function fn(arr){
+				for(var i = 0; i < arr.length; i++){
+					arr[i] += 2;
+				}
+			}
+			
+			fn(arr);
+			
+			console.log(arr);
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

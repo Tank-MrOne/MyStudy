@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//父类
+			function Dog(name,age){
+				this.name = name;
+				this.age = age;
+			}
+			
+			//子类
+			function Teddy(name,age){
+//				this.name = name;
+//				this.age = age;
+				//借助父类的构造函数实现属性的继承
+				Dog.call(this,name,age);
+			}
+			
+			Dog.prototype.run = function(){
+				console.log('跑的很快~');
+			}
+			
+			//为了让子类去继承父类原型当中的方法
+			//我们需要用到原型继承，原型继承主要就是为了让子类继承方法使用的
+			//让子类的原型变成父类的一个实例
+			//手动给原型对象添加一个构造器，因为原型对象里面都是有构造器的，指向和自己匹配的构造函数
+			Teddy.prototype = new Dog();
+			Teddy.prototype.constructor = Teddy;
+			
+			
+			//方法重写和方法重载   是多态的两个表现形式
+			//方法重写；和父类同名方法功能不同，被称作方法重写
+			Teddy.prototype.run = function(flag){
+				//方法重载
+				if(typeof flag === 'number'){
+					console.log('跑的很慢~');
+				}else{
+					console.log('跑的很快~');
+				}
+			}
+			
+			
+			
+			var d1 = new Dog('旺财',3);
+			d1.run();
+			
+			var t1 = new Teddy('小黑',2);
+			t1.run(10);
+			
+			console.log(t1);
+			
+		</script>
+	</body>
+</html>

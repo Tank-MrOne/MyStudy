@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>伪类选择器</title>
+		<style>
+			/* 
+				让没访问过的链接变成橙色
+				访问过的链接变成红色
+			 */
+			/* a{
+				color: orange;
+			} */
+			
+			/* 
+				伪类
+					- 伪类用来表示元素处在的一些特殊的状态
+					- 像一个链接是否访问过
+						一个链接是否正在点击
+						一个文字是否被选中
+						……
+					- 伪类都是以:开头的
+						
+					- 超链接相关的四个伪类：	
+						:link
+							- 正常的超链接（设置了href属性的链接）
+							- 通常用来表示没有访问过的链接
+						:visited
+							- 访问过的超链接
+							- 由于隐私原因，通过visited这个伪类只能修改文字的颜色
+						:hover
+							- 表示鼠标移入的状态
+						:active
+							- 表示鼠标移入的状态
+						注意：hover和active可以用于其他元素	
+			 */
+			
+			/* 没访问过的超链接 */
+			a:link{
+				color: orange;
+			}
+			
+			/* 访问过的超链接 */
+			a:visited{
+				color: red;
+			}
+			
+			/* 鼠标移入的状态 */
+			a:hover{
+				color:green;
+			}
+			
+			/* 鼠标点击的状态 */
+			a:active{
+				color: blue;
+			}
+			
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+			}
+			
+			.box1:hover{
+				background-color: red;
+			}
+			
+			.box1:active{
+				background-color: yellowgreen;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		
+		
+		<a href="https://www.baidu.com">访问过的网站</a>
+		<br>
+		<br>
+		<a href="https://www.baidu123.com">没访问过的网站</a>
+		
+	</body>
+</html>

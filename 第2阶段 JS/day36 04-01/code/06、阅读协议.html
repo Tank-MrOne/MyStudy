@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="确认(5s)"  disabled="disabled"/>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var n = 5;
+				var inputNode = document.querySelector('input');
+				var timer = null;
+				timer = setInterval(function(){
+					n--;
+					if(n <= 0){
+						clearInterval(timer);
+						inputNode.value = '确认';
+						inputNode.disabled = false;
+					}else{
+						inputNode.value = '确认('+ n +'s)';
+					}
+				},1000);
+			}
+		</script>
+	</body>
+</html>

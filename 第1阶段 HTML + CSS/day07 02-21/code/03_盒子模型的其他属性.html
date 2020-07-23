@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #ADFF2F;
+				
+				/* 
+					outline 轮廓
+						- 用来设置元素的轮廓线，使用方式和border类似
+						- 轮廓和边框很像，但是轮廓不会占据页面的位置
+					box-shadow 盒子的阴影	
+						- 语法：
+							box-shadow: 颜色 x偏移量 y偏移量 虚化半径 [inset]
+								x偏移量 正值是向右移动阴影 负值是向左移动阴影
+								y偏移量 正值是向下移动阴影 负值是向上移动阴影
+								
+							阴影的设置不会影响到页面的布局
+							
+							如果添加inset则是向内的阴影
+								
+				 */
+				/* outline: 10px tomato solid; */
+				/* border: 10px tomato solid; */
+				
+				box-shadow: rgba(0,0,0,.3) 10px 10px 10px ;
+				
+				
+			}
+			
+			/* .box1:hover{
+				outline: 10px rgba(255,0,0,.5) solid;
+				box-shadow: black 0px 0px 10px;
+			} */
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		
+	</body>
+</html>

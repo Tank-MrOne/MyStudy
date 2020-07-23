@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <input type="text" v-model="msg">
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+
+    <script>
+        let vm = new MVVM({
+            el:'#root',
+            data:{
+                msg:'赵丽颖',
+            },
+            methods: {
+                handler(){
+
+                }
+            },
+        })
+
+        //解析v-model双向数据
+        //建立在单向数据绑定基础之上
+        //1、先初始化显示input的内容，并且给input 添加了一个input事件 
+        //也得给对应的表达式创建watcher
+        //2、当我们输入内容的时候，会调用input事件的回调，回调当中去修改vm的对应属性值
+        //3、vm的对应属性值变化，就会通知相关的watcher去更新页面数据
+
+
+
+
+
+
+
+        
+
+       
+    </script>
+</body>
+</html>

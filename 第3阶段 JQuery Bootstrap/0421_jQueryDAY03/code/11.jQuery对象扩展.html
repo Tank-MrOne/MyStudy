@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        欢迎观临
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(function () {
+            // 使用 $.extend方法可以给 jQuery类扩展方法或属性
+
+            $.fn.extend({
+                eat: function () {
+                    alert("上海红烧肉～");
+                }
+            })
+
+            // $.eat();//报错
+            // $(".box").eat();
+
+
+            //给所有的jQuery对象扩展一个方法  获取文本内容再拼接一个班级名称
+            $.fn.extend({
+                getConAndClass: function () {
+                    // 这里的this指向的是jQuery获取对象，也就是实例化对象
+                    alert($(this).html() + "0212");
+                }
+            })
+            $(".box").getConAndClass();
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.box1 {
+  width: 400px;
+  height: 33.33333333px;
+}
+.box2,
+.box3 {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+}
+.box3 {
+  color: orange;
+}
+.outer .box3 {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+}
+.box5 {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+}
+.box6 {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+}

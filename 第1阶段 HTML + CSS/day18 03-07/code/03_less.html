@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			
+			.box1{
+				/* 
+					创建一个变量 
+					- 通过变量可以将一些常用的值存储起来，
+						以后就可以通过变量去使用这个值，而不需要重复输入
+				*/
+				--w: 400px;
+				--c: #00f;
+				/* width: calc(100px*2); */
+				
+				width: var(--w);
+				height: 200px;
+				background-color: var(--c);
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<!-- 
+			less
+				- less是一种预编译(预处理)的语言
+				- 在CSS中有很多很多非常强大的功能
+					比如：calc()计算函数、CSS的变量...
+					但是这些功能并不被所有的浏览器所兼容
+				- 预编译语言可以理解为是一种更加强大CSS语言，
+					在less中提供了很多很多非常非常强大的功能，使我们在编写CSS时更加方便灵活
+				- less代码并不能直接被浏览器执行，less代码编写完成后，
+					必须要经过编译转换为CSS代码，然后才能到浏览器中执行
+					
+				- 在less中可以放心的去使用一些非常强大的功能，
+					因为它的最终都会转换为通用的CSS代码被浏览器执行
+					
+				- 安装编译less的插件
+					
+		 -->		
+		 
+		 <div class="box1"></div>
+	</body>
+</html>

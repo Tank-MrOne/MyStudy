@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本使用</title>
+</head>
+<body>
+
+<script>
+    // 2s后 随机生成一个数字  如果是偶数则成功(弹框数字,中奖啦), 
+    // 如果是奇数失败(控制台输出数字)
+
+    // setTimeout(()=>{
+    //     //生成一个数字
+    //     let n = Math.ceil(Math.random() * 10);
+    //     //检测是否为偶数
+    //     if( n % 2 === 0) {
+    //         alert('成功啦,恭喜中奖, 中奖号码为 '+ n);
+    //     }else{
+    //         console.log(n + '再接再厉!!');
+    //     }
+    // }, 2000);
+
+    //实例化 promise 对象
+    let p = new Promise(function(resolve, reject){
+        //生成一个数字
+        let n = Math.ceil(Math.random() * 10);
+        //检测是否为偶数
+        if( n % 2 === 0) {
+            //如果成功啦 则由 resolve 函数来处理
+            resolve(n);
+        }else{
+            reject(n);
+        }
+    });
+    
+    //then 然后的意思 value 值的意思  reason 理由的意思
+    p.then(function(value){
+        alert('成功的中奖啦!! 中奖号码为'+value);
+    }, function(reason){
+        console.log("再接再厉 号码为"+ reason);
+    });
+
+    
+
+
+</script>
+</body>
+</html>

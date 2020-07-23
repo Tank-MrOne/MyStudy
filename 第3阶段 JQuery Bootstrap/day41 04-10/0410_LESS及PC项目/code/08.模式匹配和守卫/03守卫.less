@@ -1,0 +1,19 @@
+.mine(@a){//没有守卫  只要参数正确，即可拿走
+    height: 300px;
+}
+
+//when守卫看守
+.mine(@a) when(@a > 50){
+    background: red;
+}
+.mine(@a) when(@a <= 10){
+    background: blue;
+}
+.mine(@a) when (@a <= 50) and (@a >10){
+    background: yellow;
+}
+
+.box{
+    width: 100px;
+    .mine(@a:40);
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			数组求和
+//			var arr = [1,2,3,4,5,6,7,8,9,10];
+			
+			//1 - 100的和
+//			var sum = 0;
+//			for(var i = 1; i <= 100; i++){
+//				sum += i;
+//			}
+//			console.log(sum);
+			
+//			var sum = 0;
+//			for(var i = 0; i < arr.length; i++){
+//				sum += arr[i];
+//			}
+//			
+//			console.log(sum);
+
+//			求数组最大值，最小值，平均值
+			
+//			var arr = [88,66,99,520,30,8];//
+//			var max = arr[0];
+//			var min = arr[0];
+//			var sum = 0;
+//			
+//			for(var i = 0; i < arr.length; i++){
+//				//在拿最大值
+//				if(max < arr[i]){
+//					max = arr[i];
+//				}
+//				
+//				//在拿最小值
+//				if(min > arr[i]){
+//					min = arr[i];
+//				}
+//				
+//				//求和
+//				sum += arr[i];
+//			}
+//			
+//			console.log(max,min,sum/arr.length);
+
+
+
+
+//			翻转数组*******
+//          可以是两种情况
+			var arr = [1,2,3,4,5,6];
+			//1、在原数组上进行翻转
+//			i 0     4
+//			i 1     3
+//			i 2     2
+			console.log(arr);
+			for(var i = 0; i < arr.length/2; i++){
+				var temp = arr[i];
+				arr[i] = arr[arr.length - 1 - i];
+				arr[arr.length - 1 - i] = temp;
+			}
+			
+			console.log(arr);
+			
+			
+			
+			
+			//2、在新数组当中翻转
+//			var newArr = [];
+//			
+//			for(var i = arr.length - 1; i >= 0; i--){
+//				newArr[newArr.length] = arr[i];//newArr[0] = arr[4]
+//												// newArr[1] = arr[3];
+//			}
+//			console.log(newArr);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+		</script>
+	</body>
+</html>

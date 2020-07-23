@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+				border: 10px tomato solid;
+				
+				/* border-top-left-radius: 左上角弧度;
+				border-top-right-radius: 右上角的弧度;
+				border-bottom-right-radius: 右下角的弧度;
+				border-bottom-left-radius: 左下角的弧度; */
+				
+				/*
+					左上角的弧度 
+						- 我们可以指定一个长度值，则该值会绝对圆角的弧度
+							值越大弧度就越大
+						- 我们只传递一个值，则此时圆角是通过一个圆形实现
+						- 我们也可以传递两个不同的值，
+							此时圆角可以通过一个椭圆来实现
+				*/
+				/* border-top-left-radius: 100px 30px; */
+				
+				/* 
+					border-radius 可以同时设置四个角的圆角
+				 */
+				/* border-radius: 10px 20px 30px ; */
+				
+				/* 
+					如果元素的宽度和高度是一样的，
+						则可以通过 border-radius: 50%; 来将其设置为正圆
+				 */
+				border-radius: 50%;
+				
+				/* outline: 10px red solid; */
+				
+				
+				/* 
+					如果需要分别指定圆角的两个半径
+						则可以使用 / 来划分
+				 */
+				/* border-radius: 40px / 20px; */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+	</body>
+</html>

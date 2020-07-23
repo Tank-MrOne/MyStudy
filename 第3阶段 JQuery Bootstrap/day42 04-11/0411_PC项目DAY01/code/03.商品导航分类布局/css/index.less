@@ -1,0 +1,117 @@
+.clearFix(){
+    *zoom:1;
+    &:after{
+        //空字符
+        content:"\200B";
+        height: 0;
+        display: block;
+        clear: both;
+    }
+}
+.outer{
+    .header{
+        &>.top{
+            width: 100%;
+            background-color: #eaeaea;
+            height: 30px;
+            line-height: 30px;
+            .container{
+                .clearFix();
+                width: 1200px;
+                margin: 0 auto;
+                .loginList{
+                    float: left;
+                    p{
+                       float: left;
+                       margin-right: 10px; 
+                       .register{
+                           border-left: 1px solid #b3aeae;
+                           padding: 0 5px;
+                           margin-left: 5px;
+                       }
+                    }
+                }
+                .typeList{
+                    float: right;
+                    font-size: 0;
+                    a{
+                        font-size: 12px;
+                        padding: 0 10px;
+                        & ~ a{
+                            border-left: 1px solid #b3aeae;
+                        }
+                    }
+                }
+            }
+        }
+        &>.bottom{
+            width: 1200px;
+            margin: 0 auto;
+            .clearFix();
+            .logoArea{
+                float: left;
+                img{
+                    width: 176px;
+                    height: 56px;
+                    margin: 25px 45px;
+                }
+            }
+            .searchArea{
+                float: right;
+                margin-top: 35px;
+                .searchForm{
+                    .clearFix();
+                    input{
+                        box-sizing: border-box;
+                        width: 490px;
+                        height: 32px;
+                        padding:0px 4px;
+                        border: 2px solid #ea4a36;
+                        float: left;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    button{
+                        width: 68px;
+                        height: 32px;
+                        background-color: #ea4a36;
+                        color: #fff;
+                        float: left;
+                        border: none;
+                        cursor: pointer;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .typeNav{
+        border-bottom:2px solid #e1251b;
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            .all{
+                width: 210px;
+                height: 50px;
+                background-color: #e1251b;
+                font-size: 14px;
+                color: #fff;
+                line-height: 50px;
+                text-align: center;
+                font-weight: bold;
+            }
+            .nav{
+                a{
+                    margin:  0 22px;
+                    line-height: 45px;
+                    font-size: 16px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}

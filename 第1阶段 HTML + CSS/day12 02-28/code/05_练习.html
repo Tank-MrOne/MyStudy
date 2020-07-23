@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			/* 设置链接的样式 */
+			a:link{
+				display: block;
+				width: 93px;
+				height: 29px;
+				/* background-color: #bfa; */
+				background-image: url(btn/btn.png);
+			}
+			
+			/* 设置鼠标移入后的效果 */
+			a:hover{
+				/* background-image: url(btn/btn.png); */
+				/* 修改背景图片的位置 */
+				background-position: -93px 0;
+			}
+			
+			/* 设置鼠标点击的效果 */
+			a:active{
+				/* background-image: url(btn/btn.png); */
+				background-position: -186px 0;
+			}
+			
+			/* 
+				我们通过三张图片来实现了一个动态的按钮效果
+					正常时显示 link.png
+					移入时显示 hover.png
+					点击时显示 active.png
+					
+				为什么闪？
+					- 网页中的外部资源（图片、音频、视频、css文件、js文件）
+						都是按需加载的，只有文件使用时，才会向服务器发送请求进行加载。
+						
+					- 可以通过 CSS Sprite 来解决上述问题
+						- 通过CSS Sprite 可以将多个图片保存到一起，这样只需一次即可加载所有图片，
+							使用图片时只需要同background-position调整位置来显示我们需要的图片即可
+						- 这种图我们就称为雪碧图
+						- 优点：
+							1.合并了图片减少了发送请求次数
+							2.同时也减少请求数据的大小
+						- 缺点：
+							1.相比于图标字体雪碧图还是要大一些
+							2.雪碧图不能很方便的缩放
+							3.雪碧图只适用于背景图片
+							
+					- 雪碧图的使用步骤：
+						1.确定要使用的图形并测量图形的大小（130 * 46）
+						2.创建一个和图形大小一样的元素
+						3.将雪碧图设置为元素的背景图片
+						4.确认背景图片的偏移量，并设置元素background-position属性
+			 */
+			
+			.box1{
+				width: 130px;
+				height: 46px;
+				background-image: url(img/amazon-sprite_.png);
+				background-position: 0 0;
+			}
+			
+			.box2{
+				width: 42px;
+				height: 30px;
+				background-image: url(img/amazon-sprite_.png);
+				background-position: -58px -338px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box2"></div>
+		<div class="box1"></div>
+		
+		<!-- 创建一个动态效果的按钮 -->
+		<a class="btn" href="javascript:;"></a>
+		
+	</body>
+</html>

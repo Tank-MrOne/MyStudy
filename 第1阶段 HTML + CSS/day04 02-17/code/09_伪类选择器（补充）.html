@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			/* 
+				为div的第一个子元素p，设置一个字体颜色为红色
+			 */
+			
+			/* 
+				:first-child 第一个子元素（所有子元素中排第一）
+				:first-of-type 同类型中的第一个子元素
+				:last-child 最后一个子元素
+				:last-of-type 同类型中的最后一个子元素
+				:nth-child 第n个子元素
+				:nth-of-type 同类型中的第n个子元素
+				
+		
+			 */
+			/* div>p:first-child{
+				color: red;
+			} */
+			
+			/* div>p:first-of-type{
+				color: red;
+			} */
+			
+			/* p:last-child{
+				color: blue;
+			} */
+			
+			/* p:last-of-type{
+				color: blue;
+			} */
+			
+			p:nth-child(3){
+				color: red;
+			}
+			
+			/* 
+				如果写则n的值会取0 1 2 3 4 ……
+				
+				2n(even) 表示取偶数位的
+				2n+1(odd) 表示取奇数位
+				
+			 */
+			/* p:nth-child(even){
+				color: red;
+			} */
+			
+			/* p:nth-of-type() */
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>我是span</span>
+			<p>第一个p元素</p>
+			<p>第二个p元素</p>
+			<p>第三个p元素</p>
+			<p>第四个p元素</p>
+			<span>我是span</span>
+		</div>
+		
+	</body>
+</html>

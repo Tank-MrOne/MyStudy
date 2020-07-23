@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num = 10;
+			
+			function fun() {
+	  			var num = 20;
+	  			fun2();
+			}//var fun = function(){};
+				
+	
+	
+			function fun2() {
+	  			console.log(num);//?
+			}//var fun2 = function(){};
+
+
+			fun();
+			
+			
+			//结果是10，因为函数定义的时候，作用域就已经确定好啦
+			//自己的和上一级的就确定好啦，自己调用的时候，内部找不到就去上级去找
+			
+			//作用域不是在函数调用的时候确定的，而是在函数定义的时候就确定好了
+			
+			
+			
+		</script>
+	</body>
+</html>

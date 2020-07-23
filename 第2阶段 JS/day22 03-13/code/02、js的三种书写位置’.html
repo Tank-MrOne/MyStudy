@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				height: 300px;
+				background-color: hotpink;
+			}
+		</style>
+	</head>
+	<body>
+		<!--第一种：行内的js写法几乎不用
+			1、行内的js比较局限，只能对元素的事件属性去写
+			2、如果js写在行内，代码的分离性比较差，可读性很差
+		-->
+		<!--<div id="box" onclick="alert('i love you~')">点击变色(行内的js写法)</div>-->
+		
+		
+		
+		
+		<!--第二种：这个script标签写在body内部的最下方，称为内嵌js写法-->
+		<!--<script type="text/javascript">
+			
+			//三种输出内容的方式
+			
+			alert('i love you~ zhao li ying!');//以弹出框的形式输出内容
+			console.log('i love you~ zhao li ying! two');//以后台日志的形式输出内容；用的最多
+			document.write('i love you~ zhao li ying! three');//把内容当做页面的内容去输出；
+			
+			//；是代码语句结束的标志，在js当中，可有可无，但是推荐把；写上，防止一些不必要的错误发生
+			
+			
+			//js当中注释  单行注释和多行注释
+			//单行注释     //
+			//多行注释    /* 多行  */
+			
+		</script>-->
+		
+		
+		
+		
+		<!--第三种js书写方式，外链式，项目的最后都要变为外链式去写-->
+		<!--注意：外链js，script标签是用来链接外部的js文件内容的，所以中间不要去书写代码，写了也没用-->
+		<script type="text/javascript" src="js/index.js"></script>
+		
+		
+	</body>
+</html>

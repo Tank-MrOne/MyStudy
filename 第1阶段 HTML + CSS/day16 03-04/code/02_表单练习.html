@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入图标字体库 -->
+		<link rel="stylesheet" href="iconfont/css/all.css">
+		<style>
+			/* 清除默认样式 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 设置背景颜色 */
+			body{
+				background-color: #128f75;
+			}
+			
+			/* 设置表单容器 */
+			.form-wrapper{
+				width: 800px;
+				height: 600px;
+				background: url(img/bg.jpg);
+				/* 设置居中 */
+				margin: 20px auto;
+				/* 解决外边距的传递 */
+				overflow: hidden;
+			}
+			
+			/* 设置内部的容器 */
+			.inner{
+				width: 368px;
+				height: 455px;
+				background-color: #fff;
+				border-radius: 5px;
+				margin: 72px auto 0;
+				overflow: hidden;
+			}
+			
+			/* 设置头像 */
+			.avatar{
+				width: 107px;
+				height: 107px;
+				margin: 48px auto;
+			}
+			
+			/* 设置文本框和密码框的大小 */
+			.inp-wrapper,
+			.pwd-wrapper{
+				/* 开启相对定位 */
+				position: relative;
+				width: 250px;
+				height: 42px;
+				background-color: #bfa;
+				margin: 0 auto 17px;
+			}
+			
+			.inner input{
+				/* 设置盒子模型的计算方式 */
+				box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				outline: none;
+				border: none;
+				/* 设置一个下边框 */
+				border-bottom: 2px solid #000;
+				/* 设置一个左右padding */
+				padding: 0 60px 0 10px;
+			}
+			
+			/* 获取焦点时，修改边框的样式 */
+			.inner input:focus{
+				border-color: #3eb18b;
+			}
+			
+			.inner input:focus + i{
+				color: #3eb18b;
+			}
+			
+			/* 设置图标字体的颜色 */
+			input + i{
+				/* 开启绝对定位 */
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				color: #5c5c5c;
+				font-size: 24px;
+			}
+			
+			/* 设置按钮 */
+			.btn-wrapper{
+				margin:60px auto 0 ;
+				text-align: center;
+			}
+			
+			/* 设置按钮的样式 */
+			.btn-wrapper button{
+				border: none;
+				background-color: #fff;
+				font-size: 18px;
+				color: #3eb18b;
+				cursor: pointer;
+			}
+			
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- 创建一个外部的容器 -->
+		<div class="form-wrapper">
+			<!-- 创建一个内部容器 -->
+			<div class="inner">
+				<!-- 创建头像的容器 -->
+				<div class="avatar">
+					<!-- 头像图片 -->
+					<img src="img/avatar.png">
+				</div>
+				
+				<!-- 创建表单 -->
+				<form action="#">
+					<div class="inp-wrapper">
+						<input type="text" placeholder="Username">
+						<!-- 添加一个小人的图片字体 -->
+						<i class="fas fa-user-circle"></i>
+					</div>
+					<div class="pwd-wrapper">
+						<input type="password" placeholder="Password">
+						<i class="fas fa-lock"></i>
+						
+					</div>
+					<div class="btn-wrapper">
+						<button type="submit">
+							SIGN IN <i class="fas fa-arrow-right"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

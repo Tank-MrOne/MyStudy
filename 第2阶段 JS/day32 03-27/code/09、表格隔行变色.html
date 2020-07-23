@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>班级</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+			
+			<tr>
+				<td>一班</td>
+				<td>张三</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>一班</td>
+				<td>李四</td>
+				<td>21</td>
+			</tr>
+			<tr>
+				<td>一班</td>
+				<td>王五</td>
+				<td>22</td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//拿到所有的tr
+				var trNodes = document.querySelectorAll('tr');
+				for(var i = 0; i < trNodes.length; i++){
+					if(i % 2 == 0){
+						trNodes[i].style.backgroundColor = 'hotpink';
+					}else{
+						trNodes[i].style.backgroundColor = 'skyblue';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

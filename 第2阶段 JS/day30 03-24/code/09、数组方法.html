@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3,4];
+			//数组增删改查
+			
+			//从末尾增
+//			var result = arr.push(100,200,300,[1,2,3]);
+//			console.log(result);
+//			console.log(arr);
+			//功能：从数组的末尾增加一个或者多个
+			//参数：增加的元素
+			//返回值：返回加入元素后数组的新长度
+			//这个方法对原数组有影响
+			
+			
+			//从末尾去删
+//			var result = arr.pop();
+//			console.log(result);
+//			console.log(arr);
+			//功能：从数组的末尾删除一个
+			//参数：无
+			//返回值：返回删除的那一个元素
+			//这个方法对原数组有影响
+			
+			//从头部增
+//			var result = arr.unshift(100,200,300,[1,2,3]);
+//			console.log(result);
+//			console.log(arr);
+			//功能：从数组的头部增加一个或者多个
+			//参数：增加的元素
+			//返回值：返回加入元素后数组的新长度
+			//这个方法对原数组有影响
+			
+			//从头部去删
+//			var result = arr.shift();
+//			console.log(result);
+//			console.log(arr);
+			//功能：从数组的头部删除一个
+			//参数：无
+			//返回值：返回删除的那一个元素
+			//这个方法对原数组有影响
+			
+			
+			//增删改一体化
+			//这个方法根据参数的不同，有不同的功能
+			//这个方法我们大家先当作删除去理解
+			//删除
+//			var result = arr.splice(1,2);
+//			console.log(result);
+//			console.log(arr);
+			//功能：从数组的任意位置删除任意个元素
+			//参数：两个   第一个代表从哪开始，第二个代表删除几个
+			//返回值：返回删除的元素组成的新数组
+			//这个方法对原数组有影响
+			
+			//增加
+//			var result = arr.splice(2,0,400,500,600);
+//			console.log(result);
+//			console.log(arr);
+			//功能：从数组的任意位置怎加任意多个元素
+			//参数：多个   第一个代表从哪开始，第二个代表删除0个，后面的代表新增的元素
+			//返回值：返回删除的元素组成的新数组，最终是空数组
+			//这个方法对原数组有影响
+			
+			
+			//修改
+//			var result = arr.splice(1,1,1000,2000);
+//			console.log(result);
+//			console.log(arr);
+			//功能：修改数组当中任意的元素
+			//参数：多个   第一个代表从哪开始，第二个代表删除几个，后面的代表新增的元素
+			//返回值：返回删除的元素组成的新数组
+			//这个方法对原数组有影响
+			
+			
+			
+			//把数组再转化为字符串  和字符串方法 split是一个逆运算
+//			var result = arr.join('');
+			//功能：以指定的字符串为连接符，讲数组元素连接成一个字符串
+			//参数：如果不传，默认以逗号为连接符，将元素连接成字符串
+			//		如果传的是正常字符串，那么以这个字符串为连接符将元素连接成字符串
+			//     如果传的是空串，那么直接将字符串连接成字符串，中间没有任何连接
+			//返回值：返回连接好的字符串
+			//这个方法对原数组没有影响
+//			console.log(result);
+//			console.log(arr);
+			
+			
+			
+			//翻转数组
+			var result = arr.reverse();
+			console.log(result);
+			console.log(arr);
+			console.log(result == arr);
+			//功能：翻转数组
+			//参数：无
+			//返回值：返回翻转后的原数组
+			//这个方法影响原数组
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

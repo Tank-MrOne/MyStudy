@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS函数异常处理</title>
+</head>
+
+<body>
+    <script>
+        //同步函数内部抛出错误
+        // function fn() {
+        //     throw new Error('测试同步函数抛出错误');
+        // }
+        // try {
+        //     fn();
+        // } catch (e) {
+        //     console.log(e.message);
+        // }
+
+        //异步
+        function fn2() {
+            setTimeout(() => {
+                try {
+                    throw new Error('测试异步函数抛出错误');
+                } catch (e) {
+                    console.log(e.stack);
+                    console.log(e.message);
+                }
+            }, 1000);
+        }
+
+        fn2();
+
+        console.log('continue');
+
+
+
+    </script>
+</body>
+
+</html>

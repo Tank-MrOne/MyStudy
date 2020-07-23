@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 100;
+			console.log(a);
+			console.log(a instanceof Object);
+			console.log(a.toString());//A.B
+			console.log(a instanceof Object);
+			//a.toString执行到这一行的时候，其实偷摸干了很多事
+			//1、a = new Number(a);  先把数字基本值转化为包装对象
+			//2、a.toString; 调用的其实是包装对象的原型当中的toString方法
+			//3、调用结束后自动再让a变回基本值  a = 100;
+			
+			
+//			var und;
+//			console.log(und.toString());//报错，原因是因为undefined没有包装对象
+			
+			
+			//包装对象一共有三种：数字   字符串  布尔值
+			
+//			var a = 100;
+			var b = new Number(100);//就是数字的包装对象
+//			
+//			console.log(a);
+			console.log(b);
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

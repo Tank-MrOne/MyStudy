@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol避免重名</title>
+</head>
+<body>
+    <script>
+       let stu1 = {
+           name: '张三',
+           key: Symbol()
+       };
+
+       let stu2 = {
+           name: '张三',
+           key: Symbol()
+       };
+
+       let scores = {
+            [stu1.key]: 100,
+            [stu2.key]: 12
+       };
+
+       //获取第一个同学的成绩
+       console.log(scores[stu1.key]);
+    </script>
+</body>
+</html>

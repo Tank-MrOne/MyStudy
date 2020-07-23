@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise的API</title>
+</head>
+
+<body>
+
+    <script>
+        /**
+         * 1. Promise 的实例化接收一个 函数类型的参数( 执行器函数 )
+         * 2. resolve和 reject 两个形参类型都是 函数.
+         * 3. 执行器函数是一个同步的回调函数
+         */
+        //1. 构造函数
+        let p = new Promise((resolve, reject) => {
+            // console.log(111);
+            setTimeout(() => {
+                // resolve('成功的数据');
+                reject('失败的数据');
+            }, 2000);
+        });
+
+        //2. then 方法. 调用 p 中的 then 方法
+        // let result = p.then(value => {
+
+        // }, reason => {
+
+        // });
+
+        //3. catch 方法. 调用 p 对象的 catch 方法, 用来处理失败的结果
+        p.catch(reason => {
+            console.error(reason);
+        });
+
+        //4. Promise.resolve  返回一个新的  Promise
+        // let result = Promise.resolve('下午阴天啦!! ');
+
+        //5. 成功与失败的状态    resolved 成功的状态  rejected 失败的状态
+        // p.status = undefined; 
+        // resolve =>   p.status = '成功';  
+        // reject  =>   p.status = '失败';
+
+        //6. Promise.reject 
+        // let result = Promise.reject('失败的数据');
+
+        //7. Promise.all 所有
+        let p1 = Promise.resolve(1);
+        let p2 = Promise.resolve(2);
+        let p3 = Promise.reject(3);
+        let p4 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                reject(4);
+            },1000);
+        });
+        // let result = Promise.all([p1, p2, p4]);
+
+        //8. Promise.race  赛跑
+        let result = Promise.race([p4,p2,p1,p3]);
+
+        //打印 result 变量
+        console.log(result);
+    // console.log(222);
+    </script>
+</body>
+
+</html>

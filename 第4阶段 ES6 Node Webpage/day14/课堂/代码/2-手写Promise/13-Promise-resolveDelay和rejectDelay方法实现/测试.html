@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise测试文件</title>
+</head>
+<body>
+<script src="promise.js"></script>
+
+<script>
+
+    const p1 = Promise.resolveDelay('成功啦', 3000);
+    const p2 = Promise.rejectDelay('失败啦', 3000);
+
+    p1.then(
+        value=>{
+            console.log(value);
+        }
+    )
+
+    p2.then(
+        null,
+        reason => {
+            console.error(reason);
+        }
+    )
+
+
+</script>
+</body>
+</html>

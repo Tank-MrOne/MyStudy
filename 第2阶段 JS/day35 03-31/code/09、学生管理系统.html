@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>张周文</td>
+				<td>18</td>
+				<td>
+					<a href="javascript:;">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>高琪</td>
+				<td>18</td>
+				<td>
+					<a href="javascript:;">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>王世杰</td>
+				<td>18</td>
+				<td>
+					<a href="javascript:;">删除</a>
+				</td>
+			</tr>
+		</table>
+		
+		<input type="text" placeholder="请输入学生姓名"/> <br />
+		<input type="text" placeholder="请输入学生年龄"/> <br />
+		<input type="button" value="确认添加"/>
+		
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//先搞添加
+				//获取按钮，添加点击事件
+				var inputNodes = document.querySelectorAll('input');
+				var tbodyNode = document.querySelector('tbody');
+				inputNodes[2].onclick = function(){
+					var username = inputNodes[0].value;
+					var age = inputNodes[1].value;
+					
+					if(username.trim()&&age.trim()){
+						//username和age拿到的都不是空串或者空白串
+						var trNode = document.createElement('tr');
+						//往tr当中加入td是学生名字
+						var tdUsername = document.createElement('td');
+						tdUsername.innerHTML = username;
+						trNode.appendChild(tdUsername);
+						//往tr当中加入td是学生年龄
+						var tdAge = document.createElement('td');
+						tdAge.innerHTML = age;
+						trNode.appendChild(tdAge);
+						//往tr当中加入td是删除操作
+						var tdOperate = document.createElement('td');
+						tdOperate.innerHTML = '<a href="javascript:;">删除</a>';
+						trNode.appendChild(tdOperate);
+						//把tr放到table当中，但是切记tr的爹是tbody
+						tbodyNode.appendChild(trNode);
+					}else{
+						alert('学生姓名或年龄不能为空')
+						
+					}
+					inputNodes[0].value = '';
+					inputNodes[1].value = '';
+					
+				}
+				
+				//再搞删除
+				tbodyNode.onclick = function(event){
+					event = event || window.event;
+					var target = event.target || event.srcElement;
+					if(target.nodeName === 'A'){
+						//点的是哪个a，就把和这个a相关的tr给删除
+						tbodyNode.removeChild(target.parentNode.parentNode); 
+					} 
+				}
+			}
+		</script>
+	</body>
+</html>

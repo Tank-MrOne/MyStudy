@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			表单（form）
+				- 在现实生活中，表单用于将我们的个人数据提交给他人
+				- 同样在网页中也存在表单，网页中的表单用于将我们的信息
+					提交给服务器(百度的搜索框，登录表单，注册表单)
+				- 在网页中使用form标签来创建标题
+		 -->
+		 
+		 <!-- 
+			form用来创建一个表单，表单中有一个属性action
+				action需要的是一个服务器地址，表单提交时数据将会发送action对应的地址上
+		  -->
+		 <form action="target.html">
+			 <!-- 
+				在表单中，需要添加表单项，以使表单可用
+				
+				文本框：
+					- 使用input标签创建一个文本框，
+						文本框应该有一个type属性，属性值为text
+						文本框可以直接编写内容（用户名、关键字）
+						
+					- 一个属性如果想要发送给服务器，属性必须有属性名
+						必须在表单项中指定name属性，填写的内容才会被提交到服务器
+					
+					- 用户所填写的数据默认会以查询字符串的形式发送给服务器
+						网页的路径?后的内容叫做查询字符串
+						
+					- ?username=admin&password=123123
+					- 查询字符串是一个名值对结构（name-value）
+						一个属性名对应一个属性值，
+							属性名就是name属性的值
+							属性值就是用户填写的内容
+						两个名值对结构之间使用&分开
+			  -->
+			  用户名 <input type="text" name="username">
+			  
+			  <br><br>
+			  
+			  <!-- 
+				密码框也使用input，不同的是type属性值是password
+					和文本框不同，密码框中填写的内容会以密文的形式显示
+			   -->
+			  密码 <input type="password" name="password">
+			  
+			  <br><br>
+			  
+			  <!-- 
+					单选按钮
+						- 使用input创建单选按钮，它的type属性值为radio
+						- 单选按钮必须使用name属性进行分组
+							拥有相同name属性的元素属于同一组
+							同一组中只能选一个
+						- 向radio这种选择框，不需要用户填内容
+							而是让用户直接选择的，还必须要指定一个value属性
+							value属性的值就是最终提交到服务器的值
+							
+						- 在单选和多选可以通过设置checked来设置默认选中
+			   -->
+			  性别 
+			  <input type="radio" name="gender" value="male"> 男
+			  <input type="radio" name="gender" value="female" checked> 女
+			  
+			  <br><br>
+			  
+			  <!-- 
+				多选框使用input标签，type属性为checkbox
+			   -->
+			  爱好
+			  <input type="checkbox" name="hobby" value="ppq"> 乒乓球
+			  <input type="checkbox" name="hobby" value="ymq" checked> 羽毛球
+			  <input type="checkbox" name="hobby" value="zq"> 足球
+			  <input type="checkbox" name="hobby" value="lq"> 篮球
+			  
+			  <br><br>
+			  
+			  <!-- 
+				下拉列表使用select,
+					在select中，使用option来表示列表项
+					下拉列表的name属性需要指定给select
+						value属性要指定给每个option
+						
+					在下拉列表中可以使用 optgroup 来为列表项分组
+					
+					可以直接在select上添加一个属性 multiple
+						则可以将下拉列表变成一个多选的下拉列表
+						
+					可以为选项添加一个selected属性，来使选项变成默认选中
+			   -->
+			   
+			  你喜欢的明星
+			  <select name="star">
+				  <optgroup label="女明星">
+				  	<option value="fbb">范冰冰</option>
+				  	<option value="zw">赵薇</option>
+				  	<option value="lxr">林心如</option>
+				  </optgroup>
+				  <optgroup label="男明星">
+				  	<option value="pcj" >潘长江</option>
+				  	<option value="zbs">赵本山</option>
+				  	<option value="wyz" selected>吴彦祖</option>
+				  </optgroup>
+			  </select>
+			  <br><br>
+			  <!-- 
+				提交按钮
+					- 使用input创建提交按钮,type属性是submit
+					- 可以通过value属性来指定按钮上的文字
+			   -->
+			   <input type="submit" value="注册">
+			  
+		 </form>
+		 
+	</body>
+</html>

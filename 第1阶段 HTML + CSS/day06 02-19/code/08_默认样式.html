@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>默认样式</title>
+		<style>
+			/* body{
+				margin: 0;
+			}
+			
+			p{
+				margin: 0;
+			} */
+			
+			/* ul{
+				margin: 0;
+				padding: 0; */
+				/* 去除项目符号 */
+				/* list-style:none;
+			} */
+			
+			/* 
+				可以使用如下代码来清除默认样式
+			 */
+			/* *{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul{
+				list-style: none;
+			} */
+			
+			/* 
+				正常来讲在做pc端项目时，都会引入一些专门用来清除默认样式css文件
+					两种不同的重置样式表：
+						reset.css ，该样式表中会去除大部分会影响到布局的默认样式
+						
+						normalize.css ，
+							该样式表并不会简单的去除默认样式
+							而是保留一些有用的默认样式，并且将其统一
+							
+						公司自己的重置样式表	
+			 */
+				
+			
+		</style>
+		
+		<link rel="stylesheet" href="normalize.css">
+	</head>
+	<body>
+		
+		<!-- 
+			通常情况下，浏览器会为元素设置一个默认的样式，
+				浏览器之所以设置默认样式，是因为它要确保网页就是没有设置CSS
+				也可以正常的浏览一些基本的信息
+				
+			但是在不通的浏览器中，默认样式也是不一样的，
+					所以通常情况下，在编写网页前，我们需要去除掉浏览器的默认样式
+		 -->
+		
+		<div>我是一个div</div>
+		
+		<p>我是一个p元素</p>
+		<p>我是第二个p元素</p>
+		
+		<ul>
+			<li>哈哈哈哈</li>
+			<li>嘻嘻嘻嘻</li>
+			<li>嘁嘁嘁嘁</li>
+		</ul>
+		
+	</body>
+</html>

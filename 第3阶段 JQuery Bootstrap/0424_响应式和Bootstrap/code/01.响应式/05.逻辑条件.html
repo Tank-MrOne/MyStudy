@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        /* and 是与  也就是多个条件必须满足 */
+        @media tv and (min-width: 700px) {
+            .box {
+                background-color: blueviolet;
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            .box {
+                background-color: yellow;
+            }
+        }
+
+        /* @media screen and (min-width: 300px) and (orientation: portrait) {
+            .box {
+                background-color: hotpink;
+            }
+        } */
+
+        /* only是仅仅在某个条件下 多数情况下 和不写only 类似*/
+        @media only screen and (min-width: 300px) and (orientation: portrait) {
+            .box {
+                background-color: hotpink;
+            }
+        }
+
+        /* not: 检测后边所有的语句*/
+        @media not screen and (orientation: portrait) {
+            .box {
+                background-color: greenyellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

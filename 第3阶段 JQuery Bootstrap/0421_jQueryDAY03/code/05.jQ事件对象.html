@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">box</div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+
+        $(function () {
+            $(".box").click(function (e) {
+                //jQ已经对事件对象做了兼容性的处理  所以只要需要使用事件方法的参数即可
+                //如果需要兼容低版本的浏览器，请使用jQ的1.XX版本  2.XX版本已经停止做兼容了
+                // jQuery中的事件对象是jQuery根据原生js的事件对象自己封装的
+                console.log(e);
+
+                //在jQuery中，阻止默认事件使用 e.preventDefault()
+                e.preventDefault();
+
+                //在jQuery中，阻止传播 使用 e.stopPropagation();
+                e.stopPropagation()
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>行内和块</title>
+	</head>
+	<body>
+		<!-- 
+			块元素（block）
+				- 在页面中会独占一行的元素被称为块元素
+				- 默认情况下块元素独占页面中的一行
+				- 常见的块元素：
+					p h1~h6 ul ol li main header div ...
+				- 在网页中块元素主要用来对网页进行布局	
+				
+			行内元素、内联元素（inline）
+				- 行内元素在网页中不会独占页面的一行
+					只会占有自身内容大小
+				- 常见的行内元素：
+					a span ...
+				- 行内元素主要用来选中文本内容，为文本设置样式	
+				
+			嵌套的规则：
+				通常情况下可以在块元素中放置块元素或行内元素
+					但是不会在行内元素中放置块元素
+				两种特殊情况：
+					1、p中不能出现任何的块元素
+					2、a中可以放置除了它自身以外的任何元素
+		 -->
+		 
+		 <p style="background-color: yellow; width: 100px;">我是第一个p元素</p>
+		 <p style="background-color: orange; width: 100px;">我是第二个p元素</p>
+		 
+		 <a href="#">超链接一</a>
+		 <a href="#">超链接二</a>
+		 
+		 <span style="color: chocolate;">我是一段文字</span>
+		 <span>我也是一段文字</span>
+		 
+		 <div>
+			 我是一个div
+			 <div>
+				 我是内部的div
+				 <span>我是div内部的span</span>
+			 </div>
+		 </div>
+		 
+		 <div>
+		 	我是一个div
+		 </div>
+		 <!-- <a href="#">
+			 <a href=""></a>
+		 </a> -->
+		 <p>我是p元素<div>hello</div></p>
+		
+		 
+	</body>
+</html>

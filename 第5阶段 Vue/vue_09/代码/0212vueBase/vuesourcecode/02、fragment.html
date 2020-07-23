@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+    <script>
+        // 6)	documentfragment  文档碎片
+		// 	是一个容器，在内存中干活，批量更新，这个容器本身进入不了页面，它内部的所有东西会进去页面，
+		// 	1、可以把原来的元素的子节点，转移到documentfragment 节点当中，原来的里面就没有了
+		// 	2、去处理documentfragment 中的子元素节点数据
+		// 	3、最后把documentfragment 节点 追加到原来的元素当中
+        //之前的做法效率很慢，因为我们是一个一个改的
+        let box = document.getElementById('box')
+        //定义一个容器  fragment 去把box内部所有的节点，搬（转移）到我这个容器里面，box内部节点就不在了
+        let fragmentNode = document.createDocumentFragment()//创建了一个文档碎片容器
+
+        let child
+
+        //把box内部所有的节点转移到fragment内部，原来box里面就没有了
+        while(child = box.firstChild){
+            //box.firstChild 拿box的第一个字节点
+            fragmentNode.appendChild(child)//直接把原来的节点删除，转移到fragment里面
+        }
+
+
+        // 直接去处理fragmentNode当中的东西
+        // fragmentNode.children拿的是所有的子元素节点，为了拿到ul
+        //这里只是在fragment容器当中在干活
+        let liNodes = fragmentNode.children[0].children;
+        [].slice.call(liNodes).forEach(item => item.innerText = "我爱你赵丽颖")
+
+
+        //处理完成之后，把整个fragment的东西归还给box
+        box.appendChild(fragmentNode) //fragmentNode这个碎片并不会进入到box，它会把它内部的所有东西归还
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

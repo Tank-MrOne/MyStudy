@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象扩展</title>
+</head>
+
+<body>
+    <script>
+        //1. 判断两个值是否完全相等  ===
+        // let o1 = {};
+        // let o2 = o1;
+
+        // console.log(Object.is(o1, o2));
+        // console.log(Object.is(200, '200'));
+        // console.log(Object.is(+0, -0));
+        // console.log(Object.is(+0, -0));
+        // console.log(Object.is(NaN, NaN));
+        // console.log(NaN === NaN);//
+
+        //2. Object.assign
+        // let o1 = {
+        //     a: 100,
+        //     b: 200,
+        //     c: 300
+        // };
+        // let o2 = {
+        //     d: 400,
+        //     e: 500,
+        //     f: 600,
+        //     a: 1000
+        // };
+        // Object.assign(o1, o2); // 配置项的合并
+        // console.log(o1);
+
+        //直接修改对象的原型
+        let o1 = {
+            a:100,
+            b:200
+        };
+
+        let o2 = {
+            c:300,
+            d:400
+        };
+
+        // console.log(o1);
+        //修改原型对象
+        o1.__proto__ = o2;
+        o1.__proto__.run = function(){
+            console.log('我可以奔跑!!');
+        }
+
+        // console.log(o1.run());
+        // console.log(o1);
+
+        o1.run();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 设置完美视口 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 
+				移动端的设计图常见的大小（375的倍数）
+					750px  (2x)
+					1125px (3x)
+			 
+			 */
+			
+			html{
+				/* font-size: 0.13333vw; */
+				/* font-size: 1.33333vw; */
+				
+				/* 将0.13333 扩大 40倍 变成 5.3333 */
+				font-size: 5.3333vw;
+				
+				/* 
+					在老版本的Chrome中它所支持的字体大小最小是12px，
+						如果为chrome设置一个小于12px的字体是不会生效的
+						
+					如何解决老版本的适配问题？
+						那么意味着我们必须为html指定一个大于12px的字体
+						
+					为了使字体大小生效，将值扩大了40倍，
+						这样1rem表示的是40px
+						
+					这个问题在新版本的chrome中不复存在~
+						
+				 */
+			}
+			
+			.box1{
+				/* 
+					h35
+					w48
+				 */
+				/* height: 4.67vw; */
+				
+				/* 
+					vw (视口宽度)
+					100vw = 1个视口宽度
+					 百分比是参照于包含块去计算的
+					 而vw总是参照于视口计算
+					 
+					 设计图的宽度 750px
+					 视口的宽度   100vw
+					 
+					 750px = 100vw
+						100÷750=0.13333333333333
+					 1px = 0.133333vw
+						48 x 0.133333 = 6.4
+					 48px = 6.4vw
+					 35px = 4.67vw
+				 
+				 */
+				/* width: 6.4vw; */
+				
+				/* 
+					1rem = 1个根元素字体的大小
+					
+					48 / 35
+				 */
+				width: 1.2rem;
+				height: 0.875rem;
+				
+				background-color: #bfa;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">
+			
+			
+			
+		</div>
+		
+		
+	</body>
+</html>

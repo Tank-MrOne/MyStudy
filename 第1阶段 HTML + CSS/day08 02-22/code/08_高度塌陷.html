@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>高度塌陷</title>
+		<style>
+			
+			.box1{
+				border: 10px red solid;
+				
+				/* 
+					本例中，box1没有设置height属性，此时它的height属性值为auto
+					box1的高度值将被内容撑开，box1中有一个子元素box2，
+						box2的高度为200像素，所以box1现在的高度也是200像素
+						
+					当box2设置浮动后，box2将会从文档流中脱离，
+						脱离文档流后，元素无法撑起父元素的高度，导致父元素的高度塌陷
+						当父元素的高度塌陷后，它下边的元素会自动上移，
+						将会导致整个页面的布局变得混乱
+					
+					box2设置浮动后，box1的高度丢失
+				 */
+				
+				/* 
+				临时办法 
+					1、给父元素指定一个高度（有局限）
+					2、让父元素也浮动（有局限）
+				*/
+			   /* height: 200px; */
+			   float: left;
+				
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				
+				float: left;
+			}
+			
+			.box3{
+				width: 300px;
+				height: 300px;
+				background-color: orange;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+		
+		<div class="box3"></div>
+		
+	</body>
+</html>

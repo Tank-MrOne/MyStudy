@@ -1,0 +1,34 @@
+.outer {
+  width: 500px;
+  height: 600px;
+  background-color: yellow;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.outer .inner {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.outer .inner .con {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border: 10px dotted yellow;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>
+			我是一个段落
+			<span>
+				尚硅谷
+			</span>
+		</p>
+		<script type="text/javascript">
+			window.onload = function(){
+				var pNode = document.querySelector('p');
+				
+				pNode.onclick = function(){
+					//读：
+					//如果获取的元素当中没有其它的元素
+					//那么这两个都是直接获取文本（innerHTML获取的东西带空白和换行，innerText不带）
+//					console.log(this.innerText);//如果内部有其他标签，只是获取标签内部的所有文本，标签不会获取
+//					console.log(this.innerHTML);//如果内部有其他标签，文本和标签都会获取
+					
+					
+					//写：
+					//如果设置的内容当中没有标签内容
+					//那么这两个都是直接把p当中所有的东西替换成文本内容
+//					this.innerText = '赵丽颖';
+//					this.innerHTML = '赵丽颖';
+//					this.innerText = '<h1>赵丽颖</h1>';//如果设置的内容当中有其他标签内容，那么标签是原样字符串显式在页面上；
+					this.innerHTML = '<h1>赵丽颖</h1>';//如果设置的内容当中有其他标签内容，那么标签是在页面上渲染生效的；
+				}
+			}
+		</script>
+	</body>
+</html>

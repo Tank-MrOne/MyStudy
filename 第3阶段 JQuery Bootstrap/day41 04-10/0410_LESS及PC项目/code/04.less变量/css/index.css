@@ -1,0 +1,32 @@
+* {
+  margin: 10px;
+  padding: 10px;
+}
+.outer {
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+.outer .box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  margin: auto;
+  background-color: red;
+}
+.outer .logo {
+  width: 200px;
+  height: 100px;
+  background: url("http://www.atguigu.com/images/pic_new/logo.png") 0 0 no-repeat;
+}
+.class {
+  right: 1;
+}
+.class .brass {
+  left: 3;
+}

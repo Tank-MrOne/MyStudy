@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person(name,age,gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+			}
+			
+			//一般属性都是写在函数内部，因为属性值都不一样
+			//方法一般都写在原型中，为了让所有的实例化对象共享
+			
+			Person.prototype.eat = function(){
+				console.log('吃饭');
+			}
+			
+			//原型对象当中的所有东西  都是为实例化对象服务的
+			//函数对象对象本身是没法使用的
+			//如果函数对象也想用那个方法，要么自己给自己加一个，要么间接的去使用
+			
+			
+			
+//			Person.eat = function(){
+//				console.log('吃饭');
+//			}
+			
+			console.dir(Person);
+			
+			
+			var p1 = new Person('赵丽颖',33,'female');
+			p1.eat();
+			var p2 = new Person('杨幂',34,'female');
+			p2.eat();
+			
+//			Person.eat();
+			
+		</script>
+	</body>
+</html>

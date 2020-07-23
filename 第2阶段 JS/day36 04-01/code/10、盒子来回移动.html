@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100px;
+				height: 80px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			//求出盒子最新的位置，设置给盒子的left 就能让盒子动
+			// 盒子的新位置  = 盒子的原始位置  + 盒子要移动的距离差
+			
+			var box = document.getElementById('box');
+//			setTimeout(function(){
+//				//第一步：拿到盒子原来的位置
+//				var eleX = box.offsetLeft;
+//				//第二步：求出现在准备要走的位置
+//				var lastX = eleX + 50;
+//				//第三步：把算出来的位置设置给box
+//				box.style.left = lastX + 'px';
+//				
+//			},3000)
+
+			var step = 3;
+			setInterval(function(){
+				//第一步：拿到盒子原来的位置
+				var eleX = box.offsetLeft;
+				//第二步：求出现在准备要走的位置
+				var lastX = eleX + step;
+				
+				//在判定临界值，当达到左右临界的时候，往相反方向去走
+				if(lastX > document.documentElement.clientWidth - box.offsetWidth){
+					lastX = document.documentElement.clientWidth - box.offsetWidth;
+					step = -3;
+				}else if(lastX < 0){
+					lastX = 0;
+					step = 3;
+				}
+				
+				
+				//第三步：把算出来的位置设置给box
+				box.style.left = lastX + 'px';
+			},16)
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

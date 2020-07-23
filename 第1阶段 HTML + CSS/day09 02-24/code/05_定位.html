@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				/* 
+					将box2移动到box1的右侧
+				 */
+				/* margin-left: 200px;
+				margin-top: -200px; */
+				
+				/* 
+					定位（position）
+						- 定位是网页中一种比较高级的布局的手动
+						- 通过定位可以将一个元素摆放到页面中的任意位置
+						- 定位通过position属性来设置：
+							可选值：
+								static 默认值，元素没有开启定位
+								relative 开启元素的相对定位
+								absolute 开启元素的绝对定位
+								fixed 开启元素的固定定位
+								sticky 开启元素的粘滞定位
+				 
+				 */
+				
+				/* 
+					相对定位：
+						- 将元素的position属性值设置为relative即开启了元素的相对定位
+							position: relative;
+						- 开启了相对定位的元素会具有如下特点：
+								1、开启元素的相对定位后，如果不设置偏移量
+									元素不会发生任何的变化
+								2、相对定位元素，是相对于自身在文档流中的位置计算偏移量的
+								3、相对定位不会使元素脱离文档流，
+									相对定位元素依然会占据网页中的位置
+								4、相对定位不会改变元素的性质，
+									块还是块，行内还是行内
+								5、相对定位会提升元素的层级
+									相对定位元素会盖住文档流中的元素
+									
+									
+					偏移量：
+						- 偏移量用来设置元素在页面中的位置
+						- 只有开启了定位的元素才可以通过偏移量来设置位置
+						- 开启了定位的元素指position属性是一个非static值的元素
+						- 偏移量一共有四个值：
+							top
+								- 元素距离定位位置上边的距离
+							bottom
+								- 元素距离定位位置底部的距离
+							left
+								- 元素距离定位位置左侧的距离
+							right
+								- 元素距离定位位置右侧的距离
+						
+				 
+				 */
+				position: relative;
+				
+				/* 设置左边距 */
+				left:100px;
+				top:100px;
+			}
+			
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: tomato;
+				/* margin-top: 200px; */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</body>
+</html>

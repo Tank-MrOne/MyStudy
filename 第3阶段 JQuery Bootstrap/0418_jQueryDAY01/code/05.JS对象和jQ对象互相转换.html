@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="con1">con1</div>
+    <div id="con2">con2</div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        //通过JS的方法获取con1
+        var oCon1 = document.getElementById("con1");
+        // 使用JS方法没有问题
+        // oCon1.style.color = "red";
+        //但是JS对象调用jQ方法就会出现问题
+        // oCon1.css("color","red");
+        //如果JS对象想要使用jQ方法，则在JS对象外边添加一个$()包裹即可
+        $(oCon1).css("color", "pink");
+
+
+
+        // 通过jQ对象 获取con2
+        //使用jQ方法没有问题
+        // $("#con2").css("color", "red");
+        //使用js方法有问题
+        // $("#con2").style.color = "pink"
+        //jQ对象转JS对象
+        $("#con2").get(0).style.color = "red";
+        $("#con2")[0].style.color = "red";
+    </script>
+</body>
+
+</html>

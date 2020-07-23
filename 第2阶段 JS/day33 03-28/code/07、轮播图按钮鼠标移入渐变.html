@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			
+			img{
+				display: block;
+				/*vertical-align: middle;*/
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			input{
+				outline: none;
+			}
+			
+			.clearFix:after{
+				content: '';
+				display: table;
+				clear: both;
+			}
+			
+			#box{
+				position: relative;
+				width: 600px;
+				height: 300px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			
+			#box .list{
+				width: 3000px;
+				height: 300px;
+			}
+			
+			#box .list li{
+				float: left;
+				width: 600px;
+				height: 300px;
+			}
+			
+			#box .list li img{
+				width: 600px;
+				height: 300px;
+			}
+			
+			
+			#box span{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 100px;
+				background-color: rgba(200,200,200,.7);
+				font-size: 50px;
+				text-align: center;
+				line-height: 100px;
+				color: white;
+				opacity: 0;
+				transition: opacity 10s;
+			}
+			#box .left{
+				left: 0;
+			}
+			#box .right{
+				right: 0;
+			}
+			
+			#box .iconList{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10px;
+				overflow: hidden;
+			}
+			
+			#box .iconList li{
+				float: left;
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				border-radius: 50%;
+				background-color: gray;
+			}
+			
+			#box .iconList li.current{
+				background-color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul class="list">
+				<li><img src="img/17.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/7.jpg"/></li>
+				<li><img src="img/9.jpg"/></li>
+			</ul>
+			
+			<span class="left">  <  </span>
+			<span class="right">  >  </span>
+			
+			
+			<ul class="iconList">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var spanNodes = document.querySelectorAll('#box span');
+				//移入
+				box.onmouseenter= function(){
+					spanNodes[0].style.opacity = 1;
+					spanNodes[1].style.opacity = 1;
+				};
+				//移出
+				box.onmouseleave = function(){
+					spanNodes[0].style.opacity = 0;
+					spanNodes[1].style.opacity = 0;
+				};
+			}
+		</script>
+	</body>
+</html>

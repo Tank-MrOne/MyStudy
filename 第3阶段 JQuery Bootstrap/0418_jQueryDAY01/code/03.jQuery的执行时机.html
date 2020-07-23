@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script>
+        /*
+        window.onload ：当页面的节点  资源  音视频等等全部加载完毕以后才执行，
+        因为这个是DOM0级事件绑定，所以只能绑定一次，多次绑定会覆盖
+
+        window.addEventListener("DOMContentLoaded"): 当页面的节点加载完成之后触发。
+        可以绑定多次
+
+        $(document).ready(function () { }):
+        $(document)是选择器选择到了整个文档
+        ready方法是事件的简写，代表当节点加载完成后执行 里边的回调函数
+        也可以书写多次
+        提供了简写：$(function () {  })
+        */
+
+
+        $(function () {
+            alert(1)
+        })
+
+
+        $(function () {
+            alert(2)
+        })
+
+
+        $(function () {
+            alert(3)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入你喜欢的歌曲" />
+		<ul>
+			
+		</ul>
+		<script type="text/javascript">
+			window.onload = function(){
+				//回车之后，input内容获取添加li,页面发生变化
+				//第一步：获取input标签
+				var inputNode = document.querySelector('input');
+				var ulNode = document.querySelector('ul');
+				//第二步：对input添加回车事件
+				inputNode.onkeyup = function(event){
+					//第三步：回车之后做的事情
+					if(event.keyCode === 13){
+						//1、获取内容保存
+						var content = inputNode.value;//获取表单类元素的内容，拿到的都是字符串
+						if(content.trim()){
+							//content一定不是空串和空白串
+							//2、创建li
+							var liNode = document.createElement('li');
+							//3、把内容放到li内部
+							liNode.innerHTML = content;
+							//4、把li追加给ul
+							ulNode.appendChild(liNode);
+							liNode.onmouseenter = function(){
+								this.style.backgroundColor = 'red';
+							};
+							liNode.onmouseleave= function(){
+								this.style.backgroundColor = 'white';
+							};
+//							inputNode.value = '';
+
+							//找到所有的li
+//							//每加一个歌曲，都会从头到尾把所有的li重新添加一次事件，效率不高
+//							var liNodes = document.querySelectorAll('li');
+//							for(var i = 0; i < liNodes.length; i++){
+//								liNodes[i].onmouseenter = function(){
+//									this.style.backgroundColor = 'red';
+//								};
+//								liNodes[i].onmouseleave = function(){
+//									this.style.backgroundColor = 'white';
+//								}
+//							}
+
+						}else{
+							//content要么是空串要么是空白串
+							alert('歌曲名字不能为空');
+//							inputNode.value = '';
+						}
+						inputNode.value = '';
+					}
+				}
+				
+				//trim是一个字符串方法，去除两遍空格
+//				var str = '            哈哈                       ';
+//				console.log(str);
+//				console.log(str.trim());
+//				console.log(str.trimLeft());
+//				console.log(str.trimRight());
+				
+				
+			}
+		</script>
+	</body>
+</html>

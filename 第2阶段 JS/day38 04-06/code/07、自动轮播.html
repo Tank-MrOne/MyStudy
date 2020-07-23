@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			
+			img{
+				display: block;
+				/*vertical-align: middle;*/
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			input{
+				outline: none;
+			}
+			
+			.clearFix:after{
+				content: '';
+				display: table;
+				clear: both;
+			}
+			
+			#box{
+				position: relative;
+				width: 600px;
+				height: 300px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			
+			#box .list{
+				position: absolute;
+				left: -600px;
+				top: 0;
+				width: 4200px;
+				height: 300px;
+			}
+			
+			#box .list li{
+				float: left;
+				width: 600px;
+				height: 300px;
+			}
+			
+			#box .list li img{
+				width: 600px;
+				height: 300px;
+			}
+			
+			
+			#box span{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 100px;
+				background-color: rgba(200,200,200,.7);
+				font-size: 50px;
+				text-align: center;
+				line-height: 100px;
+				color: white;
+				opacity: 0;
+				transition: opacity 2s;
+			}
+			#box .left{
+				left: 0;
+			}
+			#box .right{
+				right: 0;
+			}
+			
+			#box .iconList{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10px;
+				overflow: hidden;
+			}
+			
+			#box .iconList li{
+				float: left;
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				border-radius: 50%;
+				background-color: gray;
+			}
+			
+			#box .iconList li.current{
+				background-color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+			<ul class="list">
+				<!--无缝效果需要改变结构  最前面加最后一个，最后面加最前面一个-->
+				<li><img src="img/9.jpg"/></li>
+				<li><img src="img/17.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/7.jpg"/></li>
+				<li><img src="img/9.jpg"/></li>
+				<li><img src="img/17.jpg"/></li>
+			</ul>
+			
+			<span class="left">  <  </span>
+			<span class="right">  >  </span>
+			
+			
+			<ul class="iconList">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var spanNodes = document.querySelectorAll('#box span');
+				var ulNode = document.querySelector('#box .list');
+				var iconItems = document.querySelectorAll('#box .iconList li');
+				var timeAll = 600;//点击一次移动一张图片的距离所需要的总时间
+				var stepTime = 20;//每都一步所需要的的时间
+				var timer = null;
+				var isMove = false;
+				var autoTimer = null;
+				
+				//移入
+				box.onmouseenter= function(){
+					spanNodes[0].style.opacity = 1;
+					spanNodes[1].style.opacity = 1;
+					clearInterval(autoTimer);
+				};
+				//移出
+				box.onmouseleave = function(){
+					spanNodes[0].style.opacity = 0;
+					spanNodes[1].style.opacity = 0;
+					autoRun();
+				};
+				
+				
+				
+				//点击右侧按钮图片动起来
+				
+				spanNodes[1].onclick = function(){
+					move(true);
+				}
+				
+				//点击左侧按钮
+				spanNodes[0].onclick = function(){
+					move(false);
+				}
+				
+				//点击小圆点移动
+				for(var i = 0; i < iconItems.length; i++){
+					iconItems[i].index = i;
+					iconItems[i].onclick = function(){
+						//点击小圆点后的逻辑
+						//和小圆点变色求小圆点的下标  刚好相反
+						//点击哪个小圆点，可以获取到点击的这个小圆点的下标
+						//根据小圆点的下标可以求出要显示的图片的下标
+						//就可以求出要显示的图片对应的最终位置
+						//把最终位置传到move可以求出点击小圆点后的距离差
+						//点击按钮和点击小圆点逻辑是一样的，只是距离差不同
+						move((this.index + 1)* -600);
+					}
+				}
+				
+				
+				//自动轮播
+				autoRun();
+				function autoRun(){
+					autoTimer = setInterval(function(){
+						move(true);
+					},2000);
+				}
+				
+				
+				
+				
+				function move(flag){
+					
+					//第二次开始的时候去判断开关状态；
+					if(isMove){
+						return;
+					}
+					
+					//第一次点击的时候
+					isMove = true;
+					
+					//在特定的条件下，让isMove再次变为false,为了后期也能动，否则后期点击就不动了
+					setTimeout(function(){
+						isMove = false;
+					},600);
+					
+					
+					if(typeof flag === "boolean"){
+						//证明点击的是按钮
+						if(flag){
+							var disX = -600;
+						}else{
+							var disX = 600;
+						}
+					}else{
+						//证明点击的是小圆点进来的flag不是布尔值
+						var disX = flag - ulNode.offsetLeft;
+					}
+					
+					//可以求出目前ul所在的位置
+					var startX = ulNode.offsetLeft;
+					//我们就可以求出点击一次移动的最终位置
+					var lastX = startX + disX;
+					//把求出的最终位置设置给ul,这样点击就已经能轮播了，但是是瞬变轮播
+					//如果要变成滑动就不能这样做，我们得让这个-600慢慢一步一步走；
+//					ulNode.style.left = lastX + 'px';
+//					用循环定时器模拟过度效果
+					//求出每一步走的距离
+					var stepDis = disX / (timeAll / stepTime);
+					timer = setInterval(function(){
+						var left = ulNode.offsetLeft + stepDis;
+						//当慢慢移动到最后和瞬间移动到最后距离一样的时候，我们就清除定时器
+						if(left === lastX){
+							clearInterval(timer);
+							//无缝的逻辑
+							if(left === -3600){
+								left = -600;
+							}else if(left === 0){
+								left = -3000;
+							}
+							//在特定的条件下，让isMove再次变为false,为了后期也能动，否则后期点击就不动了
+//							isMove = false;
+							
+						}
+						ulNode.style.left = left + 'px';
+					},stepTime);
+					
+					//小圆点变色
+					//排它
+					//先让所有的小圆点变灰
+					for(var i = 0; i < iconItems.length; i++){
+						iconItems[i].className = '';
+					}
+					
+					//让对应的小圆点变红
+					//要求对应的小圆点，其实就是要求出对应的小圆点的下标
+					//想要求小圆点的下标，我们可以转而求要显示的图片的下标，
+					//图片下标 - 1就是我们要的小圆点下标
+					var index = lastX / -600 - 1;
+					if(index > 4){
+						index = 0;
+					}else if(index < 0){
+						index = 4;
+					}
+					
+					iconItems[index].className = 'current';
+					
+				}
+				
+			}
+		</script>
+	</body>
+</html>

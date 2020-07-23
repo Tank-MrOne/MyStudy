@@ -1,0 +1,56 @@
+#outer {
+  border: 1px solid #000;
+}
+#outer .con {
+  background-color: #ccc;
+  padding: 30px;
+}
+#outer .con .nav {
+  background-color: pink;
+  border: 1px solid #000;
+  list-style: none;
+}
+#outer .con .nav li {
+  height: 40px;
+  line-height: 40px;
+  font-size: 28px;
+  color: royalblue;
+}
+#outer .con .nav li:nth-child(3) {
+  color: yellow;
+}
+#outer .con .nav li:hover {
+  color: green;
+}
+#outer .con .nav .active {
+  color: red;
+}
+#outer .box {
+  margin: 40px;
+  background-color: yellowgreen;
+}
+#outer .box h2 {
+  font-size: 30px;
+  text-align: center;
+}
+#outer .box p {
+  color: #ccc;
+  font-size: 12px;
+  border: 1px solid red;
+}
+#outer .clearFix {
+  *zoom: 1;
+}
+#outer .clearFix div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  float: left;
+  margin: 10px;
+}
+#outer .clearFix:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}

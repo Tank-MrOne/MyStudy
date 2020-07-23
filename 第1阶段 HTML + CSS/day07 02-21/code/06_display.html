@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			a{
+				/* 
+					display 用来设置元素的显示方式
+						可选值：
+							block 元素将以块元素的形式显示
+							inline 元素将以行内元素的形式显示
+							inline-block 元素将以行内块元素的形式显示
+								- 可以设置宽度和高度并且元素不会独占页面中的一行
+							table 元素将以表格的形式呈现	
+								- table的特点和块元素类似，但是又不完全一样
+							none 元素不在页面中显示
+								- 设置display:none;元素将完全从页面中消失
+									并且不会在占用页面中的位置
+				 */
+				display: block;
+				width: 200px;
+				height: 200px;
+				background-color: #ff0;
+				/* 
+					如何将一行文字在父元素中垂直居中
+						在网页中，文字都排列在一个被称为行框的地方
+						文字默认在行框中垂直居中
+						所以如果希望文字在父元素中垂直居中，
+							只需要将文字的行框的高度，设置为父元素的高度即可
+						通过line-height来设置行高（行框的高度）
+				 */
+				line-height: 200px;
+			}
+			
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #ADFF2F;
+				
+				/* 
+					visibility 用来设置元素是否在页面中显示
+						参数：
+							- visible 默认值 元素在页面中正常显示
+							- hidden 隐藏，元素会在页面中隐藏
+								隐藏的元素依然会占据页面中的位置
+				 */
+				visibility: hidden;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<a href="javascript:;">我是一个超链接</a>
+		<!-- <a href="javascript:;">我是一个超链接</a> -->
+		
+		<div class="box1"></div>
+		<div class="box2"></div>
+		
+	</body>
+</html>

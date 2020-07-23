@@ -1,0 +1,89 @@
+层级结构信息：
+	一级分类：前端
+	二级分类:HTML
+		  课程一：深入浅出HTML
+			  	 第一章节：初识HTML
+				  	 	第1课时：超文本标记语言 ======> 对应着一个能看的视频
+				  	 	第2课时：常用标签
+			  	 第二章节：常见布局方案
+			  	 		第1课时：圣杯布局
+			  	 		第2课时：双飞翼布局
+		  课程二：HTML5
+		  		 第一章节：初始HTML5
+				  	 	第1课时：HTML5的定义
+				  	 	第2课时：HTML5的优势
+			  	 第二章节：语义化标签
+			  	 		第1课时：常用的语义化标签
+			  	 		第2课时：语义化标签使用原则
+	二级分类:JavaScript
+		  课程一：JavaScript从入门到精通
+			  	 第一章节：初始JS
+				  	 	第1课时：JS的发展史
+				  	 	第2课时：JS的应用场景
+			  	 第二章节：JS中的数据类型
+			  	 		第1课时：Number类型
+			  	 		第2课时：String类型
+		  课程二：JavaScript高级
+		  		 第一章节：剖析JS中的内存
+				  	 	第1课时：基本数据类型内存分析
+				  	 	第2课时：对象类型内存分析
+			  	 第二章节：原型与原型链
+			  	 		第1课时：prototype
+			  	 		第2课时：__proto__
+			  	 		
+
+分析redux
+-src
+	-componnets
+	-pages
+		Person.js
+	-utils
+	-redux：
+		-actions:放着一个一个actionCreater，用于创建action对象
+			person.js
+			student.js
+
+		-action_types:定义的都是常量（如果保证action.type不会写错，不用也可以）
+			-types.js : const ADD_PERSON = 'add_person'
+
+		-reducers：放着一个一个的reducer，用于真正去加工状态
+			备注：多个reducer是要汇总的，要用combineReducers()
+
+		store.js:最核心的store对象，一个就够
+
+同步action：
+		返回的是一个Object类型的action对象，形如：action:{data:???,type:??}
+
+异步action：
+		返回的是一个函数，函数会接收到一个参数dispatch，
+		函数里面一般开启异步任务
+		一般来讲，异步action中，一定会调用一个同步action
+
+
+一个章节信息结构：
+	{
+		_id(pin):"5f0192debecd5c186cb6fd24"
+		title(pin):"第一章节-剖析JS中的内存"
+	}
+
+一个课时的结构：
+	{
+        "free": true, //标识课时是否免费
+        "video": "http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4",//视频地址
+        "gmtCreate": "2020-07-04T16:00:00.000Z", //创建时间
+        "gmtModified": "2020-07-04T16:00:00.000Z",//修改时间
+        "_id": "5f019ff1becd5c186cb6fd34",//唯一标识
+        "chapterId": "5f0192debecd5c186cb6fd24",//所属章节id
+        "title": "第1课时-基本数据类型内存分析"//课时标题
+    }
+
+redux的使用原则：
+	 1.能不用，就不用 ---- redux编码难度大，对编码人员要求高
+	 2.如果不使用redux，有难度，那就用
+	 备注：使用redux，编码难度可能会变大
+
+
+注意区分：浏览器全屏、浏览器页签全屏(程序员用代码操作的)
+Modal===>模态框
+
+测试视频地址：http://qdalhckky.bkt.clouddn.com/rc-upload-1594456448960-2

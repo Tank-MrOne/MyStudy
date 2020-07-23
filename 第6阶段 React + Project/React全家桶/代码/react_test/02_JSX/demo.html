@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSX_DEMO</title>
+</head>
+<body>
+  <h2>前端JS框架列表</h2>
+  <div id="root"></div>
+  <div id="root2"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+	<script type="text/babel">
+		let arr = ['来吧，展示','我还是充钱那个少年','心在跳，爱在烧']
+		let root = document.getElementById('root')
+		let li = arr.map(item => <li>{item}</li>)
+		const vDOM = 
+			<ul>
+				{li}
+			</ul>
+		ReactDOM.render(vDOM,root)
+	</script>
+</body>
+</html>
+			<!-- <ul>
+				<li>{arr[0]}</li>
+				<li>{arr[1]}</li>
+				<li>{arr[2]}</li>
+			</ul> -->

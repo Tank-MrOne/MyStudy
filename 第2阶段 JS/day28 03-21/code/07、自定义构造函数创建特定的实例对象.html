@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Object这个构造函数 实例的对象类别是不清晰的，通用的
+			
+			//类：其实就是我们现在所说的构造函数，构造函数本质也就是个函数
+			//在js  es5当中没有类的概念，它是用函数来充当类去实例化对象的
+			
+			
+			function Person(name,age,gender){
+				//this是一个内置的变量
+				//本质上this存储的是一个对象的地址
+				//this我们可以称作是一个对象
+				//它代表了这个函数的执行者或者调用者是谁
+				//this在构造函数当中代表的是实例化对象
+				//this在普通函数当中代表的是window对象,window是浏览器窗口对象，代表所有的一切，是顶级对象
+				
+				this.name = name;//  this.name
+				this.age = age;
+				this.gender = gender;
+				this.eat = function(){
+					console.log('吃米饭');
+				}
+				
+				console.log(this);
+				
+//				return  100000;
+//				return [1,2,3];
+			}
+			
+			
+			//Person本质上还是一个函数，函数调用有不同的方式
+			
+			//如果我们是 new Person()，此时是把函数当构造函数用
+			var p1 = new Person('赵丽颖',33,'female');//构造函数使用
+			console.log(p1);
+			//函数的this指向的是准备实例化出来的对象
+			//函数的返回值返回的是实例化好的对象，如果写了return
+			//1、return的是一个基本数据值，那么依然返回的是实例化对象
+			//2、return的是一个对象数据，那么实例化对象就不见了，返回的就是return的这个对象数据
+			
+			
+			
+			//如果我们是直接加括号Person()，此时是把函数当普通函数用
+//			var result = Person('戚薇',40,'female');//普通函数使用
+//			console.log(result);
+			//函数的this指向的是window顶级对象
+			//函数的返回值返回的是return后面的值，如果没有return返回的就是undefined;
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

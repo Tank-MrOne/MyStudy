@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			debugger;//代表在这个位置打了个断点，这个打断点几乎不用
+			var a = 10;
+			var b = 20;
+			console.log(a);
+			function fn(){
+				var c = 100;
+//				b = 200;
+				function fn1(){
+					var d = 300;
+					console.log(b);
+					console.log(d);
+					console.log(c);
+				}
+				fn1()
+			}
+			fn();			
+		</script>
+	</body>
+</html>

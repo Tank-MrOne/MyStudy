@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button id="btn">按钮</button>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//事件是可以重复触发执行的
+				var btn = document.getElementById('btn');
+				var n = 0;
+				btn.onclick = function(){
+					n++;
+					console.log(n);
+				}
+			}
+		</script>
+	</body>
+</html>

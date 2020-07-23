@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员</title>
+</head>
+<body>
+    
+    <script>
+        //笔记本
+        // function Computer(brand){
+        //     this.brand;
+        // }
+
+        // //函数对象添加属性和方法
+        // Computer.mingzi = '计算机';
+        // Computer.change = function(){
+            // console.log('我可以改变世界!!');
+        // };
+
+        //静态成员 
+        class Computer{
+            //创建静态属性
+            static mingzi = '计算机';
+
+            //构造方法
+            constructor(name){
+                this.name = name;
+            }
+
+            //创建静态方法
+            static change(){
+                console.log('我可以改变世界')
+            }
+
+        }
+
+        //打印属性
+        console.log(Computer.mingzi);
+        Computer.change();
+
+    </script>
+</body>
+</html>

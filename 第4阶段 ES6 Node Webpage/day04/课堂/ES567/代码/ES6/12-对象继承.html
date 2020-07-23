@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象继承</title>
+</head>
+<body>
+    <script>
+        
+        // 手机 与 智能手机  
+        // function Phone(brand, color){
+        //     this.brand = brand;
+        //     this.color = color;
+        // }
+
+        // //方法 打电话 
+        // Phone.prototype.message = function(someone){
+        //     console.log(`我可以给 ${someone} 发短信`);
+        // }
+
+        // //声明子类
+        // function SmartPhone(brand, color, screen, pixel){
+        //     //调用父类方法
+        //     Phone.call(this, brand, color);
+        //     //子类属性设置
+        //     this.screen = screen;   //屏幕大小
+        //     this.pixel = pixel ;    //像素
+        // }
+
+        // //
+        // SmartPhone.prototype = new Phone;
+        // SmartPhone.prototype.constructor = SmartPhone;
+
+        // //子类的方法
+        // SmartPhone.prototype.photo = function(){
+        //     console.log('我可以拍照');
+        // };    
+        // SmartPhone.prototype.playGame = function(){
+        //     console.log('我可以玩游戏');
+        // };       
+
+        // let s = new SmartPhone('apple6s','白色','4.7inch','500w');
+
+        // console.log(s.message('刘渊'));
+        // console.log(s);
+
+
+        class Phone{
+            constructor(name, color){
+                this.name = name;
+                this.color = color;
+            }
+
+            message(someone){
+                console.log(`我可以给${someone}发短信`);
+            }
+        }
+
+        //子类
+        class SmartPhone extends Phone{
+            //构造函数 初始化
+            constructor(name, color, screen, pixel){
+                //调用父类的方法初始化
+                super(name, color);
+                //
+                this.screen = screen;
+                this.pixel = pixel;
+            }
+
+            photo(){
+                console.log('我可以拍照')
+            }
+
+            learn(){
+                console.log('我还可以学习!!');
+            }
+            
+            //子类对父类方法进行重写
+            message(someone){
+                console.log(`我可以给${someone}发微信`);
+            }
+        }
+
+        //手机
+        let newPhone = new SmartPhone('华为','白色','5.0inch','2000w');
+
+        //调用父类方法
+        newPhone.message('沛华');
+
+        newPhone.learn();
+        // console.log(newPhone);
+    </script>
+</body>
+</html>

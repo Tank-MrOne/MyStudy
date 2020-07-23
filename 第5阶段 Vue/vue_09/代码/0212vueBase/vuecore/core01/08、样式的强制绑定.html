@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .classA{
+            color:red
+        }
+        .classB{
+            background-color: green;
+        }
+        .classC{
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <!-- 对于页面的变化，除了内容变化以外，样式变了也算变 -->
+        <!-- 对于样式的变化，我们可以通过行内style去写，也可以通过class去写 -->
+
+
+        <!-- 用类去绑定样式 -->
+        <!-- 1、根本不知道这个元素使用的是哪个类 -->
+        <p :class="myClass">我爱你赵丽颖</p>
+
+        <!-- 2、知道了用哪些类，但是不清楚哪个类生效 对象写法-->
+        <p :class="{classA:isA,classB:isB}">我爱你赵丽颖222</p>
+
+        <!-- 3、多个类一起生效，数组写法 -->
+        <p :class="['classA','classB']">我爱你赵丽颖333</p>
+
+
+        <!-- 用style的方式去绑定样式 -->
+
+        <!-- <p style="color: red;font-size: 60px;">我爱你赵丽颖444</p> -->
+        <p :style="{color: myColor,fontSize: myFontSize}">我爱你赵丽颖444</p>
+        
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data(){
+                return {
+                    myClass:'classA',
+                    isA:true,
+                    isB:false,
+                    myColor:'hotpink',
+                    myFontSize:'80px'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

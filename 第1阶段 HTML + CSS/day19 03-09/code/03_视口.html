@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 
+			通过meta标签来修改视口的宽度 
+			device-width 就表示当前设备完美视口的大小
+		-->
+		<!-- <meta name="viewport" content="width=device-width"/> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- meta:vp + tab -->
+		<style>
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			.box1{
+				width: 320px;
+				height: 100px;
+				background-color: tomato;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		
+		<!-- 
+			视口（viewport）
+				- 网页的可视区域叫做视口
+				- 通常我们只关心视口的宽度，不关心高度
+				- 移动端显示网页时视口的默认大小是980
+					像素比：
+						1080:980
+						750:980
+						640:980
+						
+					像素比主要是由视口宽度来决定的，
+						我们可以直接通过修改视口的宽度来改变像素比
+						<meta name="viewport" content="width=200px"/>
+						width=多少，视口的宽度就是多少
+						
+					每一个手机在出厂时都会有一个最佳的像素比，
+						当你像素比设置为该值时，移动端页面会有一个最佳的浏览效果
+						
+					iphone6
+						像素 750物理像素
+						最佳的像素比 2:1
+						要实现2:1的像素，应该将视口大小设置为?
+						
+						750:375
+							- 使像素比为最佳像素比的视口大小称为完美视口
+							- 不同设备的完美视口大小是不同的：
+								iphone4 / 5  320px
+								iphon6       375px
+								iphon6 p     414px
+								
+						要编写移动端的页面，第一件事就是先设置完美视口
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						
+						由于设置了完美视口，所以在不同的设备中视口的大小是不一样的
+							所以同样是320px，在一些手机中是全屏，
+								但是在另一些手机中可能会存在空隙
+							所以基于此，在编写移动页面时，就不能再使用像素作为单位了
+							
+						
+				- 通常一个网站要提供两个版本的网页：
+					pc端页面
+					移动端页面
+		 -->
+	</body>
+</html>

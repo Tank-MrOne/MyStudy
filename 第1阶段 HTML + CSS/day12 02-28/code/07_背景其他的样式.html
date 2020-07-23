@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				width: 300px;
+				height: 300px;
+				/* 
+				如果在简写属性中编写background-size
+					size必须写在position的
+				 */
+				background: #bfa url(img/1.jpg) no-repeat  0 0/200px 300px;
+				
+				/* 
+					background-size: ; *****
+						设置背景图片的尺寸
+						- 需要两个值作为参数：
+							背景的宽度 背景的高度
+							- 如果只写一个值，第二个值默认是auto
+							- 固定值：
+								cover 对背景图片进行缩放（比例不变），将元素填满
+								contain 完整的显示背景图片（比例不变）
+				 */
+				
+				/* background-size: 100% auto; */
+				/* background-size: 100% 100%; */
+				/* background-size:contain ; */
+			}
+			
+			
+			.box2{
+				width: 300px;
+				height: 300px;
+				border: 10px red double;
+				padding: 50px;
+				/* 
+					默认情况下，padding上和border上都会有背景颜色
+					
+					background-clip 可以指定背景的设置范围
+						- 参数：
+							border-box 默认值 背景会延伸到边框的下边
+							content-box 背景只会设置到内容区上
+							padding-box 背景会一致延伸到内边距，但是不会延伸边框下
+				 */
+				/* background: #bfa content-box; */
+				
+				/* background-clip: padding-box; */
+				
+				background: #bfa url(img/1.jpg) no-repeat 0 0/200px 200px padding-box content-box;
+				
+				/* 
+					background-origin: ;
+						可以用来指定背景图片的定位的起点（坐标原点）
+						- 可选值：
+							padding-box 默认值，背景图片从内边距处开始定位
+							content-box 背景图片从内容区处开始定位
+							border-box  背景图片从边框处开始定位
+						
+						- 在简写属性中，clip必须写在origin的后边	
+						
+				 */
+				/* background-origin: border-box; */
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- <div class="box1"></div> -->
+		
+		<div class="box2"></div>
+		
+	</body>
+</html>

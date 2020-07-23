@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>高度塌陷</title>
+		<style>
+			.box1{
+				border: 10px #bfa solid;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				float: left;
+			}
+			
+			/* 
+				通过在父元素的最后添加了一个新的子元素，
+					并对其设置clear来解决高度塌陷问题。
+					1、通过这种方式，需要向页面中添加多余的元素
+					2、多余的元素必须放在父元素的最下边，修改时容易发生问题
+					
+					- 总的来说：
+						这种方式是通过HTML来解决CSS的问题，
+							属于结构和表现的耦合，不推荐使用
+			 */
+			.box3{
+				clear:both;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+			
+			<div class="box3"></div>
+		</div>
+	</body>
+</html>

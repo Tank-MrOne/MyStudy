@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//编写求1到n的和函数
+//			function add(n){
+//				var sum = 0;
+//				for(var i = 0; i <= n; i++){
+//					sum += i;
+//				}
+//				return sum;
+//			}
+//			
+//			
+//			var result = add(100);
+//			console.log(result);
+			
+//			编写函数实现求一个数的阶乘
+//			function getFactorial(n){
+//				var product = 1;
+//				for(var i = 1; i <= n; i++){
+//					product *= i;
+//				}
+//				return product;
+//			}
+//			var a = 3;
+////			var result = getFactorial(a+2);
+////			console.log(result);
+//			
+//			console.log(getFactorial(a+2));
+
+
+
+//			编写函数求数组的最大值，最小值
+//			function getMaxAndMinOfArray(arr){
+//				var max = arr[0];
+//				var min = arr[0];
+//				for(var i = 0; i < arr.length; i++){
+//					if(max < arr[i]){
+//						max = arr[i];
+//					}
+//					
+//					if(min > arr[i]){
+//						min = arr[i];
+//					}
+//				}
+//				return [max,min];     //只能返回一个值；
+//			}
+//			
+//			var arr = [11,22,3,4,5];//函数内外如果有同名的变量，这两个变量没有关系
+//			var result = getMaxAndMinOfArray(arr);//var result = [max,min]
+//			console.log(result[0],result[1]);
+
+//			封装函数加工数组，每一项加10输出(打印)
+//			function machiningArray(arr){
+//				for(var i = 0; i < arr.length; i++){
+//					console.log(arr[i] += 10);// 这里改不改数组的值都无所谓
+//				}
+//			}
+////			var arr = [1,2,3,4];
+////			machiningArray(arr);
+//
+//			machiningArray([1,2,3,4]);
+			
+
+//			封装函数实现打印1到N的质数;
+//			function printPrimeNumber(n){
+//				var flag = true;//true最终标志着这个数是质数
+//				for(var i = 1; i <= n; i++){
+//					//外层循环控制的是拿的被除数
+//					//7   2 -- 6
+//					//8   2 -- 7 
+//					//让拿进来的数从2初到自身减一；
+//					for(var j = 2; j < i; j++){
+//						//内层循环控制的是除数
+//						if(i % j == 0){
+//							flag = false;
+//							break;  
+//						}
+//					}
+//					
+//					//通过break跳出的，证明这个数不是质数
+//					//如果是老老实实走完内层循环没有碰过break,最终也是在这个位置，证明这个数是质数
+//					//怎么去区分是质数还是不是质数；
+//					if(flag && i!==1){
+//						console.log(i);
+//					}
+//					
+//					flag = true; //重置标志位
+//					
+//				}
+//			}
+//			
+//			printPrimeNumber(100);
+
+
+
+//			封装函数实现对数组进行排序；
+//			function sortArray(arr){
+//				for(var i = 0; i < arr.length - 1; i++){
+//				//外层循环控制轮数
+//					for(var j = 0; j < arr.length - 1 - i; j++){
+//						//内层循环控制的是比较的次数
+//						//同时内层循环的循环变量，也是比较时候拿的数组值得下标
+//						if(arr[j] > arr[j + 1]){//升序还是降序，自己决定，就看是大于还是小于
+//							var temp = arr[j];
+//							arr[j] = arr[j + 1];
+//							arr[j + 1] = temp;
+//						}
+//						
+//					}
+//					
+//				}
+//				return arr;
+//			}
+//			var arr = [1,3,5,7,9,2,4,6,8,10];
+//			var result = sortArray(arr);
+//			console.log(result);
+//			封装函数实现对数组翻转
+//			function reverseArray(arr){
+//				for(var i = 0; i < arr.length/2; i++){
+//					var temp = arr[i];
+//					arr[i] = arr[arr.length - 1 - i];
+//					arr[arr.length - 1 - i] = temp;
+//				}
+//				return arr;
+//			}
+//			var arr = [1,2,3,4];
+//			console.log(reverseArray(arr));
+
+//			封装函数实现对数组去重
+			function deduplicationArray(arr){
+				//数组去重都是在新数组当中去重的；
+				var newArr = [];
+				//代码是次要，首先是过程，过程明白了，代码多敲敲就熟练了
+				var flag = true;
+				for(var i = 0; i < arr.length; i++){
+					//从老的数组当中拿数
+					for(var j = 0; j < newArr.length; j++){
+						//拿新的数组当中的值和老数组拿的值进行比较
+						//而且从原数组当中拿的值，必须和新数组当中所有的值比较完成，才知道有没有
+						if(arr[i] == newArr[j]){
+							//代表着新数组内部有这个值；
+							flag = false;
+							break;
+						}
+					}
+					//break出来的，代表新数组当中有这个值
+					//老老实实执行完内部循环出来的，代表新数组内部没有这个值；
+					if(flag){
+						newArr[newArr.length] = arr[i];
+					}
+					flag = true;//重置标志位
+				}
+				return newArr;
+			}
+			var arr = [1,2,3,4,1,1,1,2,3,4,5,2,3,4];
+			console.log(deduplicationArray(arr))
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数实践</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //点击 div 2s 后颜色变成 粉色
+        let div = document.querySelector('div');
+
+        //绑定事件
+        div.onclick = function () {
+            // 2s 后改变 div 的颜色
+            setTimeout(() => {
+                this.style.background = 'pink';
+            }, 2000);
+        };
+
+
+        //需求  从数组中返回偶数的元素
+        let arr = [20, 19, 29, 89, 10, 235, 128];
+
+        //借助 filter 方法
+        // let result = arr.filter(function (item) {
+        //     //判断
+        //     if (item % 2 === 0) {
+        //         return item;
+        //     }
+        // });
+
+        //通过箭头函数来实现
+        let res = arr.filter(item => item % 2 === 0);
+
+        //将一个数组中的元素 集体  * 100
+        // let resultArr = arr.map(function(item){
+        //     return item * 100;
+        // });
+
+        let rArr = arr.map(item => item * 52);
+        console.log(rArr);
+
+    </script>
+</body>
+
+</html>

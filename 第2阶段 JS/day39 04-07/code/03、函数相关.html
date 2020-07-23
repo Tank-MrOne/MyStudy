@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//定义函数
+			//1、函数声明定义
+			function fn(){
+				
+			}
+			
+			fn();//当函数用
+			new fn();//当函数用
+			
+			fn.a = 100;//fn当对象用
+			
+			
+			
+			//2、函数表达式定义
+			var fn1 = function(){
+				
+			}
+			//上面两个不同：1、预解析  2、打印函数名   一个包含函数名  一个不包含
+			console.log(fn1)
+			
+			
+			//3、构造函数定义  Function
+			
+//			function add(a,b){
+//				return a + b;
+//			}
+//			var result = add(10,20);
+//			console.log(result);
+			
+//			var add = new Function('a','b','return a + b');
+//			console.log(add);
+//			var result = add(20,20);
+//			console.log(result);
+			
+			
+			
+			
+			//4
+			var obj = {
+				name:'赵丽颖',
+				age:32,
+				eat:function(name,age){ 
+					this.name = name;//this普通函数调用代表obj
+									//构造函数调用代表实例化对象
+					this.age = age;
+				}
+			}
+
+	
+//			obj.eat('戚薇',40);//就相当于是普通函数调用，只不过这个函数是一个方法（this不是window）
+//			console.log(obj);
+			console.log(new obj.eat());
+			
+			
+		</script>
+	</body>
+</html>

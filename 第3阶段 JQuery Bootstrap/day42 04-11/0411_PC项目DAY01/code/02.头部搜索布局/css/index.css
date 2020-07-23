@@ -1,0 +1,95 @@
+.outer .header > .top {
+  width: 100%;
+  background-color: #eaeaea;
+  height: 30px;
+  line-height: 30px;
+}
+.outer .header > .top .container {
+  *zoom: 1;
+  width: 1200px;
+  margin: 0 auto;
+}
+.outer .header > .top .container:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .header > .top .container .loginList {
+  float: left;
+}
+.outer .header > .top .container .loginList p {
+  float: left;
+  margin-right: 10px;
+}
+.outer .header > .top .container .loginList p .register {
+  border-left: 1px solid #b3aeae;
+  padding: 0 5px;
+  margin-left: 5px;
+}
+.outer .header > .top .container .typeList {
+  float: right;
+  font-size: 0;
+}
+.outer .header > .top .container .typeList a {
+  font-size: 12px;
+  padding: 0 10px;
+}
+.outer .header > .top .container .typeList a ~ a {
+  border-left: 1px solid #b3aeae;
+}
+.outer .header > .bottom {
+  width: 1200px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+.outer .header > .bottom:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .header > .bottom .logoArea {
+  float: left;
+}
+.outer .header > .bottom .logoArea img {
+  width: 176px;
+  height: 56px;
+  margin: 25px 45px;
+}
+.outer .header > .bottom .searchArea {
+  float: right;
+  margin-top: 35px;
+}
+.outer .header > .bottom .searchArea .searchForm {
+  *zoom: 1;
+}
+.outer .header > .bottom .searchArea .searchForm:after {
+  content: "\200B";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.outer .header > .bottom .searchArea .searchForm input {
+  box-sizing: border-box;
+  width: 490px;
+  height: 32px;
+  padding: 0px 4px;
+  border: 2px solid #ea4a36;
+  float: left;
+}
+.outer .header > .bottom .searchArea .searchForm input:focus {
+  outline: none;
+}
+.outer .header > .bottom .searchArea .searchForm button {
+  width: 68px;
+  height: 32px;
+  background-color: #ea4a36;
+  color: #fff;
+  float: left;
+  border: none;
+  cursor: pointer;
+}
+.outer .header > .bottom .searchArea .searchForm button:focus {
+  outline: none;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生JSONP的事件</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result{
+            height:100px;
+            border:solid 1px #000;
+        }
+    </style>
+    <script src='https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js'></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">原生JSONP的实践</h2>
+        <button class="btn btn-danger">点击获取数据</button>
+        <hr>
+        <div id="result">
+            <h4></h4>
+        </div>
+    </div>
+
+    <script>
+        //0. 创建回调函数
+        function abc(data){
+            //将数据进行解析
+            let d = JSON.parse(data);
+            //获取 h4 
+            let h4 = document.querySelector('h4');
+            h4.innerHTML = d.name;
+            //创建ul标签
+            //拼接字符串
+            let ul = '<ul>';
+            //遍历
+            for(let i=0;i<d.cities.length;i++){
+                ul += `<li>${d.cities[i]}</li>`
+            }
+            ul += '</ul>'
+            $(ul).appendTo('#result');
+        }
+        //获取button
+        let btn = document.querySelector('button');
+        //绑定事件
+        btn.addEventListener('click', ()=>{
+            //1. 创建一个 script 标签
+            let script = document.createElement('script');
+            //2. 设置 script 的 src 属性
+            script.src = "http://127.0.0.1:8001/jsonp-server?callback=abc";
+            //3. 将标签插入到文档中
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>

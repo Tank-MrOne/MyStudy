@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <form action="##">
+            用户名：<input type="text" v-model="userInfo.username"> <br> 
+            密码：<input type="password" v-model="userInfo.password">
+            <br>
+            性别：
+            <!-- 单选输入框，value属性的值,被选中之后，会自动作为输入框的值 -->
+                <input type="radio" name="sex" value="male" v-model="userInfo.gender">男
+                <input type="radio" name="sex" value="female" v-model="userInfo.gender">女
+            <br>
+            爱好：
+            <!-- 多选输入框，和单选输入框比较类似,当你选中的时候，也是把value值，获取到
+            自动作为输入框的值赋值，只不过它是多个，需要用数组来接收 -->
+                🏀<input type="checkbox" value="basketball" v-model="userInfo.favs">
+                ⚽<input type="checkbox" value="football" v-model="userInfo.favs">
+                🏓<input type="checkbox" value="pingpang" v-model="userInfo.favs">
+            <br>
+            城市：
+            <!-- 对于下拉菜单，select最终获取的到值是选中的option的value值 -->
+                <select v-model="userInfo.cityId">
+                    <option :value="city.id" v-for="(city, index) in citys" :key="city.id">
+                        {{city.name}}
+                    </option>
+                </select>
+            <br>
+            自我简介：
+                <textarea  v-model="userInfo.info"></textarea>
+            <br>
+                <input type="submit" value="确认提交" @click.prevent="submitData">
+        </form>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                citys:[
+                    {id:1,name:'北京'},
+                    {id:2,name:'上海'},
+                    {id:3,name:'深圳'}
+                ],
+                userInfo:{
+                    username:'',
+                    password:'',
+                    gender:'male',
+                    favs:['basketball'],//用来接收爱好的，可以是多个
+                    cityId:1,
+                    info:''
+                }
+            },
+            methods: {
+                submitData(){
+                    //发请求，瞬变把收集的数据转化json进行发送
+                    console.log(JSON.stringify(this.userInfo))
+                }
+            },
+        })
+    </script>
+</body>
+</html>

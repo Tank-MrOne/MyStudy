@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>精灵动画</title>
+		<style>
+			.box1{
+				/* 设置高度 */
+				height: 271px;
+				/* 
+					设置宽度
+					 calc() 是CSS中的计算函数，可以直接在函数中计算值
+						+ 加法
+						- 减法
+						* 乘法
+						/ 除法
+				*/
+				width: calc(528px/4);
+				
+				/* 设置居中 */
+				margin: 50px auto;
+				
+				background: url(img/bigtap-mitu-queue-big.png) 0 0;
+				
+				/* 设置过渡效果 */
+				transition: background-position 300ms steps(4);
+			}
+			
+			.box1:hover{
+				/* 修改背景图片的偏移量 */
+				background-position: -528px 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 创建一个元素来放图片 -->
+		<div class="box1"></div>
+	</body>
+</html>

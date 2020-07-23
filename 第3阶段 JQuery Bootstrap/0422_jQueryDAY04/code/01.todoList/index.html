@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="todo-container">
+            <!-- 头部 -->
+            <div class="todo-header">
+                <input type="text" id="newTodo" placeholder="请输入您的任务，回车确认">
+            </div>
+            <!-- 内容展示区域 -->
+            <ul class="todo-main">
+                <!-- <li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>抽烟</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li>
+                <li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>喝酒</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li>
+                <li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>烫头发</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li> -->
+            </ul>
+            <!-- 底部区域 -->
+            <div class="todo-footer">
+                <label>
+                    <input type="checkbox" id="checkAll">
+                </label>
+                <span>
+                    已完成 <span id="allComplateTodos">0</span>
+                    /全部 <span id="allTodos">0</span>
+                </span>
+                <button id="removeAllComplate" class="btn btn-danger">清除已完成任务</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(function () {
+            //1.后台提供数据
+            var obj = {
+                doThing: [
+                    { content: "抽一支烟" },
+                    { content: "喝一口酒" },
+                    { content: "没有头发怎么汤头" }
+                ]
+            }
+
+            //2.绑定数据，把数据插入到页面去
+            bind();
+            function bind() {
+                // $.each是jQuery的静态方法，遍历数组和对象
+                // each的参数第一个是遍历的数组或对象，第二个是一个回调函数，回调函数的第一个参数是 下标，第二个参数是当前对应下标的值
+                $.each(obj.doThing, function (index, item) {
+                    $(`
+                        <li class="todo-list">
+                            <label>
+                                <input type="checkbox">
+                                <span>${item.content}</span>
+                            </label>
+                            <button class="btn btn-danger">删除</button>
+                        </li>
+                    `).appendTo($(".todo-main"));
+                })
+            }
+
+            //3.鼠标悬浮动画
+            $(".todo-main").on("mouseenter", "li", function () {
+                // $(this)是指向li的
+                //改变悬浮的颜色
+                $(this).css("backgroundColor", "#eee").siblings().css("backgroundColor", "#fff");
+                //改变按钮的显示状态  让当前的button显示，让当前的button父元素的兄弟的button隐藏
+                $(this).find("button").show().end().siblings().find("button").hide();
+            }).on("mouseleave", "li", function () {
+                //只要离开  就让所有li样式清空   让button隐藏
+                $(this).css("backgroundColor", "#fff");
+                $(this).find("button").hide();
+            })
+
+            //4.初始化全部任务的数量（因为可能多个地方调用，所以封装函数）
+            setAllTodoNum();
+            function setAllTodoNum() {
+                $("#allTodos").html($(".todo-main>li").length);
+            }
+
+            //5.单选控制全选按钮  并设置已完成数量  封装里边的函数 方便后边调用
+            $(".todo-main").on("click", "label", setCheckedAndCheckedAll)
+            function setCheckedAndCheckedAll() {
+                //在隐式迭代解决问题比较麻烦的时候，可以使用遍历  jQuery给jQuery对象也提供each方法进行遍历
+                // each中直接是一个回调函数，回调函数的参数 第一个是下标  第二个是对象
+
+                //获取已完成数量方法1
+                /* var num = 0;//初始化 总数
+                $(".todo-main input").each(function (index, item) {
+                    if ($(item).prop("checked")) {
+                        num++;
+                    }
+                }) */
+
+                //获取已完成数量的方法2
+                //直接选择器获取所有被选中的input
+                var num = $(".todo-main input:checked").length;
+
+                $("#allComplateTodos").html(num);
+
+                //判断全选  判断已选中的元素个数 是否等于 li的长度
+                if (num === $(".todo-main li").length) {
+                    $("#checkAll").prop("checked", true);
+                } else {
+                    $("#checkAll").prop("checked", false);
+                }
+
+            }
+
+            //6.设置全选按钮功能
+            $("#checkAll").click(function () {
+                //首先判断 当前的按钮是否被选中
+                if ($(this).prop("checked")) {
+                    //设置所有的li被选中
+                    $(".todo-main input").prop("checked", true);
+                    //设置已选择数量
+                    $("#allComplateTodos").html($(".todo-main li").length);
+                } else {
+                    //设置所有的li不被选中
+                    $(".todo-main input").prop("checked", false);
+                    //设置以选择数量
+                    $("#allComplateTodos").html(0);
+                }
+            })
+
+            //7.发布功能
+            $("#newTodo").keyup(function (e) {
+                //实时检测回车键的键码
+                // 如果当前的键码为13的时候就发布
+                if (e.keyCode === 13) {
+                    //首位去空格 检测是否为空  如果不为空则发布
+                    if ($(this).val().trim() === "") {
+                        alert("内容为空，不能发布～")
+                    } else {
+                        //首先将 后台的数据修改  后台数据是 一个数组中 包含多个对象
+                        var newObj = {};
+                        newObj.content = $(this).val().trim();
+                        //把新对象插入到数组的最前
+                        obj.doThing.unshift(newObj);
+                        //创建一个新的li，把li插入到todo-main的最前边
+                        var newLi = $(`
+                            <li class="todo-list">
+                                <label>
+                                    <input type="checkbox">
+                                    <span>${$(this).val().trim()}</span>
+                                </label>
+                                <button class="btn btn-danger">删除</button>
+                            </li>
+                        `);
+                        newLi.prependTo($(".todo-main"));
+                        //元素插入才能书写动画，但是必须先隐藏然后再执行下拉动画
+                        newLi.hide().slideDown(300);
+
+                        //清空当前的内容
+                        $(this).val("");
+                        //设置全部任务数量
+                        setAllTodoNum();
+
+                        //每次发布的任务是非选中状态,所以如果全选按钮是选中状态，则把按钮的状态改为非选中
+                        $("#checkAll").prop("checked", false)
+                    }
+                }
+            })
+
+            //8.点击单个删除
+            $(".todo-main").on("click", "button", function () {
+                //给当前的li限制性收起动画，等动画执行完成之后 在执行删除
+                $(this).parent().slideUp(1000, function () {
+
+                    //点击删除以后 要判断当前点击的是第几个 已方便删除对象中的数据
+                    var num = $(this).index();
+                    obj.doThing.splice(num, 1);
+
+                    //这个里边的this指向的就是li  应该等其他业务处理完成再删除 
+                    $(this).remove();
+
+
+                    //设置全部任务数量
+                    setAllTodoNum();
+
+                    //对全选按钮进行设置
+                    setCheckedAndCheckedAll();
+
+                })
+            })
+
+            //9.清除已完成任务
+            $("#removeAllComplate").click(function () {
+                //遍历所有的选项，判断 被选选中被删除
+                //因为删除每一项的时候 还要删除数据  数据每一个都不一样  所以不能直接使用隐式迭代
+                $(".todo-main input:checked").each(function (index, item) {
+                    //首先先删除数据  然后再删除节点
+                    var num = $(this).parent().parent().index();//获取当前删除元素的节点
+                    console.log(obj.doThing)
+                    obj.doThing.splice(num, 1);
+
+                    console.log(obj);
+                    //删除完成数据之后  删除节点  先执行动画再删除
+                    $(this).parent().parent().slideUp(300, function () {
+                        $(this).remove();
+
+                        //设置全部任务数量
+                        setAllTodoNum();
+
+                        //对全选按钮进行设置
+                        setCheckedAndCheckedAll();
+                    })
+
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

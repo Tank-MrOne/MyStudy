@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//交换两个变量的值
+			
+			var a = 10;
+			var b = 20;
+			console.log(a,b);
+//			a = 20;//修改a的值为20
+//			b = 10;//修改b的值为10
+//			console.log(a,b);
+			//它不是交换；
+			
+			//1、借用第三方变量实现两个变量值得交换
+//			var c;
+//			c = a;// = 出现 代表要把=右侧的值，赋值给 =左侧的变量， =左侧一定是变量，右侧只要有值就行
+////			console.log(a);//a的值刚才复制了一份给了c，a内部的值还是存在的
+//			a = b;
+////			console.log(a);
+//			b = c;
+//			console.log(a,b);
+			
+			//2、不借助第三方变量实现交换（求和）；
+			
+			a = a + b;//a = 30
+			b = a - b;// 30 - 20 = 10  b = 10
+			a = a - b;// 30 - 10 = 20  a = 20;
+			
+			console.log(a,b);
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

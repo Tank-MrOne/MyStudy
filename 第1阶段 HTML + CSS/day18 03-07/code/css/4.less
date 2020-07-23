@@ -1,0 +1,48 @@
+//Mixin函数
+//函数（function） 用来存储一组功能（数据），在需要的时候可以对函数中的内容进行复用
+//在mixin函数，可以将一些常用的代码统一保存
+//	需要重复使用时可以直接进行调用
+// 在定义mixin函数时，可以在函数名后边添加一个括号
+//		这样函数本身的代码将不会被编译到页面中
+.box1(){
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+.box2{
+	//调用mixin函数
+	.box1();
+}
+
+.box3{
+	.box1();
+}
+
+//定义一个用来设置边框的函数
+//定义函数时，可以在其后的()指定参数
+// 参数就相当于是变量但是并没有赋值
+// 形式参数
+.my-border(@w:200px,@h:200px){
+	width: @w;
+	height: @h;
+	background-color: #bfa;
+	border: 1px red solid;
+}
+
+.box4{
+	//如果函数中定义了参数，则调用时必须传递对应值
+	//实际参数
+	// .my-border(100px);
+	
+	//只传递一个高度一个作为参数
+	.my-border(@h:100px);
+}
+
+.box5{
+	.my-border(100px,400px);
+}
+
+
+
+

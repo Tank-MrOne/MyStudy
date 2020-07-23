@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*css初始化*/
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			img{
+				display: block;
+			}
+			a{
+				text-decoration: none;
+			}
+			input{
+				outline: none;
+			}
+			.clearFix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			
+			.list{
+				/*所有的样式都先考虑宽和高*/
+				overflow: hidden;
+			}
+			
+			.list li{
+				float: left;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				margin-right: 10px;
+				background-color: gray;
+			}
+			.list li.current{
+				background-color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li class="current"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var liNodes = document.querySelectorAll('.list li');
+				
+				for(var i = 0; i < liNodes.length; i++){
+					liNodes[i].onclick = function(){
+						//先让所有的变灰
+						for(var j = 0; j < liNodes.length; j++){
+							liNodes[j].className = '';
+						}
+						
+						//再让点击的那一个变红
+						this.className = 'current';
+					}
+				}
+				
+			}
+		</script>
+	</body>
+</html>

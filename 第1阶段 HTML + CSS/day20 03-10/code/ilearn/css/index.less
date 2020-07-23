@@ -1,0 +1,254 @@
+//清除默认样式
+*{
+	margin: 0;
+	padding: 0;
+}
+
+// 重置超链接的样式
+a{
+	// 去除下划线
+	text-decoration: none;
+	// 重置颜色
+	color: inherit;
+}
+
+// 设置图片的样式
+img{
+	// 设置宽度
+	width: 100%;
+	// 设置基线
+	vertical-align: top;
+}
+
+// 去除项目符号
+ul{
+	list-style: none;
+}
+
+// clearfix
+.clearfix::before,
+.clearfix::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+//设置变量存储设计图的宽度
+@ps_w:750;
+
+// 设置变量保存倍数
+@num:40;
+
+//设置vw适配
+html{
+	// 设置字体大小
+	font-size: 100vw/@ps_w*@num;
+}
+
+// 设置背景颜色
+body{
+	background-color: #eff0f4;
+}
+
+//确定主要宽度
+.w{
+	// 设置宽度
+	width: 693rem/@num;
+	// 设置水平居中
+	margin: 0 auto;
+}
+
+// 设置头部
+.header{
+	// 设置高度
+	height: 175rem/@num;
+	// 将header设置为弹性容器
+	display: flex;
+	// 设置主轴的对齐方式
+	justify-content: space-between;
+	// 设置侧轴的对齐
+	align-items: center;
+	
+	// 设置图标字体的样式
+	a{
+		// 设置颜色
+		color: #999;
+		// 设置字体大小
+		font-size: 40rem/@num;
+	}
+	
+	// 设置标题的字体
+	h1{
+		font-size: 50rem/@num;
+	}
+
+}
+
+// 设置banner
+.banner{
+	// 设置高度
+	height: 278rem/@num;
+	// 设置圆角
+	border-radius: 10px;
+	// 裁剪溢出的部分
+	overflow: hidden;
+	// 设置一个下外边距
+	margin-bottom: 40rem/@num;
+}
+
+// 设置服务栏的样式
+.service{
+	// 设置高度
+	height: 244rem/@num;
+	// 开启弹性盒
+	display: flex;
+	// 设置换行
+	flex-flow: row wrap;
+	// 设置主轴的对齐
+	justify-content: space-between;
+	// 设置侧轴的空白空间
+	align-content: space-between;
+	//设置一个下外边距
+	margin-bottom: 48rem/@num;
+	
+	a{
+		// 关闭弹性
+		flex: none;
+		// 设置宽度和高度
+		width: 327rem/@num;
+		height: 104rem/@num;
+		background-color: orange;
+		// 设置圆角
+		border-radius: 10px;
+		// 设置文字的居中
+		text-align: center;
+		line-height: $height;
+		// 设置字体颜色
+		color: #fff;
+		// 设置字体大小
+		font-size: 36rem/@num;
+		
+		i{
+			margin-right: 14rem/@num;
+		}
+		
+		&:nth-child(1){
+			background-color: #f7745c;
+		}
+		
+		&:nth-child(2){
+			background-color: #c657ff;
+		}
+		
+		&:nth-child(3){
+			background-color: #ff3971;
+		}
+		
+		&:nth-child(4){
+			background-color: #1ca6fe;
+		}
+	}
+}
+
+// 设置下边的课程列表
+.course{
+	// 设置一个下外边距
+	margin-bottom: 46rem/@num;
+	
+	
+	// 标题的容器
+	.course-title{
+		height: 28rem/@num;
+		// 设置行高
+		line-height: $height;
+		// 设置弹性盒
+		display: flex;
+		// 设置主轴的空白空间
+		justify-content: space-between;
+		// 设置一个左侧边框
+		border-left: 3px solid #3a84ff;
+		// 设置下外边距
+		margin-bottom: 40rem/@num;
+		
+		// 设置标题的字体
+		h2{
+			// 设置字体大小
+			font-size: 34rem/@num;
+			// 设置一个左内边距
+			padding-left: 18rem/@num;
+		}
+		
+		a{
+			//设置字体大小
+			font-size: 28rem/@num;
+		}
+	}
+
+	// 课程列表的容器 （ul）
+	.course-list{
+		// 修改宽度
+		width: 720rem/@num;
+		// 将容器设置为弹性容器
+		display: flex;
+		// 设置滚动条
+		overflow: auto;
+	}
+	
+	// 设置课程信息的项
+	.course-item{
+		// 修改盒子大小的计算方式
+		box-sizing: border-box;
+		// 关闭伸缩的功能
+		flex: none;
+		// 设置一个右外边距
+		margin-right: 24rem/@num;
+		
+		width: 328rem/@num;
+		height: 324rem/@num;
+		// 设置背景颜色
+		background-color: #fff;
+		// 设置圆角
+		border-radius: 10px;
+		// 水平居中
+		padding: 0 20rem/@num;
+		
+		// 为li的子元素设置一个上外边距
+		> *{
+			margin-top: 22rem/@num;
+		}
+		
+		//设置课程的标题
+		.course-name{
+			// 设置字体大小
+			font-size: 32rem/@num;
+			// 设置不加粗
+			font-weight: normal;
+		}
+		
+		// 设置讲师信息
+		.teacher-info{
+			// 开启弹性盒
+			display: flex;
+			// 设置头像
+			.avatar{
+				width: 42rem/@num;
+				// 设置圆形
+				border-radius: 50%;
+				// 裁剪多余的部分
+				overflow: hidden;
+			}
+			
+			// 设置讲师名字的样式
+			.teacher-name{
+				// 设置颜色
+				color: #969393;
+				// 设置大小
+				font-size: 24rem/@num;
+				// 设置左外边距
+				margin-left: 16rem/@num;	
+			}
+		}
+		
+		
+	}
+}

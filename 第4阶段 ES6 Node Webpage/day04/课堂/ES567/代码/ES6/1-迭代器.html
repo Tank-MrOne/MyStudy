@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+         let arr = ['唐僧','孙悟空','猪八戒','沙僧'];
+
+         //使用 for...of 循环遍历
+        //  for(let v of arr){
+        //      console.log(v);
+        //  }
+
+         //打印数组
+        console.log(arr);
+
+        //得到数组的遍历器函数
+        let iterator = arr[Symbol.iterator]();
+
+        //调用 迭代器对象的 next 方法
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        //  for(let i in arr){
+        //      console.log(i);
+        //  }
+    </script>
+</body>
+</html>

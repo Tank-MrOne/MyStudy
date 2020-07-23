@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新闻</title>
+		<style>
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			body{
+/* background-color: #bfa; */
+			}
+			
+			/* 设置外层容器的样式 */
+			.news-wrapper{
+				/* 设置宽度和高度 */
+				width: 300px;
+				height: 323px;
+				/* 设置白色的背景 */
+				background-color: #fff;
+/* 设置外边距 */
+margin: 50px auto;
+
+				/* 设置一个上边框 */
+				border-top: 1px rgb(221,221,221) solid;
+			}
+			
+			/* 设置标题 */
+			.news-wrapper .title{
+				/* 将h2转换为行内块元素，使其宽度被内容撑开 */
+				display: inline-block;
+				/* 设置一个高度 */
+				height: 40px;
+				/* 设置一个上边框 */
+				border-top: 1px red solid;
+				/* 设置元素上移一个像素，使两个边框重叠 */
+				margin-top: -1px;
+			}
+			
+			/* 设置标题中超链接的的样式 */
+			.news-wrapper .title a{
+				text-decoration: none;
+				/* 字体大小 */
+				font-size: 16px;
+				/* 字体颜色 */
+				color: #404040;
+			}
+			
+			/* 设置点的样式 */
+			.news-wrapper .title .point{
+				font-family: Arial;
+				font-size: 16px;
+				color: #888;
+				padding: 0 2px;
+			}
+			
+			/* 设置图片的标题 */
+			.img-wrapper .img-title{
+				/* 设置标题的高度 */
+				height: 40px;
+				/* 设置文字垂直居中 */
+				line-height: 40px;
+				/* 设置字体颜色 */
+				color: #fff;
+				/* 字体大小 */
+				font-size: 16px;
+				/* 设置一个负的上外边距，使元素框上移（临时的收到） */
+				margin-top: -44px;
+				/* 使文字向右移动 */
+				padding-left: 20px;
+				
+			}
+			
+			/* 设置ul */
+			.news-list{
+				/* 使li向右移动 */
+				padding-left: 24px;
+				/* 设置项目符号为方形 */
+				list-style: square;
+				/* 字体大小 */
+				font-size: 12px;
+				/* 字体颜色，主要修改项目符号的颜色 */
+				color: rgb(221,221,221);
+			}
+			
+			/* 设置li的样式 */
+			.news-list li{
+				/* 设置上下的外边距 */
+				margin: 10px 0;
+			}
+			
+			/* 设置新闻列表超链接的样式 */
+			.news-list a{
+				/* 去除超链接的下划线 */
+				text-decoration: none;
+				/* 设置字体大小 */
+				font-size: 14px;
+				/* 设置字体颜色 */
+				color: #666;
+			}
+			
+			/* 设置超链接鼠标移入后的样式 */
+			.news-list a:hover{
+				/* 鼠标已入后字体设置为红色 */
+				color: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- 创建一个外层容器 -->
+		<div class="news-wrapper">
+			
+			<!-- 创建一个标题标签 -->
+			<h2 class="title">
+				<a href="#">军事</a><span class="point">·</span><a href="#">航空</a>
+			</h2>
+			
+			<!-- 新闻图片的容器 -->
+			<div class="img-wrapper">
+				<img src="img/4.jpg" alt="大飞机">
+				<h3 class="img-title">
+					战斗民族附体，F35也装减速伞！
+				</h3>
+			</div>
+			
+			<!-- 新闻列表 -->
+			<ul class="news-list">
+				<li>
+					<a href="#">新疆民警巡边装备马和口罩</a>
+				</li>
+				<li>
+					<a href="#">南海舰队演练战时补给，直升机送鱼雷</a>
+				</li>
+				<li>
+					<a href="#">法航退役其首架A380 在爱尔兰拆解</a>
+				</li>
+				<li>
+					<a href="#">C919节后复工忙 昨天滑行试验 今天试飞</a>
+				</li>
+			</ul>
+			
+		</div>
+		
+		
+	</body>
+</html>

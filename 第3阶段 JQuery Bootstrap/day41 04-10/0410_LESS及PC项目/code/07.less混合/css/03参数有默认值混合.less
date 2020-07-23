@@ -1,0 +1,30 @@
+//定义的时候声明形参  和变量一个样子
+//如果用户不传宽高的时候，默认宽高就是500px ，那么可以给形参定义默认值,只要传递参数就会覆盖默认值
+.center(@w:500px,@h:500px,@bg){
+    width: @w;
+    height: @h;
+    background-color: @bg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    margin: auto;
+}
+.border(@w,@s,@c){
+    // border:@w @s @c;
+    //在mixin中，可以使用@arguments代表传入的实参
+    border:@arguments;
+}
+.outer{
+    //传参数
+    //命名参数：传递参数的时候，可以给对应的形参传递
+    .center(@bg:yellow,@h:600px);
+    .inner{
+       .center(300px,300px,green);
+        .con{
+            .center(100px,100px,pink);
+            .border(10px,dotted,yellow)
+        }
+    }
+}

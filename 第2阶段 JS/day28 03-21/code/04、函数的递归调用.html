@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//错误的类型：  语法 syn  引用 ref   类型  ty  范围  ra
+			//函数的递归调用，就是函数在内部自己调自己
+			//函数的递归调用是一把双刃剑，如果设计的好，可以帮我们简单的处理事情，如果设计不好就是灾难
+			//函数的递归要想设计好必须有两个条件
+			//1、必须有一个明显的结束条件，不能一直递归下去
+			//2、每一次调用都要有一个趋近结束条件的趋势
+			
+			
+			//1、灾难
+//			function fn(){
+//				console.log('i love you zhao li ying~');
+//				fn();
+//			}
+//			fn();
+			
+			
+			//2、让灾难变成好事
+			//我想打印10遍后，就停止
+//			var n = 0;
+//			function fn(){
+//				if(n >= 10){
+//					return;
+//				}
+//				n++;
+//				console.log('i love you zhao li ying~');
+//				fn = 1;
+////				fn();
+//				arguments.callee();//为了防止递归内部函数名字被修改，递归建议使用arguments.callee，
+//									//它仍然还是存储原来函数的地址；
+//			}
+//			fn();
+			
+			
+			
+			
+			//3、递归处理求一个数的阶乘
+			function getFactorial(n){
+				if(n <= 1){
+					return 1;
+				}
+				return  n * getFactorial(n - 1);
+			}
+			console.log(getFactorial(5));// 5! = 4! * 5
+			
+			
+			//递归可以简化我们的写法，但是执行的效率不乐观，所以以后除非不得已，能不用递归则不用；
+			
+			
+			
+			//斐波那契数列   兔子数列
+			//Fibonacci 
+			// 1 1 2 3 5 8 13
+			//第n个月的兔子对数
+			
+			
+			function fibonacci(n){
+				if(n <= 2){
+					return 1;
+				}
+				
+				var result = fibonacci(n - 1) + fibonacci(n - 2);
+				
+				return result;
+			}
+			
+			
+			console.log(fibonacci(8));
+			
+		</script>
+	</body>
+</html>

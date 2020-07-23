@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>我是列表项1</li>
+			<li>我是列表项2</li>
+			<li>我是列表项3</li>
+			<li>我是列表项4</li>
+			<li>我是列表项5</li>
+			<li>我是列表项6</li>
+			<li>我是列表项7</li>
+			<li>我是列表项8</li>
+		</ul>
+		
+		<button>点击添加</button>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				//本来有一些，然后还可能去动态添加一些新的
+				//老的和新的都要有相同的行为效果
+				//此时就想事件委派
+//				//1、先让老的可以移入变色
+				var liNodes = document.querySelectorAll('li');
+				var btn = document.querySelector('button');
+				var ulNode = document.querySelector('ul');
+//				
+//				for(var i = 0; i < liNodes.length; i++){
+//					liNodes[i].onmouseover = function(){
+//						this.style.backgroundColor = 'hotpink';
+//					};
+//					
+//					liNodes[i].onmouseout = function(){
+//						this.style.backgroundColor = 'white';
+//					};
+//				}
+//				
+//				
+//				//2、点击按钮添加新的
+//				btn.onclick = function(){
+//					var liNode = document.createElement('li');
+//					liNode.innerHTML = '我是新的';
+//					ulNode.appendChild(liNode);
+//					liNode.onmouseover = function(){
+//						this.style.backgroundColor = 'hotpink';
+//					};
+//					liNode.onmouseout = function(){
+//						this.style.backgroundColor = 'white';
+//					};
+//					
+//				}
+				
+				
+				
+				
+				//事件委派的写法
+				btn.onclick = function(){
+					var liNode = document.createElement('li');
+					liNode.innerHTML = '我是新的';
+					ulNode.appendChild(liNode);
+				}
+				
+				ulNode.onmouseover= function(e){
+					if(e.target.nodeName === 'LI'){
+						e.target.style.backgroundColor = 'hotpink';
+					}
+				};
+				
+				ulNode.onmouseout = function(e){
+					if(e.target.nodeName === 'LI'){
+						e.target.style.backgroundColor = 'white';
+					}
+				};
+				
+			}
+		</script>
+	</body>
+</html>

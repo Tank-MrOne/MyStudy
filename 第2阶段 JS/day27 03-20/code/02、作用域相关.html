@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			//作用域是虚拟的概念，但是很有用
+			//它主要是用来隔离变量的，让全局和局部作用域变量可以区分开来
+			//作用域有两种：以函数为界，函数内部称为局部作用域，函数外部被称作全局作用域
+			//作用域是在写完代码就确定好的；只是看不见摸不着也打印不到；
+			//函数内部和函数外部的同名变量为什么可以区分开来，就是因为作用域在隔离变量；
+			
+			
+			var a = 10;
+			var b = 20;
+			
+			function fn(a){
+				a = 59;
+				var b = 30;
+				console.log(a,b);//59,30
+			}//var fn = function(){   }
+			
+			fn(a);
+			
+			console.log(a,b);//
+			
+			
+			
+		</script>
+	</body>
+</html>

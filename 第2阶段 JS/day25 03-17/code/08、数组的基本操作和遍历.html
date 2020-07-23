@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [100,200,300,400,500];//虽然数组当中可以存储不同的数据类型，但是一般数组当中存储的还是相同类型；
+			
+			//数组的增删改查
+			//1、增  分为三个位置增：  末尾增一个    头部增一个   中间增一个
+//			console.log(arr[100]);//5这个下标在数组当中不存在，但是不会报错，会打印一个undefined值
+			
+			//末尾增一个：
+//			arr[5] = 1000;
+//			arr[arr.length] = 1000;//往数组末尾添加元素就是这一句
+//			console.log(arr);
+			
+			
+			//头部增加一个
+			//循环遍历数组的时候，循环变量一般都是和数组的下标对应，因为下标是连续的
+			
+//			for(var i = arr.length - 1; i >= 0; i--){
+//				arr[i + 1] = arr[i];//arr[5] = arr[4];//往下标为0的位置添加一个1000
+//			}
+//			arr[0] = 1000;
+//			console.log(arr);
+			
+//			for(var i = 0; i < 100; i++){
+//				
+//			}
+//			
+//			for(var i = 99; i >= 0; i--){
+//				
+//			}
+			
+			//中间增加一个(主要是要知道往哪个下标去填)  往下标为2的位置添加一个1000
+//			for(var i = arr.length - 1; i >= 2; i--){
+//				arr[i + 1] = arr[i];//arr[5] = arr[4];
+//			}
+//			arr[2] = 1000;
+//			console.log(arr);
+			
+			
+			//2、删  分为三个位置删：  末尾删一个    头部删一个   中间删一个
+			//末尾删一个(其实就是让数组的长度-1)
+			
+//			arr.length -= 1; //
+//			arr.length = arr.length - 1;
+//			arr.length--
+//			console.log(arr);
+//			console.log(arr[4]);//undefined，删除了就不再存在了
+			
+			//头部删一个（头部没办法去直接操作）  //删除下标为0的那个元素
+			
+//			for(var i = 1; i <= arr.length - 1; i++){
+//				arr[i - 1] = arr[i];
+//			}
+//			arr.length--;
+//			console.log(arr);
+			
+			
+			//中间删一个   删除下标为1的那个元素    
+//			for(var i = 2; i <= arr.length - 1; i++){
+//				arr[i - 1] = arr[i];
+//			}
+//			arr.length--;
+//			console.log(arr);
+
+
+
+			//3、改和查   
+			//一句话，修改和查找数组的哪个元素，必须知道这个元素的下标，如果知道了下标想怎么玩就怎么玩；
+			//如果不知道下标  首先得找到下标
+			
+			//知道下标的情况下：
+			//把下标为2的值，修改为666
+			//读取下标为3的值；
+//			arr[2] = 666;
+//			console.log(arr[3]);
+//			console.log(arr);
+			
+			
+			//不知道下标的情况下，得先找到下标；
+			//把数组当中的200，修改为2000；
+			//得先遍历数组，找到200这个值对应的下标才能修改它
+			
+//			for(var i = 0; i < arr.length; i++){//数组遍历的固定模式，切记i对应的是数组的下标
+//				if(arr[i] === 200){
+//					arr[i] = 2000;
+//				}
+//			}
+//			console.log(arr);
+			
+			
+			
+			
+			
+			//数组的遍历（循环去找数组的所有元素）
+			//数组在遍历的时候，切记下标对应的就是循环变量
+			
+			for(var i = 0; i < arr.length; i++){
+				console.log(arr[i]);
+			}
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

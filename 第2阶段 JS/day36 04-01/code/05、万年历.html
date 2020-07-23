@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span></span>
+		<script type="text/javascript">
+			window.onload = function(){
+				function getDateAndTimeNow(){
+					var date = new Date();
+					var year = date.getFullYear();
+					var month = date.getMonth() + 1;
+					var day = date.getDate();
+					var time = date.toLocaleTimeString();
+					return '现在是：' + year + '年' + month + '月' + day + '日 '+ time;
+				}
+				var spanNode = document.querySelector('span');
+				setInterval(function(){
+					spanNode.innerHTML = getDateAndTimeNow();
+				},1000);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 300px;
+            border: 1px solid #000;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .con div {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <button id="show">显示</button>
+        <button id="hide">隐藏</button>
+        <button id="toggle">切换</button>
+        <div class="con">
+            <div>
+                今天是个好天气，我想开空调。今天是个好天气，。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。今天是个好天气，我想开空调。
+            </div>
+
+        </div>
+    </div>
+    <script src="./jquery-2.1.4/jquery.js"></script>
+    <script src="./jquery-2.1.4/jquery.easing.1.3.js"></script>
+    <script>
+        $(function () {
+            $("#show").click(function () {
+                // $(".con").slideDown();//不书写参数  默认是有时间 normal
+                // $(".con").slideDown(2000);//不书写参数  默认是有时间 normal
+                // $(".con").slideDown(2000, "linear");
+                $(".con").slideDown(2000, "linear", function () {
+                    alert("gg")
+                });
+
+            })
+
+            $("#hide").click(function () {
+                $(".con").slideUp(2000);
+            })
+
+
+            //toggle
+            $("#toggle").click(function () {
+                $(".con").slideToggle(1000);//toggle可以自动判断元素显示隐藏状态，然后更改状态
+            })
+        })
+    </script>
+</body>
+
+</html>

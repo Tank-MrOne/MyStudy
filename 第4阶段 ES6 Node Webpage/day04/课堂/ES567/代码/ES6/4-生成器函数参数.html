@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数参数</title>
+</head>
+<body>
+    <script>
+        function * gen(args){
+            console.log(args);
+            //yield 整体有返回值
+            let res1 = yield 2;
+            console.log(res1);
+            let res2 = yield 4;
+            console.log(res2);
+        }
+
+        //调用生成器函数  返回的是一个迭代器对象
+        let iterator = gen(1);
+
+        //调用 next 方法
+        let r1 = iterator.next();
+        //第二次调用 next
+        let r2 = iterator.next(3);
+        //第三次调用
+        let r3 = iterator.next(100);
+
+    </script>
+</body>
+</html>
