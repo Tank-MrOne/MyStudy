@@ -1,0 +1,89 @@
+﻿
+
+/*
+	数据库操作： CRUD
+	1. C - create 增
+		1) insert() 向集合中插入一个或者多个文档对象
+		2) db.<collection>.insert()
+		3) db代表当前数据库
+		4) collection代表数据库指定的集合
+	2. R - read 查
+		1) db.<collection>.find(条件, 投影) || db.<collection>.findOne(条件, 投影)
+		2 )   运算符: 大于($gt) 小于($lt) 大于等于($gte) 小于等于($lte)  不等于($ne)
+		3)   操作符: $or $in $nin $where
+		4)    投影
+			- db.collections.find(查询条件, 投影)
+ 			-    对查询的数据字段进行过滤
+ 			-    投影其实就是过滤数据的选项
+	3. U - update 更新
+		1) db.<collection>.updateOne(查询条件, 更新内容) || db.<collection>.updateMany(查询条件, 更新内容)
+	4. D - delete 删
+		1) db.<collection>.deleteMany(查询条件)
+		2) db.<collection>.deleteOne(查询条件)
+		3) 尽量不要删除，真要删除数据，通常使用软删除
+			1. 通过对数据添加删除标识，用来表示该数据应该被删除
+ 			2.不是真正意义上的删除
+*/
+
+// Create 增
+db.students.insert({name: 'curry', age: 32})
+db.students.find()
+
+
+// 2. Read 查
+// 2.1 查询所有
+db.students.find({})
+db.students.findOne({})
+
+// 2.2 根据指定条件查询
+db.students.find({name: '张三'})
+db.students.find({age: 18})
+
+// 2.3 条件运算符
+db.students.find({age: {$gte: 18}})
+db.students.insert({name: '小明', age: 12})
+db.students.find({age: {$lte: 18}})
+db.students.find({age: {$ne: 18}})
+
+// 2.4 操作符
+// 查找年龄为18的和32的
+db.students.find({age: {$in: [18, 32]}})
+db.students.insert({name: 'ducan', age: 45})
+db.students.find({age: {$nin: [18]}})
+// 查找到年龄为18或者name叫curry的
+db.students.find({$or: [{name: 'curry'}, {age: 18}]})
+// 查找到年龄不等于18的
+db.students.find({age: {$nin: [18]}})
+
+// 模糊查询
+db.students.find({name: /u/})
+
+// 查询年龄大于等于18小于35的所有数据
+db.students.find({age: {$gte: 18}, age: {$lt: 35}}) // 不靠谱
+db.students.find({$where: function(){return this.age >= 18 && this.age < 35}})
+
+// 2.5 投影
+db.students.find({}, { _id: 0})
+db.students.find({}, {name: true,age: 1, _id: 0})
+
+// 3 Upate 更新
+// 3.1 更新多个数据
+db.students.update({age: 19}, {$set: {age: 18}})
+db.students.find()
+db.students.updateMany({age: 18}, {$set: {age: 19}})
+
+// 3.2 更新一个数据
+db.students.updateOne({name: 'curry'}, {$set: {age: 33}})
+db.students.find()
+
+
+// 4. 软删除 
+db.students.updateMany({}, {$set: {isDelected: false}})
+db.students.find()
+db.students.updateOne({name:  '李四'}, {$set: {isDelected: true}})
+db.students.find()
+db.students.find({isDelected: false}, {_id: 0})
+
+
+
+

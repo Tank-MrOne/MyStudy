@@ -12,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 安装包
+MongoDB安装包
 .git
 
 # Editor directories and files
