@@ -1,0 +1,69 @@
+.recommendContainer {
+  margin-top: 4rpx;
+}
+.recommendContainer .banner {
+  width: 100%;
+  height: 350rpx;
+}
+.recommendContainer .banner image {
+  width: 100%;
+  height: 100%;
+}
+.recommendContainer .policyDescList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.recommendContainer .policyDescList .policyDescItem {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.recommendContainer .policyDescList .policyDescItem ._img {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+.recommendContainer .policyDescList .policyDescItem ._span {
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+.recommendContainer .kingKongList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 20rpx 0;
+}
+.recommendContainer .kingKongList .kingKongItem {
+  width: 20%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recommendContainer .kingKongList .kingKongItem ._img {
+  width: 110rpx;
+  height: 110rpx;
+}
+.recommendContainer .kingKongList .kingKongItem ._span {
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+
